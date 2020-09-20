@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuboyuan.fun/"/>
-  <updated>2020-09-19T01:34:02.076Z</updated>
+  <updated>2020-09-20T01:22:48.606Z</updated>
   <id>https://liuboyuan.fun/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>朝天子·题册</title>
+    <link href="https://liuboyuan.fun/chaotianzi/"/>
+    <id>https://liuboyuan.fun/chaotianzi/</id>
+    <published>2020-09-19T23:00:00.000Z</published>
+    <updated>2020-09-20T01:22:48.606Z</updated>
+    
+    <content type="html"><![CDATA[<p>习题，习册，卷儿小愁儿大，</p><p>答案归隐进师家，笔儿没油说嘛话。</p><p>你听了你愁，他听了他怕。</p><p>眼见的吓倒了这家，吓疯了那家。</p><p>只吓的风吹心凉罢！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;习题，习册，卷儿小愁儿大，&lt;/p&gt;
+&lt;p&gt;答案归隐进师家，笔儿没油说嘛话。&lt;/p&gt;
+&lt;p&gt;你听了你愁，他听了他怕。&lt;/p&gt;
+&lt;p&gt;眼见的吓倒了这家，吓疯了那家。&lt;/p&gt;
+&lt;p&gt;只吓的风吹心凉罢！&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="沙雕" scheme="https://liuboyuan.fun/tags/%E6%B2%99%E9%9B%95/"/>
+    
+  </entry>
   
   <entry>
     <title>v2ray节点</title>
@@ -1173,9 +1206,9 @@
       <category term="摄影" scheme="https://liuboyuan.fun/categories/%E6%91%84%E5%BD%B1/"/>
     
     
-      <category term="摄影" scheme="https://liuboyuan.fun/tags/%E6%91%84%E5%BD%B1/"/>
-    
       <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="摄影" scheme="https://liuboyuan.fun/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   
@@ -1766,9 +1799,9 @@
       <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
     
     
-      <category term="文化" scheme="https://liuboyuan.fun/tags/%E6%96%87%E5%8C%96/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="文化" scheme="https://liuboyuan.fun/tags/%E6%96%87%E5%8C%96/"/>
     
   </entry>
   
@@ -2864,43 +2897,6 @@
     
     
       <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>叹月·幻梦</title>
-    <link href="https://liuboyuan.fun/moonandream/"/>
-    <id>https://liuboyuan.fun/moonandream/</id>
-    <published>2020-03-19T22:30:08.000Z</published>
-    <updated>2020-08-20T05:00:01.819Z</updated>
-    
-    <content type="html"><![CDATA[<p>我曾经幻想过无数次，</p><p>一栏明月之下，</p><p>信手而联，</p><p>牵心走过，</p><p>盛夏仲秋。</p><p>却不知如何言说。</p><p>执笔无言，</p><p>叹失良机。</p><p>恨无重望背影，</p><p>却凭其，</p><p>泪花尽洒。</p><p>若有来生啊，</p><p>我愿重至，</p><p>明月花下。</p><p>化雨为雾。</p><p>赏曾经，</p><p>灼灼桃花。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;我曾经幻想过无数次，&lt;/p&gt;
-&lt;p&gt;一栏明月之下，&lt;/p&gt;
-&lt;p&gt;信手而联，&lt;/p&gt;
-&lt;p&gt;牵心走过，&lt;/p&gt;
-&lt;p&gt;盛夏仲秋。&lt;/p&gt;
-&lt;p&gt;却不知如何言说。&lt;/p&gt;
-&lt;p&gt;执笔无言，&lt;/p&gt;
-&lt;p&gt;叹失良机。&lt;/p&gt;
-&lt;p&gt;恨无重望背影，&lt;/p&gt;
-&lt;p&gt;却凭其，&lt;/p&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
-    
-    
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
-      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
     
   </entry>
   

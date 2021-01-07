@@ -293,11 +293,11 @@
   </entry>
   
   <entry>
-    <title>loyal</title>
+    <title>忠诚</title>
     <link href="https://liuboyuan.fun/loyal/"/>
     <id>https://liuboyuan.fun/loyal/</id>
     <published>2020-11-22T00:00:00.000Z</published>
-    <updated>2021-01-04T01:40:51.783Z</updated>
+    <updated>2021-01-06T00:39:43.604Z</updated>
     
     <content type="html"><![CDATA[<p>盏月永恒地奔向，</p><p>挥之不去的朝阳，</p><p>潮涌淘去曾经易散的沙砾。</p><p>日日夜夜，朝朝暮暮。</p><p>眼中只有月儿，</p><p>莫被繁星吸引。</p><p>太阳永远相信罢，</p><p>世间仅一轮明月在长夜绽放。</p><p>皎洁翩翩，安守流年。</p><p>一侧忽明忽暗的光点，</p><p>被另一颗星玩弄、拖曳。</p><p>被虚幻的光吸引。</p><p>或在今夜迸裂耀眼的火花，</p><p>或在明日消殒纯净的光芒。</p><p>盛花易现，浮心轻移。</p><p>每每日落日出，繁星过尽。</p><p>日月似初见美好，</p><p>如细细清泉，</p><p>流过白昼黑夜的梦，</p><p>吹走虚浮幻光的风。</p><p>于无止的轮回，</p><p>无止的重生中。</p><p>惟遗留，</p><p>肩负时光的忠诚。</p><p>负雨 作</p>]]></content>
     
@@ -327,11 +327,11 @@
   </entry>
   
   <entry>
-    <title>snow</title>
+    <title>雪</title>
     <link href="https://liuboyuan.fun/snow/"/>
     <id>https://liuboyuan.fun/snow/</id>
     <published>2020-11-21T20:00:00.000Z</published>
-    <updated>2021-01-04T01:32:12.855Z</updated>
+    <updated>2021-01-06T00:40:05.965Z</updated>
     
     <content type="html"><![CDATA[<p>混入灰尘的阴天，</p><p>几片碎雪斜斜落下，</p><p>装点冷冷的冰花。</p><p>冲走了，冻住了，点燃了</p><p>天上的星星。</p><p>凝固的秋雨从眼前扑过，</p><p>暗黄的树叶抱起新鲜的雪。</p><p>留下风中围绕的树干。</p><p>碰撞，又被弹开。</p><p>被惊起的白雾弥漫，</p><p>罩住白色的世界。</p><p>在最后一抹晚霞泛起暗红，</p><p>细细碎碎地飞舞。</p><p>路灯被传到另一片天际。</p><p>透着繁华的光。</p><p>洁白的雪，清新的雪，</p><p>朴实的雪！</p><p>愿你洗清一切污浊，</p><p>冰封沉睡的安魂。</p><p>生命被赋予春天的梦，</p><p>轻轻的绽放哦，</p><p>绽放啊，</p><p>绽放罢！</p><p>负雨 作</p><p>于十一月末  下课时</p>]]></content>
     
@@ -1310,9 +1310,9 @@
       <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
     
     
-      <category term="沙雕" scheme="https://liuboyuan.fun/tags/%E6%B2%99%E9%9B%95/"/>
-    
       <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="沙雕" scheme="https://liuboyuan.fun/tags/%E6%B2%99%E9%9B%95/"/>
     
   </entry>
   
@@ -1606,9 +1606,9 @@
       <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -3101,6 +3101,1943 @@
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
     
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日志：反编译Minecraft</title>
+    <link href="https://liuboyuan.fun/rizhifanbianyiminecraft/"/>
+    <id>https://liuboyuan.fun/rizhifanbianyiminecraft/</id>
+    <published>2020-06-06T12:01:34.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-10.png" alt=""></p><p>Minecraft的apk竟然有4个dex文件<br>网易改过的沙雕界面全部忽略太难了<br>AndroidManifest.xml打开是乱码……</p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-12.png" alt=""></p><p>用压缩包直接开有风险啊<br>还是老老实实反编译吧<br>这是Minecraft的AndroidManifest.xml</p><p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/MC-AndroidManifest.zip">MC-AndroidManifest</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/MC-AndroidManifest.zip">下载</a></p><p>密码：123456</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://liuboyuan.fun/wp-content/uploads/2020/06/image-10.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Minecraft的apk竟然有4个dex文件&lt;br&gt;网易改过的沙雕界面全部忽略太难了&lt;br&gt;An
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="Java" scheme="https://liuboyuan.fun/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无题</title>
+    <link href="https://liuboyuan.fun/wuti/"/>
+    <id>https://liuboyuan.fun/wuti/</id>
+    <published>2020-06-05T19:54:31.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/hello-61-1024x576.jpg" alt=""></p><p>三两新茶浊残春<br>奈何人远千古恨<br>暮春欲盼三冬暖<br>芳草桥头情断魂</p><p>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://liuboyuan.fun/wp-content/uploads/2020/06/hello-61-1024x576.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;三两新茶浊残春&lt;br&gt;奈何人远千古恨&lt;br&gt;暮春欲盼三冬暖&lt;br&gt;芳草桥头情断魂
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+      <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5000 RMB-Make Wordpress Faster</title>
+    <link href="https://liuboyuan.fun/5000rmbmakewordpressfaster/"/>
+    <id>https://liuboyuan.fun/5000rmbmakewordpressfaster/</id>
+    <published>2020-06-04T14:25:53.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>Our Website added new goods.<br>It can make your website powered by Wordpress Faster.<br>So,what we can do?<br>First,change your PHP version to 5.6.<br>Even if your website is PHP 7.4.<br>It will be more safe and faster.<br>Then,Disable the Memcached and the OPcache.<br>This will make your website fast enough.<br>Sure enough,delete ALL of your .css files.<br>It will be opening so fast as wind.<br>Your website will be beautiful.<br>I will tell you one thing.<br>CDN is useless.<br>It’ll make the website worse.<br>We will stop compressing your images.<br>You’ll be very happy after all.<br>Now,It’s Only 5000 RMB<br>700 dollars!<br>Let’s do it!</p><p>LiuBoyuan</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Our Website added new goods.&lt;br&gt;It can make your website powered by Wordpress Faster.&lt;br&gt;So,what we can do?&lt;br&gt;First,change your PHP vers
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
+    
+      <category term="沙雕" scheme="https://liuboyuan.fun/tags/%E6%B2%99%E9%9B%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>apk反编译简易指北</title>
+    <link href="https://liuboyuan.fun/apkfanbianyijianyizhibei/"/>
+    <id>https://liuboyuan.fun/apkfanbianyijianyizhibei/</id>
+    <published>2020-06-03T16:25:23.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>在生活中呢，我们会经常遇到一些问题<br>废话不多说，开始！<br>反编译apk文件可以得到应用的运行原理，甚至可以直接得到源代码。<br>这样我们可以很轻易地学习、探讨一个软件。<br>在证明Minecraft和迷你世界关系上也有重大作用。<br>所需软件均在本服务器上，可以自行获取。<br><strong>无任何广告、病毒及推广信息</strong></p><p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool.zip">Apktool-1</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool.zip">下载</a></p><p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool-1.zip">Apktool-2</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool-1.zip">下载</a></p><h3 id="ApkTool功能"><a href="#ApkTool功能" class="headerlink" title="ApkTool功能"></a>ApkTool功能</h3><ul><li>将资源解码成原来的形式（包括resources.arsc，class.dex，liuboyuan.png和shadiao.xml）</li><li>将解码的资源重新打包成apk/jar</li><li>组织和处理依赖于框架资源的APK</li><li>Smali调试</li><li>执行自动化任务</li></ul><p>由于apk本身就是压缩文件的一种，所以可用解压缩软件查看。<br>也可以使用Apktool来进行反编译<br>直接解压可以得到一些资源文件，但是 AndroidManifest.xml 和其他的 xml 文件都是乱码，通过 Apktool 进行反编译，可以最大限度的还原这些文件的内容。<br>解压文件 其中会得到class.dex  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-4.png" alt=""></p><blockquote><p><strong>科普</strong></p><p>META-INF 里保存 App 的签名信息classes.dex<br>.dex 是 Dalvik 虚拟机上的可执行文件，需要使用 apktool将其转换为 jar 文件<br>AndroidManifest.xml Android 清单文件，向 Android 系统提供应用的必要信息。<br>assets 存放一些资源文件字体，声音等。<br>lib 存放第三方库<br>original 存放未经过反编译的等 AndroidManifest.xml 文件<br>res存放资源文件，例如图片，颜色，字符等。<br>smali 里存放的是 java 编译成的 smali 代码，smali 相当于 Android 虚拟机上运行的语言。  </p></blockquote><p>其中.dex和.apk的关系是这样的</p><p><img src="https://upload-images.jianshu.io/upload_images/3012089-4c77540c5604b606.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/611/format/webp" alt=""></p><p>以疑似抄袭的迷你世界为例<br>也不能说疑似 就是八九不离十吧<br>下一期咱们好好分析分析<br>不然那些喷MC的败犬又该说MC如何了  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image.png" alt=""></p><p>这里面有一个class.dex和class2.dex<br>这时用记事本打开是一坨乱码<br>如果你非要打开<br>结果可能和我一样  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-1.png" alt=""></p><p>这时就需要Apktool的dex转jar功能了<br>这里提供两个软件<br>依据需要进行使用  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-2.png" alt=""></p><p>输入路径，点击反编译dex、</p><blockquote><p>科普：<br>dex文件是Android系统的可执行文件，包含应用程序的全部操作指令以及运行时数据。<br>当java程序编译成class后，还需要使用dex工具将所有的class文件整合到一个dex文件，目的是其中各个类能够共享数据，在一定程度上降低了冗余，同时也是文件结构更加经凑，dex文件是传统jar文件大小的50％左右。</p></blockquote><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-3.png" alt=""></p><p>在.jar工具输入.dex的路径<br>或者直接拖入框框里<br>这个软件也可以进行对apk的重建、签名和优化操作。  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-5.png" alt=""></p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-6.png" alt=""></p><p>这时就得到了.jar文件</p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-7.png" alt=""></p><p>将.jar转为.java还需要一步<br>点击下载jd-gui</p><p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/jd-gui.zip">jd-gui</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/jd-gui.zip">下载</a></p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-8.png" alt=""></p><p>将刚刚的.jar导入其中  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-9-1024x838.png" alt=""></p><p>此时就可以看到相应的源代码了<br>感兴趣的朋友们可以钻研一下软件的运行原理<br>但是一些应用会混淆代码<br>比如说迷你世界，apk进行了混淆处理<br>所以你会看到a b c d这一类的傻x命名规则<br>但还是可以得到运行原理的<br>感谢各位耐心读完<br>如有任何问题请咨询QQ:2622936124<br>在操作上有任何问题随时找我</p><h3 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a>后面的话</h3><p>这篇教程是在<strong>证明迷你抄袭</strong>的过程中临时赶出来的<br>如有小漏洞请见谅<br><strong>本组文档及未来的证明日志只针对涉嫌抄袭的游戏，<br>不针对任何玩家。</strong></p><p>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在生活中呢，我们会经常遇到一些问题&lt;br&gt;废话不多说，开始！&lt;br&gt;反编译apk文件可以得到应用的运行原理，甚至可以直接得到源代码。&lt;br&gt;这样我们可以很轻易地学习、探讨一个软件。&lt;br&gt;在证明Minecraft和迷你世界关系上也有重大作用。&lt;br&gt;所需软件均在本服务器上，
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Java" scheme="https://liuboyuan.fun/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小忆</title>
+    <link href="https://liuboyuan.fun/xiaoyi/"/>
+    <id>https://liuboyuan.fun/xiaoyi/</id>
+    <published>2020-06-01T21:44:12.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>夏天到了，仿佛啊<br>时光只是那么一刻。<br>随即逝去，<br>却仿佛经过了许多。<br>也包括，自己的蜕变。<br>曾经多么恐惧的时光<br>也终究，成为了记忆。<br>看到明年的中考，<br>分别，又近了一步。<br>从素不相识，<br>到亲密无间。<br>我们经历了多少啊……<br>谁还记得，开学时自我介绍的腼腆<br>与同学交流时的不知所措。<br>看向她时的紧张。<br>本以为时光永驻，<br>本以为童年依旧。<br>光阴似箭，箭箭穿心。<br>九月落叶，<br>六月归根。<br>可能不久的分别，<br>便是永远的回忆。<br>落叶飞洒，吹尽青春昂扬。<br>人来人往，走过夕阳，踌躇难忘。<br>我们是这个学校其中的一届，<br>可能没有人会记住。<br>岁月轮回，终究成为过往。<br>若有来生，<br>我们还会遇到彼此。<br>我依旧，在那个落叶纷飞的校园，<br>等你们每一个人。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;夏天到了，仿佛啊&lt;br&gt;时光只是那么一刻。&lt;br&gt;随即逝去，&lt;br&gt;却仿佛经过了许多。&lt;br&gt;也包括，自己的蜕变。&lt;br&gt;曾经多么恐惧的时光&lt;br&gt;也终究，成为了记忆。&lt;br&gt;看到明年的中考，&lt;br&gt;分别，又近了一步。&lt;br&gt;从素不相识，&lt;br&gt;到亲密无间。&lt;br&gt;我们经历
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于YOJ停服的公告</title>
+    <link href="https://liuboyuan.fun/youthoj-bye/"/>
+    <id>https://liuboyuan.fun/youthoj-bye/</id>
+    <published>2020-05-29T00:00:12.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>Youth Online Judge在一段时间的运行中，迎来了许多用户。多半是我的朋友。在服务器开启此系统后先后提供了蓝桥杯和CSP的样例，在此感谢李登峰同学自出的两道题目。本在线评测系统依据Universal Online Judge进行搭建，基于Docker运行。由于评测机无人提交代码，且因为系统的服务出现了问题。现在已经进入停服状态。感谢各用户的注册与试用。<br>如需要题目及评测数据请联系站长 QQ：2622936124<br>YOJ的全部备份一段时间后会全部公布。</p><p>YOJ站长<br>刘渤源<br>2020年5月</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Youth Online Judge在一段时间的运行中，迎来了许多用户。多半是我的朋友。在服务器开启此系统后先后提供了蓝桥杯和CSP的样例，在此感谢李登峰同学自出的两道题目。本在线评测系统依据Universal Online Judge进行搭建，基于Docker运行。由于评
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Wordpress 优化指北</title>
+    <link href="https://liuboyuan.fun/wordpressyouhuazhibei/"/>
+    <id>https://liuboyuan.fun/wordpressyouhuazhibei/</id>
+    <published>2020-05-28T16:43:25.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们经常会有一些问题</p><blockquote><p>我的网站为啥这么慢</p><p>许多站长</p></blockquote><p>首先，如果你的钱很够，你完全可以搞一台高配服务器。<br>有句话说得好 需求+钱=解决<br>我们需要做的，<br>就是在有限的资源内，<br>达到尽量快的速度。<br>有一些大佬的网站，可以说是秒开。<br>我们应该怎么优化呢？</p><blockquote><p><strong>WP优化有什么妙用？不知道就丢脸了</strong><br>你知道WP优化吗？WP优化最近为什么这么火？<br>众所周知，WP优化是最近非常火的一个词。<br>那么WP优化到底是什么梗呢？<br>相信大家对WP优化都很熟悉，<br>WP优化就是我们每天都会经常遇到的，但是WP优化是怎么回事呢？<br>其实之前并没有太多人知道WP优化，<br>大家可能会感到很惊讶，WP优化为什么是这样的？<br>WP优化究竟为什么火起来了呢？<br>但事实就是这样，小编也感到非常惊讶。<br>以下就是小编为大家带来的的关于WP优化是什么意思，WP优化是什么梗的内容。<br>如果大家喜欢，可以点赞表示对小编的支持。欢迎在下方评论和小编一起讨论喔</p><p>营销号专用开头</p></blockquote><h3 id="Gzip压缩"><a href="#Gzip压缩" class="headerlink" title="Gzip压缩"></a>Gzip压缩</h3><p>我们可以安装<em>WP Super Cache_或者_WP Fastest Cache</em><br>这两个插件都带有压缩功能<br>也可以把这些代码放到_function.php_里</p><pre><code>add_action(&apos;init&apos;, &apos;wpjam_gzip_compression&apos;);function wpjam_gzip_compression(){    if (substr_count($_SERVER[&apos;HTTP_ACCEPT_ENCODING&apos;], &apos;gzip&apos;)) {        ob_start(&apos;ob_gzhandler&apos;);     }else{        ob_start();     }}htacce</code></pre><p>也可以啊<br>把下面这些放到.htaccess里</p><pre><code>&lt;IfModule mod_expires.c&gt;ExpiresActive OnExpiresByType image/gif A2592000ExpiresByType image/jpeg A2592000ExpiresByType image/png A2592000ExpiresByType image/x-icon A2592000ExpiresByType application/x-javascript A604800ExpiresByType text/css A604800&lt;/IfModule&gt;&lt;IfModule mod_deflate.c&gt;SetOutputFilter DEFLATEAddOutputFilterByType DEFLATE text/html text/css image/gif image/jpeg image/png application/x-javascript&lt;/IfModule&gt;</code></pre><p>再简单一点,<br>直接使用插件<em>Gzippy</em><br>我还是比较推荐直接用缓存插件自带的。</p><h3 id="缓存插件"><a href="#缓存插件" class="headerlink" title="缓存插件"></a>缓存插件</h3><p>缓存插件有很多，<br>比如说自称很好的LiteSpeed Cache<br>甚至说比WP rocket好<br>目前比较流行的插件有<br><em>WP Fastest Cache<br>WP Super Cache<br>WP Rocket<br>WP Total Cache</em><br>里面的设置有以下小建议：<br><em>CSS合并</em> 开启后可能会出现加载时间过长<br>然后所有东西一下子出来的现象<br>所以你觉得一点一点出现好<br>还是一起出来好<br>举个栗子<br>你访问个站点，一直等什么也看不到。<br>另一个站点一点点加载出来。<br>你会对哪个充满希望？<br>JS合并 开不开无所谓<br>合并后可以有效减少请求。<br>所有选项都自己尝试一遍<br>有一点需要注意<br>缓存插件不是越多越好<br>但是越多越慢是可能。<br>有一些插件彼此兼容 比如Autoptimize和WP rocket<br>有时候你会遇到加缓存没有裸奔快的情形<br>这时候可以去掉插件</p><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>我们可以使用CDN（内容分发网络）来加速站点<br>比如说我现在就在用腾讯云的CDN<br>开通后每个月50G持续6个月<br>到期后每月10G<br>国内多地延迟在10ms左右</p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/05/image-1.png" alt=""></p><p>还有一些公司如<a href="http://cloudflare.com" target="_blank" rel="noopener">Cloudflare</a>、<a href="http://su.baidu.com" target="_blank" rel="noopener">百度云加速</a>、<a href="http://shangeyun.com" target="_blank" rel="noopener">栅格云</a>都可以<br>以下是缓存规则<br>/wp-admin 是一定要回源的<br>所有文件 几天都行<br>CSS和图片类的 几天都行<br>.gz .xml .php直接回源  </p><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/05/image.png" alt=""></p><p>还有就是看清是国内还是国外流量<br>这一点很重要</p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>推荐使用Memcached和OPcache扩展<br>修订版本如果没有需要可以删除<br>但是如果有人复制你文章可能很难拿出证据。<br>国内尽量删除谷歌字体<br>一些插件有这个功能<br>插件不要太多<br>主题要使用正规来源的<br>不会什么要折腾<br>不折腾出来一个博客咋来成就感</p><p>告辞</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我们经常会有一些问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我的网站为啥这么慢&lt;/p&gt;
+&lt;p&gt;许多站长&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;首先，如果你的钱很够，你完全可以搞一台高配服务器。&lt;br&gt;有句话说得好 需求+钱=解决&lt;br&gt;我们需要做的，&lt;br&gt;就是在有限
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>思古言今</title>
+    <link href="https://liuboyuan.fun/siguyanjin/"/>
+    <id>https://liuboyuan.fun/siguyanjin/</id>
+    <published>2020-05-24T21:51:09.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>唐宋二代，名流满城。<br>执笔而书，花尽浮尘。<br>千百诗风，皆自为家。<br>天下共赏，内外同读。<br>手接星河，足临明月。<br>对风念家，思情恨阙。<br>身立沙场，不敌则为带首归。<br>春寒秋暖，一纸憔悴话年岁。<br>半抹灯火，三世繁华。<br>江南雨墨，多少文客。<br>花落冬雪，流尽人心。<br>望天而叹，四季无情。<br>文类茂如夏叶，书体盛于繁花。<br>诗词流芳南北，歌舞惊世东西。<br>后世见得，不可仿之。<br>遣唐倭使，前来习学。<br>鉴真东渡，至岛赠技。<br>倭人见之，甚有心喜。<br>遂惜此技，传代至今。<br>天下渐乱，少有太平。<br>偶有时同，年过皆空。<br>倭国虽乱，却能保文。<br>子传子孙，就成万千。<br>今生全云，唐于倭国。<br>未言中华，文化何处。<br>倭国喜墨，行草化文。<br>许或忘却，文属中原。<br>唐宋传外，外不扰内。<br>也罢无联，外无侵内。<br>多代盛世，恢弘一时。<br>南宋渐弱，元兵大入。<br>屠亡百姓，血河入海。<br>汉人将倾，诗词或无。<br>春冬又至，外族渐平。<br>元朝时安，又演多曲。</p><blockquote><p>话说天下大势，分久必合，合久必分。</p><p>《三国演义》第一回</p></blockquote><p>洪武侵元，流掀暴政。<br>女真灭明，一统南北。<br>为固国政，文字狱生。<br>若有清字，则为牢狱。<br>如见反国，则为九泉。<br>文人受害，名流无言。<br>年过民国，天下似乱。<br>又值新文化之运动，文言立足地之坍塌。<br>五千载风雨雪潇潇，足一年挥之去尘埃。<br>西方占文之江山，国人忘技之珍惜。<br>传统之末路将至，唐宋之消殒无形。<br>文化末路，白话四起。<br>胡适鲁迅，再斥文言。<br>全盘无认，似五千载未曾现诗词辉煌。<br>推崇西学，见半壁文学江山毁于一旦。<br>开放至外，外渐侵内。<br>非扰政权，唯占文化。<br>文言先失，后又如何？<br>待至人不可保文，书无人曾问。<br>老辈依旧，仅无外人。<br>崇洋媚外，实属可凄。<br>若有一日，鄙人见之。<br>街巷内外，无人念旧。<br>那时传统，应当殆尽。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;唐宋二代，名流满城。&lt;br&gt;执笔而书，花尽浮尘。&lt;br&gt;千百诗风，皆自为家。&lt;br&gt;天下共赏，内外同读。&lt;br&gt;手接星河，足临明月。&lt;br&gt;对风念家，思情恨阙。&lt;br&gt;身立沙场，不敌则为带首归。&lt;br&gt;春寒秋暖，一纸憔悴话年岁。&lt;br&gt;半抹灯火，三世繁华。&lt;br&gt;江南雨墨，
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="念旧" scheme="https://liuboyuan.fun/tags/%E5%BF%B5%E6%97%A7/"/>
+    
+      <category term="文化" scheme="https://liuboyuan.fun/tags/%E6%96%87%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>星空的记忆</title>
+    <link href="https://liuboyuan.fun/xingkongdejiyi/"/>
+    <id>https://liuboyuan.fun/xingkongdejiyi/</id>
+    <published>2020-05-15T22:24:36.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>月亮探出了头，<br>带来了黑夜。<br>引领着江水流向远方。<br>天好像变得无限大了，<br>洒落着点点繁星。<br>东侧的发电厂仿佛末日的景象，<br>烟囱像曾经的森林一样，<br>喷出墨黑的恶灵。<br>西侧似乎是一望无际的海洋，<br>延伸到水天相接，<br>深蓝，泛着点黄昏。<br>月光透过刚刚冒出新芽的花草，<br>散发着淡淡的喜悦，<br>空气并不冷，也不热的心烦，<br>每一口空气都有曾经的香味。<br>与偶尔飞过的鸟，<br>还有静静走过的人，<br>流尽了初春。<br>枝梢下的鸳鸯齐飞，<br>也少了几分孤单。<br>年少的情愫啊，<br>几百年没有变过。<br>唯一更替的，<br>只是过去的人。<br>无垠的月空早已记下了一切。<br>千古情恨，<br>又回到了苍穹之上。<br>微风猛然吹过，<br>夜深了，<br>我也终于醒来。<br>春天还是那么短暂，<br>光阴一瞬，<br>窥尽全秋。<br>我们又会遇见谁？<br>可能孤独终生，<br>沉浸在深夜的美好。<br>也可能，<br>永远在星空的记忆里，<br>驻足。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;月亮探出了头，&lt;br&gt;带来了黑夜。&lt;br&gt;引领着江水流向远方。&lt;br&gt;天好像变得无限大了，&lt;br&gt;洒落着点点繁星。&lt;br&gt;东侧的发电厂仿佛末日的景象，&lt;br&gt;烟囱像曾经的森林一样，&lt;br&gt;喷出墨黑的恶灵。&lt;br&gt;西侧似乎是一望无际的海洋，&lt;br&gt;延伸到水天相接，&lt;br&gt;深蓝
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站图片下载</title>
+    <link href="https://liuboyuan.fun/wztpxz-trashed/"/>
+    <id>https://liuboyuan.fun/wztpxz-trashed/</id>
+    <published>2020-05-13T14:39:29.000Z</published>
+    <updated>2020-08-20T05:00:01.820Z</updated>
+    
+    <content type="html"><![CDATA[<p>分辨率大部分为1920*1080<br>未来会持续更新<br>压缩包提供7z和zip格式<br>由于在网站中图片被压缩而质量改变，<br>所以在这里提供所有背景图片。</p><p>7z下载地址：<a href="http://liuboyuan.fun/wp-content/uploads/2020/05/pictures.7z">点击此处</a><br>zip下载地址: <a href="http://liuboyuan.fun/wp-content/uploads/2020/05/pictures.zip">点击此处</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;分辨率大部分为1920*1080&lt;br&gt;未来会持续更新&lt;br&gt;压缩包提供7z和zip格式&lt;br&gt;由于在网站中图片被压缩而质量改变，&lt;br&gt;所以在这里提供所有背景图片。&lt;/p&gt;
+&lt;p&gt;7z下载地址：&lt;a href=&quot;http://liuboyuan.fun/wp-conten
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="资源" scheme="https://liuboyuan.fun/tags/%E8%B5%84%E6%BA%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无话可说</title>
+    <link href="https://liuboyuan.fun/nothingtosay/"/>
+    <id>https://liuboyuan.fun/nothingtosay/</id>
+    <published>2020-05-08T20:07:24.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>当一个组织出现卧底，<br>那么这个团队将不复存在。</p><p>刘渤源</p></blockquote><p>在每一个班级中<br>总会有大大小小的团体。<br>而每一个团体，<br>都有很多高尚的卧底——<br>对老师而言。<br>往往这些卧底，<br>便是同学关系瓦解的祸首。<br>我对这种人，<br>说不上深恶痛绝，<br>但是对他（她）感到惋惜。<br>与同学不好好相处，<br>却干这种勾当，<br>将同学间的秘密公之于他人<br>无耻啊，实在是无耻！<br>虽不说其利弊，<br>单凭人情世故，<br>这种告密者理应湮灭在时间的洪流里。<br>但是纵观千古，<br>这似乎是一种文化——一种让人厌恶的文化</p><blockquote><p>令民为什伍而相牧司连坐，告奸者与斩敌首同赏，不告奸者与降敌同罚。</p><p>《史记》</p></blockquote><p>而这种行为无非就是为了统治者——<br>一定范围内的统治者<br>对其管辖人的一种了解。<br>我对这种统治者不做评价，<br>也不敢评价。<br>试想告密的，<br>正是你最信任的人，<br>你的心，会是什么样子？<br>如若有一天，<br>这种告密者长大了，<br>人缘又该如何？<br>我们无须想象，<br>这种人的结果—不过是乌合之众。<br>当兵可能通敌，<br>工作可能随意检举他人。<br>打报告是好的——<br>在理论上。<br>但是人是活生生的，<br>不是死去不动的。<br>为了利益，各方面的利益，<br>不惜放弃自己的人情，<br>道德何在？</p><blockquote><p>不告密、不揭发，与其说是一种可贵品质，不如说是一条道德底线。告密成风的社会，是人人自危的社会，告密使人与人之间失去基本信任，甚至相互侵害，冲击人们的价值判断，毁掉社会的道德基础。</p><p>《人民日报》</p></blockquote><p>如果那些在角落里偷笑的卧底成年了，<br>我希望他（她）明白，<br>社会没有什么是绝对错的，<br>也没有永远的统治，<br>但是请时刻记住，<br>你是一个人。</p><p>新文章预告：初心</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;当一个组织出现卧底，&lt;br&gt;那么这个团队将不复存在。&lt;/p&gt;
+&lt;p&gt;刘渤源&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在每一个班级中&lt;br&gt;总会有大大小小的团体。&lt;br&gt;而每一个团体，&lt;br&gt;都有很多高尚的卧底——&lt;br&gt;对老师而言。&lt;br&gt;往往这
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>送断情客</title>
+    <link href="https://liuboyuan.fun/sendoffthelover/"/>
+    <id>https://liuboyuan.fun/sendoffthelover/</id>
+    <published>2020-05-07T20:47:00.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>年入芳华心易散，欲寻一友话蹉跎。<br>友至暖念人渐慕，鸳鸯比翼齐天过。<br>连枝初花照海棠，却道师至根叶落。<br>持仙欲斩断情魔，雷鸣八方恶灵辍。</p><p>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;年入芳华心易散，欲寻一友话蹉跎。&lt;br&gt;友至暖念人渐慕，鸳鸯比翼齐天过。&lt;br&gt;连枝初花照海棠，却道师至根叶落。&lt;br&gt;持仙欲斩断情魔，雷鸣八方恶灵辍。&lt;/p&gt;
+&lt;p&gt;刘渤源 作&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+      <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无题</title>
+    <link href="https://liuboyuan.fun/untitled/"/>
+    <id>https://liuboyuan.fun/untitled/</id>
+    <published>2020-05-03T21:48:19.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>一抹浮云映青空，</p><p>夕阳斜下人匆匆。</p><p>余光只剩流东水，</p><p>秋梦初醒泪惺忪。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一抹浮云映青空，&lt;/p&gt;
+&lt;p&gt;夕阳斜下人匆匆。&lt;/p&gt;
+&lt;p&gt;余光只剩流东水，&lt;/p&gt;
+&lt;p&gt;秋梦初醒泪惺忪。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>藏头小作</title>
+    <link href="https://liuboyuan.fun/hideyourhead/"/>
+    <id>https://liuboyuan.fun/hideyourhead/</id>
+    <published>2020-05-03T17:03:56.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>待着开学的一刻，<br>到曾经的那丛落叶。<br>秋天好像到了，<br>季节的变换仿佛就是一瞬。<br>重回那年，<br>至初春百花齐放。<br>我还是像曾经一样，<br>愿意永不长大。<br>坐立轩窗，<br>于风尘之口。<br>课堂的气息已经远离，<br>桌子上的灰尘早已难以逝去。<br>前面的印记，<br>再不知道飘到了哪里。<br>望向江畔，<br>往常依旧的，<br>日出日落。<br>荣光洒遍大地，<br>耀满芳华。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;待着开学的一刻，&lt;br&gt;到曾经的那丛落叶。&lt;br&gt;秋天好像到了，&lt;br&gt;季节的变换仿佛就是一瞬。&lt;br&gt;重回那年，&lt;br&gt;至初春百花齐放。&lt;br&gt;我还是像曾经一样，&lt;br&gt;愿意永不长大。&lt;br&gt;坐立轩窗，&lt;br&gt;于风尘之口。&lt;br&gt;课堂的气息已经远离，&lt;br&gt;桌子上的灰尘早
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="藏头" scheme="https://liuboyuan.fun/tags/%E8%97%8F%E5%A4%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>又遇一人曰心雨</title>
+    <link href="https://liuboyuan.fun/imetanotherpersonwhosaidxinyu/"/>
+    <id>https://liuboyuan.fun/imetanotherpersonwhosaidxinyu/</id>
+    <published>2020-05-02T21:40:22.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天呢，分享一下我的经历<br>自从建了网站，<br>认识了不少人。</p><p>在刚写完小咸鱼那篇文章之后，<br>我便认识了心雨。<br>说实话，<br>在认识她之前。<br>我是不相信一个女生——<br>一个十四岁的女生，<br>会卖服务器。<br>正常来说，<br>这个年纪应该被学习困扰，<br>最多卖个笔、本、吃的之类的，<br>精通电脑的可以说微乎其微，<br>如若精通，会用Linux内核的也很少<br>（不包括安卓系统）<br>弄网站也是没有听说过。<br>但是她在这基础上，<br>能够卖服务器，<br>而且在四年前，也就是十岁。<br>开始搞这一行。<br>最初，她是做软件行业的。<br>后来开始卖主机。<br>谁会记得，<br>在别人玩游戏时，<br>她在做别人可能没有听说过的事。<br>随着时间的流逝，<br>终于成为了过去。<br>认识了无数的人，<br>经历了无数沧桑。<br>谁能料想，<br>她曾经，是个风华正茂的少年？<br>我在那时候估计才会做Windows系统吧。<br>服务器更是没有使用过，<br>只是偶尔路过母亲单位的机房，<br>能迷茫地看一眼。<br>那时我以为自己会的已经够多了。<br>便开始洋洋得意，<br>骄傲自满。<br>如果说小咸鱼给了我当头一棒，<br>那么心雨就相当于把我打进了土里。</p><blockquote><p><em>懂得越多，越觉得自己是这世界的孤儿。<br>走得越远，越觉得这世界，本是孤儿院。</em></p><p>韩寒</p></blockquote><p>年纪轻轻，<br>便能接触社会，<br>认识更多的人，<br>去推荐自己卖的服务器。<br>这不仅是胆量，<br>也是内心的一次突破。<br>年少的身躯，<br>装的是不屈的灵魂。<br>每当服务器被人攻击，<br>她总能从容面对，<br>与前来咄咄逼人的同行斗智斗勇。<br>如若是个成年人，<br>可以说他有毅力。<br>但是别忘了，<br>心雨只是个初二的学生，<br>却面对了成年现实的残酷，<br>风风雨雨。</p><blockquote><p><em>成功的花, 人们只惊羡她现时的明艳。然而当初她的芽儿, 浸透了奋斗的泪泉, 洒遍了牺牲的血雨。</em></p><p>冰心</p></blockquote><p>她用自己的努力，<br>创造出了属于自己的天地。<br>但是也有所牺牲——<br>自己的大好年华，<br>社会黑暗的一面，<br>可能会摧残她的心灵。<br>但是能提前面对生活，<br>这点损失似乎不算什么了吧。<br>我对现实有一种恐惧，<br>似乎不敢接近，<br>却不得不面对。<br>与她相识，<br>让我狭隘的见闻，<br>有所增长。<br>我也终于见到了，<br>青春路上经历残酷现实留下来的——<br>一丛海棠花。</p><p>小作一诗以书思</p><p>风离叶散冬似去，复见初春雾一缕。<br>愁去雨来晨露暖，春风微冷遇心雨。<br>年少从商无人教，初芳沾污忘为女。<br>自云莫苦八九载，逝如春水千万余。</p><p>刘渤源 作<br>记心雨</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天呢，分享一下我的经历&lt;br&gt;自从建了网站，&lt;br&gt;认识了不少人。&lt;/p&gt;
+&lt;p&gt;在刚写完小咸鱼那篇文章之后，&lt;br&gt;我便认识了心雨。&lt;br&gt;说实话，&lt;br&gt;在认识她之前。&lt;br&gt;我是不相信一个女生——&lt;br&gt;一个十四岁的女生，&lt;br&gt;会卖服务器。&lt;br&gt;正常来说，&lt;br
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日志</title>
+    <link href="https://liuboyuan.fun/journal-2/"/>
+    <id>https://liuboyuan.fun/journal-2/</id>
+    <published>2020-05-01T20:35:22.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>五一劳动节快乐</p><p>今天和冠城哥去荒郊野岭大好河山去玩了一下<br>躲开了人群密集的地方，<br>离市区很远，<br>因为嘛，没有景区开门。<br>所以就去了不知道哪的地方，<br>在别人家的农场上采野菜。<br>准确来说去哪不重要，<br>重要的是和谁去。<br>到了哪里也不重要，<br>重要的是去的过程中有什么收获。<br>一路上，吃了许多垃圾食品快乐食品。<br>回来时，<br>去了曾经每次英语班下课都要去的馄饨店，<br>早已没有曾经的繁华，<br>剩下的，只有偶尔闪过的人。<br>仿佛已经很久没有人来了。<br>忽然吹过的灰尘，<br>飘洒出往日的光彩。<br>香气缭绕的街道，<br>如今啊，早已不知道在哪了。<br>馄饨店还是在那，<br>一直都没有变过。<br>变的，<br>只有曾经路过的人，<br>却想不起发生的事。<br>馄饨还是曾经的味道，<br>只是多了酱油瓶，<br>似乎少了胡椒粉。<br>那已经是很久以前的事啦，<br>无论如何也再见不到了。<br>过去的人啊，<br>也就过去了。<br>走过的四季，<br>在哪还能见到？<br>窗外，春雨淅淅沥沥。<br>只不过多了一些雷声，<br>少了几分往日的岁月。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;五一劳动节快乐&lt;/p&gt;
+&lt;p&gt;今天和冠城哥去荒郊野岭大好河山去玩了一下&lt;br&gt;躲开了人群密集的地方，&lt;br&gt;离市区很远，&lt;br&gt;因为嘛，没有景区开门。&lt;br&gt;所以就去了不知道哪的地方，&lt;br&gt;在别人家的农场上采野菜。&lt;br&gt;准确来说去哪不重要，&lt;br&gt;重要的是和谁去。&lt;br
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>五月</title>
+    <link href="https://liuboyuan.fun/may/"/>
+    <id>https://liuboyuan.fun/may/</id>
+    <published>2020-04-30T14:34:07.000Z</published>
+    <updated>2020-09-13T00:07:24.152Z</updated>
+    
+    <content type="html"><![CDATA[<p>我将活在风里，<br>吹向另一条河。<br>看光芒透过，<br>树木青葱，<br>流过温润土地，<br>滋养一方。<br>待骄阳似火，<br>给人清凉。<br>吹向一片草原，<br>闻马咀嚼牧草的声音，<br>在晨曦之中，<br>露水没有消散，<br>看农民劳作，<br>自给自足。<br>回到曾经的校园，<br>赏百花齐放。<br>直至秋天到来，<br>万物凋零，<br>落叶纷飞，<br>我又来到了梦开始的地方。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我将活在风里，&lt;br&gt;吹向另一条河。&lt;br&gt;看光芒透过，&lt;br&gt;树木青葱，&lt;br&gt;流过温润土地，&lt;br&gt;滋养一方。&lt;br&gt;待骄阳似火，&lt;br&gt;给人清凉。&lt;br&gt;吹向一片草原，&lt;br&gt;闻马咀嚼牧草的声音，&lt;br&gt;在晨曦之中，&lt;br&gt;露水没有消散，&lt;br&gt;看农民劳作，&lt;br&gt;自
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>429,再见!</title>
+    <link href="https://liuboyuan.fun/429bye/"/>
+    <id>https://liuboyuan.fun/429bye/</id>
+    <published>2020-04-28T22:08:57.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们都知道，网站是生活的必需品 我们的生活无论如何也脱离不了网络。 现如今，许多人已经有了自己的网站 而很多网站都是使用Wordpress搭建的 现状：在中国，WordPress站点覆盖率即将突破20%，CMS行业占有率超30%；是中国站长最欢迎的内容管理系统，但和其它地区相比领先幅度有限。 市场：2019年首次突破80亿，人均建站花费20081元，站均花费5594元。 站长画像：年少有为的一线城市90后男生。 虽然我并不有为、但是我年少。 有对未来的憧憬， 对过去的怀念。 我能够呼吸 踩在这片大地上 看朝阳晨曦 望夕阳落日 坐轩窗 执笔无言。 凭栏杆 观人来人往 寂寞凄清。 我有一支笔 一本书 能看到一株草， 一束花 便有万千世界 看尽心境。 我唯一能做的 便是把自己的思想写进去 这时发布平台就必不可少 Wordpress作为一个优秀的平台 其中许多插件都是很好用的 主题也很多 但是人家服务器在国外， VPN还要花钱 在不需要钱财的情况下 我们既可以使用G家头像 也可以使用官方主题和插件 首选便是WP china yes 这个插件完美解决了气人的429 Too many requests 项目地址：<a href="https://github.com/sunxiyuan/wp-china-yes" target="_blank" rel="noopener">Github</a> 作者发布：<a href="https://www.ibadboy.net/archives/3204.html" target="_blank" rel="noopener">ibadboy</a> 插件下载：<a href="https://github.com/wp-china-yes/wp-china-yes/releases" target="_blank" rel="noopener">Github</a></p><h3 id="官方下载："><a href="#官方下载：" class="headerlink" title="官方下载："></a>官方下载：</h3><h3 id="版本v2-1-0下载"><a href="#版本v2-1-0下载" class="headerlink" title="版本v2.1.0下载"></a>版本<a href="https://github.com/wp-china-yes/wp-china-yes/releases/download/v2.1.0/wp-china-yes.zip" target="_blank" rel="noopener">v2.1.0</a>下载</h3><h3 id="版本v2-0-3下载"><a href="#版本v2-0-3下载" class="headerlink" title="版本v2.0.3下载"></a>版本<a href="https://github.com/wp-china-yes/wp-china-yes/releases/download/v2.0.3/wp-china-yes.zip" target="_blank" rel="noopener">v2.0.3</a>下载</h3><h3 id="本服务器资源："><a href="#本服务器资源：" class="headerlink" title="本服务器资源："></a>本服务器资源：</h3><h3 id="版本V2-1-0下载"><a href="#版本V2-1-0下载" class="headerlink" title="版本V2.1.0下载"></a>版本<a href="http://liuboyuan.fun/wp-content/uploads/2020/04/wp-china-yes.zip">V2.1.0</a>下载</h3><p>在上传插件处上传即可 在下载主题和插件时会自动激活 不使用时不占用服务器资源 速度完胜官方</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我们都知道，网站是生活的必需品 我们的生活无论如何也脱离不了网络。 现如今，许多人已经有了自己的网站 而很多网站都是使用Wordpress搭建的 现状：在中国，WordPress站点覆盖率即将突破20%，CMS行业占有率超30%；是中国站长最欢迎的内容管理系统，但和其它地区
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随感</title>
+    <link href="https://liuboyuan.fun/randomthoughts/"/>
+    <id>https://liuboyuan.fun/randomthoughts/</id>
+    <published>2020-04-25T22:40:25.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="初遇"><a href="#初遇" class="headerlink" title="初遇"></a>初遇</h3><p>我与这位同学的相识， 是极其偶然的。 在那时， 我什么都不会， 就是个小白。 误打误撞加入了WP China Yes插件群 要不是因为这个插件， 我现在还什么也下不了。 刚进群， 他就热烈欢迎， 本以为是大人， 便没有在意。 那时， 我还很轻狂， 在自己的小圈子里洋洋得意。 以为会建个网站就可以了—— 不思进取。 直到我与他相识。</p><h3 id="相识"><a href="#相识" class="headerlink" title="相识"></a>相识</h3><p>我从聊天里知道了， 他是长江三角洲地区的一名学生。 （为保护个人隐私） 在计算机方面可以说很强， 我在他的面前可以算是个垃圾了。 我从初二才开始接触服务器， 自以为很早， 却不知，他早了解明白。 虽然是同龄人， 却比不过。 悲哀啊！ 他不希望别人把他当做小孩子， 他早已不是小孩子， 只是有些稚嫩。</p><blockquote><p>Hi~ 很荣幸与你们见面。 我是一名生于2006年的小孩纸，你们口中的年轻人。 是的我是初中生毫不忌讳我的年龄。 因为我本来就是个辣鸡。 我从来不认为年龄是这个世界上衡量的标准。 尽管有时候会遭受歧视。 但是我并不在意。 是的，我目前是一名很小的初中生。 我和计算机的故事是从小时候开始的。 主要历程也就是—— 二年级装装系统。 三年级搞搞路由器 五年级搞搞网站。 六年级忙于学业。 初二正式搞稳定的博客。 刚刚进入这个圈子，认识了很多可爱的人。 比如—— Rorical 孙锡源 刘渤源 邵先冲 魏星等等大佬。 很高兴认识他们。 很高兴他们有时候给了我这样那样的机会和帮助。 是的目前我还是个垃圾。 各种编程都是启蒙状态。 我会努力学习的。 是的我很贫穷。 还非常菜。 但是穷没办法， 生活还要继续。 我尽量让这个站点开着。 学业繁忙呀。 我会加油的。 我的QQ是<strong><em>\</em>***</strong> 可以找我来玩呀。 我是个很傻逼的沙雕。 很随和。 应该 比较好说话吧。 我的学业中 语文最渣。 所以我是一个 钢铁直男。 我喜欢开车文雅。 我爱Minecraft。 陪伴我八年了。 只有这个游戏。 讨厌农药吃鸡。 喜欢听歌。 追求质量和音质。 喜欢唱歌。 就这样。 青春飘扬啊~ 希望永驻。 虽然很扯淡。 青春美好，</p></blockquote><p>青春，多么美好的词啊。 有曾经的情愫、拼搏。 那年的她，也不过昙花一现。 确是最美的——彼岸花开。 多少次的望去， 伏案书写， 写千古名句， 留后人惊羡。 把自己的精神， 化作笔墨， 飘洒千里至塞外， 流尽北大荒上来！ 到了多少年后， 多远的未来？ 只飘扬—— 青春永驻。 多少年后啊， 如果我们能够相见， 我宁愿擦肩而过。 我不愿面对他， 可能是不敢。 因为我们已经认识了， 在心里， 在天上—— 那颗明亮的星星。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;初遇&quot;&gt;&lt;a href=&quot;#初遇&quot; class=&quot;headerlink&quot; title=&quot;初遇&quot;&gt;&lt;/a&gt;初遇&lt;/h3&gt;&lt;p&gt;我与这位同学的相识， 是极其偶然的。 在那时， 我什么都不会， 就是个小白。 误打误撞加入了WP China Yes插件群 要不是因为这个插
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随想</title>
+    <link href="https://liuboyuan.fun/caprice/"/>
+    <id>https://liuboyuan.fun/caprice/</id>
+    <published>2020-04-23T21:15:07.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>晨曦终于坠下去，<br>便是永恒的黑夜。<br>空中飘下雪花，<br>透过如风的繁华。<br>如若有一天，<br>这里是一片不毛之地。<br>谁又会记得，<br>当初的一醉方休，<br>吟诗作赋。<br>又怎么能够想起那时的<br>“青春年华”<br>多么有趣的词啊，<br>过了多少年，<br>还是像曾经那样。<br>纵然千古流逝，<br>我们都曾是少年时，<br>都有那段经历—<br>能让我们永远都无法忘记的经历。<br>这就是青葱年华，<br>一代人的梦想，<br>一辈人的希望，<br>便在这里启程。<br>无数次的盼望，<br>都胜不过，<br>过往匆匆。<br>怎奈何，<br>曾经的人，<br>回不来。<br>曾经的事，<br>可能发生，<br>但是永远都不会，<br>再发生在我的心里。<br>那时，<br>即使能看见光，<br>也不过是幻象。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;晨曦终于坠下去，&lt;br&gt;便是永恒的黑夜。&lt;br&gt;空中飘下雪花，&lt;br&gt;透过如风的繁华。&lt;br&gt;如若有一天，&lt;br&gt;这里是一片不毛之地。&lt;br&gt;谁又会记得，&lt;br&gt;当初的一醉方休，&lt;br&gt;吟诗作赋。&lt;br&gt;又怎么能够想起那时的&lt;br&gt;“青春年华”&lt;br&gt;多么有趣的词啊，&lt;br
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日志</title>
+    <link href="https://liuboyuan.fun/journal/"/>
+    <id>https://liuboyuan.fun/journal/</id>
+    <published>2020-04-22T14:42:36.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="又下雪了"><a href="#又下雪了" class="headerlink" title="又下雪了"></a>又下雪了</h3><p>“一场春雨一场寒” 但是四月末来一场雪是真冷。 明天就考试了。 晨曦终于坠下去， 便是永恒的黑夜。 空中飘下雪花， 透过如风的繁华。 如若有一天， 这里是一片不毛之地。 谁又会记得， 当初的一醉方休， 吟诗作赋。 又怎么能够想起那时的 “青春年华” 多么有趣的词啊， 过了多少年， 还是像曾经那样。 纵然千古流逝， 我们都曾是少年时， 都有那段经历— 能让我们永远都无法忘记的经历。 这就是青葱年华， 一代人的梦想， 一辈人的希望， 便在这里启程。 无数次的盼望， 都胜不过， 过往匆匆。 怎奈何， 曾经的人， 回不来。 曾经的事， 可能发生， 但是永远都不会， 再发生在我的心里。 那时， 即使能看见光， 也不过是幻象。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;又下雪了&quot;&gt;&lt;a href=&quot;#又下雪了&quot; class=&quot;headerlink&quot; title=&quot;又下雪了&quot;&gt;&lt;/a&gt;又下雪了&lt;/h3&gt;&lt;p&gt;“一场春雨一场寒” 但是四月末来一场雪是真冷。 明天就考试了。 晨曦终于坠下去， 便是永恒的黑夜。 空中飘下雪花， 透过如风
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>忆清</title>
+    <link href="https://liuboyuan.fun/recallclearly/"/>
+    <id>https://liuboyuan.fun/recallclearly/</id>
+    <published>2020-04-20T23:45:27.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>京城的风， 带着些未散去的烟气。 空中， 飘洒出柔和的水雾， 让人难以呼吸。</p><p>烛光带着些光晕， 映在黑暗的夜。 是江南的雨吗？ 繁华里， 尽是荒芜。 天上洒下的水滴， 浇醒了地上的人。 让他们看见了自己。 又如昨夜剩下的酒， 却早已没有味道。 云里，他的身影又显现在人群。 本以为是暖春， 却吹来一阵冷风。 他的思绪又回到了那个人。 相逢不语， 一朵芙蓉看秋雨。 他等那个人， 等了几生几世。 月光无情的撒向大地， 酒杯倾倒在水中。 留下了他的叹息。 疏花已是不禁风， 那更夜深清露湿愁红。 他终于明白了， 就算等不到她， 也不枉走过红尘， 来过世上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;京城的风， 带着些未散去的烟气。 空中， 飘洒出柔和的水雾， 让人难以呼吸。&lt;/p&gt;
+&lt;p&gt;烛光带着些光晕， 映在黑暗的夜。 是江南的雨吗？ 繁华里， 尽是荒芜。 天上洒下的水滴， 浇醒了地上的人。 让他们看见了自己。 又如昨夜剩下的酒， 却早已没有味道。 云里，他的身影又
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>词藻堆砌？</title>
+    <link href="https://liuboyuan.fun/wordsandphrases/"/>
+    <id>https://liuboyuan.fun/wordsandphrases/</id>
+    <published>2020-04-19T22:56:11.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>临时起笔 水一篇随笔</p><hr><p>我们从小便会写作文， 有的时候， 难免会过度模板化。 甚至会编造事实，颠倒黑白。 到了初中， 一些同学会摘抄一些优美的文段， 用在自己的作文里。 便会形成一些奇怪的文风， 一些读起来毫无实际用处的语段， 充斥着一篇文章。 这些“优美的”文段， 放在一起，就是词藻堆砌。 我曾经无比喜欢这么写， 具体请看<a href="https://liuboyuan.fun/momery/yu-ye-lou-qian-gu-chou-yu-hou-zhao-yang-xiang-chun-liu/">这里</a> 但是直到意识出毫无意义之后， 便不再这么写。 其实辞藻是锻炼我们写作技巧的一种方式， 但是滥用便会适得其反。 辞藻终究是别人的， 自己写的句子永远都是自己的， 就算被别人用去， 他们也无法体会你的思想, 便出现在了另一篇文章里， 但是这样的文章—— 终究会被时间淘汰。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;临时起笔 水一篇随笔&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;我们从小便会写作文， 有的时候， 难免会过度模板化。 甚至会编造事实，颠倒黑白。 到了初中， 一些同学会摘抄一些优美的文段， 用在自己的作文里。 便会形成一些奇怪的文风， 一些读起来毫无实际用处的语段， 充斥着一篇文章。 这些“
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我们需要念旧吗</title>
+    <link href="https://liuboyuan.fun/doweneedtobenostalgic/"/>
+    <id>https://liuboyuan.fun/doweneedtobenostalgic/</id>
+    <published>2020-04-18T10:58:51.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们的人生中，有曾经，也有未来。而我们是否需要回忆曾经，还是该看向未来，忘掉过去？<br>我经常想起过往的事，然后细细品味一番，就像一壶冲泡了十年的茶，苦涩又挥不去，想忘掉，却如何也无法放弃。每个人心中都有伤心的一隅，在孤单时需要有人安慰。而这些安慰，可能只有从过去得到。而过去的，经过了时间的磨砺，把最值得怀念的，留了下来。我总是感觉过去的，永远都应该在自己的心里，不应该消逝，不应该遗忘。</p><p>说白了，我就是一个喜欢念旧的人。感觉所有东西都是一种记忆——旧的书、旧的笔，不舍得扔，也许是因为放不下。没有那种旷达，也不坚定。<br>直到在和博友聊天时，无意间谈到“小时候”。</p><blockquote><p>“哥 你小时候…”</p><p>“你总好奇我小时候的事做什么”<br>“而且你这问题完全没有意义”</p></blockquote><p>失望之余，我再次开始思考，念旧真的有意义吗？<br>我们的视野，必然要向前看，但是未来毕竟是模糊的，带有些不确定的因素，而过去的，能给予我们安慰，也是我们可以相信的东西。但是我们不能永远活在过去，念旧会给我们带来安慰，也会让我们对自己度过的岁月，有所念想。</p><p>但是安慰能解决什么问题呢？我们终究会面向未来，面向自己的余生。总是不坚强，其实也是一种懦弱的表现，我们需要坚强起来，走向明天，无论风和雨，晴与阴。</p><blockquote><p>生活需要向前看<br>过去的事，只存在于日记<br>多花时间思考无意义</p></blockquote><p>对啊，生活需要安慰，也固然需要向前看，这并不矛盾，过去的也回不去，也改变不了什么，只能让千疮百孔的心灵，暂时有了希望，并不渴求别的，只是想以完整的精神面向余生。<br>我们需要念旧，但是不需要永远活在过去。<br>我们需要向前看，但是不需要永远遗忘过去。<br>但并不至于，留在今天。</p><hr><p>想到念旧，文化？总该是历史，也算是一种念旧，而这种念旧的人，也就是对文化执迷不忘，不肯放弃的人。也正是这种对文化的不舍，让一些文化得以传承。遥想当年，我们祖先留下的无数遗产，在一场新文化运动中，所剩无几。民间艺术，之乎者也，已焉哉呼——也终究是历史。</p><p>无论怎么说，新文化运动的许多人都是一些社会上的名人，我也不可妄加评论，我本身并不是大家。毕竟这是历史的选择，一代文明的选择。可能是为了让中文好学些，但是中国的文言文从此便被打入了十八层地狱，白话文时来运转，疯狂了近一百年。其影响之巨，令人心惊。这可能是几千年文化最悲哀的落幕——从此唐诗宋词，不再存在。总之，新文化运动是当时的一批豪杰为中国开出的一剂良方，为正处于特殊历史阶段下的中国作出了突出贡献。</p><p>华夏文明，五千年朝代更替，五千年山重水复。手刻甲骨，挥毫千行。诗词文戏，琴棋书画。柴米油盐，酱醋茶酒。几代传承，几代珍惜。只可怕，当今将湮灭。</p><blockquote><p>“传统文化就只是传统文化”<br>“了解了解就行，吸取有趣的”</p></blockquote><p>这句话对于时代发展来说可以算是完全正确的了。我们终究会面向未来，而不是想着过去的事。但是文化毕竟是一个民族的结晶，一辈辈人的心血。</p><blockquote><p>当喊出“中国复兴需要外国人“的时候，<br>中华民族的伟大复兴就成了笑话。</p></blockquote><p>世界上许多国家，早已开始学习我们的文化。而我们却还在“向前看”，作为炎黄子孙，竟然无法保住文化，等到某门手艺在中国消亡，在别国兴盛起来时——我们可能需要向他们学习，多么悲哀，多么可笑！然而，现在许多青年已经不屑于文化传承，都去追求自己想要的生活，少有人学习，几乎无人发扬，在遗忘的路上越走越远。我认为学校理应开设相关课程，让学生去了解，增加民族自信。让崇洋媚外的风气有所减少。我们不能让外国文化占据一席之地，因为当外来文化的地位超过本土文化时，一个文明的灭亡可能就是明天。</p><p>念旧，本就是一种对过去的怀念，也是一种对文化的珍惜。念旧的同时需要向前发展，不能永远活在过去，也不能死在未来。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我们的人生中，有曾经，也有未来。而我们是否需要回忆曾经，还是该看向未来，忘掉过去？&lt;br&gt;我经常想起过往的事，然后细细品味一番，就像一壶冲泡了十年的茶，苦涩又挥不去，想忘掉，却如何也无法放弃。每个人心中都有伤心的一隅，在孤单时需要有人安慰。而这些安慰，可能只有从过去得到。而
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+      <category term="念旧" scheme="https://liuboyuan.fun/tags/%E5%BF%B5%E6%97%A7/"/>
+    
+      <category term="文化" scheme="https://liuboyuan.fun/tags/%E6%96%87%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>夜深</title>
+    <link href="https://liuboyuan.fun/lateatnight/"/>
+    <id>https://liuboyuan.fun/lateatnight/</id>
+    <published>2020-04-15T21:21:01.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>一纸一笔， 书写千秋喜怒哀乐。 记载一代文明。 一声一响， 淋漓万古情爱恩怨， 响彻三生无归。 白昼、晴空， 步履匆匆，无人回望。 知道遇见心中的归所， 才能停下脚步， 叹息那道背影， 幻想着从前， 思念着曾经。 梦回到了青春的起点， 转眼便消散如烟。 方才明白， 回不去的，才叫记忆。 看不清的，才叫青春。 夜深了， 灯光一点点变暗。 就剩下残余的星火， 却由于遥远， 如何也无法照亮。 偶尔吹过的冷风， 伴着冬雪融化剩下的灰尘， 吹透轩窗。 孤单的人啊， 也彻夜无眠。 巷口，也没有了往日的熙攘。 仿佛物是人非， 冲淡曾经繁华。 都在盼望着， 晨曦的到来。</p><p>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一纸一笔， 书写千秋喜怒哀乐。 记载一代文明。 一声一响， 淋漓万古情爱恩怨， 响彻三生无归。 白昼、晴空， 步履匆匆，无人回望。 知道遇见心中的归所， 才能停下脚步， 叹息那道背影， 幻想着从前， 思念着曾经。 梦回到了青春的起点， 转眼便消散如烟。 方才明白， 回不去的
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重游向阳湖</title>
+    <link href="https://liuboyuan.fun/zhong-you-xiang-yang-hu/"/>
+    <id>https://liuboyuan.fun/zhong-you-xiang-yang-hu/</id>
+    <published>2020-04-13T14:13:32.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>冬疫似去草木盛，<br>天终感殇人心惶。<br>多年离家求学路，<br>几载回乡下向阳。<br>日暮映水卧流冰，<br>湖光初醒连山旷。<br>若有重回归来日，<br>一赏秋景忆沧桑。</p><p>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;冬疫似去草木盛，&lt;br&gt;天终感殇人心惶。&lt;br&gt;多年离家求学路，&lt;br&gt;几载回乡下向阳。&lt;br&gt;日暮映水卧流冰，&lt;br&gt;湖光初醒连山旷。&lt;br&gt;若有重回归来日，&lt;br&gt;一赏秋景忆沧桑。&lt;/p&gt;
+&lt;p&gt;刘渤源 作&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>又回那年仲秋时</title>
+    <link href="https://liuboyuan.fun/you-hui-na-nian-zhong-qiu-shi/"/>
+    <id>https://liuboyuan.fun/you-hui-na-nian-zhong-qiu-shi/</id>
+    <published>2020-04-11T22:22:43.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>阳光温和地照在窗上，<br>焦灼的空气里，<br>带着几分昏眩。<br>不想移动一分。</p><p>或许是作业的缘故，<br>懒在床上，<br>不愿起来。<br>任凭大脑更加浑浊。<br>直到头不知如何，<br>倒在了地上…</p><p>我用仅余的力气，<br>打开了那面世界。<br>春风呼啸而入。<br>暖洋洋的，<br>又带有几分干燥，<br>几分忧伤。<br>吹醒了飞扬的历史题。<br>吹落了飘荡的演算纸。<br>几分幼稚，<br>几分甜蜜。</p><p>将沉睡的我，<br>送回了那年仲秋。<br>相识未料曾相逢啊，<br>终见落叶伴东风。<br>虽然熟悉无比，<br>却更加陌生。<br>她，<br>还是如曾经那样。<br>一切都是从前。<br>一切相视，<br>都是初见。<br>我们虽然素不相识，<br>却熟悉彼此。<br>但不知如何回首。<br>青春的小河啊，<br>还在静静地流淌。<br>有时会激起一朵水花，<br>便飞向了另一片海。</p><p>我在梦里睡下了，<br>到了那年仲秋，<br>记得把我叫醒。<br>我还是曾经那样，<br>一直都是如此。</p><p>2020.4.11<br>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;阳光温和地照在窗上，&lt;br&gt;焦灼的空气里，&lt;br&gt;带着几分昏眩。&lt;br&gt;不想移动一分。&lt;/p&gt;
+&lt;p&gt;或许是作业的缘故，&lt;br&gt;懒在床上，&lt;br&gt;不愿起来。&lt;br&gt;任凭大脑更加浑浊。&lt;br&gt;直到头不知如何，&lt;br&gt;倒在了地上…&lt;/p&gt;
+&lt;p&gt;我用仅余的力气，&lt;br&gt;打开了那
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown基础语法</title>
+    <link href="https://liuboyuan.fun/markdown-ji-chu-yu-fa/"/>
+    <id>https://liuboyuan.fun/markdown-ji-chu-yu-fa/</id>
+    <published>2020-04-09T19:03:39.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>文档可能较长， 由于wordpress未支持部分语法 请按需阅读。</p><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><pre><code># 一级标题啦啦啦啦</code></pre><h1 id="一级标题啦啦啦"><a href="#一级标题啦啦啦" class="headerlink" title="一级标题啦啦啦"></a>一级标题啦啦啦</h1><pre><code>## 二级标题啦啦啦</code></pre><h2 id="二级标题啦啦啦"><a href="#二级标题啦啦啦" class="headerlink" title="二级标题啦啦啦"></a>二级标题啦啦啦</h2><pre><code>### 三级标题啦啦啦</code></pre><h3 id="三级标题啦啦啦"><a href="#三级标题啦啦啦" class="headerlink" title="三级标题啦啦啦"></a>三级标题啦啦啦</h3><pre><code>#### 四级标题啦啦啦</code></pre><h4 id="四级标题啦啦啦"><a href="#四级标题啦啦啦" class="headerlink" title="四级标题啦啦啦"></a>四级标题啦啦啦</h4><pre><code>##### 五级标题啦啦啦</code></pre><h5 id="五级标题啦啦啦"><a href="#五级标题啦啦啦" class="headerlink" title="五级标题啦啦啦"></a>五级标题啦啦啦</h5><pre><code>###### 六级标题啦啦啦</code></pre><h6 id="六级标题啦啦啦"><a href="#六级标题啦啦啦" class="headerlink" title="六级标题啦啦啦"></a>六级标题啦啦啦</h6><hr><p>然后你会发现，只有一到六级标题 然而在html里你可以这么写</p><pre><code>&lt;h3&gt; 三级标题啦啦啦 &lt;/h3&gt;</code></pre><h3 id="三级标题啦啦啦-1"><a href="#三级标题啦啦啦-1" class="headerlink" title="三级标题啦啦啦"></a>三级标题啦啦啦</h3><h3 id="注意要点"><a href="#注意要点" class="headerlink" title="注意要点"></a>注意要点</h3><p>但是在一些开源OJ里 比如那个UOJ社区版 它在标题的下一行会自动来一个tab 这就很闹心 但是你在编辑器里点换行啥用没有 （粗鄙之语） 这个时候html又出现了</p><pre><code>&lt;br&gt;</code></pre><p>没错，就是它。 它的作用就是换行。 主要是为了防UOJ 在一些不太智能的编辑器里 你需要在一行文字后加上<strong>两个</strong>空格</p><pre><code>My name&apos;s van.I&apos;m an artist.I&apos;m an performance artist</code></pre><p>当你打完了以后，你如果没加空格：</p><pre><code>My name&apos;s van.I&apos;m an artist.I&apos;m an performance artist</code></pre><p>所以，空格在一些编辑器里尤为重要。</p><h3 id="字符处理"><a href="#字符处理" class="headerlink" title="字符处理"></a>字符处理</h3><p>markdown有以下方式：</p><pre><code>*斜体文本*_斜体文本_**粗体文本**__粗体文本__***粗斜体文本***___粗斜体文本___</code></pre><p>还有可以更改字体的方法</p><pre><code>&lt;font face=楷体&gt; 芳华落去，我定载梦而归！&lt;/font&gt;</code></pre><p>芳华落去，我定载梦而归！</p><p>这个是调用你电脑里的字体 使用时请考虑到用户的电脑里是否有这个字体。 在windows中系统自带 <strong>宋体、黑体、楷体(GB2312)、仿宋(GB2312)</strong> 如果是ghost版可能还有华文系列和部分方正字体。 请注意，如果商用方正字体可能会倾家荡产！ 请自觉使用其他字体。</p><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><pre><code>**** * ******- - -----------</code></pre><p>效果：</p><hr><hr><hr><hr><hr><p>当你想变得沙雕一点： 删除线是必要的 正如洛谷P3353的第一个题解</p><blockquote><p>题目好甜啊……虽然是个女孩子可是还是被甜到了呢……（话说要是有这么个小哥哥追我就好了……） ↑以上为题解作者的幻想</p></blockquote><p>很明显，作者把想说却不想说的话表达出来了。 使用方法</p><pre><code>我一直想写一个文档~~当然不是针对某个OJ~~</code></pre><p>效果： 我一直想写一个文档 当然不是针对某个OJ</p><h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><pre><code>&lt;u&gt;青春的意义&lt;/u&gt;</code></pre><p>显示效果如下所示： 青春的意义</p><h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>Markdown 脚注的格式如下:</p><pre><code>[^ 要注明的文本]</code></pre><p>以下实例演示了脚注的用法：</p><pre><code>创建脚注格式类似这样 [^HELLO]。[^HELLO]:我曾经有一个梦，却逝如春风。</code></pre><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表：</p><pre><code>* 第一项* 第二项* 第三项+ 第一项+ 第二项+ 第三项- 第一项- 第二项- 第三项</code></pre><ul><li>第一项</li><li>第二项</li><li>第三项</li></ul><p>有序列表：</p><pre><code>1. 第一项2. 第二项3. 第三项</code></pre><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><pre><code>1. 第一项：    - 第一项嵌套的第一个元素    - 第一项嵌套的第二个元素2. 第二项：    - 第二项嵌套的第一个元素    - 第二项嵌套的第二个元素</code></pre><ol><li>第一项：<ul><li>第一项嵌套的第一个元素</li><li>第一项嵌套的第二个元素</li></ul></li><li>第二项：<ul><li>第二项嵌套的第一个元素</li><li>第二项嵌套的第二个元素</li></ul></li></ol><h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><p>Markdown 区块引用使用 <strong>&gt;</strong> 符号 ，然后后面紧跟一个<strong>空格</strong>：</p><pre><code>&gt; 我等待了无数次&gt; 不甘孤单&gt; 却失望而归</code></pre><blockquote><p>我等待了无数次 不甘孤单 却失望而归</p></blockquote><p>另外区块是可以嵌套的</p><pre><code>&gt; 风雨&gt; &gt; 轩窗&gt; &gt; &gt; 日暮光</code></pre><blockquote><p>风雨</p><blockquote><p>轩窗</p><blockquote><p>日暮光</p></blockquote></blockquote></blockquote><h3 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h3><pre><code>&gt; 区块中使用列表&gt; 1. 第一项&gt; 2. 第二项&gt; + 第一项&gt; + 第二项&gt; + 第三项</code></pre><blockquote><p>区块中使用列表</p><ol><li>第一项</li><li>第二项</li></ol><ul><li>第一项</li><li>第二项</li><li>第三项</li></ul></blockquote><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（<strong>`</strong>），例如：</p><pre><code>`printf()` 函数</code></pre><p><code>printf()</code> 函数</p><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><pre><code>​```javapublic class dingyibianliang {    public static void main(String[] args) {        System.out.println(&quot;Hello world&quot;);    }}​```public class HelloWorld {    public static void main(String[] args) {        System.out.println(&quot;Hello World&quot;);    }}</code></pre><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><pre><code>你好[风雨轩窗日暮光](https://liuboyuan.fun)&lt;https://liuboyuan.fun&gt;</code></pre><p>你好<a href="https://liuboyuan.fun">风雨轩窗日暮光</a> <a href="https://liuboyuan.fun">https://liuboyuan.fun</a></p><h3 id="奇妙链接"><a href="#奇妙链接" class="headerlink" title="奇妙链接"></a>奇妙链接</h3><pre><code>用 me 作为网址变量 [youthriverside][me]然后在文档的结尾为变量赋值[me]: https://youthriverside.github.io</code></pre><p><a href="https://youthriverside.github.io" target="_blank" rel="noopener">youthriverside</a></p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><pre><code>![名称 属性文本](图片地址)![名称 属性文本](图片地址 &quot;可选标题&quot;)</code></pre><p>举个栗子：</p><pre><code>![Huaji 滑稽](http://liuboyuan.fun/wp-content/uploads/2020/02/562c11dfa9ec8a13424f9c95fc03918fa0ecc06a.jpg)</code></pre><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/02/562c11dfa9ec8a13424f9c95fc03918fa0ecc06a.jpg" alt="Huaji 滑稽"></p><p>或者使用html</p><pre><code>&lt;img src=&quot;https://liuboyuan.fun/wpcontent/uploads/2020/02/562c11dfa9ec8a13424f9c95fc03918fa0ecc06a.jpg&quot;  width=&quot;100%&quot;&gt;</code></pre><p><img src="https://liuboyuan.fun/wpcontent/uploads/2020/02/562c11dfa9ec8a13424f9c95fc03918fa0ecc06a.jpg" alt=""></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><pre><code>|  沙雕   | 沙雕  ||  ----  | ----  || 啦啦啦  | 啦啦啦 || 啦啦啦  | 啦啦啦 |</code></pre><p>沙雕</p><p>沙雕</p><p>啦啦啦</p><p>啦啦啦</p><p>啦啦啦</p><p>啦啦啦</p><p><strong>对齐方式：</strong></p><ul><li><strong>-:</strong> 设置内容和标题栏居右对齐。</li><li><strong>:-</strong> 设置内容和标题栏居左对齐。</li><li><strong>:-:</strong> 设置内容和标题栏居中对齐。</li></ul><p>实例如下：</p><pre><code>| 左对齐 | 右对齐 | 居中对齐 || :-----| ----: | :----: || 单元格 | 单元格 | 单元格 || 单元格 | 单元格 | 单元格 |</code></pre><p>左对齐</p><p>右对齐</p><p>居中对齐</p><p>单元格</p><p>单元格</p><p>单元格</p><p>单元格</p><p>单元格</p><p>单元格</p><h3 id="高级技♂巧"><a href="#高级技♂巧" class="headerlink" title="高级技♂巧"></a>高级技♂巧</h3><pre><code>目前支持的 HTML 元素有：&lt;kbd&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;等 ，如：&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; </code></pre><p>Ctrl+Alt+Del</p><h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>Markdown 使用反斜杠转义特殊字符：</p><pre><code>**文本加粗** \*\* 正常显示星号 \*\*</code></pre><h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。</p><pre><code>$$\sqrt[100]{a} + \frac{1}{6666666}$$</code></pre><p>$$ \sqrt[100]{a} + \frac{1}{6666666} $$</p><p>请参考：</p><h2 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h2><p>符号</p><p>示例</p><p>显示</p><p>上下标</p><p><code>S=a_{1}^2+a_{2}^2+a_{3}^2$</code></p><p><img src="https://math.jianshu.com/math?formula=S%3Da_%7B1%7D%5E2%2Ba_%7B2%7D%5E2%2Ba_%7B3%7D%5E2" alt="S=a_{1}^2+a_{2}^2+a_{3}^2"></p><p>括号</p><p><code>$f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$</code></p><p><img src="https://math.jianshu.com/math?formula=f(x%2C%20y)%20%3D%20100%20*%20%5Clbrace%5B(x%20%2B%20y)%20*%203%5D%20-%205%5Crbrace" alt="f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace"></p><p>分数</p><p><code>$\frac{1}{3} 与 \cfrac{1}{3}$</code></p><p><img src="https://math.jianshu.com/math?formula=%5Cfrac%7B1%7D%7B3%7D%20%E4%B8%8E%20%5Ccfrac%7B1%7D%7B3%7D" alt="\frac{1}{3} 与 \cfrac{1}{3}"></p><p>开方</p><p><code>$\sqrt[3]{X}$</code>和<code>$\sqrt{5 - x}$</code></p><p><img src="https://math.jianshu.com/math?formula=%5Csqrt%5B3%5D%7BX%7D" alt="\sqrt[3]{X}">和<img src="https://math.jianshu.com/math?formula=%5Csqrt%7B5%20-%20x%7D" alt="\sqrt{5 - x}"></p><h2 id="其他字符"><a href="#其他字符" class="headerlink" title="其他字符"></a>其他字符</h2><h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><p>代码</p><p>符号</p><p>\pm</p><p><img src="https://math.jianshu.com/math?formula=%5Cpm" alt="\pm"></p><p>\times</p><p><img src="https://math.jianshu.com/math?formula=%5Ctimes" alt="\times"></p><p>\div</p><p><img src="https://math.jianshu.com/math?formula=%5Cdiv" alt="\div"></p><p>\mid</p><p><img src="https://math.jianshu.com/math?formula=%5Cmid" alt="\mid"></p><p>\nmid</p><p><img src="https://math.jianshu.com/math?formula=%5Cnmid" alt="\nmid"></p><p>\cdot</p><p><img src="https://math.jianshu.com/math?formula=%5Ccdot" alt="\cdot"></p><p>\circ</p><p><img src="https://math.jianshu.com/math?formula=%5Ccirc" alt="\circ"></p><p>\ast</p><p><img src="https://math.jianshu.com/math?formula=%5Cast" alt="\ast"></p><p>\bigodot</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigodot" alt="\bigodot"></p><p>\bigotimes</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigotimes" alt="\bigotimes"></p><p>\bigoplus</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigoplus" alt="\bigoplus"></p><p>\leq</p><p><img src="https://math.jianshu.com/math?formula=%5Cleq" alt="\leq"></p><p>\geq</p><p><img src="https://math.jianshu.com/math?formula=%5Cgeq" alt="\geq"></p><p>\neq</p><p><img src="https://math.jianshu.com/math?formula=%5Cneq" alt="\neq"></p><p>\approx</p><p><img src="https://math.jianshu.com/math?formula=%5Capprox" alt="\approx"></p><p>\equiv</p><p><img src="https://math.jianshu.com/math?formula=%5Cequiv" alt="\equiv"></p><p>\sum</p><p><img src="https://math.jianshu.com/math?formula=%5Csum" alt="\sum"></p><p>\prod</p><p><img src="https://math.jianshu.com/math?formula=%5Cprod" alt="\prod"></p><h3 id="对数运算符"><a href="#对数运算符" class="headerlink" title="对数运算符"></a>对数运算符</h3><p>代码</p><p>符号</p><p>\log</p><p><img src="https://math.jianshu.com/math?formula=%5Clog" alt="\log"></p><p>\lg</p><p><img src="https://math.jianshu.com/math?formula=%5Clg" alt="\lg"></p><p>\ln</p><p><img src="https://math.jianshu.com/math?formula=%5Cln" alt="\ln"></p><h3 id="三角运算符"><a href="#三角运算符" class="headerlink" title="三角运算符"></a>三角运算符</h3><p>代码</p><p>符号</p><p>\bot</p><p><img src="https://math.jianshu.com/math?formula=%5Cbot" alt="\bot"></p><p>\angle</p><p><img src="https://math.jianshu.com/math?formula=%5Cangle" alt="\angle"></p><p>\sin</p><p><img src="https://math.jianshu.com/math?formula=%5Csin" alt="\sin"></p><p>\cos</p><p><img src="https://math.jianshu.com/math?formula=%5Ccos" alt="\cos"></p><p>\tan</p><p><img src="https://math.jianshu.com/math?formula=%5Ctan" alt="\tan"></p><p>\cot</p><p><img src="https://math.jianshu.com/math?formula=%5Ccot" alt="\cot"></p><p>\sec</p><p><img src="https://math.jianshu.com/math?formula=%5Csec" alt="\sec"></p><p>\csc</p><p><img src="https://math.jianshu.com/math?formula=%5Ccsc" alt="\csc"></p><h3 id="微积分运算符"><a href="#微积分运算符" class="headerlink" title="微积分运算符"></a>微积分运算符</h3><p>代码</p><p>符号</p><p>\prime</p><p><img src="https://math.jianshu.com/math?formula=%5Cprime" alt="\prime"></p><p>\int</p><p><img src="https://math.jianshu.com/math?formula=%5Cint" alt="\int"></p><p>\iint</p><p><img src="https://math.jianshu.com/math?formula=%5Ciint" alt="\iint"></p><p>\iiint</p><p><img src="https://math.jianshu.com/math?formula=%5Ciiint" alt="\iiint"></p><p>\oint</p><p><img src="https://math.jianshu.com/math?formula=%5Coint" alt="\oint"></p><p>\lim</p><p><img src="https://math.jianshu.com/math?formula=%5Clim" alt="\lim"></p><p>\infty</p><p><img src="https://math.jianshu.com/math?formula=%5Cinfty" alt="\infty"></p><p>\nabls</p><p><img src="https://math.jianshu.com/math?formula=%5Cnabla" alt="\nabla"></p><p>\mathrm{d}</p><p><img src="https://math.jianshu.com/math?formula=%5Cmathrm%7Bd%7D" alt="\mathrm{d}"></p><h3 id="集合运算符"><a href="#集合运算符" class="headerlink" title="集合运算符"></a>集合运算符</h3><p>代码</p><p>符号</p><p>\emptyset</p><p><img src="https://math.jianshu.com/math?formula=%5Cemptyset" alt="\emptyset"></p><p>\in</p><p><img src="https://math.jianshu.com/math?formula=%5Cin" alt="\in"></p><p>\notin</p><p><img src="https://math.jianshu.com/math?formula=%5Cnotin" alt="\notin"></p><p>\subset</p><p><img src="https://math.jianshu.com/math?formula=%5Csubset" alt="\subset"></p><p>\subseteq</p><p><img src="https://math.jianshu.com/math?formula=%5Csubseteq" alt="\subseteq"></p><p>\supseteq</p><p><img src="https://math.jianshu.com/math?formula=%5Csupseteq" alt="\supseteq"></p><p>\bigcap</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigcap" alt="\bigcap"></p><p>\bigcup</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigcup" alt="\bigcup"></p><p>\bigvee</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigvee" alt="\bigvee"></p><p>\bigwedge</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigwedge" alt="\bigwedge"></p><p>\biguplus</p><p><img src="https://math.jianshu.com/math?formula=%5Cbiguplus" alt="\biguplus"></p><p>\bigsqcup</p><p><img src="https://math.jianshu.com/math?formula=%5Cbigsqcup" alt="\bigsqcup"></p><h3 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h3><p>代码</p><p>大写</p><p>代码</p><p>小写</p><p>A</p><p><img src="https://math.jianshu.com/math?formula=A" alt="A"></p><p>\alpha</p><p><img src="https://math.jianshu.com/math?formula=%5Calpha" alt="\alpha"></p><p>B</p><p><img src="https://math.jianshu.com/math?formula=B" alt="B"></p><p>\beta</p><p><img src="https://math.jianshu.com/math?formula=%5Cbeta" alt="\beta"></p><p>\Gamma</p><p><img src="https://math.jianshu.com/math?formula=%5CGamma" alt="\Gamma"></p><p>\gamma</p><p><img src="https://math.jianshu.com/math?formula=%5Cgamma" alt="\gamma"></p><p>\Delta</p><p><img src="https://math.jianshu.com/math?formula=%5CDelta" alt="\Delta"></p><p>\delta</p><p><img src="https://math.jianshu.com/math?formula=%5Cdelta" alt="\delta"></p><p>E</p><p><img src="https://math.jianshu.com/math?formula=E" alt="E"></p><p>\epsilon</p><p><img src="https://math.jianshu.com/math?formula=%5Cepsilon" alt="\epsilon"></p><p>Z</p><p><img src="https://math.jianshu.com/math?formula=Z" alt="Z"></p><p>\zeta</p><p><img src="https://math.jianshu.com/math?formula=%5Czeta" alt="\zeta"></p><p>H</p><p><img src="https://math.jianshu.com/math?formula=H" alt="H"></p><p>\eta</p><p><img src="https://math.jianshu.com/math?formula=%5Ceta" alt="\eta"></p><p>\Theta</p><p><img src="https://math.jianshu.com/math?formula=%5CTheta" alt="\Theta"></p><p>\theta</p><p><img src="https://math.jianshu.com/math?formula=%5Ctheta" alt="\theta"></p><p>I</p><p><img src="https://math.jianshu.com/math?formula=I" alt="I"></p><p>\iota</p><p><img src="https://math.jianshu.com/math?formula=%5Ciota" alt="\iota"></p><p>K</p><p><img src="https://math.jianshu.com/math?formula=K" alt="K"></p><p>\kappa</p><p><img src="https://math.jianshu.com/math?formula=%5Ckappa" alt="\kappa"></p><p>Lambda</p><p><img src="https://math.jianshu.com/math?formula=%5CLambda" alt="\Lambda"></p><p>\lambda</p><p><img src="https://math.jianshu.com/math?formula=%5Clambda" alt="\lambda"></p><p>M</p><p><img src="https://math.jianshu.com/math?formula=M" alt="M"></p><p>\mu</p><p><img src="https://math.jianshu.com/math?formula=%5Cmu" alt="\mu"></p><p>N</p><p><img src="https://math.jianshu.com/math?formula=N" alt="N"></p><p>\nu</p><p><img src="https://math.jianshu.com/math?formula=%5Cnu" alt="\nu"></p><p>Xi</p><p><img src="https://math.jianshu.com/math?formula=Xi" alt="Xi"></p><p>\xi</p><p><img src="https://math.jianshu.com/math?formula=%5Cxi" alt="\xi"></p><p>O</p><p><img src="https://math.jianshu.com/math?formula=O" alt="O"></p><p>\omicron</p><p><img src="https://math.jianshu.com/math?formula=%5Comicron" alt="\omicron"></p><p>\Pi</p><p><img src="https://math.jianshu.com/math?formula=%5CPi" alt="\Pi"></p><p>\pi</p><p><img src="https://math.jianshu.com/math?formula=%5Cpi" alt="\pi"></p><p>P</p><p><img src="https://math.jianshu.com/math?formula=P" alt="P"></p><p>\rho</p><p><img src="https://math.jianshu.com/math?formula=%5Crho" alt="\rho"></p><p>\Sigma</p><p><img src="https://math.jianshu.com/math?formula=%5CSigma" alt="\Sigma"></p><p>\sigma</p><p><img src="https://math.jianshu.com/math?formula=%5Csigma" alt="\sigma"></p><p>T</p><p><img src="https://math.jianshu.com/math?formula=T" alt="T"></p><p>\tau</p><p><img src="https://math.jianshu.com/math?formula=%5Ctau" alt="\tau"></p><p>\Upsilon</p><p><img src="https://math.jianshu.com/math?formula=%5CUpsilon" alt="\Upsilon"></p><p>\upsilon</p><p><img src="https://math.jianshu.com/math?formula=%5Cupsilon" alt="\upsilon"></p><p>\Phi</p><p><img src="https://math.jianshu.com/math?formula=%5CPhi" alt="\Phi"></p><p>\phi</p><p><img src="https://math.jianshu.com/math?formula=%5Cphi" alt="\phi"></p><p>X</p><p><img src="https://math.jianshu.com/math?formula=X" alt="X"></p><p>\chi</p><p><img src="https://math.jianshu.com/math?formula=%5Cchi" alt="\chi"></p><p>\Psi</p><p><img src="https://math.jianshu.com/math?formula=%5CPsi" alt="\Psi"></p><p>\psi</p><p><img src="https://math.jianshu.com/math?formula=%5Cpsi" alt="\psi"></p><p>\Omega</p><p><img src="https://math.jianshu.com/math?formula=%5COmega" alt="\Omega"></p><p>\omega</p><p><img src="https://math.jianshu.com/math?formula=%5Comega" alt="\omega"></p><p>文章部分来源 菜鸟教程 和 简书</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;文档可能较长， 由于wordpress未支持部分语法 请按需阅读。&lt;/p&gt;
+&lt;h3 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# 一级标题啦啦啦啦&lt;/code&gt;&lt;/pr
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开源协议</title>
+    <link href="https://liuboyuan.fun/kaiyuan/"/>
+    <id>https://liuboyuan.fun/kaiyuan/</id>
+    <published>2020-04-08T17:41:07.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>来源：《开源时代》2010.02 第十七期  </p><h3 id="BSD开源协议-original-BSD-license、FreeBSD-license、Original-BSD-license"><a href="#BSD开源协议-original-BSD-license、FreeBSD-license、Original-BSD-license" class="headerlink" title="BSD开源协议(original BSD license、FreeBSD license、Original BSD license)"></a><strong>BSD开源协议(original BSD license、FreeBSD license、Original BSD license)</strong></h3><p>BSD开源协议是一个给于使用者很大自由的协议。基本上使用者可以”为所欲为”，可以自由<br>的使用，修改源代码，也可以将修改后的代码作为开源或者专有软件再发布。</p><p>但”为所欲为”的前提当你发布使用了BSD协议的代码，或则以BSD协议代码为基础做二次开<br>发自己的产品时，需要满足三个条件：</p><p>如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协议。如果再发布<br>的只是二进制类库/软件，则需要在类库/软件的文档和版权声明中包含原来代码中的BSD协议。</p><p>不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。</p><p>BSD代码鼓励代码共享，但需要尊重代码作者的著作权。BSD由于允许使用者修改和重新发布<br>代码，也允许使用或在BSD代码上开发商业软件发布和销售，因此是对商业集成很友好的协议。而<br>很多的公司企业在选用开源产品的时候都首选BSD协议，因为可以完全控制这些第三方的代码，在<br>必要的时候可以修改或者二次开发。</p><h3 id="Apache-Licence-2-0-Apache-License，-Version-2-0、Apache-License，-Version"><a href="#Apache-Licence-2-0-Apache-License，-Version-2-0、Apache-License，-Version" class="headerlink" title="**Apache Licence 2.0(Apache License， Version 2.0、Apache License， Version"></a>**Apache Licence 2.0(Apache License， Version 2.0、Apache License， Version</h3><p>1.1、Apache License， Version 1.0)**</p><p>Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，同样<br>鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再发布(作为开源或商业软件)。需要满足<br>的条件也和BSD类似：</p><p>需要给代码的用户一份Apache Licence，如果你修改了代码，需要在被修改的文件中说明。<br>在延伸的代码中(修改和有源代码衍生的代码中)需要带有原来代码中的协议，商标，专利声明和其他<br>原来作者规定需要包含的说明。</p><p>如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。<br>你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。</p><p>Apache Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需<br>要并作为开源或商业产品发布/销售。</p><h3 id="GPL-GNU-General-Public-License"><a href="#GPL-GNU-General-Public-License" class="headerlink" title="GPL(GNU General Public License)"></a><strong>GPL(GNU General Public License)</strong></h3><p>我们很熟悉的Linux就是采用了GPL。GPL协议和BSD，Apache Licence等鼓励代码重用的<br>许可很不一样。GPL的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用，但<br>不允许修改后和衍生的代码做为闭源的商业软件发布和销售。这也就是为什么我们能用免费的各种<br>linux，包括商业公司的linux和linux上各种各样的由个人，组织，以及商业软件公司开发的免费软<br>件了。</p><p>GPL协议的主要内容是只要在一个软件中使用(”使用”指类库引用，修改后的代码或者衍生代<br>码)GPL协议的产品，则该软件产品必须也采用GPL协议，既必须也是开源和免费。这就是所谓的<br>”传染性”。GPL协议的产品作为一个单独的产品使用没有任何问题，还可以享受免费的优势。</p><p>由于GPL严格要求使用了GPL类库的软件产品必须使用GPL协议，对于使用GPL协议的开源<br>代码，商业软件或者对代码有保密要求的部门就不适合集成/采用作为类库和二次开发的基础。</p><p>其它细节如再发布的时候需要伴随GPL协议等和BSD/Apache等类似。</p><h3 id="LGPL-GNU-Lesser-General-Public-License"><a href="#LGPL-GNU-Lesser-General-Public-License" class="headerlink" title="LGPL(GNU Lesser General Public License)"></a><strong>LGPL(GNU Lesser General Public License)</strong></h3><p>LGPL是GPL的一个为主要为类库使用设计的开源协议。和GPL要求任何使用/修改/衍生之<br>GPL类库的的软件必须采用GPL协议不同。LGPL允许商业软件通过类库引用(link)方式使用LGPL<br>类库而不需要开源商业软件的代码。这使得采用LGPL协议的开源代码可以被商业软件作为类库引用<br>并发布和销售。</p><p>但是如果修改LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生<br>的代码都必须采用LGPL协议。因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，<br>但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。</p><p>GPL/LGPL都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品</p><h3 id="MIT-MIT"><a href="#MIT-MIT" class="headerlink" title="MIT(MIT)"></a><strong>MIT(MIT)</strong></h3><p>MIT是和BSD一样宽范的许可协议，作者只想保留版权，而无任何其他了限制.也就是说，你必<br>须在你的发行版里包含原许可协议的声明，无论你是以二进制发布的还是以源代码发布的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;来源：《开源时代》2010.02 第十七期  &lt;/p&gt;
+&lt;h3 id=&quot;BSD开源协议-original-BSD-license、FreeBSD-license、Original-BSD-license&quot;&gt;&lt;a href=&quot;#BSD开源协议-original-BSD-lic
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>望友·飞雪无言</title>
+    <link href="https://liuboyuan.fun/nothingtosay-2/"/>
+    <id>https://liuboyuan.fun/nothingtosay-2/</id>
+    <published>2020-04-07T17:06:10.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>数似东风料峭寒， 昼夜欲增如累土。 望天叹月月无情， 心无寄所无归处。 土飘凡世无重见， 唯留各坊充天虚。 唯留落叶残秋途。</p><p>待到日光照北时， 我欲乘风南下去， 一洗冬气迎芳露。 归来还把冬殇除。 草亦有根人有心， 冬风散尽草木疏。 彼岸花落人如初， 百花齐落满荒芜。</p><p>己卯月乙亥日亥时一作 二作于庚辰月庚辰日</p><p>刘渤源 望四月残雪而思</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;数似东风料峭寒， 昼夜欲增如累土。 望天叹月月无情， 心无寄所无归处。 土飘凡世无重见， 唯留各坊充天虚。 唯留落叶残秋途。&lt;/p&gt;
+&lt;p&gt;待到日光照北时， 我欲乘风南下去， 一洗冬气迎芳露。 归来还把冬殇除。 草亦有根人有心， 冬风散尽草木疏。 彼岸花落人如初， 百花齐落
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>未眠而作</title>
+    <link href="https://liuboyuan.fun/didntsleep/"/>
+    <id>https://liuboyuan.fun/didntsleep/</id>
+    <published>2020-04-06T22:30:00.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>门外的灯光，</p><p>随着人们的休息，</p><p>一盏盏熄灭。</p><p>只有剩着的几笼，</p><p>却似乎飘出哀叹声。</p><p>若不是孤独，</p><p>谁又会在夜里——</p><p>雪还没有融化的春季</p><p>独自支起一盏灯呢？</p><p>也许吧，</p><p>是为了显得自己，</p><p>有人陪伴一样。</p><p>多年的追寻，</p><p>换来的，</p><p>不过是纸醉金迷。</p><p>叹息依旧，</p><p>可能还如从前那样，</p><p>孤独。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;门外的灯光，&lt;/p&gt;
+&lt;p&gt;随着人们的休息，&lt;/p&gt;
+&lt;p&gt;一盏盏熄灭。&lt;/p&gt;
+&lt;p&gt;只有剩着的几笼，&lt;/p&gt;
+&lt;p&gt;却似乎飘出哀叹声。&lt;/p&gt;
+&lt;p&gt;若不是孤独，&lt;/p&gt;
+&lt;p&gt;谁又会在夜里——&lt;/p&gt;
+&lt;p&gt;雪还没有融化的春季&lt;/p&gt;
+&lt;p&gt;独自支起一盏灯呢？&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>洛谷P3353 题解</title>
+    <link href="https://liuboyuan.fun/p3353/"/>
+    <id>https://liuboyuan.fun/p3353/</id>
+    <published>2020-04-04T22:35:55.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P3353" target="_blank" rel="noopener">原题目地址</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>飞逝的的时光不会模糊我对你的记忆。难以相信从我第一次见到你以来已经过去了3年。我仍然还生动地记得，3年前，在美丽的集美中学，从我看到你微笑着走出教室，你将头向后仰，柔和的晚霞照耀着你玫瑰色的脸颊。我明白，我已经沉醉于你了。之后，经过几个月的观察和窥探，你的优雅与智慧，你对待生活的态度和你对未来的愿望深切地在我心中留下了印象。你是迷人的阳光女孩，我总是梦想着与你分享余生。唉，实际上你远远超过了我最疯狂的梦想。我不知道如何桥起我与你之间的鸿沟。所以我没有任何计划，仅仅只是等待，等待一个适当的机会到来。直到现在，毕业的到来，我意识到我是个傻瓜，我应该创造机会并且抓住它而不只是等待。</p><p>这些日子里，我和我的朋友、室友、同学一个接一个地分开。我仍无法相信，在挥手之后，这些熟悉的面孔很快就会从我们的生活中消失，仅仅留下回忆。我明天就将离开学校。你已经计划远走高飞，追求你的未来，实现你的梦想。如果没有命运，也许我们不会再次相遇。所以今晚，我正在你的宿舍楼下徘徊，希望能偶然遇见你。但矛盾的是，你的美貌一定会使我心跳加速，我笨拙的舌头也许无法吐出一个字。我不记得我曾多少次经过你的宿舍楼，每次都希望看到你出现在阳台上或是窗台上。我不记得这个想法曾多少次在我的脑海中涌出：打电话叫她一起吃晚饭或是聊聊天。但每次，考虑到你的优秀和我的平凡，胆怯的优势超越勇气驱使我静静地离开。</p><p>毕业，意味着中学生活的终结。这些光荣与浪漫的时代结束。你可爱的微笑是我原来努力学习的动力，这单相思的爱情会被密封，作为一个我心灵深处的记忆。毕业，也意味着新生活的开始，一个到达光明未来的足迹。我真希望你在国外天天开心，一切顺利。同时，我将努力从幼稚中走出来，变得更加成熟。我的理想将是在现实中追求我的爱与幸福，我永远不会放弃。</p><p>再见了，我的公主！</p><p>如果有一天，在某个天涯海角，我们有机会相聚，即使是白发苍苍的男人和女人，在那个时候，我希望我们可以成为好朋友来自豪地分享这个记忆，重温年轻快乐的激情。如果这个机会永远没有到来，我希望我是天空中的星星，在你的窗外闪烁。远远地保佑着你，就像一个朋友，每天晚上陪伴在你左右，一同分享甜美的梦亦或是一同经历可怕的梦。</p><p>现在问题来了：天空可以理解为一条数轴，在这条数轴上分布着许多颗星星，对于每颗星星都有它的位置Xi和自身的亮度Bi。而窗户所能看到的范围是一个给出的参数W，我们看到的星星也包括窗户边缘的星星。现在，要你求出调整窗户位置后能看到星星的亮度之和最大值。</p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>一行N,W，分别代表星星的数量和窗户的宽度</p><p>余下N行，输入Xi和Bi，代表星星的坐标和亮度</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>一个数字，代表能看到星星的最大亮度和</p><h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><p><strong>输入 #1</strong></p><p>6 3<br>1 2<br>2 4<br>3 8<br>4 4<br>5 2<br>1000 1</p><p><strong>输出 #1</strong></p><p>16</p><h3 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>样例说明：</p><p><img src="https://cdn.luogu.com.cn/upload/pic/3818.png" alt=""></p><p>对于10%的数据，W=0（没有边缘）</p><p>对于40%的数据，W&lt;=1000</p><p>对于100%的数据，N&lt;=100000，W&lt;=100000，Xi&lt;=100000，1&lt;=Bi&lt;=100</p><p>除W=0的情况外，W均为&gt;=3的奇数</p><h3 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h3><pre><code>看到这个题目不禁想起我的经历。那个梦中的她，或许早已成为，生死边界的彼岸花。直到入土也难以相见。她或许，早已化作一场梦，一场永无现实的梦 。 &quot;在你窗外闪耀的星星&quot;可能只是一道掠影，浮光一现 消逝，如泪。 */ include using namespace std;long long int a[666666],b[666666];long long int ans;void qsort(int x,int y){    int i=x,j=y;    int mid=b[(x+y)/2];    do    {        while(b[i]mid)         j--;        if(i&lt;=j)         {             swap(a[i],a[j]);             swap(b[i],b[j]);             i++;j--;         }     }while(i&lt;=j);     if(x&gt;n&gt;&gt;m;    for(int i=1;i&lt;=n;i++)     cin&gt;&gt;b[i]&gt;&gt;a[i];    qsort(1,n);         int j=1;    long long s=0;    for(int i=1;i&lt;=n;i++)    {        s-=a[i-1];              while(j&lt;=n and b[j]-b[i]&lt;m)        {            s=a[j]+s;            j++;        }        ans=max(ans,s);    }    cout&lt;&lt;ans&lt;&lt;endl;    return 0;}//纵然千秋已逝//愿你//芳华初始</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P3353&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原题目地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOJ 暗恋 题解</title>
+    <link href="https://liuboyuan.fun/love-that-cannot-say/"/>
+    <id>https://liuboyuan.fun/love-that-cannot-say/</id>
+    <published>2020-04-04T21:30:03.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://111.229.173.184:126/problem/24" target="_blank" rel="noopener">原题目地址</a></p><h3 id="网站管理员的话"><a href="#网站管理员的话" class="headerlink" title="网站管理员的话"></a>网站管理员的话</h3><p>在看到这个题目之前，<br>说实话，<br>我是不相信这个题目出自蓝桥杯的。<br>这里的他2019年的我特别像<br>既然蓝桥杯都这样了，<br>咋说我也得配合一下[滑稽]<br>这是一首很沙雕的短诗，<br>不喜勿喷。<br>作者是一个沙雕(没错就是我)</p><hr><p><strong>临风·无题</strong><br>起风了<br>楼外的灯，<br>星星点点。<br>偶尔划过的流光，<br>却如四月的飞雪，<br>转瞬即逝。<br>屋外，<br>寂寥无人，<br>似乎早已走过，<br>无垠月光。<br>斜起的路灯下，<br>拖起一串长长的影子。<br>最终停留在，<br>刚刚融化的一块冰上。<br>冬季原来已经过去了，<br>只是这雪，<br>不知何时遇见春天。<br>夕阳已经不见，<br>孤自的人，<br>却在静静地等待，<br>清晨的到来。</p><hr><p>看完了？<br>你可能没看懂，<br>这并不重要。<br>那么我们继续看题。</p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>同在一个高中，他却不敢去找她，虽然在别人看 来，那是再简单不过的事。暗恋，是他唯一能做的事。他只能在每天课间操的时候，望望她的位置，看看她倾心的动作，就够了。操场上的彩砖啊，你们的位置，就 是他们能够站立的地方，他俩的关系就像砖与砖之间一样固定，无法动摇。还记得当初铺砖的工人，将整个操场按正方形铺砖（整个操场可视为R行C列的矩阵，矩 阵的每个元素为一块正方形砖块），正方形砖块有两种，一种为蓝色，另一种为红色。我们定义他和她之间的“爱情指标”为最大纯色正方形的面积，请你写一个程 序求出“爱情指标”。</p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行两个正整数R和C。<br>接下来R行C列描述整个操场，红色砖块用1来表示，蓝色砖块用0来表示。</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>一个数，表示他和她之间的“爱情指标”。</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><p>5 8<br>0 0 0 1 1 1 0 1<br>1 1 0 1 1 1 1 1<br>0 1 1 1 1 1 0 1<br>1 0 1 1 1 1 1 0<br>1 1 1 0 1 1 0 1</p><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><p>9</p><h3 id="数据规模和约定"><a href="#数据规模和约定" class="headerlink" title="数据规模和约定"></a>数据规模和约定</h3><p>40%的数据R,C&lt;=10;<br>70%的数据R,C&lt;=50;<br>100%的数据R,C&lt;=200;</p><h3 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h3><p>#include &lt;bits/stdc++.h&gt;<br>const long long int MAX 666666<br>int p[MAX][MAX];<br>int check(int a,int b,int ans)<br>{<br>int temp=p[a][b];<br>for(int i=0;ib)mmax=a;<br>else mmax=b;<br>int ans=0;<br>for(int i=0;i&lt;a;i++)<br>for(int j=0;j&lt;b;j++)<br>cin&gt;&gt;p[i][j]<br>for(int i=0;i&lt;a;i++)<br>for(int j=0;j&lt;b;j++)<br>for(int k=ans+1;k&lt;=mmax;k++)<br>{<br>if(i+k&lt;=mmax&amp;&amp;j+k&lt;=mmax)<br>if(check(i,j,k))<br>ans=k;<br>else break;<br>}<br>cout&lt;&lt;ans*ans&lt;&lt;endl;<br>return 0;<br>}</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://111.229.173.184:126/problem/24&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原题目地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;网站管理员的话&quot;&gt;&lt;a href=&quot;#网站管理员的话&quot; class=&quot;h
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网课时余闲作</title>
+    <link href="https://liuboyuan.fun/didinwangke/"/>
+    <id>https://liuboyuan.fun/didinwangke/</id>
+    <published>2020-03-31T20:19:01.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>在一个月的网课中，<br>我学会了不少知识，<br>同时，<br>也遇到了不少的人。</p><p>我开始尝试扩列，<br>正如上一篇文章所说，<br>为了寻求安慰，<br>或许，<br>只是想不孤独。</p><p>扩列到的好友，<br>有的只能持续一两天，<br>便如生人。<br>这样只会让本来孤单的自己，<br>深陷泥潭。</p><p>有句话说的好：</p><blockquote><p>他手里攥着一把糖，<br>逢人便给，<br>但你却总觉得，<br>他给你的那块最甜。<br>来源网络</p></blockquote><p>我也深切体会到这种方式的可怕。<br>这不仅会在一个人的精神深处打击他，<br>还会摧毁那个曾经，<br>无比纯洁的他。</p><p>因此，<br>交友时，<br>我再也不敢轻信别人的话。<br>但我依然觉得，<br>世间应有真情在。</p><p>我也开始学着去了解扩列的每一个人，<br>也终于发现，<br>谁都是无比有趣的，<br>在这个看脸活着的时代，<br>扩列又何尝不是一种交友的好方式呢？</p><p>待到日光照北时，<br>我欲乘风南下去，<br>载梦归途！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在一个月的网课中，&lt;br&gt;我学会了不少知识，&lt;br&gt;同时，&lt;br&gt;也遇到了不少的人。&lt;/p&gt;
+&lt;p&gt;我开始尝试扩列，&lt;br&gt;正如上一篇文章所说，&lt;br&gt;为了寻求安慰，&lt;br&gt;或许，&lt;br&gt;只是想不孤独。&lt;/p&gt;
+&lt;p&gt;扩列到的好友，&lt;br&gt;有的只能持续一两天，&lt;br&gt;便如生
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ扩列，是否真实？</title>
+    <link href="https://liuboyuan.fun/is-that-real/"/>
+    <id>https://liuboyuan.fun/is-that-real/</id>
+    <published>2020-03-29T22:34:54.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>信息技术的发达，<br>引起了人与人交流的新时代。<br>在中国脱颖而出的腾讯QQ，<br>从身边熟悉的人，<br>也终于发展到陌生的人。</p><p>QQ，将未知变为已知。<br>扩列，将陌生变为熟悉。<br>匹配聊天，扩列宣言——<br>交友的憧憬。</p><p>也许是孤独蒙蔽了心灵，<br>或许是逃避现实，<br>疯狂扩列。<br>却最终，<br>更加孤独。</p><p>你无法知道，<br>屏幕的背后，<br>经历了多少次的扩列，<br>又遇到了多少的陌生人。<br>也永远不会知道，<br>你只不过是那个人，<br>千万扩列中的一个。</p><p>扩列，<br>让无数人沉浸，<br>到底是在安慰些什么？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;信息技术的发达，&lt;br&gt;引起了人与人交流的新时代。&lt;br&gt;在中国脱颖而出的腾讯QQ，&lt;br&gt;从身边熟悉的人，&lt;br&gt;也终于发展到陌生的人。&lt;/p&gt;
+&lt;p&gt;QQ，将未知变为已知。&lt;br&gt;扩列，将陌生变为熟悉。&lt;br&gt;匹配聊天，扩列宣言——&lt;br&gt;交友的憧憬。&lt;/p&gt;
+&lt;p&gt;也
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOJ 网络寻路 题解</title>
+    <link href="https://liuboyuan.fun/yojlinkways/"/>
+    <id>https://liuboyuan.fun/yojlinkways/</id>
+    <published>2020-03-20T22:31:03.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://111.229.173.184:126/problem/10" target="_blank" rel="noopener">原题目地址</a></p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>沙雕国的一个网络使用若干条线路连接若干个节点。节点间的通信是双向的。某重要数据包，为了安全起见，必须恰好被转发两次到达目的地。该包可能在任意一个节点产生，我们需要知道该网络中一共有多少种不同的转发路径。<br>源地址和目标地址可以相同，但中间节点必须不同。<br>如下图所示的网络。  </p><p><code>1 -&gt; 2 -&gt; 3 -&gt; 1</code> 是允许的<br><code>1 -&gt; 2 -&gt; 1 -&gt; 2</code> 或者 <code>1 -&gt; 2 -&gt; 3 -&gt; 2</code>都是非法的。</p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/02/%E5%9B%BE%E7%89%871.png" alt="wangluoxunlu"></p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入数据的第一行为两个整数N M，分别表示节点个数和连接线路的条数 (1&lt;=N&lt;=10000; 0&lt;=M&lt;=100000)。<br>接下去有M行，每行为两个整数 u 和 v，表示节点u 和 v 联通 (1&lt;=u,v&lt;=N , u!=v)。<br>输入数据保证任意两点最多只有一条边连接，并且没有自己连自己的边，即不存在重边和自环。</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一个整数，表示满足要求的路径条数。</p><h3 id="样例输入1"><a href="#样例输入1" class="headerlink" title="样例输入1"></a>样例输入1</h3><pre><code>3 31 22 31 3 </code></pre><h3 id="样例输出1"><a href="#样例输出1" class="headerlink" title="样例输出1"></a>样例输出1</h3><pre><code>6 </code></pre><h3 id="样例输入2"><a href="#样例输入2" class="headerlink" title="样例输入2"></a>样例输入2</h3><pre><code>4 41 22 33 11 4 </code></pre><h3 id="样例输出2"><a href="#样例输出2" class="headerlink" title="样例输出2"></a>样例输出2</h3><pre><code>10</code></pre><h3 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h3><p>#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br>#define MAXN 10010<br>#define MAXM 100010<br> int Du[MAXN],U[MAXM],V[MAXM];<br> int main()<br> {<br>     int n,i,m;<br>     long long ans=0;<br>     scanf(“%d%d”,&amp;n,&amp;m);<br>     memset(Du,0,sizeof(Du));<br>     for(i=0;i1&amp;&amp;Du[V[i]]&gt;1)ans+=(Du[U[i]]-1)_(Du[V[i]]-1)_2;<br>     printf(“%lld\n”,ans);<br>     return 0;<br> }</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://111.229.173.184:126/problem/10&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原题目地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerl
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>叹月·幻梦</title>
+    <link href="https://liuboyuan.fun/moonandream/"/>
+    <id>https://liuboyuan.fun/moonandream/</id>
+    <published>2020-03-19T22:30:08.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>我曾经幻想过无数次，</p><p>一栏明月之下，</p><p>信手而联，</p><p>牵心走过，</p><p>盛夏仲秋。</p><p>却不知如何言说。</p><p>执笔无言，</p><p>叹失良机。</p><p>恨无重望背影，</p><p>却凭其，</p><p>泪花尽洒。</p><p>若有来生啊，</p><p>我愿重至，</p><p>明月花下。</p><p>化雨为雾。</p><p>赏曾经，</p><p>灼灼桃花。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我曾经幻想过无数次，&lt;/p&gt;
+&lt;p&gt;一栏明月之下，&lt;/p&gt;
+&lt;p&gt;信手而联，&lt;/p&gt;
+&lt;p&gt;牵心走过，&lt;/p&gt;
+&lt;p&gt;盛夏仲秋。&lt;/p&gt;
+&lt;p&gt;却不知如何言说。&lt;/p&gt;
+&lt;p&gt;执笔无言，&lt;/p&gt;
+&lt;p&gt;叹失良机。&lt;/p&gt;
+&lt;p&gt;恨无重望背影，&lt;/p&gt;
+&lt;p&gt;却凭其，&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三月十二日随笔</title>
+    <link href="https://liuboyuan.fun/3-12/"/>
+    <id>https://liuboyuan.fun/3-12/</id>
+    <published>2020-03-15T22:58:16.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>低矮的屋檐，</p><p>时不时有灯透过。</p><p>昏暗无比。</p><p>对岸的人啊，</p><p>不知在桌前回忆些什么 。</p><p>又淋着风，</p><p>看向了哪一片海？</p><p>却终于，</p><p>在叹息中让本黑暗的屋子，</p><p>如念俱灰</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;低矮的屋檐，&lt;/p&gt;
+&lt;p&gt;时不时有灯透过。&lt;/p&gt;
+&lt;p&gt;昏暗无比。&lt;/p&gt;
+&lt;p&gt;对岸的人啊，&lt;/p&gt;
+&lt;p&gt;不知在桌前回忆些什么 。&lt;/p&gt;
+&lt;p&gt;又淋着风，&lt;/p&gt;
+&lt;p&gt;看向了哪一片海？&lt;/p&gt;
+&lt;p&gt;却终于，&lt;/p&gt;
+&lt;p&gt;在叹息中让本黑暗的屋子，&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOJ ♂ Fibonacci ♂ 题解</title>
+    <link href="https://liuboyuan.fun/yoj-fib/"/>
+    <id>https://liuboyuan.fun/yoj-fib/</id>
+    <published>2020-03-15T22:13:11.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://111.229.173.184:126/problem/12" target="_blank" rel="noopener">原题目地址</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>斐波那契数列大家都非常熟悉。它的定义是：<br><code>f(x) = 1 .... (x=1,2)</code><br><code>f(x) = f(x-1) + f(x-2) .... (x&gt;2)</code><br>对于给定的整数 n 和 m，我们希望求出：<br>f(1) + f(2) + … + f(n) 的值。但这个值可能非常大，所以我们把它对 f(m) 取模。<br>公式如下  </p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/02/fibmod.png" alt="Fib"></p><p>但这个数字依然很大，所以需要再对 p 求模。</p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入为一行用空格分开的整数 n m p (0 &lt; n, m, p &lt; 10^18)</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出为1个整数，表示答案</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><p>2 3 5</p><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><p>0</p><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h3><p>15 11 29</p><h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h3><p>25</p><h3 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h3><p>#include &lt;bits/stdc++.h&gt;<br>using namespace std;<br>#define PB push_back<br>#define MP make_pair<br>#define AA first<br>#define BB second<br>#define OP begin()<br>#define ED end()<br>#define SZ size()<br>#define SORT(x) sort(x.OP,x.ED)<br>#define SQ(x) ((x)<em>(x))<br>#define SSP system(“pause”)<br>#define cmin(x,y) x=min(x,y)<br>#define cmax(x,y) x=max(x,y)<br> typedef long long LL;<br> typedef pair PII;<br> const double eps=1e-8;<br> const double INF=1e20;<br> const double PI=acos( -1. );<br> const int MXN = 50;<br> const LL MOD = 1000000007;<br> LL llmul( LL a,LL b,LL mod ) {<br>     a%=mod;a+=mod;a%=mod;<br>     b%=mod;b+=mod;b%=mod;<br>     if ( a*</em>&gt;n&gt;&gt;m&gt;&gt;mod )<br>         cout&lt;&lt;( solve( n+2,m,mod )-1+mod )%mod&lt;&lt;endl;<br>     return 0;<br> }**</p><p>struct matrix {<br>     LL x[3][3];<br>     matrix() {memset( x,0,sizeof x );}<br> };<br> matrix mmul( matrix &amp;A,matrix &amp;B,LL mod ) {<br>     matrix ret;<br>     for ( int i=1; i&lt;=2; i++ )<br>         for ( int j=1; j&lt;=2; j++ )<br>             for ( int k=1; k&lt;=2; k++ )<br>                 ret.x[i][j]=( ret.x[i][j]+llmul( A.x[i][k],B.x[k][j],mod ) )%mod;<br>     return ret;<br> }<br> matrix E;<br> matrix A;<br>LL fib( LL n,LL mod ) {<br>     matrix O=E,B=A;<br>     while ( n ) {<br>         if ( n&amp;1 )O=mmul( O,B,mod );<br>         B=mmul( B,B,mod );<br>         n/=2;<br>     }<br>     return O.x[1][2];<br> }<br> //[(2_3)%5]%3=1 //(2%3)_(3%3)=0</p><p>LL solve( LL n,LL m,LL mod ) {<br>     //f(n)%f(m)%mod<br>     LL t=n/m;<br>     //(f(m-1)^t_f(n%m))%f(m)%mod;     //f(i)^2%f(i-1)=(-1)^(i+1)     LL p=t/2,q=t%2;     //{f(m-1)^q_(-1)^(pm)<em>f(n%m)}%f(m)%mod     LL fuhao=p_m%2==0?1:-1;<br>     if ( q==0 ) {<br>         LL ans=fib( n%m,mod )_fuhao;         ans%=mod;         ans+=mod;         return ans%mod;     }     if ( n%m==0 )return 0;     //f(m-1)_f(n%m)_fuhao%f(m)%mod //    cout&lt;fib(n%m,mod111111)fuhao%fib(m,mod&lt;&lt;5)%mod&lt;&lt;endl;<br> //    cout&lt;&lt;fib(m-1,mod&lt;&lt;5)&lt;&lt;””&lt;”&lt;&lt;fuhao&lt;&lt;”%”&lt;&lt;fib(m,mod&lt;&lt;5)&lt;&lt;”%”&lt;&lt;mod&lt;&lt;endl;<br> //    cout&lt;&lt;fib(n%m,mod&lt;&lt;5)fib(m-1,mod&lt;&lt;5)/fib(m,mod&lt;&lt;5)&lt;y)%mod<br>     //a=[x/y]<br>     LL x=(llmul(fib(n%m,mod),fib(m-1,mod),mod)*fuhao%mod+mod)%mod;<br>     LL y=fib(m,mod);<br>     LL a=fib(n%m-1,mod);<br>     if(n%m%2==0)a–;<br>     if(fuhao&lt;0)a++;<br>     a=(a%mod+mod)%mod;<br> //    cout&lt;&lt;a&lt;&lt;endl;<br>     return ((x-llmul(a,y,mod))%mod+mod)%mod;<br> }</em></p><p>int main() {<br>     int i,j;<br>     A.x[1][2]=A.x[2][1]=A.x[2][2]=1;<br>     E.x[1][1]=E.x[2][2]=1;<br>     LL n,m,mod;<br>     while ( cin&gt;&gt;n&gt;&gt;m&gt;&gt;mod )<br>         cout&lt;&lt;( solve( n+2,m,mod )-1+mod )%mod&lt;&lt;endl;<br>     return 0;<br> }</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://111.229.173.184:126/problem/12&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原题目地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerl
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOJ 横向打印二叉树 题解</title>
+    <link href="https://liuboyuan.fun/yoj-erchashu/"/>
+    <id>https://liuboyuan.fun/yoj-erchashu/</id>
+    <published>2020-03-15T21:40:04.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://111.229.173.184:126/problem/9" target="_blank" rel="noopener">原题目地址</a></p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>二叉树可以用于排序。其原理很简单：对于一个排序二叉树添加新节点时，先与根节点比较，若小则交给左子树继续处理，否则交给右子树。<br>当遇到空子树时，则把该节点放入那个位置。<br>比如，<code>10 8 5 7 12 4</code> 的输入顺序，应该建成二叉树如下图所示，其中<strong><code>.</code></strong>表示空白。</p><p>…|-12<br>10-|<br>…|-8-|<br>…….|-8-|…|…|-7<br>…….|-5-|<br>………..|-4</p><p>本题目要求：根据已知的数字，建立排序二叉树，并在标准输出中横向打印该二叉树。</p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入数据为一行空格分开的N个整数。 N&lt;100，每个数字不超过10000。 输入数据中没有重复的数字。</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出该排序二叉树的横向表示。为了便于评卷程序比对空格的数目，请把空格用句点代替：</p><h3 id="样例输入1"><a href="#样例输入1" class="headerlink" title="样例输入1"></a>样例输入1</h3><p>10 5 20</p><h3 id="样例输出1"><a href="#样例输出1" class="headerlink" title="样例输出1"></a>样例输出1</h3><p>…|-20<br>10-|<br>…|-5</p><h3 id="样例输入2"><a href="#样例输入2" class="headerlink" title="样例输入2"></a>样例输入2</h3><p>5 10 20 8 4 7</p><h3 id="样例输出2"><a href="#样例输出2" class="headerlink" title="样例输出2"></a>样例输出2</h3><p>…….|-20<br>..|-10-|<br>..|….|-8-|<br>..|……..|-7<br>5-|<br>..|-4</p><h3 id="以下为样例代码，请尽量不要贸然复制"><a href="#以下为样例代码，请尽量不要贸然复制" class="headerlink" title="以下为样例代码，请尽量不要贸然复制"></a>以下为样例代码，请<strong>尽量</strong>不要贸然复制</h3><h3 id="小心刘渤源顺着网线爬到你家"><a href="#小心刘渤源顺着网线爬到你家" class="headerlink" title="小心刘渤源顺着网线爬到你家"></a>小心刘渤源顺着网线爬到你家</h3><h3 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h3><p>#include &lt;bits/stdc++.h&gt; typedef struct TNode<br>{<br>    int key;<br>    struct TNode *left;<br>    struct TNode *right;<br>}TNode, *Tree;</p><p>Tree insert(Tree root, Tree src)<br>{<br>    if(root == NULL)<br>    {<br>        root = src;<br>    }<br>    else if(src-&gt;key &gt; root-&gt;key)<br>    {<br>        root-&gt;left = insert(root-&gt;left, src);<br>    }<br>    else<br>    {<br>        root-&gt;right = insert(root-&gt;right, src);<br>    }<br>    return root;<br>}</p><p>char l[1000];</p><p>#define U 1<br>#define D 2<br>#define S (‘.’)</p><p>void print(Tree root, int s, int dir)<br>{<br>    if(root != NULL)<br>    {<br>        int i;<br>        char buf[10];<br>        sprintf(buf, “|-%d-“, root-&gt;key);<br>        int len = strlen(buf);<br>        for(i = 0; i &lt; len; i++)<br>        {<br>            l[s + i] = S;<br>        }<br>        if(dir == D)<br>        {<br>            l[s] = ‘|’;<br>        }<br>        print(root-&gt;left, s + len, U);</p><pre><code>    l\[s\] = &apos;\\0&apos;;    if(root-&gt;left == NULL &amp;&amp; root-&gt;right == NULL)    {        buf\[len - 1\] = &apos;\\0&apos;;        printf(&quot;%s%s\\n&quot;, l, buf);    }    else    {        printf(&quot;%s%s|\\n&quot;, l, buf);    }    l\[s\] = S;    if(dir == U)    {        l\[s\] = &apos;|&apos;;    }    print(root-&gt;right, s + len, D);    l\[s\] = S;}</code></pre><p>}</p><p>void printPre(Tree root, int s)<br>{<br>    if(root != NULL)<br>    {<br>        int i;<br>        char buf[10];<br>        sprintf(buf, “%d-“, root-&gt;key);<br>        int len = strlen(buf);<br>        for(i = 0; i &lt; len; i++)<br>        {<br>            l[s + i] = S;<br>        }<br>        print(root-&gt;left, s + len, U);</p><pre><code>    printf(&quot;%s|\\n&quot;, buf);    print(root-&gt;right, s + len, D);}</code></pre><p>}</p><p>int main(void)<br>{<br>    int n;<br>    Tree tree = NULL;<br>    while(scanf(“%d”, &amp;n) &gt; 0)<br>    {<br>        Tree neo = malloc(sizeof(TNode));<br>        neo-&gt;key = n;<br>        neo-&gt;left = neo-&gt;right = NULL;<br>        tree = insert(tree, neo);<br>    }<br>    printPre(tree, 0);<br>    return 0;<br>}</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://111.229.173.184:126/problem/9&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原题目地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOJ Sine之舞 题解</title>
+    <link href="https://liuboyuan.fun/yoj-sine/"/>
+    <id>https://liuboyuan.fun/yoj-sine/</id>
+    <published>2020-03-15T21:27:19.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://111.229.173.184:126/problem/21" target="_blank" rel="noopener">原题目地址</a></p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>最近FJ为他的奶牛们开设了数学分析课，FJ知道若要学好这门课，必须有一个好的三角函数基本功。所以他准备和奶牛们做一个“Sine之舞”的游戏，寓教于乐，提高奶牛们的计算能力。<br>不妨设<br>An=sin(1–sin(2+sin(3–sin(4+…sin(n))…)<br>Sn=(…(A1+n)A2+n-1)A3+…+2)An+1<br>FJ想让奶牛们计算Sn的值，请你帮助FJ打印出Sn的完整表达式，以方便奶牛们做题。</p><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>仅有一个数：N&lt;201。</p><h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>请输出相应的表达式Sn，以一个换行符结束。输出中不得含有多余的空格或换行、回车符。</p><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><p>3</p><h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><p>((sin(1)+3)sin(1–sin(2))+2)sin(1–sin(2+sin(3)))+1</p><h3 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h3><p>/*<br>关于sprintf函数的介绍：<br>(来自CSDN，那些大佬比我了解得多。)</p><p>srpintf()函数的功能非常强大：<br>效率比一些字符串操作函数要高；<br>而且更具灵活性；<br>可以将想要的结果输出到指定的字符串中，<br>也可作为缓冲区，<br>而printf只能输出到命令行上<br><em>/<br>#include<br>#define N 200000<br>int main()<br>{<br>    char</em> sinA = “sin(%d%s%s)”;<br>    char* Sa = “%s+%d”;<br>    char* S = “(%s)%s”;<br>    char An[N] = “sin(1%s%s)”, An2[N], An3[N], Sn[N] = “sin(1)+%d”, Sn2[N];<br>    int i, j, n;<br>    scanf(“%d”, &amp;n);<br>    sprintf(Sn2, Sn, n);<br>    strcpy(Sn, Sn2);<br>    for (i = 2; i &lt;= n; i++)<br>    {<br>        sprintf(An2, An, i % 2 == 0 ? “-“ : “+”, sinA);<br>        strcpy(An, An2);<br>        sprintf(An2, An, i, “%s”, “%s”);<br>        strcpy(An, An2);<br>        sprintf(An2, Sa, An, n - i + 1);<br>        sprintf(An3, An2, “”, “”);<br>        sprintf(Sn2, S, Sn, An3);<br>        strcpy(Sn, Sn2);<br>        sprintf(Sn2, Sn, n - i+ 1);<br>        strcpy(Sn, Sn2);<br>    }<br>    printf(“%s”, Sn);<br>    return 0;<br>}</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://111.229.173.184:126/problem/21&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原题目地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerl
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二次根式知识点总结</title>
+    <link href="https://liuboyuan.fun/ercigenshi/"/>
+    <id>https://liuboyuan.fun/ercigenshi/</id>
+    <published>2020-03-14T21:38:20.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>欢迎下载，请勿侵权<br><a href="http://liuboyuan.fun/wp-content/uploads/2020/03/第十六章知识点总结.pdf">点击下载文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;欢迎下载，请勿侵权&lt;br&gt;&lt;a href=&quot;http://liuboyuan.fun/wp-content/uploads/2020/03/第十六章知识点总结.pdf&quot;&gt;点击下载文档&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>临风·无题</title>
+    <link href="https://liuboyuan.fun/facethewind/"/>
+    <id>https://liuboyuan.fun/facethewind/</id>
+    <published>2020-03-12T22:31:51.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>起风了</p><p>楼外的灯，星星点点。</p><p>偶尔划过的流光，</p><p>却如四月的飞雪，</p><p>转瞬即逝。</p><p>屋外，</p><p>寂寥无人，</p><p>似乎早已走过，</p><p>无垠月光。</p><p>斜起的路灯下，</p><p>拖起一串长长的影子。</p><p>最终停留在，</p><p>刚刚融化的一块冰上。</p><p>冬季原来已经过去了，</p><p>只是这雪，</p><p>不知何时遇见春天。</p><p>夕阳已经不见，</p><p>顾自的人，</p><p>却在静静地等待，</p><p>清晨的到来。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;起风了&lt;/p&gt;
+&lt;p&gt;楼外的灯，星星点点。&lt;/p&gt;
+&lt;p&gt;偶尔划过的流光，&lt;/p&gt;
+&lt;p&gt;却如四月的飞雪，&lt;/p&gt;
+&lt;p&gt;转瞬即逝。&lt;/p&gt;
+&lt;p&gt;屋外，&lt;/p&gt;
+&lt;p&gt;寂寥无人，&lt;/p&gt;
+&lt;p&gt;似乎早已走过，&lt;/p&gt;
+&lt;p&gt;无垠月光。&lt;/p&gt;
+&lt;p&gt;斜起的路灯下，&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在C中list头文件用法</title>
+    <link href="https://liuboyuan.fun/howtouselist/"/>
+    <id>https://liuboyuan.fun/howtouselist/</id>
+    <published>2020-03-08T21:38:57.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Lists将元素按顺序储存在链表中. 与 向量(vectors)相比, 它允许快速的插入和删除，但是随机访问却比较慢.</strong></p><p><strong>assign() 给list赋值<br>back() 返回最后一个元素<br>begin() 返回指向第一个元素的迭代器<br>clear() 删除所有元素<br>empty() 如果list是空的则返回true<br>end() 返回末尾的迭代器<br>erase() 删除一个元素<br>front() 返回第一个元素<br>get_allocator() 返回list的配置器<br>insert() 插入一个元素到list中<br>max_size() 返回list能容纳的最大元素数量<br>merge() 合并两个list<br>pop_back() 删除最后一个元素<br>pop_front() 删除第一个元素<br>push_back() 在list的末尾添加一个元素<br>push_front() 在list的头部添加一个元素<br>rbegin() 返回指向第一个元素的逆向迭代器<br>remove() 从list删除元素<br>remove_if() 按指定条件删除元素<br>rend() 指向list末尾的逆向迭代器<br>resize() 改变list的大小<br>reverse() 把list的元素倒转<br>size() 返回list中的元素个数<br>sort() 给list排序<br>splice() 合并两个list<br>swap() 交换两个list<br>unique() 删除list中重复的元素</strong></p><p><strong>#include <iostream><br>#include <list><br>#include <numeric><br>#include <algorithm></strong><br><strong>using namespace std;</strong><br> <strong>//创建一个list容器的实例LISTINT<br>typedef list<int> LISTINT;</strong><br> <strong>//创建一个list容器的实例LISTCHAR<br>typedef list<char> LISTCHAR;</strong><br> <strong>void main(void)<br>{<br>    //————————–<br>    //用list容器处理整型数据<br>    //————————–<br>    //用LISTINT创建一个名为listOne的list对象<br>    LISTINT listOne;<br>    //声明i为迭代器<br>    LISTINT::iterator i;</strong><br> **    //从前面向listOne容器中添加数据<br>    listOne.push_front (2);<br>    listOne.push_front (1);**<br> **    //从后面向listOne容器中添加数据<br>    listOne.push_back (3);<br>    listOne.push_back (4);**<br> **    //从前向后显示listOne中的数据<br>    cout&lt;&lt;”listOne.begin()— listOne.end():”&lt;&lt;endl;<br>    for (i = listOne.begin(); i != listOne.end(); ++i)<br>        cout &lt;&lt; <em>i &lt;&lt; “ “;<br>    cout &lt;&lt; endl;*</em><br> **    //从后向后显示listOne中的数据<br>LISTINT::reverse_iterator ir;<br>    cout&lt;&lt;”listOne.rbegin()—listOne.rend():”&lt;&lt;endl;<br>    for (ir =listOne.rbegin(); ir!=listOne.rend();ir++) {<br>        cout &lt;&lt; <em>ir &lt;&lt; “ “;<br>    }<br>    cout &lt;&lt; endl;*</em><br> **    //使用STL的accumulate(累加)<a href="http://lib.csdn.net/base/datastructure" target="_blank" rel="noopener">算法</a><br>    int result = accumulate(listOne.begin(), listOne.end(),0);<br>    cout&lt;&lt;”Sum=”&lt;&lt;result&lt;&lt;endl;<br>    cout&lt;&lt;”——————“&lt;&lt;endl;**<br> **    //————————–<br>    //用list容器处理字符型数据<br>    //————————–**<br> **    //用LISTCHAR创建一个名为listOne的list对象<br>    LISTCHAR listTwo;<br>    //声明i为迭代器<br>    LISTCHAR::iterator j;**<br> **    //从前面向listTwo容器中添加数据<br>    listTwo.push_front (‘A’);<br>    listTwo.push_front (‘B’);**<br> **    //从后面向listTwo容器中添加数据<br>    listTwo.push_back (‘x’);<br>    listTwo.push_back (‘y’);**<br> **    //从前向后显示listTwo中的数据<br>    cout&lt;&lt;”listTwo.begin()—listTwo.end():”&lt;&lt;endl;<br>    for (j = listTwo.begin(); j != listTwo.end(); ++j)<br>        cout &lt;&lt; char(<em>j) &lt;&lt; “ “;<br>    cout &lt;&lt; endl;*</em><br> **    //使用STL的max_element算法求listTwo中的最大元素并显示<br>    j=max_element(listTwo.begin(),listTwo.end());<br>    cout &lt;&lt; “The maximum element in listTwo is: “&lt;&lt;char(<em>j)&lt;&lt;endl;<br>}*</em><br> <strong>#include <iostream><br>#include <list></strong><br> <strong>using namespace std;<br>typedef list<int> INTLIST;</strong><br> <strong>//从前向后显示list队列的全部元素<br>void put_list(INTLIST list, char *name)<br>{<br>    INTLIST::iterator plist;</strong><br> **    cout &lt;&lt; “The contents of “ &lt;&lt; name &lt;&lt; “ : “;<br>    for(plist = list.begin(); plist != list.end(); plist++)<br>        cout &lt;&lt; <em>plist &lt;&lt; “ “;<br>    cout&lt;&lt;endl;<br>}*</em><br> <strong>//<a href="http://lib.csdn.net/base/softwaretest" target="_blank" rel="noopener">测试</a>list容器的功能<br>void main(void)<br>{<br>//list1对象初始为空<br>    INTLIST list1;<br>    //list2对象最初有10个值为6的元素<br>    INTLIST list2(10,6);<br>    //list3对象最初有3个值为6的元素<br>    INTLIST list3(list2.begin(),–list2.end());</strong><br> **    //声明一个名为i的双向迭代器<br>    INTLIST::iterator i;**<br> **    //从前向后显示各list对象的元素<br>    put_list(list1,”list1”);<br>    put_list(list2,”list2”);<br>    put_list(list3,”list3”);</p><p>//从list1序列后面添加两个元素<br>list1.push_back(2);<br>list1.push_back(4);<br>cout&lt;&lt;”list1.push_back(2) and list1.push_back(4):”&lt;&lt;endl;<br>    put_list(list1,”list1”);**<br> <strong>//从list1序列前面添加两个元素<br>list1.push_front(5);<br>list1.push_front(7);<br>cout&lt;&lt;”list1.push_front(5) and list1.push_front(7):”&lt;&lt;endl;<br>    put_list(list1,”list1”);</strong><br> <strong>//在list1序列中间插入数据<br>list1.insert(++list1.begin(),3,9);<br>cout&lt;&lt;”list1.insert(list1.begin()+1,3,9):”&lt;&lt;endl;<br>    put_list(list1,”list1”);</strong><br> <strong>//测试引用类函数<br>cout&lt;&lt;”list1.front()=”&lt;&lt;list1.front()&lt;&lt;endl;<br>cout&lt;&lt;”list1.back()=”&lt;&lt;list1.back()&lt;&lt;endl;</strong><br> <strong>//从list1序列的前后各移去一个元素<br>list1.pop_front();<br>list1.pop_back();<br>cout&lt;&lt;”list1.pop_front() and list1.pop_back():”&lt;&lt;endl;<br>    put_list(list1,”list1”);</strong><br> <strong>//清除list1中的第2个元素<br>list1.erase(++list1.begin());<br>cout&lt;&lt;”list1.erase(++list1.begin()):”&lt;&lt;endl;<br>    put_list(list1,”list1”);</strong><br> <strong>//对list2赋值并显示<br>list2.assign(8,1);<br>cout&lt;&lt;”list2.assign(8,1):”&lt;&lt;endl;<br>    put_list(list2,”list2”);</strong><br> <strong>//显示序列的状态信息<br>cout&lt;&lt;”list1.max_size(): “&lt;&lt;list1.max_size()&lt;&lt;endl;<br>cout&lt;&lt;”list1.size(): “&lt;&lt;list1.size()&lt;&lt;endl;<br>cout&lt;&lt;”list1.empty(): “&lt;&lt;list1.empty()&lt;&lt;endl;</strong><br> <strong>//list序列容器的运算<br>    put_list(list1,”list1”);<br>    put_list(list3,”list3”);<br>cout&lt;&lt;”list1&gt;list3: “&lt;&lt;(list1&gt;list3)&lt;&lt;endl;<br>cout&lt;&lt;”list1&lt;list3: “&lt;&lt;(list1&lt;list3)&lt;&lt;endl;</strong><br> **//对list1容器排序<br>list1.sort();<br>    put_list(list1,”list1”);</p><p>//结合处理<br>list1.splice(++list1.begin(), list3);<br>    put_list(list1,”list1”);<br>    put_list(list3,”list3”);<br>}** </p><p><strong>补充：STL标准函数find进行vector 、list链表查找</strong></p><p><strong>#include <vector><br>#include <algorithm><br>#include <iostream></strong><br> <strong>class example<br>{<br>public:<br>example(int val)<br>{<br>i = val;<br>}</strong><br> <strong>bool operator==(example const &amp; rhs)<br>{<br>return (i == rhs.i) ? true : false;<br>}</strong><br> <strong>private:<br>int i;<br>};<br>using namespace std;<br>int main(void)<br>{<br>vector<example> ve;<br>ve.push_back(1);<br>vector<example>::iterator it;<br>example elem(1);<br>it = find(ve.begin(), ve.end(), elem);<br>cout&lt;&lt;boolalpha&lt;&lt;(*it == elem);<br>}</strong> </p><p>(摘自CSDN)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;Lists将元素按顺序储存在链表中. 与 向量(vectors)相比, 它允许快速的插入和删除，但是随机访问却比较慢.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;assign() 给list赋值&lt;br&gt;back() 返回最后一个元素&lt;br&gt;begin(
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>庚子疫 书</title>
+    <link href="https://liuboyuan.fun/covid19/"/>
+    <id>https://liuboyuan.fun/covid19/</id>
+    <published>2020-03-08T21:04:31.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>己亥年丙子月，大疫初见。</p><p>少人知，思伤寒者遂告他人其疾不足言。</p><p>现不知其因。</p><p>人云因者，鄂中集市。</p><p>或曰他者，外传也。</p><p>以为无事，度日依旧。</p><p>劝阻无用，踏门登访。</p><p>人亦见人，人亦谈人。</p><p>咳无流涕，首稍发热。</p><p>以为伤寒，自为人医。</p><p>日月而逝，不得疾强。</p><p>唯咳之烈。</p><p>先发于鄂而后布于国。</p><p>国人知难，财物捐之。</p><p>群人知难，尽能助之。</p><p>医者有情，忘身援鄂。</p><p>舍身忽死，以命援灾。</p><p>灾若将歇，跪地谢之，</p><p>雨雪无休，彻夜救命。</p><p>挽人于水土危难，</p><p>莫使人命易交天！</p><p>邑人以之为恩，</p><p>欲以命偿。</p><p>少人不知恩贵，</p><p>忘恩而负义也！</p><p>举国上下，忧无停歇。</p><p>几人步于门外，</p><p>少车驶于路中。</p><p>无往日之喧嚣。</p><p>国之外友，</p><p>“山川异域，风月同天”</p><p>“岂曰无衣,与子同裳”</p><p>无顾自而顾人，</p><p>无忧己而助人。</p><p>国中现医他人而受染者，</p><p>非一二小数。</p><p>以学生之身，</p><p>以何报医者之恩，</p><p>国之恩？</p><p>仅尽己所能，</p><p>报效医者</p><p>报效中华。</p><p>以青春之志，</p><p>莫忘恩！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;己亥年丙子月，大疫初见。&lt;/p&gt;
+&lt;p&gt;少人知，思伤寒者遂告他人其疾不足言。&lt;/p&gt;
+&lt;p&gt;现不知其因。&lt;/p&gt;
+&lt;p&gt;人云因者，鄂中集市。&lt;/p&gt;
+&lt;p&gt;或曰他者，外传也。&lt;/p&gt;
+&lt;p&gt;以为无事，度日依旧。&lt;/p&gt;
+&lt;p&gt;劝阻无用，踏门登访。&lt;/p&gt;
+&lt;p&gt;人亦见人，人
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="战疫" scheme="https://liuboyuan.fun/tags/%E6%88%98%E7%96%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>己酉记梦</title>
+    <link href="https://liuboyuan.fun/beautifuldream/"/>
+    <id>https://liuboyuan.fun/beautifuldream/</id>
+    <published>2020-03-06T16:30:11.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>他的一生即将殆尽。</p><p>他用着生命的最后一刻，</p><p>回望曾经。</p><p>纷纷过往如风而逝。</p><p>他依旧无动于衷。</p><p>记忆飞速流逝。</p><p>却停在了十四岁。</p><p>他笑了，</p><p>这似乎是理所应当，</p><p>因为他在这一年经历了太多。</p><p>不禁流出泪水。</p><p>“多么可笑啊，“</p><p>“在大年初一和一个根本不喜欢自己的女生表白”</p><p>却如何呢？</p><p>自己将要命归九泉，</p><p>谁又会记得，</p><p>一个心里永远活泼的人，</p><p>在那日也无比紧张，</p><p>手心的汗，</p><p>如雨而下。</p><p>心如丹灵，转眼化作寒酥般寒冷。</p><p>一切都过去了，</p><p>已知回不去的过往，</p><p>又何必呢？</p><p>他早已不记得那个女生的模样，</p><p>只记得那只身影，</p><p>跌在了大海中，</p><p>沉睡。</p><p>他带着最后一抹笑。</p><p>残阳如梦。</p><p>霓虹，</p><p>似火。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;他的一生即将殆尽。&lt;/p&gt;
+&lt;p&gt;他用着生命的最后一刻，&lt;/p&gt;
+&lt;p&gt;回望曾经。&lt;/p&gt;
+&lt;p&gt;纷纷过往如风而逝。&lt;/p&gt;
+&lt;p&gt;他依旧无动于衷。&lt;/p&gt;
+&lt;p&gt;记忆飞速流逝。&lt;/p&gt;
+&lt;p&gt;却停在了十四岁。&lt;/p&gt;
+&lt;p&gt;他笑了，&lt;/p&gt;
+&lt;p&gt;这似乎是理所应当，&lt;/p
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>闲笔</title>
+    <link href="https://liuboyuan.fun/xianbi/"/>
+    <id>https://liuboyuan.fun/xianbi/</id>
+    <published>2020-02-28T19:49:31.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>这段长路啊，也终究，没有她的陪伴。<br>孤零走过。</p><p>无限回望她的身影，<br>她却径直离去。<br>春风拂过的大地，<br>有对她的回忆，<br>也有那滴泪水，<br>转瞬之间，<br>化作烟云。</p><p>2020.2.28</p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/02/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200228194613-1024x347.jpg" alt=""></p><p>灵感来源</p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/02/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200228194830.jpg" alt=""></p><p>一群沙雕评论</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这段长路啊，也终究，没有她的陪伴。&lt;br&gt;孤零走过。&lt;/p&gt;
+&lt;p&gt;无限回望她的身影，&lt;br&gt;她却径直离去。&lt;br&gt;春风拂过的大地，&lt;br&gt;有对她的回忆，&lt;br&gt;也有那滴泪水，&lt;br&gt;转瞬之间，&lt;br&gt;化作烟云。&lt;/p&gt;
+&lt;p&gt;2020.2.28&lt;/p&gt;
+&lt;p&gt;&lt;img s
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无题</title>
+    <link href="https://liuboyuan.fun/none/"/>
+    <id>https://liuboyuan.fun/none/</id>
+    <published>2020-02-24T20:44:23.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>我曾经做过无数的梦，</p><p>有的无比真实，有的荒唐不经。</p><p>却都是黄粱一梦。</p><p>每次望向那个身影，</p><p>都不禁流下泪来。</p><p>一阵苦涩在心头。</p><p>寻求知己的希望，</p><p>一次次破碎。</p><p>剩下的，</p><p>早已不是往年的纯真。</p><p>而是，</p><p>占有污垢的灵魂。</p><p>昏暗的霓虹下，</p><p>冰晶飘散，</p><p>从江畔，</p><p>到绝望的远方。</p><p>透过我无限失望的身躯。</p><p>尝试拂去飞雪的手，</p><p>只不过让早已疼痛不堪的皮肤，</p><p>更添痛苦。</p><p>长叹也终究无济于事，</p><p>缕缕烟雾，</p><p>终于飘向远方。</p><p>化作又一载的风雨。</p><p>青春茫然的心啊，</p><p>何时才能有个着落？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我曾经做过无数的梦，&lt;/p&gt;
+&lt;p&gt;有的无比真实，有的荒唐不经。&lt;/p&gt;
+&lt;p&gt;却都是黄粱一梦。&lt;/p&gt;
+&lt;p&gt;每次望向那个身影，&lt;/p&gt;
+&lt;p&gt;都不禁流下泪来。&lt;/p&gt;
+&lt;p&gt;一阵苦涩在心头。&lt;/p&gt;
+&lt;p&gt;寻求知己的希望，&lt;/p&gt;
+&lt;p&gt;一次次破碎。&lt;/p&gt;
+&lt;p&gt;剩下
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Virtual关键字</title>
+    <link href="https://liuboyuan.fun/virtualinc/"/>
+    <id>https://liuboyuan.fun/virtualinc/</id>
+    <published>2020-02-22T21:45:28.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>在面向对象的C++语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C++语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚至称虚函数是C++语言的精髓。</p><blockquote><p>那么，什么是虚函数呢，我们先来看看微软的解释：<br>虚函数是指一个类中你希望重载的成员函数，<br>当你用一个基类指针或引用指向一个继承类对象的时候，<br>你调用一个虚函数，实际调用的是继承类的版本。<br>——摘自MSDN  </p></blockquote><p>这个定义说得不是很明白。MSDN中还给出了一个例子，但是它的例子也并不能很好的说明问题。<br>举个栗子：</p><p>#include using  namespace std;<br>class Parent //类<br>{<br> public:</p><pre><code>char data\[20\];void Function1();    virtual void Function2();   // 这里声明Function2是虚函数</code></pre><p> }parent;</p><p> void Parent::Function1()<br> {<br>     printf(“This is parent,function1\n”);<br> }</p><p> void Parent::Function2()<br> {<br>     printf(“This is parent,function2\n”);<br> }</p><p> class Child:public Parent<br> {<br>     void Function1();<br>     void Function2();</p><p> } child;</p><p> void Child::Function1()<br> {<br>     printf(“This is child,function1\n”);<br> }</p><p> void Child::Function2()</p><p> {<br>     printf(“This is child,function2\n”);<br> }</p><p> int main(int argc, char* argv[])<br> {<br>     Parent *p;  　　　　　// 定义一个基类指针<br>     if(_getch()==’c’)    // 如果输入一个小写字母c<br>         p=&child;        // 指向继承类对象<br>     else<br>         p=&parent;       // 否则指向基类对象<br>     p-&gt;Function1();  　　 // 这里在编译时会直接给出Parent::Function1()的入口地址。<br>     p-&gt;Function2();   　　// 注意这里，执行的是哪一个Function2？<br>     return 0;</p><p> } </p><p>输入”c”<br>得到结果：</p><pre><code>This is parent,function1This is child,function2</code></pre><p>为什么会有第一行的结果呢？<br>因为我们是用一个Parent类的指针调用函数Fuction1()，虽然实际上这个指针指向的是Child类的对象，但编译器无法知道这一事实（直到运行的时候，程序才可以根据用户的输入判断出指针指向的对象），它只能按照调用Parent类的函数来理解并编译，所以我们看到了第一行的结果。<br>那么第二行的结果又是怎么回事呢？我们注意到，Function2()函数在基类中被virtual关键字修饰，也就是说，它是一个虚函数。<br>虚函数最关键的特点是“动态联编”，它可以在运行时判断指针指向的对象，并自动调用相应的函数。<br>如果我们在运行上面的程序时任意输入一个非c的字符，<br>结果如下：</p><pre><code>This is parent,function1This is parent,function2</code></pre><p>请注意看第二行，它的结果出现了变化。程序中仅仅调用了一个Function2()函数，却可以根据用户的输入自动决定到底调用基类中的Function2还是继承类中的Function2，这就是虚函数的作用。<br>*<em>一定要注意“静态联翩 ”和“ 动态联编 ”的区别；对于我来说，若没有在DEV中亲自去测试，凭自己的感觉， *</em><br>当在键盘中输入“c”时，我会觉得由于有p=&child;这一句代码，我会认为结果都是：</p><pre><code>This is child,function1This is child,function2</code></pre><p>但是结果却是：</p><pre><code>This is parent,function1This is child，function2</code></pre><p>因为虽然实际上这个指针指向的是Child类的对象，但编译器无法知道这一事实，<br>它只能按照调用Parent类的函数来理解并编译，所以我们看到了第一行的结果。<br>第二行中调用了子类的function2，完全是因为virtual 的功能，virtual实现了动态联编，<br>它可以在运行时判断指针指向的对象，并自动调用相应的函数。</p><pre><code>p=&amp;parent;  //这一句，该指针很明显的是指向父类，那么肯定调用的是父类的方法</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在面向对象的C++语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C++语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="https://liuboyuan.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
+    
+      <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>卜算子·正月初作</title>
+    <link href="https://liuboyuan.fun/pusuanzi/"/>
+    <id>https://liuboyuan.fun/pusuanzi/</id>
+    <published>2020-02-17T21:26:02.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>日暮叩晨窗，黄昏坠冬江。</p><p>愁着庚子半尺雪，欲把春来望。</p><p>新风拂旧尘，泪流映痕殇。</p><p>问子执手度此春，心连赏墨香。</p><p>刘渤源作于桦南</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;日暮叩晨窗，黄昏坠冬江。&lt;/p&gt;
+&lt;p&gt;愁着庚子半尺雪，欲把春来望。&lt;/p&gt;
+&lt;p&gt;新风拂旧尘，泪流映痕殇。&lt;/p&gt;
+&lt;p&gt;问子执手度此春，心连赏墨香。&lt;/p&gt;
+&lt;p&gt;刘渤源作于桦南&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>梦醒·岁月烟火</title>
+    <link href="https://liuboyuan.fun/wakeup/"/>
+    <id>https://liuboyuan.fun/wakeup/</id>
+    <published>2020-02-17T21:00:29.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>望向灰暗的轩窗，<br>不时有雨点渗入。</p><p>执笔沉思，<br>却迟迟不敢书写。<br>泪眼彷徨，<br>窗外的雨，<br>伴随着缕缕烟火。<br>化作另一片云。<br>笔上的墨，<br>散发出岁月的痕迹。<br>蓦然回首，<br>不禁热泪盈眶。  </p><p>一梦初醒，<br>她的身影渺茫<br>青春一路的风风雨雨，<br>也许，消磨了你的意志，<br>但是你的梦想依旧。<br>回望青春的路，<br>你认识了多少的人，<br>见过了多少的事。<br>你梦中的她，<br>也终于在一阵风中，<br>化作终究消散的彼岸花。  </p><p>刘渤源 作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;望向灰暗的轩窗，&lt;br&gt;不时有雨点渗入。&lt;/p&gt;
+&lt;p&gt;执笔沉思，&lt;br&gt;却迟迟不敢书写。&lt;br&gt;泪眼彷徨，&lt;br&gt;窗外的雨，&lt;br&gt;伴随着缕缕烟火。&lt;br&gt;化作另一片云。&lt;br&gt;笔上的墨，&lt;br&gt;散发出岁月的痕迹。&lt;br&gt;蓦然回首，&lt;br&gt;不禁热泪盈眶。  &lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>缘？</title>
+    <link href="https://liuboyuan.fun/meet/"/>
+    <id>https://liuboyuan.fun/meet/</id>
+    <published>2020-02-14T21:00:34.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>人的相遇，<br>可能是偶然。<br>也可能不是。</p><p>这似乎是一种约定，<br>跨越生与死，<br>无论山与河。<br>相隔千里心相连，<br>凭的便是缘</p><p>而这缘，<br>便是生死的关键。<br>相识半刻便生情，<br>靠的不是物质上的满足，<br>而是缘分。<br>相聚十年不知味，<br>便是被钱财蒙蔽心灵，<br>被钱财束缚，<br>常常有缘的人，<br>三观必相同，<br>心灵同相连。<br>相视便会惊起波涛，<br>将前世的约定，<br>今生奉还。</p><p>一诗以应之：</p><blockquote><p><em>相传前生定身契，<br>不得深缘散别离。<br>莫忘誓约以命许，<br>今世相逢落尘凄。</em></p><p>——刘渤源</p></blockquote><p>作于庚子年正月廿一</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;人的相遇，&lt;br&gt;可能是偶然。&lt;br&gt;也可能不是。&lt;/p&gt;
+&lt;p&gt;这似乎是一种约定，&lt;br&gt;跨越生与死，&lt;br&gt;无论山与河。&lt;br&gt;相隔千里心相连，&lt;br&gt;凭的便是缘&lt;/p&gt;
+&lt;p&gt;而这缘，&lt;br&gt;便是生死的关键。&lt;br&gt;相识半刻便生情，&lt;br&gt;靠的不是物质上的满足，&lt;br
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>年末随笔</title>
+    <link href="https://liuboyuan.fun/end/"/>
+    <id>https://liuboyuan.fun/end/</id>
+    <published>2019-12-31T22:30:04.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>光阴似箭，箭箭穿心。</p><p>日月如梭，梭梭滴血。</p><p>也许在这一年里，</p><p>我们认识了更多的人，</p><p>明白了更多的事。</p><p>却看罢风雪， 孤自无言。</p><p>明月，仍然高悬。</p><p>长叹，依然伴随着欢笑。</p><p>不过多了些岁月的痕迹。</p><p>正如腊月寒冬的落日</p><p>东升西落， 终于化作烟烬，</p><p>却始终找不到存在的理由。</p><p>明年， 一切是否依旧？</p><p>作于2019年12月31日夜</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;光阴似箭，箭箭穿心。&lt;/p&gt;
+&lt;p&gt;日月如梭，梭梭滴血。&lt;/p&gt;
+&lt;p&gt;也许在这一年里，&lt;/p&gt;
+&lt;p&gt;我们认识了更多的人，&lt;/p&gt;
+&lt;p&gt;明白了更多的事。&lt;/p&gt;
+&lt;p&gt;却看罢风雪， 孤自无言。&lt;/p&gt;
+&lt;p&gt;明月，仍然高悬。&lt;/p&gt;
+&lt;p&gt;长叹，依然伴随着欢笑。&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSP 2019 共勉</title>
+    <link href="https://liuboyuan.fun/csp-2019/"/>
+    <id>https://liuboyuan.fun/csp-2019/</id>
+    <published>2019-11-12T19:00:24.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>看向面前的屏幕，</p><p>数着距离CSP寥寥无几的数日。</p><p>是享受，还是煎熬？</p><p>我们，虽然在编程之路上只度过了几载的岁月，</p><p>却乐于其中，</p><p>用键盘打出斑斓的时光，</p><p>用自己的努力，</p><p>镌刻出一片OJ天地。</p><p>未来终将，</p><p>难以忘怀。</p><p>明天的明天，</p><p>永远的永远，</p><p>也许这条路会断线，</p><p>而这些回忆，</p><p>会永远成为我们深深的怀念。</p><p>CSP 2019，</p><p>以梦为马，不负韶华，壮丽而归。</p><p>加油！</p><p>=====</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;看向面前的屏幕，&lt;/p&gt;
+&lt;p&gt;数着距离CSP寥寥无几的数日。&lt;/p&gt;
+&lt;p&gt;是享受，还是煎熬？&lt;/p&gt;
+&lt;p&gt;我们，虽然在编程之路上只度过了几载的岁月，&lt;/p&gt;
+&lt;p&gt;却乐于其中，&lt;/p&gt;
+&lt;p&gt;用键盘打出斑斓的时光，&lt;/p&gt;
+&lt;p&gt;用自己的努力，&lt;/p&gt;
+&lt;p&gt;镌刻出一
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>十一月九日有感而发</title>
+    <link href="https://liuboyuan.fun/11-9/"/>
+    <id>https://liuboyuan.fun/11-9/</id>
+    <published>2019-11-09T22:30:13.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>心中的花，落了。<br>花季菁菁，雨后初晴？芳华初醒。</p><p>我们的心是干净的，脱俗的。<br>我们会喜欢上哪个女生？<br>又是哪个青春，<br>在绽放？<br>长辈与晚辈间的万丈深渊，<br>让人不知怎的，<br>十载韶华匆匆而逝。<br>我们为什么会对那个女生如此着迷？<br>用任何介质都难以言喻。<br>我们寻找着情感，<br>却忘记着情感。<br>等到那份情感时，<br>心中的花开了。<br>我们却早已因为走得太远，<br>便忘了当初，<br>为什么出发。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;心中的花，落了。&lt;br&gt;花季菁菁，雨后初晴？芳华初醒。&lt;/p&gt;
+&lt;p&gt;我们的心是干净的，脱俗的。&lt;br&gt;我们会喜欢上哪个女生？&lt;br&gt;又是哪个青春，&lt;br&gt;在绽放？&lt;br&gt;长辈与晚辈间的万丈深渊，&lt;br&gt;让人不知怎的，&lt;br&gt;十载韶华匆匆而逝。&lt;br&gt;我们为什么会对那个女生
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的烦恼</title>
+    <link href="https://liuboyuan.fun/problems/"/>
+    <id>https://liuboyuan.fun/problems/</id>
+    <published>2019-10-31T00:00:20.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>行走在青春的河岸，采集岁月的斑斓。每个人在成长的道路上也许都会有烦恼，但倘若不乱于心，终将在蓦然回首的刹那，你会发现答案原来是丰富多彩的。</p><p>　 我曾经就有一个烦恼——我为什么学习？　 小时候，经常听到同伴们说，他们要好好学习，赚花也花不完的钱，买自己想要的东西，那是钱是什么，我还不曾得知。在快乐的玩闹中我逐渐迷失了自己，并没有想到学习。</p><p>　稍微大了一点了，我发现他们所提的钱的用处微乎其微，除了一日三餐，书本文具，钱只是一种摆设，我开始在书本里寻找答案。从杨绛的“用生活所感去读书，用读书所的去生活”，我认为读书是为了更好的生活与实践；从周恩来的“为中华之崛起而读书”，我认为读书是为了报效祖国；从梁文道的“读书是为了让我们更宽容的理解这个世界有多复杂”，我认为读书是为了看透世界。读书归根结底是为了什么，我无从知晓。　 五年级下学期转学到佳木斯的我在学校处处受到制约，为了追求白天鹅般的梦想，我在这座城市成为了一只丑小鸭，因为成绩不理想年少的我体会到了自卑的滋味，因成绩低下而受到老师轻视的我不禁一声长叹“问君能有几多愁，恰似一江春水向东流！”，后来即使成绩大有好转，即使内心狂喜不已，外表也只是风平浪静，走在青春岁月的我，碰到了烦恼的礁石，将我撞击成不息的浪花，任何一个青春年少追梦的人，不可避免经历烦恼，但那些烦恼终将让我涅槃重生，让我的人生风生水起。<br>　 进入初中，我开始热爱写作，体会翰墨之情背后的自在与空灵。向同学们取长补短，互相学习。如痴如狂地积累句子，如痴如醉地谱写篇章，我渐渐体会到，学习的意义，就在于积累的过程，正所谓蓄势方能高飞，厚积才能薄发。　 韶华易逝，菡萏香销。我们为何读书，也许是个谜吧，但是要我们为了国家而学习，为梦想而学习，奋起直追，对人生负责，终将会走向成功的彼岸，烦恼终将烟消云散，不复再来。</p><p>本文作于2019年</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;行走在青春的河岸，采集岁月的斑斓。每个人在成长的道路上也许都会有烦恼，但倘若不乱于心，终将在蓦然回首的刹那，你会发现答案原来是丰富多彩的。&lt;/p&gt;
+&lt;p&gt;　 我曾经就有一个烦恼——我为什么学习？　 小时候，经常听到同伴们说，他们要好好学习，赚花也花不完的钱，买自己想要的东西
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>壮哉大国泱泱·蓬勃旭日东方</title>
+    <link href="https://liuboyuan.fun/chinanb/"/>
+    <id>https://liuboyuan.fun/chinanb/</id>
+    <published>2019-10-01T00:00:35.000Z</published>
+    <updated>2020-08-24T12:36:43.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>   青春河岸，芳华之巅。泱泱华夏梦，代代国人传，今成壮美万里河山，成就千古文化。</p><p>愿我少年中国，顶天立地当自强，用青春之歌，唱响祖国未来，壮哉大国泱泱，美名远扬，蓬勃旭日东方！梦对春秋，紫竹摇曳。梅香，终因蕴冰而透骨；意志，终因坚守而顽强。忆峥嵘岁月，无数文人墨客用笔墨书写中华意志坚强，唤醒沉睡的心灵，向往壮美的未来，为祖国增添光彩，为人生不留遗憾。青春河畔，意味阑珊，愿我们共赴彼岸，让青春不再迷茫，让祖国灿烂辉煌。  </p><p>“古今书法不可数，犹有字本存于经”中国书法，一撇一捺，翰墨之情，闻名天下。行楷隶篆草，一指柔情万丈，笔墨飘扬，自在飞花，流传万古于世，挥毫写千行，笔走灵韵扬。愿少年中国传承典雅中华文化，不负盛世芳华。  </p><p>“九秋风露越窑开，夺得千峰翠色来”中国还是瓷器的故乡，对人类社会的进步与发展做出了许多重大贡献。在陶瓷技术与艺术上所取得的成就，尤其具有特殊重要意义。传世于今，赢得世界美名，为中华文化增添一抹亮丽的色彩，尊重传统文化，是每个炎黄子孙应有的品质。</p><p>“碾雕白玉, 罗织红纱。铫煎黄蕊色,碗转麹尘花。”中国是茶的故乡，中国人喜好饮茶，中华同胞还有民以茶代礼的风俗。喝茶的习惯开始于神农，闻于鲁周公，兴旺于唐朝，昌盛于宋代，普及于明清之时。想当年，名流骚客一抹斜阳，一壶茶，且品半日闲散；一笔素墨，一卷书，挥毫寂寞流年，茶香氤氲，心事婉约。 </p><p> “具五味，调五脏。用之如兵，疾无不恙。”中药诸以草为本，我国古代劳动人民通过长期实践所积累起来的医药遗产是极为丰富、极为宝贵的，它是中国的劳动人民所创造的瑰宝，我们应该铭记，在历史的长河里，有一颗中国文化璀璨的明珠。  </p><p>“仰天长啸待时日，巨龙腾飞平地起”山河过往，炎黄子孙不负众望。华为5G、中科院龙芯步步直追国外科技；天河3号，神威·太湖之光超级计算机领先世界；造桥、高铁、量子通信技术从未落后。壮哉我大中华，未曾湮灭于历史的长河，让我们献出自己的力量，让东方大国，矞矞皇皇，蓬勃旭日东方，让祖国未来万丈光芒。 </p><p> 少年中国，发奋图强，成为祖国栋梁。一苇以航，逐梦神州。让我们发扬中华文化，壮哉大国泱泱，蓬勃旭日东方，以梦为马，耀我中华。中国少年，顶天立地当自强，舒天朝晖，气质昂扬。让中国于天地并存，与日月同光！</p><pre><code>——刘渤源在2019冰心杯的投稿文章</code></pre><p>（段落在发布过程中可能没有换行，请见谅）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;   青春河岸，芳华之巅。泱泱华夏梦，代代国人传，今成壮美万里河山，成就千古文化。&lt;/p&gt;
+&lt;p&gt;愿我少年中国，顶天立地当自强，用青春之歌，唱响祖国未来，壮哉大国泱泱，美名远扬，蓬勃旭日东方！梦对春秋，紫竹摇曳。梅香，终因蕴冰而透骨；意志，终因坚守而顽强。忆峥嵘岁月，无数文
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生？死？</title>
+    <link href="https://liuboyuan.fun/liveordeath/"/>
+    <id>https://liuboyuan.fun/liveordeath/</id>
+    <published>2019-09-12T22:48:12.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个世界也许是个谎言，一切都是假的，终将走向湮灭。</p><p>诡异，诡异，无限的诡异。</p><p>难以形容的虚伪，对也无法言说，错也无法辩解，何为对错？</p><p>生老病死，宿命，消亡。</p><p>生死相间，悲哀，无形。</p><p>不公平，这不是一个世界！</p><p>真正的世界是公正的、自由的、没有痛苦与悲哀，没有哀怨与气恼。</p><p>不！这是天堂！</p><p>这里有我们难以想象的轻松，与我们的时空完全不同！</p><p>我们这个世界……</p><p>这是地狱。</p><p>肤浅欢乐背后的悲伤，看似自由背后的束缚。</p><p>都只是一层丑陋无比的外套。</p><p>人情世故，没有单纯的心灵。</p><p>这不是一个世界。</p><p>阴即为阳，生即为死。</p><p>天堂？人间？地狱？</p><p>活在人间，等待死亡。</p><p>迎来了又一次的死亡，无限的死亡。</p><p>不可能的天堂！</p><p>终极的死亡。</p><p>这个惊悚的世界！</p><p>这一定是谎言！幻象！</p><p>一个噩梦，</p><p>一个永远无法醒来的噩梦！</p><p>你无法呼吸，无法思考。</p><p>被万千繁华背后的丑陋憋得无法喘气。</p><p>等待终极的死亡。</p><p>等待！</p><p>2019年9月12日 作于中秋节时的桦南县林业局</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这个世界也许是个谎言，一切都是假的，终将走向湮灭。&lt;/p&gt;
+&lt;p&gt;诡异，诡异，无限的诡异。&lt;/p&gt;
+&lt;p&gt;难以形容的虚伪，对也无法言说，错也无法辩解，何为对错？&lt;/p&gt;
+&lt;p&gt;生老病死，宿命，消亡。&lt;/p&gt;
+&lt;p&gt;生死相间，悲哀，无形。&lt;/p&gt;
+&lt;p&gt;不公平，这不是一个世界
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>青春萌动·邂逅</title>
+    <link href="https://liuboyuan.fun/xiehou/"/>
+    <id>https://liuboyuan.fun/xiehou/</id>
+    <published>2019-09-07T22:40:50.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>落叶，残阳，秋。</em></p><p><em>青春，萌动，犹。</em></p><p><em>邂逅，初识，邂逅，重逢。</em></p><p><em>万事皆从同桌言起，飘然长发，入心微笑。</em></p><p><em>活泼，善良，净心素雅，淡看浮华。</em></p><p>在一年前的秋日，青春之始，她的身影进入我的眼帘，虽素未相见，却似曾相识。有一种不可言说的喜悦，也有种素不相识的悲伤。仿佛是前世的挚友，也似乎是今生的重逢。她喜欢汉服，能够体会到几千年来古人创造真正素雅的文化代表，一袭汉衣，染就一树芳华；两袖月光，诉说绝世风雅。</p><p>也许是太阳照耀的原因，她的眼睛里似乎闪烁着沉寂而又灵动的光芒，让人看到了心情不禁变得快乐，晨曦渗透着她淡赤的头发，有一种难以描述的精神力量，尽管在生活的蹂躏下也能如此，难以理喻，也许，这就是青春的神秘所在吧。</p><p>热爱学习的她似乎永远都不会丧失活泼可爱的性格，无论学习多么劳累，她都能够竭尽全力奋发向上，却能够保持乐观的态度，淡看浮华。我可能穷极一生也无法看透她吧。</p><p><em>也许，一切都是梦境，</em></p><p><em>也只有幻象，她的眼眸才会出现如此神秘的灵光。</em></p><p><em>但我宁愿相信这是事实，</em></p><p><em>因为我想和她交朋友，了解一个有趣的人。</em></p><p><em>这样，在醒来时不至于万事皆空。</em></p><p>在她的带动下，我开始学习她的优点，取长补短，终于，在我默默地学习下，年华不负追光者，我在初一期末的成绩超乎我的意料，也许她还不知道自己有这些优点带动着我，共赴彼岸，我希望有一个知己，仅此而已。</p><p><em>青春活泼的心，决不做悲哀的留滞。</em></p><p>_青春萌动·邂逅            _</p><p> 刘渤源 2019.9.7 22:40</p><p>_*本文只作为文学探讨与心路历程发布，所牵扯的一系列事件无需提起_。</p><p>确实写得足够沙雕。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;em&gt;落叶，残阳，秋。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;青春，萌动，犹。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;邂逅，初识，邂逅，重逢。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;万事皆从同桌言起，飘然长发，入心微笑。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;活泼，善良，净心素雅，淡看浮华。&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>雨夜楼 千古愁 雨后朝阳向春流</title>
+    <link href="https://liuboyuan.fun/rain/"/>
+    <id>https://liuboyuan.fun/rain/</id>
+    <published>2019-06-25T12:36:23.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>夏夜忆，相思地，静听雨声窗外泣，恍然不经意，落红已满地。涰泣然，芳华依满，往日希冀。 ——题记 窗外雨声兮兮，忽醒忽醉，忆从前，如昨天，梦一场。雨夜催昼，微光迟夜，古今雨夜楼，衬人千古愁，雨后朝阳向春流。 雨点，有时轻盈，有时沉重，柔柔地飘过发丝却浑然不知。古今文人墨客，或悲或乐，终会写雨吟诗作赋，李清照挥笔写下“梧桐更兼细雨，到黄昏，点点滴滴，这次第，怎一个愁字了得”的诗句。秦观作下“自在飞花轻似梦，无边丝雨细如愁”的壮丽诗篇道尽苦愁。风雨过后，阳光初至，便有“林外鸣鸠春雨歇，屋头初日杏花繁”的风光景象。一切泪与愁都会消散不见。所有随风而逝的，都是属于昨天的。所有历经风雨留下的，才是面向未来的。雨后的朝阳，便如春日的流水，静静地流着，流入心底。 回眸灰暗的日子，天昏地暗，日月无光。桌上杂墨二三，纸卷飞扬，红叉遍布，不知前方路在何方，失去希望，青春彷徨，人生渺茫。 夜坐闻风，昼眠听雨，感慨万千。不去想能否成功，只要选择了，便只顾风雨兼程，既然目标是地平线，不去想未来平坦或泥泞，只有与雨为伴，走向朝阳，青春路上，孰未彷徨？趁青春未央，奋发向上，风雨过后，朝阳终将充斥人生，青春终将灿烂辉煌。 雨，不仅衬托着古今人们的情感，更是对打破困难的一种坚守，雨，有种愁思，亦有种缠绵，也是一种对未来的向往。 窗外，雨停了下来，我也踏上了征程。 我听到，不远处，回声荡荡——雨夜楼，千古愁，雨后朝阳向春流。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;夏夜忆，相思地，静听雨声窗外泣，恍然不经意，落红已满地。涰泣然，芳华依满，往日希冀。 ——题记 窗外雨声兮兮，忽醒忽醉，忆从前，如昨天，梦一场。雨夜催昼，微光迟夜，古今雨夜楼，衬人千古愁，雨后朝阳向春流。 雨点，有时轻盈，有时沉重，柔柔地飘过发丝却浑然不知。古今文人墨客，或
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>远方，那轮明月伴我前行</title>
+    <link href="https://liuboyuan.fun/moonwithme/"/>
+    <id>https://liuboyuan.fun/moonwithme/</id>
+    <published>2019-04-20T18:31:41.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文章为手写版，</p><p>请点击下方继续阅读。</p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/%E8%BF%9C%E6%96%B9%EF%BC%8C%E9%82%A3%E8%BD%AE%E6%98%8E%E6%9C%88%E4%BC%B4%E6%88%91%E5%89%8D%E8%A1%8C-719x1024.jpg" alt=""></p><p>文章原稿<br>字有点丑 [手动滑稽 ]</p><p>作于2019年4月</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文章为手写版，&lt;/p&gt;
+&lt;p&gt;请点击下方继续阅读。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://liuboyuan.fun/wp-content/uploads/2020/03/%E8%BF%9C%E6%96%B9%EF%BC%8C%E9%82%A3%E8%BD%AE
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>书香漫漫，伴我走过盛世芳华</title>
+    <link href="https://liuboyuan.fun/book/"/>
+    <id>https://liuboyuan.fun/book/</id>
+    <published>2019-04-01T21:56:19.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>读书之乐何处寻，数点梅花天地心。<br>                                  　                 ——题记<br>　　青春如一场远行，与书相伴，携手走过那段盛世芳华，在人生的漫漫长路上留下璀璨的一瞬，记录下青春的华彩。</p><p>　　“两耳不闻窗外事，一心只读圣贤书”，小时候的我很喜欢读小人书，常常在家没事就读，从《西游记》读到《三国演义》，虽然字认识的不多，但也能凭借自己的积累理解大部分内容，通常是今天看诸葛亮出山，明天看空城计，走马观花。</p><p>稍大一点了，我开始学着看长篇小说，总是废寝忘食，有一次读凡尔纳科幻小说三部曲一直读到半夜还没读完，完全被剧情吸引住了。后来我又尝试去读毕淑敏、林清玄这一类作家的作品，获益匪浅，让我对生活有着新的向往与认识。读书可以充实我们的思想，可以丰富我们的情感，可以教给我们本领，可以纠正我们的过失，在书籍中，你可以真切地感受到生活原本是如此地美好。在别人沉浸在电子设备带来的快乐时，我在品味词句背后的丰富内涵与思想，对喜欢阅读的人来说，看书就是一种享受，书卷中的意念像一股无形的动力，影响你的思想和心态。<br>　　回想古人读书的故事，凿壁偷光的匡衡，程门立雪的杨时、囊萤映雪的车胤、孙康，无不令人敬佩，在对读书的一片热忱下，我的知识面不断增广，成绩日渐提高，渐渐开始热爱写作，正如歌德所言，读一本好书，就像在和许多高尚的人谈话。书香漫漫，终会伴我走过盛世芳华。<br>　　我希望这颗阅读的种子，让我化作一汪澄清透明的水，毫无缝隙地体会翰墨之情背后的自在与空灵，不负盛世韶华，读书之所以是一种乐趣，并不在于作者告诉你什么，而是因为读书使你积极思考。在作者的书里，你的想象在书里驰骋，你的思考有可能比作者的文笔更好，更详细，这样一来你不仅从书中了解世界，体验作者的生活，你也会重新认识你自己。<br>　　与书相伴，我拥有别样的风景。<br>　　与书相伴，我走过了盛世芳华。<br>　　与书中的世界相遇，我体会到了青春的华彩！</p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/%E4%B9%A6%E9%A6%99%E6%BC%AB%E6%BC%AB-1024x594.jpg" alt=""></p><p>2019.4 心桥校报</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;读书之乐何处寻，数点梅花天地心。&lt;br&gt;                                  　                 ——题记&lt;br&gt;　　青春如一场远行，与书相伴，携手走过那段盛世芳华，在人生的漫漫长路上留下璀璨的一瞬，记录下青春的华彩。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>早恋有错吗？</title>
+    <link href="https://liuboyuan.fun/loveinyouth/"/>
+    <id>https://liuboyuan.fun/loveinyouth/</id>
+    <published>2019-02-27T18:30:25.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>  现在看来很沙雕的文章</p><p>光如日月，似风流过。当青春的岁月开始的时候，我们怀揣着对美好未来的向往，心怀对青春无限憧憬的的力量，执着前行。</p><p> 步入初中，刚进入青春期的我们，可能会对异性人有善感，可能会因为对方拥有自己崇尚的能力或专长而产生羡慕之情，也许因为异性有某些自己崇尚的品行而产生倾慕之心，在中国被称作“早恋”，也就是在心智成熟前对异性产生的爱慕之心。<br>   然而我认为青春期陷入对异性的倾慕是很正常的生理现象，在欧美，早恋是件很正常的事。未成年的感情，纯真又美好，如果单单为了一个冷冰冰的成绩，就牺牲温暖的人情，不惜把学生变成没有感情的木头，就有些残忍了。经常有人说我们这代青少年很冷漠，但是教育就是将我们往这个方向扭转，摒弃温良的感情，追逐冷冰冰的成绩，我觉得这样对我们的伤害并不比考个低分少。</p><p> 其实，中国人对于情感的压抑已经不是一个时代的问题了，相比之下，西方社会则基本听不到“早恋”这个词，这是文化差异，无可厚非。家长们认为早恋会影响学习，我认为早恋中的人都会把自己最好的一面展现给对方，成绩怎么能不会共同上升呢？学习上相互促进，相互鼓励、取长补短，孔子云：“三人行，必有我师焉，择其善者而从之，其不善者而改之。”这难道不好吗，这不正是我们共同的希冀吗？<br>   家长和老师们通过日常的理解来评判每一个学生，试图从根本阻止早恋，似乎是不可能的，这样做只是会让同学关系更加疏远，难道不是过于局限吗？他们眼中的“早恋”就是成年之后所谓的“恋爱”，而事实上两者截然不同，同学之间只是单纯的“羡慕”，只要把握好这个“度”，做事就不会出格，反而还有了好处。同学之间成了朋友，这样一来，早恋就没有一点坏处了，人人都希望自己能早恋，这难道不是很好吗？<br>   既然早恋可以百利而无一害，又何尝不去早恋，体验一下与异性交往的感觉呢？今天，五中校报给了我这个机会，我就要替早恋平反。我希望有一天，教育体系改革，全民提倡早恋，那时，社会就会想发达又迈进一个巨大的台阶。<br>    青春短暂，岁月漫长。记忆中的珍珠，晶莹剔透，闪烁心中。<br>    勇敢追梦，努力付出，不轻言放弃，愿光阴不负勤奋，芳华不负卿。<br>    路上春色正好，天上太阳正晴，正确的早恋没有错！</p><p>作于 2019.2.27</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  现在看来很沙雕的文章&lt;/p&gt;
+&lt;p&gt;光如日月，似风流过。当青春的岁月开始的时候，我们怀揣着对美好未来的向往，心怀对青春无限憧憬的的力量，执着前行。&lt;/p&gt;
+&lt;p&gt; 步入初中，刚进入青春期的我们，可能会对异性人有善感，可能会因为对方拥有自己崇尚的能力或专长而产生羡慕之情，
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018年周记（部分）</title>
+    <link href="https://liuboyuan.fun/2018zhouji/"/>
+    <id>https://liuboyuan.fun/2018zhouji/</id>
+    <published>2019-01-01T00:00:49.000Z</published>
+    <updated>2020-08-20T05:00:01.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>本栏目是刘渤源上初中以来的大部分周记</p><p>可能写的不太好。</p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/58125175-C48C-4B08-87D6-9EA81C30B51B-e1583134248862-768x1024.jpeg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/7B24707D-FF8A-48B6-A362-19C989196104-e1583134499608-768x1024.jpeg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/D41CE392-6C75-425E-BB71-7EF2B491508F-e1583139223495-768x1024.jpeg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/03320B6E-CEC5-489D-A02E-0184787F6C0C-e1583139839234-768x1024.jpeg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/102475D0-C3AF-414C-8D93-29C644206957-e1583664629972-768x1024.jpeg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/D4A1B195-79F0-42F7-A462-957BB513DD4B-e1583735029802-768x1024.jpeg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/2019-1-e1583061839117-768x1024.jpg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/2019-2-1024x673.jpg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/2019-3-748x1024.jpg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/2019-3-2-799x1024.jpg" alt=""></p><p><img src="http://liuboyuan.fun/wp-content/uploads/2020/03/2019-4-740x1024.jpg" alt=""></p><p>可能有点太考场作文化了，</p><p>毕竟不敢在周记本上像随笔那么自由。</p><p>字很丑。</p><p>请见谅。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本栏目是刘渤源上初中以来的大部分周记&lt;/p&gt;
+&lt;p&gt;可能写的不太好。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://liuboyuan.fun/wp-content/uploads/2020/03/58125175-C48C-4B08-87D6-9EA81C30B51B-
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>感宪法之美，颂国之强盛</title>
+    <link href="https://liuboyuan.fun/xianfa/"/>
+    <id>https://liuboyuan.fun/xianfa/</id>
+    <published>2018-12-02T13:30:23.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>一如朝霞般美好的未来，却无不建设在法律的约束之上。<br>　　　　　　　　　　　　　　　　　　　　　　——题记　　</p><p>宪法是国家的根本<em>，规定了国家的根本制度和根本任务，是治国安邦的总章程。我国宪法是社会主义性质的宪法，必须准确、及时、全面地反映作为执政党的中国</em>的各项政治主张，我们要将宪法的各项路线、方针和政策变成国家意志，变成自己的意志，变成我们在人生漫漫长路上的灯塔。</p><p>　　林寒涧肃，银装素裹，山寒水冷。时维仲冬，参其答题于网之上，品宪法之乐趣无穷，赏宪法之严谨无比，孰谓其天网恢恢且疏而不漏，答之，方才知，然也！虽其果不甚理想，吾知其良也，足矣！</p><p>法律应始终在心中，法律，是我们行走社会、生存于世的守则和法宝，循着法律前行，我们会少犯错误，一路顺风顺水，直达心中的殿堂。在我们的人生之路上，法律不能缺席！<br>　　珍视当下，放眼未来，我们要从小事做起，独立努力实现目标，“积一时之跬步,臻千里之遥程”，我们在学习上、在生活上要有坚定的意志，感宪法之美，总有一天，你面对问题时，你会独立自主的解决它，因为在此之前，你遇上困难，第一个求助的总是自己。到了那一天，虽然你孑然一身，却胜过千军万马。<br>“苟有恒何必三更眠五更起，最无益莫过一日曝十日寒”，我们要坚守自己的目标，奋勇向前，学习身边的人，学习宪法精神，从小事做起，《道德经》有一言：<br>　　　<strong>“天下难事，必做于易；天下大事，必做于细。”<br>　　　“九层之塔，起于累土；合抱之木，生于毫末。”</strong><br>　　除此之外，我们还要多思考，真正的衰老是不思考，真正的死亡是对世人没有用处。有些人死了，但他在人们的心中还是鲜活的；而有些人活着，他们在别人心中，早已化作乌有而灰飞烟灭。<br>　　当生命以痛吻你，你就应当报之以歌。<br>　　回首望去，秋去冬来已过去了三个月，回眸期中考试不理想的成绩，回眸同学们努力的身影，心中不免赞叹“同九义，何汝秀？”，在他们的影响带动下，我的成绩有所进步，在获得曾经桦南的同学惊讶的目光时，那一瞬间，我忽然懂得，即使岁月流年，白驹过隙，那一份浓浓的坚定的信念却始终在心中，挥之不去。<br>  　　荣誉，不仅仅属于胜利者，还属于每一位为了梦想与目标全力以赴的人。<br>  　　初中，我来了。你不是我的终点，但我会讲你绘成人生路上最瑰丽的风景。<br>                                                     　 　 　 　 　 　     刘渤源<br>                                                     　 　 　 　 　 　   2018.12.2</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一如朝霞般美好的未来，却无不建设在法律的约束之上。&lt;br&gt;　　　　　　　　　　　　　　　　　　　　　　——题记　　&lt;/p&gt;
+&lt;p&gt;宪法是国家的根本&lt;em&gt;，规定了国家的根本制度和根本任务，是治国安邦的总章程。我国宪法是社会主义性质的宪法，必须准确、及时、全面地反映作为执政党
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国庆忆逝七日者有感</title>
+    <link href="https://liuboyuan.fun/guoqingjie/"/>
+    <id>https://liuboyuan.fun/guoqingjie/</id>
+    <published>2018-10-07T13:49:05.000Z</published>
+    <updated>2020-08-20T05:00:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>  秋风送爽，天高云淡。不知不觉间，一个月的时光匆匆逝去，迎来了中华人民共和国建国69周年，在这七天里，我很充实，学到了许多知识。<br>   祖国是一个伟大的名词，它是我们自信心的源泉，可以让我们有信心在竞争中立于不败之地。  </p><p>中国现在能如此强大，得益于在先后两次世界大战中连续获胜，用简陋的小米加步枪击退了侵略我们的日军，又因为历代领导人如此优秀；我们能有如此幸福的今天，都是革命先烈们辛苦努力的成果，我们一定要铭记在心中。</p><p>美国和中国最近在打贸易战，美国已经拒绝向中国提供超级计算机的Intel Exon PHI cpu和cpu的技术，而且GPS除了美国军方都不能使用军用GPS，精度差了十多倍；美国还有1台根域名服务器和9台辅根域名服务器，每一个美国人可以拥有6个IPv4地址，而每26个中国人才可以拥有1个IPv4地址；美国还停止向中国提供高性能民用cpu，中国只能自己研发，成功研发出了北斗卫星和龙芯cpu和“寒武纪”深度学习性神经网络cpu，也正在试图打破ASML光刻机的垄断，而且其北斗卫星地图APP预计在2020年进入互联网。<br>   中国在军事方面也非常优秀，其东风-41导弹就覆盖了美国全境，拥有洲际打击能力，反导弹系统无法阻拦；而且中国自产枪械95-1式自动步枪相比其他枪械后坐力小，杀伤力强，可以加装下挂式榴弹发射器，95-1式自动步枪在世界排名排第五。除此之外，中国又轻轻松松地造了22艘神盾舰（日本和英国造6艘神盾舰几乎都砸锅卖铁才造完），可见中国军事力量的雄厚，对此有专家推测，中国军事方面大约只要5年就可以远超美国，成为世界老大。<br>   中国在网络方面也不容小觑，中国起头“雪人计划”在全球部署了25台IPv6根域名服务器，其中4台在中国部署，包括1台主根域名服务器和3台辅根域名服务器，到2025年末，我国IPv6网络规模、用户规模、流量规模位居世界第一位。中国的互联网发展至今，已经成为了全球唯一能与美国相提并论的重要力量，不仅在思想、模式、应用、技术、资金等方面直追美国，更是在思想，应用等某些方面领先于美国。这也是现在许多美国硅谷公司开始向中国公司学习的原因，比如Facebook开始学习腾讯接入生活服务，中国扫码支付在国外引发热议等等。<br>   中国的强大也体现在世界各地，有一种感动，叫做祖国接我回家。2016年底，以色列第三大城市海法发生严重火灾，全城进入警戒模式。海法大学里有数百名中国留学生。中国驻以色列大使馆火速出动，当晚即组织大巴将中国留学生连夜安全撤出。第二天，当其他的欧美留学生还在想法投亲靠友，中国留学生早已安全无忧。在今年两会记者会上，中国外交部部长王毅说，“领保关系到人民群众的利益，关系到千家万户的幸福，作为外交部，做好领保工作是我们义不容辞的责任。”<br>   我们国家国力的强大推动着我们不断地向着目标前进，同时又给了我们很多发展的空间。我们应该因为背后有一个强大的民族而自豪，我们应该更加努力，尽可能地报效祖国。梁启超先生曾满怀希望地写下：今日中国之希望，全在我少年！百年前因少年强而国强，百年后物换星移，国强而少年更强，现在不努力，待到何时？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  秋风送爽，天高云淡。不知不觉间，一个月的时光匆匆逝去，迎来了中华人民共和国建国69周年，在这七天里，我很充实，学到了许多知识。&lt;br&gt;   祖国是一个伟大的名词，它是我们自信心的源泉，可以让我们有信心在竞争中立于不败之地。  &lt;/p&gt;
+&lt;p&gt;中国现在能如此强大，得益于在
+      
+    
+    </summary>
+    
+    
+      <category term="文学" scheme="https://liuboyuan.fun/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+      <category term="作文" scheme="https://liuboyuan.fun/tags/%E4%BD%9C%E6%96%87/"/>
     
   </entry>
   

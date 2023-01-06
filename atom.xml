@@ -658,9 +658,9 @@
     
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
     
-      <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
-    
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
+    
+      <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
     
   </entry>
   
@@ -1181,9 +1181,9 @@
     <link href="https://liuboyuan.fun/e6-8b-be-e5-bf-86/"/>
     <id>https://liuboyuan.fun/e6-8b-be-e5-bf-86/</id>
     <published>2021-03-14T21:14:05.000Z</published>
-    <updated>2021-08-23T13:19:58.414Z</updated>
+    <updated>2023-01-06T02:01:31.795Z</updated>
     
-    <content type="html"><![CDATA[<p>时间蚕食着记忆，</p><p>过往给予满面风霜。</p><p>蓦然回首将欲回想。</p><p>惊愕中悟却是昨天。</p><p>时光长兮，</p><p>思绪的线索蜿蜿蜒蜒。</p><p>冬尽的凉风细细捋过，</p><p>方才有些片段</p><p>已然空白。</p><p>那曾经楼间落日变迁，</p><p>那顿然饮光褪色的胶卷。</p><p>那脑海中迸裂的沙砾。</p><p>那苍白，轻轻锁死了记忆。</p><p>远远的过往啊淡得渐浓，</p><p>那疑惑染红青色的天空。</p><p>远远的过往啊淡得渐浓，</p><p>伸手触摸终恍如飞星。</p><p>那些消失的岁月啊，</p><p>似孩童嬉闹着捉迷藏。</p><p>那黑白填充的虚无啊，</p><p>回忆沉思中 颦笑点缀了天空。</p><p>停下，又一次在阡陌上回首。</p><p>看那些放不下的牵挂，</p><p>却在小径上开出纯净的花儿。</p><p>负雨 作</p>]]></content>
+    <content type="html"><![CDATA[<p>时间蚕食着记忆，</p><p>过往给予满面风霜。</p><p>蓦然回首将欲回想。</p><p>惊愕中悟却是昨天。</p>  <br><p>时光长兮，</p><p>思绪的线索蜿蜿蜒蜒。</p><p>冬尽的凉风细细捋过，</p><p>方才有些片段</p><p>已然空白。</p><p>​    <br></p><p>那曾经楼间落日变迁，</p><p>那顿然饮光褪色的胶卷。</p><p>那脑海中迸裂的沙砾。</p><p>那苍白，轻轻锁死了记忆。</p><p>​    <br></p><p>远远的过往啊淡得渐浓，</p><p>那疑惑染红青色的天空。</p><p>远远的过往啊淡得渐浓，</p><p>伸手触摸终恍如飞星。</p><p>​    <br></p><p>那些消失的岁月啊，</p><p>似孩童嬉闹着捉迷藏。</p><p>那黑白填充的虚无啊，</p><p>回忆沉思中 颦笑点缀了天空。</p>  <br><p>停下，又一次在阡陌上回首。</p><p>看那些放不下的牵挂，</p><p>却在小径上开出纯净的花儿。</p><p>  <br></br></p><p>负雨 作</p>]]></content>
     
     <summary type="html">
     
@@ -1193,11 +1193,13 @@
 &lt;p&gt;过往给予满面风霜。&lt;/p&gt;
 &lt;p&gt;蓦然回首将欲回想。&lt;/p&gt;
 &lt;p&gt;惊愕中悟却是昨天。&lt;/p&gt;
+  &lt;br&gt;
+
 &lt;p&gt;时光长兮，&lt;/p&gt;
 &lt;p&gt;思绪的线索蜿蜿蜒蜒。&lt;/p&gt;
 &lt;p&gt;冬尽的凉风细细捋过，&lt;/p&gt;
 &lt;p&gt;方才有些片段&lt;/p&gt;
-&lt;p&gt;已然空白。&lt;/
+&lt;p
       
     
     </summary>
@@ -1341,9 +1343,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
     
@@ -1586,11 +1588,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="Html" scheme="https://liuboyuan.fun/tags/Html/"/>
     
@@ -1620,11 +1622,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="Html" scheme="https://liuboyuan.fun/tags/Html/"/>
     
@@ -1653,11 +1655,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="Html" scheme="https://liuboyuan.fun/tags/Html/"/>
     
@@ -1800,18 +1802,19 @@
   
   <entry>
     <title>风影</title>
-    <link href="https://liuboyuan.fun/e9-a3-8e-e5-bd-b1/"/>
-    <id>https://liuboyuan.fun/e9-a3-8e-e5-bd-b1/</id>
+    <link href="https://liuboyuan.fun/windyshadow/"/>
+    <id>https://liuboyuan.fun/windyshadow/</id>
     <published>2020-12-27T03:00:00.000Z</published>
-    <updated>2021-08-23T13:19:58.413Z</updated>
+    <updated>2023-01-06T02:14:40.042Z</updated>
     
-    <content type="html"><![CDATA[<p>仲秋伊始的清晨， 淡黄的树叶， 掩映你的笑颜。 往过的时光变迁， 暖风一点点蔓延， 蔓延。 你于凛冬天明， 点亮西斜的群星。 浇洒冰莲的寒冷。 微凉的早晨， 原来冬天已走过， 走过。 你是繁华中消逝的梦， 是灯笼树下， 野花盛开的春天。 你是高原独放的莲， 是澄澈的潭水下， 游弋的蓝天。 你带着消失的花香， 是月在土地蹒跚。 轻笑染红天边一抹云彩， 醉晕了寂寞流年。 清秋埋下一颗种子， 期待三月的发芽。 在徐风吹拂的夏夜， 飘飞，无踪。 浅淡的夕阳下， 抚过回忆的倒影。 愿你莫被世俗沾染， 愿你如冬雪般纯净， 愿你归来，仍是曾经。 ——像吹过时光的风罢 我们会在星辰中再见 负雨 作</p>]]></content>
+    <content type="html"><![CDATA[<p>仲秋伊始的清晨，<br>淡黄的树叶，<br>掩映你的笑颜。<br>往过的时光变迁，<br>暖风一点点蔓延， 蔓延。 <br></p><p>你于凛冬天明，<br>点亮西斜的群星。<br>浇洒冰莲的寒冷。<br>微凉的早晨，<br>原来冬天已走过， 走过。   <br></p><p>你是繁华中消逝的梦，<br>是灯笼树下，<br>野花盛开的春天。<br>你是高原独放的莲，<br>是澄澈的潭水下，<br>游弋的蓝天。   <br></p><p>你带着消失的花香，<br>是月在土地蹒跚。<br>轻笑染红天边一抹云彩，<br>醉晕了寂寞流年。 <br></p><p>清秋埋下一颗种子，<br>期待三月的发芽。<br>在徐风吹拂的夏夜，<br>飘飞，无踪。<br>浅淡的夕阳下，<br>抚过回忆的倒影。  <br></p><p>愿你莫被世俗沾染，<br>愿你如冬雪般纯净，<br>愿你归来，<br>仍是曾经。<br> ——像吹过时光的风罢   <br></p><p>我们会在星辰中再见 <br></br></p><p>负雨 作</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;仲秋伊始的清晨， 淡黄的树叶， 掩映你的笑颜。 往过的时光变迁， 暖风一点点蔓延， 蔓延。 你于凛冬天明， 点亮西斜的群星。 浇洒冰莲的寒冷。 微凉的早晨， 原来冬天已走过， 走过。 你是繁华中消逝的梦， 是灯笼树下， 野花盛开的春天。 你是高原独放的莲， 是澄澈的潭水下，
+        &lt;p&gt;仲秋伊始的清晨，&lt;br&gt;淡黄的树叶，&lt;br&gt;掩映你的笑颜。&lt;br&gt;往过的时光变迁，&lt;br&gt;暖风一点点蔓延， 蔓延。 &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;你于凛冬天明，&lt;br&gt;点亮西斜的群星。&lt;br&gt;浇洒冰莲的寒冷。&lt;br&gt;微凉的早晨，&lt;br&gt;原来冬天已走过， 走过。   &lt;br&gt;&lt;/p
       
     
     </summary>
@@ -2331,6 +2334,40 @@
 &lt;p&gt;遍凭虚华直送终。&lt;/p&gt;
 &lt;p&gt;负雨 作&lt;/p&gt;
 &lt;p&gt;以讽昔日之负雨&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>江城子·灼冰</title>
+    <link href="https://liuboyuan.fun/e6-b1-9f-e5-9f-8e-e5-ad-90-c2-b7-e7-81-bc-e5-86-b0/"/>
+    <id>https://liuboyuan.fun/e6-b1-9f-e5-9f-8e-e5-ad-90-c2-b7-e7-81-bc-e5-86-b0/</id>
+    <published>2020-11-08T07:00:00.000Z</published>
+    <updated>2023-01-04T07:00:00.027Z</updated>
+    
+    <content type="html"><![CDATA[<p>寒风疾走路茫茫，雪微凉，隐鸟翔。</p><p>黑发素手，登罢风凌窗。</p><p>欲倚残花向春暖，瓣隐土，路结霜。</p><br><p>敢将年少灼途惶，梦作马，绘春光。</p><p>步临青山，魂暖尽融霜。</p><p>回首尽望暖消寒，春花朗，夏风香。</p><br><p>负雨 作</p><p>于十一月初</p><p>（临时起感，无韵无律，若有失处，自待指出）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;寒风疾走路茫茫，雪微凉，隐鸟翔。&lt;/p&gt;
+&lt;p&gt;黑发素手，登罢风凌窗。&lt;/p&gt;
+&lt;p&gt;欲倚残花向春暖，瓣隐土，路结霜。&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;敢将年少灼途惶，梦作马，绘春光。&lt;/p&gt;
+&lt;p&gt;步临青山，魂暖尽融霜。&lt;/p&gt;
+&lt;p&gt;回首尽望暖消寒，春花朗，夏风香。&lt;/p&gt;
+
       
     
     </summary>
@@ -3469,11 +3506,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
+      <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
       <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
-    
-      <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -4487,9 +4524,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
     
@@ -4801,11 +4838,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
+      <category term="Java" scheme="https://liuboyuan.fun/tags/Java/"/>
+    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
-    
-      <category term="Java" scheme="https://liuboyuan.fun/tags/Java/"/>
     
   </entry>
   
@@ -4892,11 +4929,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
   </entry>
   
@@ -4979,9 +5016,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
     
       <category term="资源" scheme="https://liuboyuan.fun/tags/%E8%B5%84%E6%BA%90/"/>
     
@@ -5217,13 +5254,13 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
-      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
     
   </entry>
   

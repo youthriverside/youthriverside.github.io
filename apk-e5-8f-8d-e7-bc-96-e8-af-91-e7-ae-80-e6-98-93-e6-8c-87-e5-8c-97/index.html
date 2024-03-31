@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="刘渤源,youthriverside@outlook.com"><title>apk反编译简易指北 · 风雨·芳华</title><meta name="description" content="在生活中呢，我们会经常遇到一些问题废话不多说，开始！反编译apk文件可以得到应用的运行原理，甚至可以直接得到源代码。这样我们可以很轻易地学习、探讨一个软件。在证明Minecraft和迷你世界关系上也有重大作用。所需软件均在本服务器上，可以自行获取。无任何广告、病毒及推广信息
+Apktool-1下载
+"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">风雨·芳华</a></h3><div class="description"><p>青春路上的记忆</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/privacy-policy">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/sec">新乡</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>apk反编译简易指北</a></h3></div><div class="post-content"><p>在生活中呢，我们会经常遇到一些问题<br>废话不多说，开始！<br>反编译apk文件可以得到应用的运行原理，甚至可以直接得到源代码。<br>这样我们可以很轻易地学习、探讨一个软件。<br>在证明Minecraft和迷你世界关系上也有重大作用。<br>所需软件均在本服务器上，可以自行获取。<br><strong>无任何广告、病毒及推广信息</strong></p>
+<p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool.zip">Apktool-1</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool.zip">下载</a></p>
+<p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool-1.zip">Apktool-2</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/Apktool-1.zip">下载</a></p>
+<h3 id="ApkTool功能"><a href="#ApkTool功能" class="headerlink" title="ApkTool功能"></a><a href="https://liuboyuan.fun/apkfanbianyijianyizhibei/#ApkTool%E5%8A%9F%E8%83%BD" title="ApkTool功能"></a>ApkTool功能</h3><ul>
+<li>将资源解码成原来的形式（包括resources.arsc，class.dex，liuboyuan.png和shadiao.xml）</li>
+<li>将解码的资源重新打包成apk/jar</li>
+<li>组织和处理依赖于框架资源的APK</li>
+<li>Smali调试</li>
+<li>执行自动化任务</li>
+</ul>
+<p>由于apk本身就是压缩文件的一种，所以可用解压缩软件查看。<br>也可以使用Apktool来进行反编译<br>直接解压可以得到一些资源文件，但是 AndroidManifest.xml 和其他的 xml 文件都是乱码，通过 Apktool 进行反编译，可以最大限度的还原这些文件的内容。<br>解压文件 其中会得到class.dex</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-4.png" alt=""></p>
+<blockquote>
+<p><strong>科普</strong></p>
+<p>META-INF 里保存 App 的签名信息classes.dex<br>.dex 是 Dalvik 虚拟机上的可执行文件，需要使用 apktool将其转换为 jar 文件<br>AndroidManifest.xml Android 清单文件，向 Android 系统提供应用的必要信息。<br>assets 存放一些资源文件字体，声音等。<br>lib 存放第三方库<br>original 存放未经过反编译的等 AndroidManifest.xml 文件<br>res存放资源文件，例如图片，颜色，字符等。<br>smali 里存放的是 java 编译成的 smali 代码，smali 相当于 Android 虚拟机上运行的语言。</p>
+</blockquote>
+<p>其中.dex和.apk的关系是这样的</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3012089-4c77540c5604b606.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/611/format/webp" alt=""></p>
+<p>以疑似抄袭的迷你世界为例<br>也不能说疑似 就是八九不离十吧<br>下一期咱们好好分析分析<br>不然那些喷MC的败犬又该说MC如何了</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image.png" alt=""></p>
+<p>这里面有一个class.dex和class2.dex<br>这时用记事本打开是一坨乱码<br>如果你非要打开<br>结果可能和我一样</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-1.png" alt=""></p>
+<p>这时就需要Apktool的dex转jar功能了<br>这里提供两个软件<br>依据需要进行使用</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-2.png" alt=""></p>
+<p>输入路径，点击反编译dex、</p>
+<blockquote>
+<p>科普：<br>dex文件是Android系统的可执行文件，包含应用程序的全部操作指令以及运行时数据。<br>当java程序编译成class后，还需要使用dex工具将所有的class文件整合到一个dex文件，目的是其中各个类能够共享数据，在一定程度上降低了冗余，同时也是文件结构更加经凑，dex文件是传统jar文件大小的50％左右。</p>
+</blockquote>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-3.png" alt=""></p>
+<p>在.jar工具输入.dex的路径<br>或者直接拖入框框里<br>这个软件也可以进行对apk的重建、签名和优化操作。</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-5.png" alt=""></p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-6.png" alt=""></p>
+<p>这时就得到了.jar文件</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-7.png" alt=""></p>
+<p>将.jar转为.java还需要一步<br>点击下载jd-gui</p>
+<p><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/jd-gui.zip">jd-gui</a><a href="https://liuboyuan.fun/wp-content/uploads/2020/06/jd-gui.zip">下载</a></p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-8.png" alt=""></p>
+<p>将刚刚的.jar导入其中</p>
+<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-9-1024x838.png" alt=""></p>
+<p>此时就可以看到相应的源代码了<br>感兴趣的朋友们可以钻研一下软件的运行原理<br>但是一些应用会混淆代码<br>比如说迷你世界，apk进行了混淆处理<br>所以你会看到a b c d这一类的傻x命名规则<br>但还是可以得到运行原理的<br>感谢各位耐心读完<br>如有任何问题请咨询QQ:2622936124<br>在操作上有任何问题随时找我</p>
+<h3 id="后面的话"><a href="#后面的话" class="headerlink" title="后面的话"></a><a href="https://liuboyuan.fun/apkfanbianyijianyizhibei/#%E5%90%8E%E9%9D%A2%E7%9A%84%E8%AF%9D" title="后面的话"></a>后面的话</h3><p>这篇教程是在<strong>证明迷你抄袭</strong>的过程中临时赶出来的<br>如有小漏洞请见谅<br><strong>本组文档及未来的证明日志只针对涉嫌抄袭的游戏，<br>不针对任何玩家。</strong></p>
+<p>刘渤源 作</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-06-04</span><i class="fa fa-comment-o"></i><a href="/apk-e5-8f-8d-e7-bc-96-e8-af-91-e7-ae-80-e6-98-93-e6-8c-87-e5-8c-97/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/计算机知识/" title="计算机知识">计算机知识 </a><a class="tag" href="/tags/Java/" title="Java">Java </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,https://liuboyuan.fun/apk-e5-8f-8d-e7-bc-96-e8-af-91-e7-ae-80-e6-98-93-e6-8c-87-e5-8c-97/,风雨·芳华,apk反编译简易指北,;" target="_blank" rel="noopener"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/e6-97-a0-e9-a2-98/" title="无题">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/e5-b0-8f-e5-bf-86/" title="小忆">下一篇</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'misthrain';
+var disqus_identifier = 'apk-e5-8f-8d-e7-bc-96-e8-af-91-e7-ae-80-e6-98-93-e6-8c-87-e5-8c-97/';
+var disqus_title = 'apk反编译简易指北';
+var disqus_url = 'https://liuboyuan.fun/apk-e5-8f-8d-e7-bc-96-e8-af-91-e7-ae-80-e6-98-93-e6-8c-87-e5-8c-97/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

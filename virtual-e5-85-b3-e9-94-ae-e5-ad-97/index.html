@@ -1,25 +1,81 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="刘渤源,youthriverside@outlook.com"><title>Virtual关键字 · 负雨杂感</title><meta name="description" content="在面向对象的C++语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C++语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚至称虚函数是C++语言的精"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">负雨杂感</a></h3></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/archives">归档</a></li><li><a href="/privacy-policy">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Virtual关键字</a></h3></div><div class="post-content"><p>在面向对象的C++语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C++语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚至称虚函数是C++语言的精髓。</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="刘渤源,youthriverside@outlook.com"><title>Virtual关键字 · 负雨杂感</title><meta name="description" content="在面向对象的C语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚至称虚函数是C++语言的精髓。
+
+"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">负雨杂感</a></h3></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/archives">归档</a></li><li><a href="/privacy-policy">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Virtual关键字</a></h3></div><div class="post-content"><p>在面向对象的C<ins>语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C</ins>语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚至称虚函数是C++语言的精髓。</p>
 <blockquote>
-<p>那么，什么是虚函数呢，我们先来看看微软的解释：<br>虚函数是指一个类中你希望重载的成员函数，<br>当你用一个基类指针或引用指向一个继承类对象的时候，<br>你调用一个虚函数，实际调用的是继承类的版本。<br>——摘自MSDN</p>
+<p>那么，什么是虚函数呢，我们先来看看微软的解释：<br>
+虚函数是指一个类中你希望重载的成员函数，<br>
+当你用一个基类指针或引用指向一个继承类对象的时候，<br>
+你调用一个虚函数，实际调用的是继承类的版本。<br>
+——摘自MSDN</p>
 </blockquote>
-<p>这个定义说得不是很明白。MSDN中还给出了一个例子，但是它的例子也并不能很好的说明问题。<br>举个栗子：</p>
-<p>#include using namespace std;<br>class Parent //类<br>{<br>public:</p>
-<pre><code>char data\[20\];void Function1();    virtual void Function2();   // 这里声明Function2是虚函数</code></pre><p>}parent;</p>
-<p>void Parent::Function1()<br>{<br>printf(“This is parent,function1\n”);<br>}</p>
-<p>void Parent::Function2()<br>{<br>printf(“This is parent,function2\n”);<br>}</p>
-<p>class Child:public Parent<br>{<br>void Function1();<br>void Function2();</p>
+<p>这个定义说得不是很明白。MSDN中还给出了一个例子，但是它的例子也并不能很好的说明问题。<br>
+举个栗子：</p>
+<p>#include using namespace std;<br>
+class Parent //类<br>
+{<br>
+public:</p>
+<pre><code>char data\[20\];void Function1();    virtual void Function2();   // 这里声明Function2是虚函数
+</code></pre>
+<p>}parent;</p>
+<p>void Parent::Function1()<br>
+{<br>
+printf(“This is parent,function1\n”);<br>
+}</p>
+<p>void Parent::Function2()<br>
+{<br>
+printf(“This is parent,function2\n”);<br>
+}</p>
+<p>class Child:public Parent<br>
+{<br>
+void Function1();<br>
+void Function2();</p>
 <p>} child;</p>
-<p>void Child::Function1()<br>{<br>printf(“This is child,function1\n”);<br>}</p>
+<p>void Child::Function1()<br>
+{<br>
+printf(“This is child,function1\n”);<br>
+}</p>
 <p>void Child::Function2()</p>
-<p>{<br>printf(“This is child,function2\n”);<br>}</p>
-<p>int main(int argc, char* argv[])<br>{<br>Parent *p; 　　　　　// 定义一个基类指针<br>if(_getch()==’c’) // 如果输入一个小写字母c<br>p=&child; // 指向继承类对象<br>else<br>p=&parent; // 否则指向基类对象<br>p-&gt;Function1(); 　　 // 这里在编译时会直接给出Parent::Function1()的入口地址。<br>p-&gt;Function2(); 　　// 注意这里，执行的是哪一个Function2？<br>return 0;</p>
+<p>{<br>
+printf(“This is child,function2\n”);<br>
+}</p>
+<p>int main(int argc, char* argv[])<br>
+{<br>
+Parent *p; 　　　　　// 定义一个基类指针<br>
+if(_getch()==’c’) // 如果输入一个小写字母c<br>
+p=&amp;child; // 指向继承类对象<br>
+else<br>
+p=&amp;parent; // 否则指向基类对象<br>
+p-&gt;Function1(); 　　 // 这里在编译时会直接给出Parent::Function1()的入口地址。<br>
+p-&gt;Function2(); 　　// 注意这里，执行的是哪一个Function2？<br>
+return 0;</p>
 <p>}</p>
-<p>输入”c”<br>得到结果：</p>
-<pre><code>This is parent,function1This is child,function2</code></pre><p>为什么会有第一行的结果呢？<br>因为我们是用一个Parent类的指针调用函数Fuction1()，虽然实际上这个指针指向的是Child类的对象，但编译器无法知道这一事实（直到运行的时候，程序才可以根据用户的输入判断出指针指向的对象），它只能按照调用Parent类的函数来理解并编译，所以我们看到了第一行的结果。<br>那么第二行的结果又是怎么回事呢？我们注意到，Function2()函数在基类中被virtual关键字修饰，也就是说，它是一个虚函数。<br>虚函数最关键的特点是“动态联编”，它可以在运行时判断指针指向的对象，并自动调用相应的函数。<br>如果我们在运行上面的程序时任意输入一个非c的字符，<br>结果如下：</p>
-<pre><code>This is parent,function1This is parent,function2</code></pre><p>请注意看第二行，它的结果出现了变化。程序中仅仅调用了一个Function2()函数，却可以根据用户的输入自动决定到底调用基类中的Function2还是继承类中的Function2，这就是虚函数的作用。<br>*<em>一定要注意“静态联翩 ”和“ 动态联编 ”的区别；对于我来说，若没有在DEV中亲自去测试，凭自己的感觉， *</em><br>当在键盘中输入“c”时，我会觉得由于有p=&child;这一句代码，我会认为结果都是：</p>
-<pre><code>This is child,function1This is child,function2</code></pre><p>但是结果却是：</p>
-<pre><code>This is parent,function1This is child，function2</code></pre><p>因为虽然实际上这个指针指向的是Child类的对象，但编译器无法知道这一事实，<br>它只能按照调用Parent类的函数来理解并编译，所以我们看到了第一行的结果。<br>第二行中调用了子类的function2，完全是因为virtual 的功能，virtual实现了动态联编，<br>它可以在运行时判断指针指向的对象，并自动调用相应的函数。</p>
-<pre><code>p=&amp;parent;  //这一句，该指针很明显的是指向父类，那么肯定调用的是父类的方法</code></pre></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-02-23</span><i class="fa fa-comment-o"></i><a href="/virtual-e5-85-b3-e9-94-ae-e5-ad-97/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/计算机知识/" title="计算机知识">计算机知识 </a><a class="tag" href="/tags/搬运/" title="搬运">搬运 </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,https://liuboyuan.fun/virtual-e5-85-b3-e9-94-ae-e5-ad-97/,负雨杂感,Virtual关键字,;" target="_blank" rel="noopener"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/e6-97-a0-e9-a2-98-3/" title="无题">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/e5-8d-9c-e7-ae-97-e5-ad-90-c2-b7-e6-ad-a3-e6-9c-88-e5-88-9d-e4-bd-9c/" title="卜算子·正月初作">下一篇</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'misthrain';
+<p>输入”c”<br>
+得到结果：</p>
+<pre><code>This is parent,function1This is child,function2
+</code></pre>
+<p>为什么会有第一行的结果呢？<br>
+因为我们是用一个Parent类的指针调用函数Fuction1()，虽然实际上这个指针指向的是Child类的对象，但编译器无法知道这一事实（直到运行的时候，程序才可以根据用户的输入判断出指针指向的对象），它只能按照调用Parent类的函数来理解并编译，所以我们看到了第一行的结果。<br>
+那么第二行的结果又是怎么回事呢？我们注意到，Function2()函数在基类中被virtual关键字修饰，也就是说，它是一个虚函数。<br>
+虚函数最关键的特点是“动态联编”，它可以在运行时判断指针指向的对象，并自动调用相应的函数。<br>
+如果我们在运行上面的程序时任意输入一个非c的字符，<br>
+结果如下：</p>
+<pre><code>This is parent,function1This is parent,function2
+</code></pre>
+<p>请注意看第二行，它的结果出现了变化。程序中仅仅调用了一个Function2()函数，却可以根据用户的输入自动决定到底调用基类中的Function2还是继承类中的Function2，这就是虚函数的作用。<br>
+*<em>一定要注意“静态联翩 ”和“ 动态联编 ”的区别；对于我来说，若没有在DEV中亲自去测试，凭自己的感觉， *</em><br>
+当在键盘中输入“c”时，我会觉得由于有p=&amp;child;这一句代码，我会认为结果都是：</p>
+<pre><code>This is child,function1This is child,function2
+</code></pre>
+<p>但是结果却是：</p>
+<pre><code>This is parent,function1This is child，function2
+</code></pre>
+<p>因为虽然实际上这个指针指向的是Child类的对象，但编译器无法知道这一事实，<br>
+它只能按照调用Parent类的函数来理解并编译，所以我们看到了第一行的结果。<br>
+第二行中调用了子类的function2，完全是因为virtual 的功能，virtual实现了动态联编，<br>
+它可以在运行时判断指针指向的对象，并自动调用相应的函数。</p>
+<pre><code>p=&amp;parent;  //这一句，该指针很明显的是指向父类，那么肯定调用的是父类的方法
+</code></pre>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-02-23</span><i class="fa fa-comment-o"></i><a href="/virtual-e5-85-b3-e9-94-ae-e5-ad-97/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/计算机知识/" title="计算机知识">计算机知识 </a><a class="tag" href="/tags/搬运/" title="搬运">搬运 </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,https://liuboyuan.fun/virtual-e5-85-b3-e9-94-ae-e5-ad-97/,负雨杂感,Virtual关键字,;" target="_blank" rel="noopener"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/e6-97-a0-e9-a2-98-3/" title="无题">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/e5-8d-9c-e7-ae-97-e5-ad-90-c2-b7-e6-ad-a3-e6-9c-88-e5-88-9d-e4-bd-9c/" title="卜算子·正月初作">下一篇</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'misthrain';
 var disqus_identifier = 'virtual-e5-85-b3-e9-94-ae-e5-ad-97/';
 var disqus_title = 'Virtual关键字';
 var disqus_url = 'https://liuboyuan.fun/virtual-e5-85-b3-e9-94-ae-e5-ad-97/';

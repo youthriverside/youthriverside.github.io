@@ -1,18 +1,111 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="刘渤源,youthriverside@outlook.com"><title>YOJ ♂ Fibonacci ♂ 题解 · 负雨杂感</title><meta name="description" content="原题目地址
-题目描述斐波那契数列大家都非常熟悉。它的定义是：f(x) = 1 .... (x=1,2)f(x) = f(x-1) + f(x-2) .... (x&amp;gt;2)对于给定的整数 n 和 m，我们希望求出：f(1) + f(2) + … + f(n) 的值。但这个值可能非常大，所以我们把它"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">负雨杂感</a></h3></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/archives">归档</a></li><li><a href="/privacy-policy">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>YOJ ♂ Fibonacci ♂ 题解</a></h3></div><div class="post-content"><p><a href="http://111.229.173.184:126/problem/12" target="_blank" rel="noopener">原题目地址</a></p>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://liuboyuan.fun/yoj-fib/#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" title="题目描述"></a>题目描述</h3><p>斐波那契数列大家都非常熟悉。它的定义是：<br><code>f(x) = 1 .... (x=1,2)</code><br><code>f(x) = f(x-1) + f(x-2) .... (x&gt;2)</code><br>对于给定的整数 n 和 m，我们希望求出：<br>f(1) + f(2) + … + f(n) 的值。但这个值可能非常大，所以我们把它对 f(m) 取模。<br>公式如下</p>
+题目描述
+斐波那契数列大家都非常熟悉。它的定义是：
+f(x) = 1 .... (x=1,2)
+f(x) = f(x-1) + f(x-2) .... (x&amp;gt;2)
+对于给定的整数 n 和 m，我们希望求出：
+f(1) + f(2) + … + f(n) 的值。但这个值可能非常大，所"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">负雨杂感</a></h3></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/archives">归档</a></li><li><a href="/privacy-policy">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>YOJ ♂ Fibonacci ♂ 题解</a></h3></div><div class="post-content"><p><a href="http://111.229.173.184:126/problem/12" target="_blank" rel="noopener">原题目地址</a></p>
+<h3 id="题目描述"><a href="https://liuboyuan.fun/yoj-fib/#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" title="题目描述"></a>题目描述</h3>
+<p>斐波那契数列大家都非常熟悉。它的定义是：<br>
+<code>f(x) = 1 .... (x=1,2)</code><br>
+<code>f(x) = f(x-1) + f(x-2) .... (x&gt;2)</code><br>
+对于给定的整数 n 和 m，我们希望求出：<br>
+f(1) + f(2) + … + f(n) 的值。但这个值可能非常大，所以我们把它对 f(m) 取模。<br>
+公式如下</p>
 <p><img src="http://liuboyuan.fun/wp-content/uploads/2020/02/fibmod.png" alt="Fib"></p>
 <p>但这个数字依然很大，所以需要再对 p 求模。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a><a href="https://liuboyuan.fun/yoj-fib/#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" title="输入格式"></a>输入格式</h3><p>输入为一行用空格分开的整数 n m p (0 &lt; n, m, p &lt; 10^18)</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a><a href="https://liuboyuan.fun/yoj-fib/#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" title="输出格式"></a>输出格式</h3><p>输出为1个整数，表示答案</p>
-<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5" title="样例输入"></a>样例输入</h3><p>2 3 5</p>
-<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA" title="样例输出"></a>样例输出</h3><p>0</p>
-<h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1" title="样例输入"></a>样例输入</h3><p>15 11 29</p>
-<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1" title="样例输出"></a>样例输出</h3><p>25</p>
-<h3 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E4%BB%A3%E7%A0%81" title="样例代码"></a>样例代码</h3><p>#include &lt;bits/stdc++.h&gt;<br>using namespace std;<br>#define PB push_back<br>#define MP make_pair<br>#define AA first<br>#define BB second<br>#define OP begin()<br>#define ED end()<br>#define SZ size()<br>#define SORT(x) sort(x.OP,x.ED)<br>#define SQ(x) ((x)<em>(x))<br>#define SSP system(“pause”)<br>#define cmin(x,y) x=min(x,y)<br>#define cmax(x,y) x=max(x,y)<br>typedef long long LL;<br>typedef pair PII;<br>const double eps=1e-8;<br>const double INF=1e20;<br>const double PI=acos( -1. );<br>const int MXN = 50;<br>const LL MOD = 1000000007;<br>LL llmul( LL a,LL b,LL mod ) {<br>a%=mod;a+=mod;a%=mod;<br>b%=mod;b+=mod;b%=mod;<br>if ( a*</em>&gt;n&gt;&gt;m&gt;&gt;mod )<br>cout&lt;&lt;( solve( n+2,m,mod )-1+mod )%mod&lt;&lt;endl;<br>return 0;<br>}**</p>
-<p>struct matrix {<br>LL x[3][3];<br>matrix() {memset( x,0,sizeof x );}<br>};<br>matrix mmul( matrix &amp;A,matrix &amp;B,LL mod ) {<br>matrix ret;<br>for ( int i=1; i&lt;=2; i++ )<br>for ( int j=1; j&lt;=2; j++ )<br>for ( int k=1; k&lt;=2; k++ )<br>ret.x[i][j]=( ret.x[i][j]+llmul( A.x[i][k],B.x[k][j],mod ) )%mod;<br>return ret;<br>}<br>matrix E;<br>matrix A;<br>LL fib( LL n,LL mod ) {<br>matrix O=E,B=A;<br>while ( n ) {<br>if ( n&amp;1 )O=mmul( O,B,mod );<br>B=mmul( B,B,mod );<br>n/=2;<br>}<br>return O.x[1][2];<br>}<br>//[(2_3)%5]%3=1 //(2%3)_(3%3)=0</p>
-<p>LL solve( LL n,LL m,LL mod ) {<br>//f(n)%f(m)%mod<br>LL t=n/m;<br>//(f(m-1)^t_f(n%m))%f(m)%mod; //f(i)^2%f(i-1)=(-1)^(i+1) LL p=t/2,q=t%2; //{f(m-1)^q_(-1)^(pm)<em>f(n%m)}%f(m)%mod LL fuhao=p_m%2==0?1:-1;<br>if ( q==0 ) {<br>LL ans=fib( n%m,mod )_fuhao; ans%=mod; ans+=mod; return ans%mod; } if ( n%m==0 )return 0; //f(m-1)_f(n%m)_fuhao%f(m)%mod // cout&lt;fib(n%m,mod111111)fuhao%fib(m,mod&lt;&lt;5)%mod&lt;&lt;endl;<br>// cout&lt;&lt;fib(m-1,mod&lt;&lt;5)&lt;&lt;””&lt;”&lt;&lt;fuhao&lt;&lt;”%”&lt;&lt;fib(m,mod&lt;&lt;5)&lt;&lt;”%”&lt;&lt;mod&lt;&lt;endl;<br>// cout&lt;&lt;fib(n%m,mod&lt;&lt;5)fib(m-1,mod&lt;&lt;5)/fib(m,mod&lt;&lt;5)&lt;y)%mod<br>//a=[x/y]<br>LL x=(llmul(fib(n%m,mod),fib(m-1,mod),mod)*fuhao%mod+mod)%mod;<br>LL y=fib(m,mod);<br>LL a=fib(n%m-1,mod);<br>if(n%m%2==0)a–;<br>if(fuhao&lt;0)a++;<br>a=(a%mod+mod)%mod;<br>// cout&lt;&lt;a&lt;&lt;endl;<br>return ((x-llmul(a,y,mod))%mod+mod)%mod;<br>}</em></p>
-<p>int main() {<br>int i,j;<br>A.x[1][2]=A.x[2][1]=A.x[2][2]=1;<br>E.x[1][1]=E.x[2][2]=1;<br>LL n,m,mod;<br>while ( cin&gt;&gt;n&gt;&gt;m&gt;&gt;mod )<br>cout&lt;&lt;( solve( n+2,m,mod )-1+mod )%mod&lt;&lt;endl;<br>return 0;<br>}</p>
+<h3 id="输入格式"><a href="https://liuboyuan.fun/yoj-fib/#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" title="输入格式"></a>输入格式</h3>
+<p>输入为一行用空格分开的整数 n m p (0 &lt; n, m, p &lt; 10^18)</p>
+<h3 id="输出格式"><a href="https://liuboyuan.fun/yoj-fib/#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" title="输出格式"></a>输出格式</h3>
+<p>输出为1个整数，表示答案</p>
+<h3 id="样例输入"><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5" title="样例输入"></a>样例输入</h3>
+<p>2 3 5</p>
+<h3 id="样例输出"><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA" title="样例输出"></a>样例输出</h3>
+<p>0</p>
+<h3 id="样例输入-v2"><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1" title="样例输入"></a>样例输入</h3>
+<p>15 11 29</p>
+<h3 id="样例输出-v2"><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1" title="样例输出"></a>样例输出</h3>
+<p>25</p>
+<h3 id="样例代码"><a href="https://liuboyuan.fun/yoj-fib/#%E6%A0%B7%E4%BE%8B%E4%BB%A3%E7%A0%81" title="样例代码"></a>样例代码</h3>
+<p>#include &lt;bits/stdc++.h&gt;<br>
+using namespace std;<br>
+#define PB push_back<br>
+#define MP make_pair<br>
+#define AA first<br>
+#define BB second<br>
+#define OP begin()<br>
+#define ED end()<br>
+#define SZ size()<br>
+#define SORT(x) sort(x.OP,x.ED)<br>
+#define SQ(x) ((x)<em>(x))<br>
+#define SSP system(“pause”)<br>
+#define cmin(x,y) x=min(x,y)<br>
+#define cmax(x,y) x=max(x,y)<br>
+typedef long long LL;<br>
+typedef pair PII;<br>
+const double eps=1e-8;<br>
+const double INF=1e20;<br>
+const double PI=acos( -1. );<br>
+const int MXN = 50;<br>
+const LL MOD = 1000000007;<br>
+LL llmul( LL a,LL b,LL mod ) {<br>
+a%=mod;a+=mod;a%=mod;<br>
+b%=mod;b+=mod;b%=mod;<br>
+if ( a*</em>&gt;n&gt;&gt;m&gt;&gt;mod )<br>
+cout&lt;&lt;( solve( n+2,m,mod )-1+mod )%mod&lt;&lt;endl;<br>
+return 0;<br>
+}**</p>
+<p>struct matrix {<br>
+LL x[3][3];<br>
+matrix() {memset( x,0,sizeof x );}<br>
+};<br>
+matrix mmul( matrix &amp;A,matrix &amp;B,LL mod ) {<br>
+matrix ret;<br>
+for ( int i=1; i&lt;=2; i++ )<br>
+for ( int j=1; j&lt;=2; j++ )<br>
+for ( int k=1; k&lt;=2; k++ )<br>
+ret.x[i][j]=( ret.x[i][j]+llmul( A.x[i][k],B.x[k][j],mod ) )%mod;<br>
+return ret;<br>
+}<br>
+matrix E;<br>
+matrix A;<br>
+LL fib( LL n,LL mod ) {<br>
+matrix O=E,B=A;<br>
+while ( n ) {<br>
+if ( n&amp;1 )O=mmul( O,B,mod );<br>
+B=mmul( B,B,mod );<br>
+n/=2;<br>
+}<br>
+return O.x[1][2];<br>
+}<br>
+//[(2_3)%5]%3=1 //(2%3)_(3%3)=0</p>
+<p>LL solve( LL n,LL m,LL mod ) {<br>
+//f(n)%f(m)%mod<br>
+LL t=n/m;<br>
+//(f(m-1)^t_f(n%m))%f(m)%mod; //f(i)<sup>2%f(i-1)=(-1)</sup>(i+1) LL p=t/2,q=t%2; //{f(m-1)<sup>q_(-1)</sup>(pm)_f(n%m)}%f(m)%mod LL fuhao=p_m%2==0?1:-1;<br>
+if ( q==0 ) {<br>
+LL ans=fib( n%m,mod )_fuhao; ans%=mod; ans+=mod; return ans%mod; } if ( n%m==0 )return 0; //f(m-1)_f(n%m)<em>fuhao%f(m)%mod // cout&lt;fib(n%m,mod111111)fuhao%fib(m,mod&lt;&lt;5)%mod&lt;&lt;endl;<br>
+// cout&lt;&lt;fib(m-1,mod&lt;&lt;5)&lt;&lt;””&lt;”&lt;&lt;fuhao&lt;&lt;”%”&lt;&lt;fib(m,mod&lt;&lt;5)&lt;&lt;”%”&lt;&lt;mod&lt;&lt;endl;<br>
+// cout&lt;&lt;fib(n%m,mod&lt;&lt;5)fib(m-1,mod&lt;&lt;5)/fib(m,mod&lt;&lt;5)&lt;y)%mod<br>
+//a=[x/y]<br>
+LL x=(llmul(fib(n%m,mod),fib(m-1,mod),mod)*fuhao%mod+mod)%mod;<br>
+LL y=fib(m,mod);<br>
+LL a=fib(n%m-1,mod);<br>
+if(n%m%2==0)a–;<br>
+if(fuhao&lt;0)a++;<br>
+a=(a%mod+mod)%mod;<br>
+// cout&lt;&lt;a&lt;&lt;endl;<br>
+return ((x-llmul(a,y,mod))%mod+mod)%mod;<br>
+}</em></p>
+<p>int main() {<br>
+int i,j;<br>
+A.x[1][2]=A.x[2][1]=A.x[2][2]=1;<br>
+E.x[1][1]=E.x[2][2]=1;<br>
+LL n,m,mod;<br>
+while ( cin&gt;&gt;n&gt;&gt;m&gt;&gt;mod )<br>
+cout&lt;&lt;( solve( n+2,m,mod )-1+mod )%mod&lt;&lt;endl;<br>
+return 0;<br>
+}</p>
 </div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-16</span><i class="fa fa-comment-o"></i><a href="/yoj-e2-99-82-fibonacci-e2-99-82-e9-a2-98-e8-a7-a3/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/YOJ/" title="YOJ">YOJ </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,https://liuboyuan.fun/yoj-e2-99-82-fibonacci-e2-99-82-e9-a2-98-e8-a7-a3/,负雨杂感,YOJ ♂ Fibonacci ♂ 题解,;" target="_blank" rel="noopener"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/e4-b8-89-e6-9c-88-e5-8d-81-e4-ba-8c-e6-97-a5-e9-9a-8f-e7-ac-94/" title="三月十二日随笔">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/yoj-e6-a8-aa-e5-90-91-e6-89-93-e5-8d-b0-e4-ba-8c-e5-8f-89-e6-a0-91-e9-a2-98-e8-a7-a3/" title="YOJ 横向打印二叉树 题解">下一篇</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'misthrain';
 var disqus_identifier = 'yoj-e2-99-82-fibonacci-e2-99-82-e9-a2-98-e8-a7-a3/';
 var disqus_title = 'YOJ ♂ Fibonacci ♂ 题解';

@@ -4,6 +4,84 @@
   
     
     <entry>
+      <title>🚗一种基于C++的ESP32智能小车控制系统</title>
+      <link href="/ESP32-smartCarController/"/>
+      <url>/ESP32-smartCarController/</url>
+      
+        <content type="html"><![CDATA[<div class="tip">    本代码已在Github开源<br>    开源协议为GPL-3.0<br>    <a href="https://github.com/youthriverside/ESP32-Smart-Car-Control-System" target="_blank" rel="noopener">点击此处</a>进入项目页面</div><h1>ESP32 Smart Car Control System</h1><h2 id="Introduction">Introduction</h2><p>The ESP32 Smart Car Control System is an innovative project that realizes hardware-software interaction between a computer and a microcontroller based on the C++ serial port module and the ESP32 microprocessor chip. This system mediates the transmission of string commands or corresponding data frames recognizable by the microcontroller through serial communication, enabling the car to move forward, backward, turn quickly, and adjust speed via PWM (Pulse Width Modulation). The system is easy to operate with a high fault tolerance rate, and it is equipped with an XOR bit self-identification, self-calculation, and self-verification module for data frames, reducing the probability of misidentifying commands. Additionally, this system can efficiently receive status data transmitted back from the ESP32 Smart Car, simplify the processing of the returned data, and clearly display it on the console, achieving precise control of the ESP32 Smart Car.</p><h2 id="Code">Code</h2><h3 id="main-cpp">main.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"serial.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="built_in">string</span> receivedData;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">displayMenuAndStatus</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; carStatus, <span class="keyword">double</span> PWM_L, <span class="keyword">double</span> PWM_R, <span class="keyword">double</span> Speed_L, <span class="keyword">double</span> Speed_R)</span> </span>&#123;</span><br><span class="line"><span class="comment">//显示菜单和小车状态</span></span><br><span class="line">    system(<span class="string">"cls"</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"选择操作:\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"1. 前进\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"2. 后退\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"3. 左转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"4. 右转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"5. 快速左转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"6. 快速右转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"7. 设置速度（单轮/PWM)\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"8. 停止\n"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"9. 刷新状态\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"0. 退出\n\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"状态: "</span> &lt;&lt; carStatus &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"左轮PWM: "</span> &lt;&lt; PWM_L &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"左轮速度: "</span> &lt;&lt; Speed_L &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"右轮PWM: "</span> &lt;&lt; PWM_R &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"右轮速度: "</span> &lt;&lt; Speed_R &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"接收数据："</span> &lt;&lt; receivedData &lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入选项: "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculateChecksum</span><span class="params">(<span class="keyword">int</span>* hexArray, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 计算异或校验和</span></span><br><span class="line">    <span class="keyword">int</span> checksum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i) &#123;</span><br><span class="line">        checksum ^= hexArray[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">stringstream</span> ss;</span><br><span class="line"><span class="comment">//使用字符串流操作数据帧</span></span><br><span class="line">    ss &lt;&lt; hex &lt;&lt; checksum;</span><br><span class="line">    <span class="keyword">int</span> hexChecksum;</span><br><span class="line">    ss &gt;&gt; hex &gt;&gt; hexChecksum;  </span><br><span class="line">    <span class="keyword">return</span> hexChecksum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">decimalToHexArray</span><span class="params">(<span class="keyword">int</span> decimal, <span class="keyword">int</span>* hexArray, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 进制转换，十进制转为十六进制，并添加前导0</span></span><br><span class="line">    <span class="built_in">stringstream</span> ss;</span><br><span class="line">    ss &lt;&lt; hex &lt;&lt; setfill(<span class="string">'0'</span>) &lt;&lt; setw(<span class="number">2</span>) &lt;&lt; decimal;</span><br><span class="line">    <span class="keyword">int</span> hexValue;</span><br><span class="line">    ss &gt;&gt; hex &gt;&gt; hexValue;  </span><br><span class="line">    hexArray[index] = hexValue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">wstring</span> comPort;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入COM端口（如COM3）："</span>;</span><br><span class="line">    getline(wcin, comPort);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> baudRate;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入波特率（如9600）："</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; baudRate;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!initSerialPort(comPort, baudRate)) &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"初始化串口失败!\n"</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">string</span> carStatus = <span class="string">"未知"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> PWM_L = <span class="number">0.0</span>, PWM_R = <span class="number">0.0</span>, Speed_L = <span class="number">0.0</span>, Speed_R = <span class="number">0.0</span>;</span><br><span class="line"><span class="comment">//初始化小车状态</span></span><br><span class="line">    displayMenuAndStatus(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">res:</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line"><span class="comment">//处理串口回传数据</span></span><br><span class="line">        displayMenuAndStatus(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line"><span class="comment">//菜单与小车状态显示</span></span><br><span class="line">        <span class="keyword">int</span> choice;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; choice;</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">        <span class="keyword">switch</span> (choice) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"FORWARD"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"BACKWARD"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"LEFT"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"RIGHT"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>: &#123;</span><br><span class="line">                <span class="keyword">int</span> hexValue[] = &#123;<span class="number">0xAA</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0xFF</span>, <span class="number">0xAB</span>&#125;;</span><br><span class="line">                sendHexCommandToESP32(hexValue);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>: &#123;</span><br><span class="line">                <span class="keyword">int</span> hexValue[] = &#123;<span class="number">0xAA</span>, <span class="number">0x00</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xAB</span>&#125;;</span><br><span class="line">                sendHexCommandToESP32(hexValue);</span><br><span class="line"><span class="comment">//向串口发送数据帧</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>: &#123;</span><br><span class="line"><span class="comment">//调速二级菜单</span></span><br><span class="line"><span class="keyword">int</span> leftPWM, rightPWM, flag = <span class="number">1</span>, inp;</span><br><span class="line">                <span class="keyword">int</span> leftStatus, rightStatus;</span><br><span class="line"><span class="keyword">while</span>(flag) &#123;</span><br><span class="line">system(<span class="string">"cls"</span>);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"调速菜单"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"1. pwm双轮调速\n"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"2. 数据帧单轮调速\n"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"3. 返回上一级\n请选择序号："</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; inp;</span><br><span class="line"><span class="keyword">if</span>(inp == <span class="number">2</span>)&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入左轮方向 1:正，0：反："</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; leftStatus;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入左轮速度 (0-255): "</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; leftPWM;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入右轮方向 1:正，0：反："</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; rightStatus;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入右轮速度 (0-255): "</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; rightPWM;   </span><br><span class="line"><span class="comment">//使用数据帧对左右轮分别调速</span></span><br><span class="line"><span class="keyword">int</span> hexValue[<span class="number">6</span>];</span><br><span class="line">hexValue[<span class="number">0</span>] = <span class="number">0XAA</span>;</span><br><span class="line">hexValue[<span class="number">1</span>] = (leftStatus == <span class="number">1</span>)? <span class="number">0x01</span> : <span class="number">0x00</span>;  <span class="comment">//左轮转动状态</span></span><br><span class="line">decimalToHexArray(leftPWM, hexValue, <span class="number">2</span>);       <span class="comment">//左轮速度</span></span><br><span class="line">hexValue[<span class="number">3</span>] = (rightStatus == <span class="number">1</span>)? <span class="number">0x01</span> : <span class="number">0x00</span>; <span class="comment">//右轮转动状态</span></span><br><span class="line">decimalToHexArray(rightPWM, hexValue, <span class="number">4</span>);      <span class="comment">//右轮速度</span></span><br><span class="line">hexValue[<span class="number">5</span>] = calculateChecksum(hexValue, <span class="number">5</span>);  <span class="comment">//异或校验位</span></span><br><span class="line">sendHexCommandToESP32(hexValue);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(inp == <span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">int</span> pwm;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入速度:"</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; pwm;</span><br><span class="line"><span class="keyword">if</span> (pwm &gt;= <span class="number">0</span> &amp;&amp; pwm &lt;= <span class="number">255</span>) &#123;</span><br><span class="line"><span class="keyword">char</span> command[<span class="number">50</span>];</span><br><span class="line">sprintf_s(command, <span class="keyword">sizeof</span>(command), <span class="string">"PWM %d"</span>, pwm);</span><br><span class="line">sendCommandToESP32(command);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"速度超出范围，请重新输入。\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(inp == <span class="number">3</span>) flag = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"STOP"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">9</span>: <span class="keyword">goto</span> res; <span class="keyword">break</span>;</span><br><span class="line"><span class="comment">//刷新小车状态</span></span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                closeSerialPort(); </span><br><span class="line"><span class="comment">// 在退出前关闭串口</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"无效的选项，请重新选择。\n"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="serial-cpp">serial.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SERIAL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERIAL_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化指定的串口并返回成功与否</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">initSerialPort</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; portName, DWORD baudRate)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送命令到ESP32</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* command)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendHexCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* command)</span></span>;</span><br><span class="line"><span class="comment">// 接受命令</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">receiveDataFromESP32</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; receivedData)</span></span>;</span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processSerialData</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; carStatus,<span class="keyword">double</span>&amp; PWM_L,<span class="keyword">double</span>&amp; PWM_R,<span class="keyword">double</span>&amp; Speed_L,<span class="keyword">double</span>&amp; Speed_R)</span></span>;</span><br><span class="line"><span class="comment">// 关闭串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">closeSerialPort</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// SERIAL_H</span></span></span><br></pre></td></tr></table></figure><h3 id="serial-h">serial.h</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SERIAL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERIAL_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化指定的串口并返回成功与否</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">initSerialPort</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; portName, DWORD baudRate)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送命令到ESP32</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* command)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendHexCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* command)</span></span>;</span><br><span class="line"><span class="comment">// 接受命令</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">receiveDataFromESP32</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; receivedData)</span></span>;</span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processSerialData</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; carStatus,<span class="keyword">double</span>&amp; PWM_L,<span class="keyword">double</span>&amp; PWM_R,<span class="keyword">double</span>&amp; Speed_L,<span class="keyword">double</span>&amp; Speed_R)</span></span>;</span><br><span class="line"><span class="comment">// 关闭串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">closeSerialPort</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// SERIAL_H</span></span></span><br></pre></td></tr></table></figure><h2 id="Features">Features</h2><p>The design results of the ESP32 Smart Car Control System basically meet the expected requirements. The commands are sent accurately and successfully achieve operations such as moving forward, backward, turning, and PWM speed adjustment. The XOR checksum calculation for data frames is precise and efficient. The parsing of the car’s status is basically correct, and it can clearly display the car’s speed and direction on the console. The system exhibits excellent robustness, promptly reporting error messages for out-of-bound data, and possesses high memory safety. However, the system still faces occasional errors in car status discrimination and delays in receiving data transmitted back from the car, which are currently difficult to resolve. In the future, we will further improve the system’s functionality by delving deeper into hardware logic and software algorithm knowledge to rewrite and refactor the code.</p><h2 id="Issues-and-Solutions">Issues and Solutions</h2><h3 id="The-single-digit-numbers-in-the-data-frame-lack-a-leading-“0”-placeholder-making-it-unrecognizable-by-the-car">The single-digit numbers in the data frame lack a leading “0” placeholder, making it unrecognizable by the car.</h3><p>Solution: By consulting literature, it was decided to use the stringstream class from the C++ standard library, analogous to the usage of the setfill() function in the iostream stream for homework assignments. Specifically, a string stream was used to add a leading “0” before single digits to achieve precise placeholder formatting.<br>Specific implementation code:</p>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ss &lt;&lt; hex &lt;&lt; setfill(<span class="string">'0'</span>) &lt;&lt; setw(<span class="number">2</span>) &lt;&lt; decimal;</span><br><span class="line"><span class="keyword">int</span> hexValue;</span><br><span class="line">ss &gt;&gt; hex &gt;&gt; hexValue;</span><br><span class="line">hexArray[index] = hexValue;</span><br></pre></td></tr></table></figure><h3 id="The-original-serial-port-sending-function-could-not-send-integer-data-frames">The original serial port sending function could not send integer data frames.</h3><p>Solution: A new serial port sending function was written to send an integer array to the ESP32 microcontroller. This function accepts the base address of an integer array and removes carriage returns when sending information.<br>Specific implementation code:</p>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendHexCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* command)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hSerial == INVALID_HANDLE_VALUE) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cerr</span> &lt;&lt; <span class="string">"Serial port not initialized."</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    DWORD bytesWritten;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">        WriteFile(hSerial, command + i, <span class="number">1</span>, &amp;bytesWritten, <span class="literal">NULL</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Incorrect-data-transmitted-back-from-the-smart-car-simulator">Incorrect data transmitted back from the smart car simulator.</h3><p>The smart car simulator transmits data like this: PWM_L = 255, Speed_L = 38, STOP; PWM_R = 255, Speed_R = 38, STOP. The status is STOP, but the speed is not zero, indicating incorrect data transmission.<br>Solution: In the car status judgment part, recognition of “STOP” was added to improve the accuracy of status discrimination.</p>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> ((PWM_L == <span class="number">0</span> &amp;&amp; PWM_R == <span class="number">0</span>) || receivedData.find(<span class="string">"STOP"</span>) != <span class="built_in">std</span>::<span class="built_in">string</span>::npos)</span><br><span class="line">    carStatus = <span class="string">"Stopped"</span>;</span><br></pre></td></tr></table></figure><h3 id="Delay-in-receiving-and-judging-the-car’s-status">Delay in receiving and judging the car’s status.</h3><p>The serial port information receiving function receiveDataFromESP32() has significant delay in receiving information.<br>Solution: A “Refresh Status” option was added to the menu to improve the timeliness of status recognition by multiple acquisitions of data transmitted back from the microcontroller. However, there is currently no feasible solution for the delay itself, and the system functionality needs further improvement.</p><h2 id="Reflection">Reflection</h2><p>During the design process of the ESP32 smart car control system, I deeply experienced the charm of combining hardware and software. By programming to control the behavior of hardware, realizing functions such as the car’s forward, backward, turning, and PWM speed adjustment, I felt the infinite possibilities of technology. However, in the actual design process, I also encountered many challenges, such as how to accurately read the car’s status data, how to accurately calculate the XOR checksum, and how to stably control the motors. Through consulting materials, debugging code, and algorithm optimization, I gradually overcame these difficulties. During the design process, I also constantly tried out new ideas in my mind, cultivated innovation and exploration spirit, and improved my problem-solving abilities and practical skills in C++ programming.</p><h2 id="Suggestions">Suggestions</h2><ul><li>More practical sessions should be added to the course, giving students more opportunities to hands-on operate hardware, write code, and debug systems. Only through practice can students gain a deeper understanding of theoretical knowledge and improve their innovative practical abilities.</li><li>Some team collaboration projects should be set up in the course, giving students opportunities to exercise their team collaboration and communication skills in practice. Teachers can also provide some team collaboration tips and methods to help students better cooperate with others.</li><li>Some application case analyses of smart car control systems can be added to the course, allowing students to understand practical application scenarios. Through discussion and analysis, students can gain a deeper understanding of the design principles and implementation methods of the system, and also stimulate their innovative thinking and improve their problem-solving abilities.</li></ul><div class="tip">This project is for the curriculum design of Programming Logic and Methodology of ZhiXing College, DUT.The above code is for academic reference only. Any consequences arising from improper use of the code are the sole responsibility of the user.</div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>💻（未完）C++程序设计习题与题解</title>
+      <link href="/cpp-2024/"/>
+      <url>/cpp-2024/</url>
+      
+        <content type="html"><![CDATA[<p>程序设计思维与方法B<br>第一次课后作业：</p><p>上机目标：<br>1.熟悉VS2010等集成开发环境，能够独立地编辑，编译 、链接，生成正确的可执行程序<br>2.完成简单的输入-输出功能及数据运算功能<br>3.通过查找资料，自学掌握C++输入输出操纵符的基本使用方法</p><p>基础编程题：</p><ol><li>学生个人信息显示<br>编写一个学生个人信息的屏幕显示程序。其中同学姓名学号为的真实信息。输出信息格式如下图所示。鼓励在此基础上进行界面改进。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|                学生信息                  |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|              姓名：刘渤源                |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|              学号：                      |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|              电话：                     |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li>温度转换<br>通过键盘输入一个华氏温度，程序将其转化为相应的摄氏温度，转化公式为：C=5/9*(F-32). 输出的摄氏温度保留２位小数点。输出见下图。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> f,c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入要转换的华氏温度："</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;f;</span><br><span class="line">    c=<span class="number">5.0</span> / <span class="number">9.0</span> * (f - <span class="number">32</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f华氏度等于%.2f摄氏度\n"</span>,f,c);</span><br><span class="line">    <span class="comment">//cout&lt;&lt; f &lt;&lt; c &lt;&lt; setprecision(2);</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3． 大写字母转换成小写字母<br>从键盘输入一个大写英文字母，输出相应的小写字母。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> letter;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter a character:"</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;letter;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The lower case of "</span> &lt;&lt; letter &lt;&lt; <span class="string">" is:"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>) ( (<span class="keyword">int</span>) (letter + <span class="number">32</span>) ) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>4． 求平方根<br>输入1 个实数x，计算并输出其平方根（保留1 位小数）。 提示：利用setprecision()设定输出精度。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The input is:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; fixed &lt;&lt; setprecision(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The square root of "</span> &lt;&lt; a &lt;&lt; <span class="string">" is:"</span> &lt;&lt; <span class="built_in">sqrt</span>(a) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="5"><li>数制转换<br>输入1个10进制整数，输出其8进制和16进制的表示形式。提示：利用hex、oct、dec设定输出进制，showbase设置输出的进制标志。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> orig,cach;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter an integer:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; orig;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The hex form of "</span> &lt;&lt; orig &lt;&lt; <span class="string">" is: "</span> &lt;&lt; showbase &lt;&lt; hex &lt;&lt; orig &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    showbase设置输出进制模式</span></span><br><span class="line"><span class="comment">    并且影响后续的全部输出</span></span><br><span class="line"><span class="comment">    直到遇到下一个showbase</span></span><br><span class="line"><span class="comment">    hex 十六进制0x</span></span><br><span class="line"><span class="comment">    oct 八进制（以0开头）</span></span><br><span class="line"><span class="comment">    dec 十进制</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The oct form of "</span> &lt;&lt; orig &lt;&lt; <span class="string">" is: "</span> &lt;&lt; showbase &lt;&lt; oct &lt;&lt; orig &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>设计类编程题：<br>6. 计算旅途时间<br>输入2 个整数time1 和time2分别表示火车的出发时间和到达时间，计算并输出旅途时间。有效的时间范围是0000 到2359，不需要考虑出发时间晚于到达时间的情况。<br>例：输入：  711  1410（出发时间是7:11，到达时间是14:10）<br>输出：  The train journey time is 6 hrs 59 mins.</p><ol start="7"><li>数字加密<br>输入1 个四位数，将其加密后输出。方法是将该数每一位上的数字加9，然后除以10 取余，做为该位上的新数字，最后将第1 位和第3 位上的数字互换，第2 位和第4 位上的数字互换，组成加密后的新数。<br>例：输入：  The original number is : 1257<br>输出：  The encrypted number is 4601</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>⛰️齐鲁游记</title>
+      <link href="/journeytoshandong/"/>
+      <url>/journeytoshandong/</url>
+      
+        <content type="html"><![CDATA[<p>高考结束，顿感无事可做，故整日宅家，茶饭不调，每况愈下。心向远邑，打算旅游，又不想与父母同行，恐二老体力不支，且对我加以约束，况已成人当独立，自知应出门锻炼生活能力，以适应大学生活。父母闻之亦允，但应去何处，还当深思。</p><p>我自初中便想去西藏这片“神圣”土地，但碍于高原苦寒，环境恶劣，语言不通，且不熟习藏民习俗，恐触犯之，孤行难返，遂搁置不虑。南方诸地亦可，但酷暑难耐。西北荒凉，心忌惮之；家在东北，多已游历。惟齐鲁未曾踏足，虽自幼涉猎孔孟之道，亦未曾体味孔孟之乡，又闻山东人才辈出，况且离家不远，以是下定主意，行旅山东。</p><p>七月十日清晨，街巷空荡，凉风习习，在父母陪同下，前往车站，奔赴省城，乘风南下。机上无论是机窗的《论语》选章，亦或古韵犹存的安全须知，皆彰显着山航乃至山东的文化气息，实是令我赞叹不已。<br>（甚至贴了两层）<br>齐鲁虽赊，扶摇可接。一越过茫茫渤海，整片山东大地便映入眼帘，广阔森林葱郁盎然，蜿蜒河流波光粼粼，山原旷其盈视，川泽纡其骇瞩——这片生机苍郁的土地，和这片沃土孕育的人们，想必定会带给我别样的体验与惊喜。</p><p>飞机强烈的触地将我从梦境拽出，不多时我便踏上山东大地，来到泉城济南。与印象中的”省会“不同，地铁并未通达机场，只得乘车入城，略有不便。大巴颠颠摇摇，颇有些游乐场的趣味，俗话说玩物丧志，这乐趣实在爱莫能受，再者为了那远大的志向，我不敢再坐下去。</p><p>我从济泺[落]路地铁站前往住所，稍作歇息，腹中咕咕，遂外出觅食。心雨建议我去环联夜市瞅瞅，只有两站地，甚是方便。临近夜市，只见人流攘攘，炊烟缭绕，花灯通明，觥筹交错。飨食遍及南北，口音跨越东西，从东北大饭包到新疆羊肉串，从粗犷豪放到吴侬软语，这里汇集着祖国各地的美食，吸引着各方来客，无论何处而来，无论将往何处，想必都会在这里寻得熟悉的味道，正如我的故乡，便在这酱香萦绕的饭包中，轻轻牵扯我心头的回忆，带来外乡里家的回味。<br>夜市虽大，琳琅满目，可肚量终究有限，最终只得带着点遗憾，远离这片熟悉而陌生的喧嚣。虽有不舍，但也给了自己再来济南的理由。<br>7月11日<br>今天要和心雨见面。<br>这是我第一次和网友见面，内心十分紧张。怀着忐忑的心情，我迈入了开往济泺路的地铁，期待着，也恐惧着。对于见面的场景，我已然预想过无数次，但当她真的到来时，却仍显得不知所措。只曾依靠电波交流、素未谋面的两人，一旦面对无比真切的对方，更多的会是喜悦，还是迷惘呢？在我的记忆里，她曾是“虚拟”的——如若身边的是“真实的”，很长一段时间里，她的形象在我心中是模糊的，多是不切实际的猜想，或是梦里虚无缥缈的幻象，而一切印象的形成，也只是胡思乱想中，小小荧屏上，万千字符的重构：平白无力，而又繁杂细腻。<br>而这次，那些印象将拥有归宿。<br>时光飞逝，一转眼地铁便稳稳停在济泺路。刚走出站，我便被阵阵热浪包裹住，定睛一看，这正是我昨日进站处。街道人来车往，我瞪大眼睛找寻她的身影，忽然路口一道熟悉的身影，将我吸引过去，这便是我与心雨的初次见面，平静得像是常常玩耍的老朋友，我悬着的心也落了地。<br>于是几句寒暄后，心雨带着我一路向前，到缤纷楼下，准备来点好吃的。我还正沉浸在见面的喜悦，直到饭食冒着香气扑鼻而来，我才意识到肚子已咕咕叫了半天。心雨俨然一副老主顾的模样，熟练地从桌子抽屉取出餐具递给我，孜孜不倦地向我介绍这家餐馆。我们便在声声谈笑中，享用了这顿便捷而充盈的午饭。<br>随后心雨领我进入机厅，准备教我打舞萌（一款音乐节奏游戏）。作为基本无音游基础的初学者，面对着滚筒洗衣机似的机器，我有点蒙圈。但在心雨的耐心指导和游戏的新手教程辅助下，我成功地登入游戏，并基本掌握了操作方法。在游玩过程中，我渐渐体会到它的乐趣，也逐渐理解玩家会为之排长队的原因，在我印象中这在机厅其他机器上似乎从未有过。几轮舞萌下来，我虽有心再玩，奈何体力不支，如此“体育锻炼”，与其说是在打舞萌，不如说在被舞萌“打”，虽然疲惫，但意犹未尽。<br>日头西斜，我与心雨喝完瑞幸，参观了她的住所。附近既有小吃街，又离机厅很近，用她的话说，这里是个准备“出勤”的好地方。闲聊几句，心雨掏出电脑，想必有不少工作要做。我自知不应打扰她办公，于是合照后，便为这次短暂又回味无穷的见面，画上圆满的句号。<br>奔入地铁站，我便开始寻觅去处。突然老舍笔下的常客“大明湖”闪入脑海，于是出于对老舍先生的敬意，我打算先去大明湖溜溜。进入大门，惟见画壁上对联一幅,其上曰:北渚云飞,泺水帝山迎帝子。明湖波静,莲歌渔唱念曾公。铜鼎庄严伫立于北渚台上,与画壁相为映衬,无声诉说着大明湖庄重典雅的历史。我漫步于大明湖公园,游客云集,或着汉服,或嬉戏,或谈笑,或起舞,笙歌此起彼伏,好一派悠闲之景!转望湖畔,荷花竞放,莲香扑鼻,湖中画船载着夕阳,缓缓驶向星光点点的彼岸。而那抹血红透过摇曳的柳叶,默默斑驳了渐渐暗淡的巷口,我注视着波光轻漾的水面,望向远方连绵的群山,嗅着莲花的阵阵清香,真切地体会到“四面荷花三面柳,一城山色半城湖”这济南城的鲜明写照。</p><p>游罢大明湖,我返回住处,在鲁菜馆子订了份菜,这方才初探到鲁菜的滋味。其实本来想到店中吃,但毕竟孤身一人,难免尴尬,待以后有人陪伴再一同享用罢。天色渐晚,安祥入梦。</p><p>7月12日<br>在老舍的作品中,&quot;趵突泉&quot;可谓是个常客,今日终于有幸前往观赏与品尝。我缓缓俯下身，掬起一捧泉水送入口中,一阵甘甜立刻在舌尖漫延开来。以前每每听闻泉水&quot;甘甜&quot;一类话,总是半信半疑,如今真相大白,甚是欣喜。而后又去看了黑虎泉,不少大爷在此用桶装水以供茶饮,我浅尝小口,却是逊色了不少。泉旁凉亭,有数老叟下棋,谈笑风生,亭中水声汩汩,凉风习习,好不自在!</p><p>下午参观了省博,初步了解齐鲁大地的历史文化,但奈何十分深厚，难以窥其全貌,有待下次再加考究。晚上去万象城闲逛,顺便找些吃食，人来人往，言笑晏晏，俄而皓月当空，好似钦羡济南城夜里的繁华。见已近半夜，只得返回，为明日的跋涉养精蓄锐。<br>7月13日<br>夜爬泰山。人山人海，早晨阴天，未见晨曦。<br>7月14日<br>离开山东。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 游记 </tag>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>📗诗朗稿</title>
+      <link href="/poem202409/"/>
+      <url>/poem202409/</url>
+      
+        <content type="html"><![CDATA[<p>注：男领2是负雨</p><p>男领1：<br>在蔚蓝海岸的怀抱中，<br>你矗立如峰，智慧之光闪耀。</p><p>女领1：<br>大连理工，我们的骄傲，<br>知识的沃土，创新的浪潮。</p><p>齐：<br>求知的种子已深深埋藏，<br>在你的沃土中孕育希望。<br>科研的舰船正乘风破浪，<br>在你的助推下坚定远航。</p><p>男领2：<br>凌水湖畔波光荡漾，<br>晨曦如梦，诉说大工人的愿景，<br>照耀着无限的憧憬与希望。</p><p>女领2：<br>福佳操场绿意盎然，<br>汗水记录拼搏的模样，<br>激励我们用青春志气，<br>书写崭新的人生篇章。</p><p>齐：<br>晨光洒在图书馆的窗前，<br>我们迫不及待翻开书卷，<br>心中满是对未来的期盼，<br>在知识的海洋起舞翩跹。</p><p>女领1：<br>学子们在这里成长，梦想翱翔。</p><p>男领1：<br>你的怀抱，是我们最温暖的港。</p><p>男，女领1：<br>你是我们永远的骄傲，<br>无论身在何方，都把你深深向往。<br>齐：<br>胸襟宽广纳万物，包容万象显气度，<br>日夜不息攀高峰，坚韧不拔铸精神。<br>品行高尚深钻研，博学多才耀世间，<br>理论实践紧相联，言行一致真人前。</p><p>男领1：<br>海纳百川，</p><p>女领1：<br>自强不息，</p><p>女领2：<br>厚德笃学，</p><p>男领2：<br>知行合一。</p><p>齐：<br>是你的教诲，<br>更是我们共通的理想。</p><p>女领1：<br>从建国之初的艰难困苦，</p><p>男领1：<br>到建设时期的激情燃烧，</p><p>女领2：<br>从改开之际的上下求索，</p><p>男领2：<br>到复兴时代的踔厉奋发。</p><p>所有领诵：<br>七十五载薪火相传，<br>一代代大工人以怎样的奋斗，<br>谱写了怎样的华章？</p><p>齐：<br>我们将把青春献给这片热土，<br>以丰富的学识与无限的热情，<br>为祖国的繁荣栉风沐雨——<br>奔赴那无限可能的彼方！<br>所有领诵：<br>百年后再回首，<br>后人或曰：</p><p>齐：<br>大工名远扬，学子聚八方，<br>楼宇连云起，书香满院芳。<br>科研创佳绩，教学育栋梁，<br>明日英才出，更耀华夏光。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 诗歌 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>🎇炽梦</title>
       <link href="/somemories/"/>
       <url>/somemories/</url>
@@ -216,7 +294,7 @@
     
     
     <entry>
-      <title>木兰香·忆过钱塘苏小小墓</title>
+      <title>🏞️木兰香·忆过钱塘苏小小墓</title>
       <link href="/e6-9c-a8-e5-85-b0-e9-a6-99-c2-b7-e5-bf-86-e8-bf-87-e9-92-b1-e5-a1-98-e8-8b-8f-e5-b0-8f-e5-b0-8f-e5-a2-93/"/>
       <url>/e6-9c-a8-e5-85-b0-e9-a6-99-c2-b7-e5-bf-86-e8-bf-87-e9-92-b1-e5-a1-98-e8-8b-8f-e5-b0-8f-e5-b0-8f-e5-a2-93/</url>
       
@@ -243,7 +321,7 @@
     
     
     <entry>
-      <title>忆江南</title>
+      <title>🏞️忆江南</title>
       <link href="/e5-bf-86-e6-b1-9f-e5-8d-97/"/>
       <url>/e5-bf-86-e6-b1-9f-e5-8d-97/</url>
       
@@ -290,9 +368,9 @@
       
         <tags>
             
-            <tag> 相思 </tag>
-            
             <tag> 胡思乱想 </tag>
+            
+            <tag> 相思 </tag>
             
             <tag> 相识 </tag>
             
@@ -593,11 +671,11 @@
     
     
     <entry>
-      <title>春残</title>
+      <title>💐春残</title>
       <link href="/e6-98-a5-e6-ae-8b/"/>
       <url>/e6-98-a5-e6-ae-8b/</url>
       
-        <content type="html"><![CDATA[<p>斑斑夏影，萧萧春风。</p><p>望空谷寂寂，朝晨孤兮。</p><p>呼耳侧畔，吟鸣翘目。</p><p>闻百折声去，恍遇归兮。</p><p>星何无明，夜何无月？</p><p>眸染浸相思，路何平兮！</p><p>月何无明，星何无圆？</p><p>眸斥塞蜃楼，心何畅兮！</p><p>朝兮念兮，寐寐梦兮。</p><p>凭涯涯碧水，何濯沙兮。</p><p>踱兮叹兮，暮暮望兮。</p><p>凭蓝霞辽海，一粟湮兮。</p><p>负雨 作</p>]]></content>
+        <content type="html"><![CDATA[<p>斑斑夏影，萧萧春风。<br>望空谷寂寂，朝晨孤兮。<br>呼耳侧畔，吟鸣翘目。<br>闻百折声去，恍遇归兮。</p><p>星何无明，夜何无月？<br>眸染浸相思，路何平兮！<br>月何无明，星何无圆？<br>眸斥塞蜃楼，心何畅兮！</p><p>朝兮念兮，寐寐梦兮。<br>凭涯涯碧水，何濯沙兮。<br>踱兮叹兮，暮暮望兮。<br>凭蓝霞辽海，一粟湮兮。</p><p>负雨 作</p>]]></content>
       
       
       <categories>
@@ -653,7 +731,7 @@
       <link href="/e6-98-a5/"/>
       <url>/e6-98-a5/</url>
       
-        <content type="html"><![CDATA[<p>枝间青绿的嫩芽，</p><p>鼓起嘴来轻吻黄花。</p><p>那黄花竟心儿荡漾，</p><p>那清风中跃起淡淡花香。</p><p>垂柳吐出濛濛飞絮，</p><p>打绕飘向思念的远方。</p><p>青杨抽来缕缕青叶，</p><p>伴落花依偎如梦春光。</p><p>看，燕儿陪相思放歌，</p><p>那春雨将相思勾勒。</p><p>那流水随晨曦斑驳，</p><p>那锦书以颦笑铭刻。</p><p>哦，这阳春暖风轻拂，</p><p>那大地点染半分青色。</p><p>那背影何时回首啊，</p><p>看那天涯火烧的晚霞，</p><p>终驻留巷口尽头</p><p>轻轻抖落漫天春花。</p><p>负雨 作</p>]]></content>
+        <content type="html"><![CDATA[<p>枝间青绿的嫩芽，<br>鼓起嘴来轻吻黄花。<br>那黄花竟心儿荡漾，<br>那清风中跃起淡淡花香。</p><p>垂柳吐出濛濛飞絮，<br>打绕飘向思念的远方。<br>青杨抽来缕缕青叶，<br>伴落花依偎如梦春光。</p><p>看，燕儿陪相思放歌，<br>那春雨将相思勾勒。<br>那流水随晨曦斑驳，<br>那锦书以颦笑铭刻。</p><p>哦，这阳春暖风轻拂，<br>那大地点染半分青色。<br>那背影何时回首啊，<br>看那天涯火烧的晚霞，<br>终驻留巷口尽头<br>轻轻抖落漫天春花。</p><p>负雨 作</p>]]></content>
       
       
       <categories>
@@ -736,11 +814,11 @@
     
     
     <entry>
-      <title>望海潮</title>
+      <title>🌇望海潮</title>
       <link href="/e6-9c-9b-e6-b5-b7-e6-bd-ae/"/>
       <url>/e6-9c-9b-e6-b5-b7-e6-bd-ae/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>时值情书初送后，应惜之时。</p><p>六月末注</p></blockquote><p>心头续塞，相思盈怀。</p><p>盈寸竟似天涯。</p><p>回首凝眸，风栖雨落。</p><p>碧穹绽焕飞花。</p><p>常记却相识，</p><p>恰叶枯枝舞，晞晓月斜。</p><p>柳折欲坠，心头荒凄探春芽。</p><p>归去念语风凉，</p><p>见西楼日落，东月星光。</p><p>校园未空，情书载梦。</p><p>谧夜春雨花香。华灯抹残阳。</p><p>念信达情远，相望难言。</p><p>凭叹远兮，静随昏巷忆春长。</p><p><br></br></p><p>负雨 作</p><p>于相思中</p><hr><p>注：“盈寸”原作”三里“</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>时值情书初送后，应惜之时。</p><p>六月末注</p></blockquote><p>心头续塞，相思盈怀。</p><p>三里竟似天涯。</p><p>回首凝眸，风栖雨落。</p><p>碧穹绽焕飞花。</p><p>常记却相识，</p><p>恰叶枯枝舞，晞晓月斜。</p><p>柳折欲坠，心头荒凄探春芽。</p><p>归去念语风凉，</p><p>见西楼日落，东月星光。</p><p>校园未空，情书载梦。</p><p>谧夜春雨花香。华灯抹残阳。</p><p>念信达情远，相望难言。</p><p>凭叹远兮，静随昏巷忆春长。</p><p><br></br></p><p>负雨 作</p><p>于相思中</p><hr><p>注：“盈寸”原作”三里“<br>2024.10.26注：改回“三里”</p>]]></content>
       
       
       <categories>
@@ -823,11 +901,11 @@
     
     
     <entry>
-      <title>春醒</title>
+      <title>😭春醒</title>
       <link href="/e6-98-a5-e9-86-92/"/>
       <url>/e6-98-a5-e9-86-92/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>于辛丑三月二十八日夜战栗抄之为书<br>三月二十九日七时末给出，轻置于案。</p><p>其拾之于案，视之颦然，惑，又阅，收之。<br>抄时更题为 《春醒以赠君》</p><p>难以回首的回忆</p></blockquote><p>徐徐春风，梦醒晨曦。</p><p>盼汝之颦笑，哀绪逝兮。</p><p>袂间素手，涛涛涟漪。</p><p>望君之颦笑，路何难兮。</p><p>春似百花，夏如洁月。</p><p>眸君之颦笑，弆于梦兮。</p><p>梦兮春兮，日夜念兮。</p><p>眸汝之颦笑，恍如醉兮。</p><p>夏兮依兮，朝暮盼兮。</p><p>一朝未见，如三秋兮。</p><p>负雨 作</p><p>已于某日清晨</p><p>鼓起勇气给出</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>于辛丑三月二十八日夜战栗抄之为书<br>三月二十九日七时末给出，轻置于案。</p><p>其拾之于案，视之颦然，惑，又阅，收之。<br>抄时更题为 《春醒以赠君》</p><p>——难以回首的回忆</p></blockquote><p>徐徐春风，梦醒晨曦。<br>盼汝之颦笑，哀绪逝兮。<br>袂间素手，涛涛涟漪。<br>望君之颦笑，路何难兮。</p><p>春似百花，夏如洁月。<br>眸君之颦笑，弆于梦兮。<br>梦兮春兮，日夜念兮。<br>眸汝之颦笑，恍如醉兮。</p><p>夏兮依兮，朝暮盼兮。<br>一朝未见，如三秋兮。</p><p>负雨 作</p><p>//已于某日清晨<br>//鼓起勇气给出</p>]]></content>
       
       
       <categories>
@@ -943,7 +1021,7 @@
     
     
     <entry>
-      <title>拾忆</title>
+      <title>🌸拾忆</title>
       <link href="/e6-8b-be-e5-bf-86/"/>
       <url>/e6-8b-be-e5-bf-86/</url>
       
@@ -972,7 +1050,7 @@
     
     
     <entry>
-      <title>春来</title>
+      <title>🥀春来</title>
       <link href="/e6-98-a5-e6-9d-a5/"/>
       <url>/e6-98-a5-e6-9d-a5/</url>
       
@@ -1501,7 +1579,7 @@
     
     
     <entry>
-      <title>时光</title>
+      <title>🕖时光</title>
       <link href="/e6-97-b6-e5-85-89/"/>
       <url>/e6-97-b6-e5-85-89/</url>
       
@@ -1526,7 +1604,7 @@
     
     
     <entry>
-      <title>星辰</title>
+      <title>🌠星辰</title>
       <link href="/e6-98-9f-e8-be-b0/"/>
       <url>/e6-98-9f-e8-be-b0/</url>
       
@@ -1630,7 +1708,7 @@
     
     
     <entry>
-      <title>忠诚</title>
+      <title>💫忠诚</title>
       <link href="/e5-bf-a0-e8-af-9a/"/>
       <url>/e5-bf-a0-e8-af-9a/</url>
       
@@ -1682,7 +1760,7 @@
     
     
     <entry>
-      <title>守望</title>
+      <title>🧑‍🌾守望</title>
       <link href="/e5-ae-88-e6-9c-9b/"/>
       <url>/e5-ae-88-e6-9c-9b/</url>
       
@@ -1759,7 +1837,7 @@
     
     
     <entry>
-      <title>梦中的童年</title>
+      <title>😴梦中的童年</title>
       <link href="/e6-a2-a6-e4-b8-ad-e7-9a-84-e7-ab-a5-e5-b9-b4/"/>
       <url>/e6-a2-a6-e4-b8-ad-e7-9a-84-e7-ab-a5-e5-b9-b4/</url>
       
@@ -2098,7 +2176,7 @@
     
     
     <entry>
-      <title>昔忆</title>
+      <title>🥹昔忆</title>
       <link href="/e6-98-94-e5-bf-86/"/>
       <url>/e6-98-94-e5-bf-86/</url>
       
@@ -2150,7 +2228,7 @@
     
     
     <entry>
-      <title>校秋</title>
+      <title>🍁校秋</title>
       <link href="/e6-a0-a1-e7-a7-8b/"/>
       <url>/e6-a0-a1-e7-a7-8b/</url>
       
@@ -2204,7 +2282,7 @@
     
     
     <entry>
-      <title>春泉</title>
+      <title>♨️春泉</title>
       <link href="/e6-98-a5-e6-b3-89/"/>
       <url>/e6-98-a5-e6-b3-89/</url>
       
@@ -2279,7 +2357,7 @@
     
     
     <entry>
-      <title>惜月</title>
+      <title>🌕惜月</title>
       <link href="/e6-83-9c-e6-9c-88/"/>
       <url>/e6-83-9c-e6-9c-88/</url>
       
@@ -2333,7 +2411,7 @@
     
     
     <entry>
-      <title>孤独</title>
+      <title>☄️孤独</title>
       <link href="/e5-ad-a4-e7-8b-ac/"/>
       <url>/e5-ad-a4-e7-8b-ac/</url>
       
@@ -2389,7 +2467,7 @@
     
     
     <entry>
-      <title>朝天子·题册</title>
+      <title>📒朝天子·题册</title>
       <link href="/e6-9c-9d-e5-a4-a9-e5-ad-90-c2-b7-e9-a2-98-e5-86-8c/"/>
       <url>/e6-9c-9d-e5-a4-a9-e5-ad-90-c2-b7-e9-a2-98-e5-86-8c/</url>
       
@@ -2416,7 +2494,7 @@
     
     
     <entry>
-      <title>掠光 ——读《三体》而言</title>
+      <title>🌑掠光 ——读《三体》而言</title>
       <link href="/e6-8e-a0-e5-85-89-e8-af-bb-e3-80-8a-e4-b8-89-e4-bd-93-e3-80-8b-e8-80-8c-e8-a8-80/"/>
       <url>/e6-8e-a0-e5-85-89-e8-af-bb-e3-80-8a-e4-b8-89-e4-bd-93-e3-80-8b-e8-80-8c-e8-a8-80/</url>
       
@@ -2441,11 +2519,11 @@
     
     
     <entry>
-      <title>沉梦</title>
+      <title>🥲沉梦</title>
       <link href="/e6-b2-89-e6-a2-a6/"/>
       <url>/e6-b2-89-e6-a2-a6/</url>
       
-        <content type="html"><![CDATA[<p>落日萦绕中的小路，</p><p>一对影子相望无言。</p><p>青草散发淡淡红晕，</p><p>朦胧着小花，伴石头</p><p>醉倒在云雾里。</p><p>温暖的空气扑盖住我，</p><p>躺在如水的土地。</p><p>那只身影带着点点星光，</p><p>蹦跳着，向我走来。</p><p>天上的两颗星星，</p><p>融化在一起，成为关外</p><p>如梦的缩影。</p><p>一阵凉风惊醒了我，</p><p>平淡的星星在高悬。</p><p>我呆呆地望着无垠的天，</p><p>啜泣声在耳边响起。</p><p>原来只有我一个人，</p><p>迎着刺骨的风，</p><p>孤单战栗。</p><p>负雨 作</p>]]></content>
+        <content type="html"><![CDATA[<p>落日萦绕中的小路，<br>一对影子相望无言。<br>青草散发淡淡红晕，<br>朦胧着小花，伴石头<br>醉倒在云雾里。</p><p>温暖的空气扑盖住我，<br>躺在如水的土地。<br>那只身影带着点点星光，<br>蹦跳着，向我走来。</p><p>天上的两颗星星，<br>融化在一起，成为关外<br>如梦的缩影。</p><p>一阵凉风惊醒了我，<br>平淡的星星在高悬。<br>我呆呆地望着无垠的天，</p><p>啜泣声在耳边响起。<br>原来只有我一个人，<br>迎着刺骨的风，<br>孤单战栗。</p><p>负雨 作</p>]]></content>
       
       
       <categories>
@@ -2491,7 +2569,7 @@
     
     
     <entry>
-      <title>如梦令·秋雨</title>
+      <title>💦如梦令·秋雨</title>
       <link href="/e5-a6-82-e6-a2-a6-e4-bb-a4-c2-b7-e7-a7-8b-e9-9b-a8/"/>
       <url>/e5-a6-82-e6-a2-a6-e4-bb-a4-c2-b7-e7-a7-8b-e9-9b-a8/</url>
       
@@ -2641,7 +2719,7 @@
     
     
     <entry>
-      <title>念孙锡源</title>
+      <title>🪨念孙锡源</title>
       <link href="/e5-bf-b5-e5-ad-99-e9-94-a1-e6-ba-90/"/>
       <url>/e5-bf-b5-e5-ad-99-e9-94-a1-e6-ba-90/</url>
       
@@ -2657,9 +2735,9 @@
       
         <tags>
             
-            <tag> 诗歌 </tag>
-            
             <tag> Wordpress </tag>
+            
+            <tag> 诗歌 </tag>
             
             <tag> 相识 </tag>
             
@@ -2799,7 +2877,7 @@
     
     
     <entry>
-      <title>宝塔面板漏洞</title>
+      <title>⛔宝塔面板漏洞</title>
       <link href="/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e6-bc-8f-e6-b4-9e/"/>
       <url>/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e6-bc-8f-e6-b4-9e/</url>
       
@@ -2828,7 +2906,7 @@
     
     
     <entry>
-      <title>晨临金山</title>
+      <title>🌄晨临金山</title>
       <link href="/e6-99-a8-e4-b8-b4-e9-87-91-e5-b1-b1/"/>
       <url>/e6-99-a8-e4-b8-b4-e9-87-91-e5-b1-b1/</url>
       
@@ -2844,9 +2922,9 @@
       
         <tags>
             
-            <tag> 诗歌 </tag>
-            
             <tag> 日志 </tag>
+            
+            <tag> 诗歌 </tag>
             
         </tags>
       
@@ -2855,7 +2933,7 @@
     
     
     <entry>
-      <title>星辰</title>
+      <title>✨星辰</title>
       <link href="/e6-98-9f-e8-be-b0-2/"/>
       <url>/e6-98-9f-e8-be-b0-2/</url>
       
@@ -2896,9 +2974,9 @@
       
         <tags>
             
-            <tag> 诗歌 </tag>
-            
             <tag> 日志 </tag>
+            
+            <tag> 诗歌 </tag>
             
         </tags>
       
@@ -2957,7 +3035,7 @@
     
     
     <entry>
-      <title>平水韵表</title>
+      <title>🎲平水韵表</title>
       <link href="/e5-b9-b3-e6-b0-b4-e9-9f-b5-e8-a1-a8/"/>
       <url>/e5-b9-b3-e6-b0-b4-e9-9f-b5-e8-a1-a8/</url>
       
@@ -3146,7 +3224,7 @@
     
     
     <entry>
-      <title>我看</title>
+      <title>👀我看</title>
       <link href="/e6-88-91-e7-9c-8b/"/>
       <url>/e6-88-91-e7-9c-8b/</url>
       
@@ -3171,7 +3249,7 @@
     
     
     <entry>
-      <title>寻旧</title>
+      <title>🎞️寻旧</title>
       <link href="/e5-af-bb-e6-97-a7/"/>
       <url>/e5-af-bb-e6-97-a7/</url>
       
@@ -3198,7 +3276,7 @@
     
     
     <entry>
-      <title>孤独</title>
+      <title>😢孤独</title>
       <link href="/e5-ad-a4-e7-8b-ac-2/"/>
       <url>/e5-ad-a4-e7-8b-ac-2/</url>
       
@@ -3387,7 +3465,7 @@
     
     
     <entry>
-      <title>摄影：残阳下</title>
+      <title>🌅摄影：残阳下</title>
       <link href="/e6-91-84-e5-bd-b1-ef-bc-9a-e6-ae-8b-e9-98-b3-e4-b8-8b/"/>
       <url>/e6-91-84-e5-bd-b1-ef-bc-9a-e6-ae-8b-e9-98-b3-e4-b8-8b/</url>
       
@@ -3491,7 +3569,7 @@
     
     
     <entry>
-      <title>夜言·一</title>
+      <title>🌙夜言·一</title>
       <link href="/e5-a4-9c-e8-a8-80-c2-b7-e4-b8-80/"/>
       <url>/e5-a4-9c-e8-a8-80-c2-b7-e4-b8-80/</url>
       
@@ -3516,7 +3594,7 @@
     
     
     <entry>
-      <title>校园</title>
+      <title>🏫校园</title>
       <link href="/e6-a0-a1-e5-9b-ad/"/>
       <url>/e6-a0-a1-e5-9b-ad/</url>
       
@@ -3595,7 +3673,7 @@
     
     
     <entry>
-      <title>望雨</title>
+      <title>☔望雨</title>
       <link href="/e6-9c-9b-e9-9b-a8/"/>
       <url>/e6-9c-9b-e9-9b-a8/</url>
       
@@ -3788,7 +3866,7 @@
     
     
     <entry>
-      <title>如何敲鼓·第一章</title>
+      <title>🥁如何敲鼓·第一章</title>
       <link href="/e5-a6-82-e4-bd-95-e6-95-b2-e9-bc-93-c2-b7-e7-ac-ac-e4-b8-80-e7-ab-a0/"/>
       <url>/e5-a6-82-e4-bd-95-e6-95-b2-e9-bc-93-c2-b7-e7-ac-ac-e4-b8-80-e7-ab-a0/</url>
       
@@ -3890,7 +3968,7 @@
     
     
     <entry>
-      <title>日志</title>
+      <title>🏫日志</title>
       <link href="/e6-97-a5-e5-bf-97/"/>
       <url>/e6-97-a5-e5-bf-97/</url>
       
@@ -3906,9 +3984,9 @@
       
         <tags>
             
-            <tag> 诗歌 </tag>
-            
             <tag> 日志 </tag>
+            
+            <tag> 诗歌 </tag>
             
         </tags>
       
@@ -4000,7 +4078,7 @@
     
     
     <entry>
-      <title>无题</title>
+      <title>☕无题</title>
       <link href="/e6-97-a0-e9-a2-98/"/>
       <url>/e6-97-a0-e9-a2-98/</url>
       
@@ -4056,7 +4134,7 @@
     
     
     <entry>
-      <title>小忆</title>
+      <title>🌱小忆</title>
       <link href="/e5-b0-8f-e5-bf-86/"/>
       <url>/e5-b0-8f-e5-bf-86/</url>
       
@@ -4139,7 +4217,7 @@
     
     
     <entry>
-      <title>思古言今</title>
+      <title>📙思古言今</title>
       <link href="/e6-80-9d-e5-8f-a4-e8-a8-80-e4-bb-8a/"/>
       <url>/e6-80-9d-e5-8f-a4-e8-a8-80-e4-bb-8a/</url>
       
@@ -4166,7 +4244,7 @@
     
     
     <entry>
-      <title>星空的记忆</title>
+      <title>🌌星空的记忆</title>
       <link href="/e6-98-9f-e7-a9-ba-e7-9a-84-e8-ae-b0-e5-bf-86/"/>
       <url>/e6-98-9f-e7-a9-ba-e7-9a-84-e8-ae-b0-e5-bf-86/</url>
       
@@ -4222,7 +4300,7 @@
     
     
     <entry>
-      <title>无话可说</title>
+      <title>🏫无话可说</title>
       <link href="/e6-97-a0-e8-af-9d-e5-8f-af-e8-af-b4/"/>
       <url>/e6-97-a0-e8-af-9d-e5-8f-af-e8-af-b4/</url>
       
@@ -4276,7 +4354,7 @@
     
     
     <entry>
-      <title>无题</title>
+      <title>⛅无题</title>
       <link href="/e6-97-a0-e9-a2-98-2/"/>
       <url>/e6-97-a0-e9-a2-98-2/</url>
       
@@ -4357,7 +4435,7 @@
     
     
     <entry>
-      <title>日志</title>
+      <title>🍲日志</title>
       <link href="/e6-97-a5-e5-bf-97-2/"/>
       <url>/e6-97-a5-e5-bf-97-2/</url>
       
@@ -4496,7 +4574,7 @@
       <link href="/e6-97-a5-e5-bf-97-3/"/>
       <url>/e6-97-a5-e5-bf-97-3/</url>
       
-        <content type="html"><![CDATA[<h3 id="又下雪了"><a href="https://liuboyuan.fun/journal/#%E5%8F%88%E4%B8%8B%E9%9B%AA%E4%BA%86" title="又下雪了"></a>又下雪了</h3><p>“一场春雨一场寒” 但是四月末来一场雪是真冷。 明天就考试了。 晨曦终于坠下去， 便是永恒的黑夜。 空中飘下雪花， 透过如风的繁华。 如若有一天， 这里是一片不毛之地。 谁又会记得， 当初的一醉方休， 吟诗作赋。 又怎么能够想起那时的 “青春年华” 多么有趣的词啊， 过了多少年， 还是像曾经那样。 纵然千古流逝， 我们都曾是少年时， 都有那段经历— 能让我们永远都无法忘记的经历。 这就是青葱年华， 一代人的梦想， 一辈人的希望， 便在这里启程。 无数次的盼望， 都胜不过， 过往匆匆。 怎奈何， 曾经的人， 回不来。 曾经的事， 可能发生， 但是永远都不会， 再发生在我的心里。 那时， 即使能看见光， 也不过是幻象。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="又下雪了"><a href="https://liuboyuan.fun/journal/#%E5%8F%88%E4%B8%8B%E9%9B%AA%E4%BA%86" title="又下雪了"></a>又下雪了</h3><p>“一场春雨一场寒”<br>但是四月末来一场雪是真冷。<br>明天就考试了。<br>晨曦终于坠下去，<br>便是永恒的黑夜。<br>空中飘下雪花，<br>透过如风的繁华。<br>如若有一天，<br>这里是一片不毛之地。<br>谁又会记得，<br>当初的一醉方休，<br>吟诗作赋。<br>又怎么能够想起那时的 “青春年华”<br>多么有趣的词啊，<br>过了多少年，<br>还是像曾经那样。<br>纵然千古流逝，<br>我们都曾是少年时，<br>都有那段经历—<br>能让我们永远都无法忘记的经历。<br>这就是青葱年华，<br>一代人的梦想，<br>一辈人的希望，<br>便在这里启程。<br>无数次的盼望，<br>都胜不过，<br>过往匆匆。<br>怎奈何，<br>曾经的人，<br>回不来。<br>曾经的事，<br>可能发生，<br>但是永远都不会，<br>再发生在我的心里。<br>那时，<br>即使能看见光，<br>也不过是幻象。</p>]]></content>
       
       
       <categories>
@@ -4521,7 +4599,7 @@
       <link href="/e5-bf-86-e6-b8-85/"/>
       <url>/e5-bf-86-e6-b8-85/</url>
       
-        <content type="html"><![CDATA[<p>京城的风， 带着些未散去的烟气。 空中， 飘洒出柔和的水雾， 让人难以呼吸。</p><p>烛光带着些光晕， 映在黑暗的夜。 是江南的雨吗？ 繁华里， 尽是荒芜。 天上洒下的水滴， 浇醒了地上的人。 让他们看见了自己。 又如昨夜剩下的酒， 却早已没有味道。 云里，他的身影又显现在人群。 本以为是暖春， 却吹来一阵冷风。 他的思绪又回到了那个人。 相逢不语， 一朵芙蓉看秋雨。 他等那个人， 等了几生几世。 月光无情的撒向大地， 酒杯倾倒在水中。 留下了他的叹息。 疏花已是不禁风， 那更夜深清露湿愁红。 他终于明白了， 就算等不到她， 也不枉走过红尘， 来过世上。</p>]]></content>
+        <content type="html"><![CDATA[<p>京城的风，<br>带着些未散去的烟气。<br>空中，<br>飘洒出柔和的水雾，<br>让人难以呼吸。</p><p>烛光带着些光晕，<br>映在黑暗的夜。<br>是江南的雨吗？<br>繁华里，<br>尽是荒芜。<br>天上洒下的水滴，<br>浇醒了地上的人。<br>让他们看见了自己。<br>又如昨夜剩下的酒，<br>却早已没有味道。<br>云里，<br>他的身影又显现在人群。<br>本以为是暖春，<br>却吹来一阵冷风。<br>他的思绪又回到了那个人。<br>相逢不语，<br>一朵芙蓉看秋雨。<br>他等那个人，<br>等了几生几世。<br>月光无情的撒向大地，<br>酒杯倾倒在水中。<br>留下了他的叹息。<br>疏花已是不禁风，<br>那更夜深清露湿愁红。<br>他终于明白了，<br>就算等不到她，<br>也不枉走过红尘，<br>来过世上。</p>]]></content>
       
       
       <categories>
@@ -4567,7 +4645,7 @@
     
     
     <entry>
-      <title>我们需要念旧吗</title>
+      <title>🌖我们需要念旧吗</title>
       <link href="/e6-88-91-e4-bb-ac-e9-9c-80-e8-a6-81-e5-bf-b5-e6-97-a7-e5-90-97/"/>
       <url>/e6-88-91-e4-bb-ac-e9-9c-80-e8-a6-81-e5-bf-b5-e6-97-a7-e5-90-97/</url>
       
@@ -4650,7 +4728,7 @@
     
     
     <entry>
-      <title>又回那年仲秋时</title>
+      <title>🌱又回那年仲秋时</title>
       <link href="/e5-8f-88-e5-9b-9e-e9-82-a3-e5-b9-b4-e4-bb-b2-e7-a7-8b-e6-97-b6/"/>
       <url>/e5-8f-88-e5-9b-9e-e9-82-a3-e5-b9-b4-e4-bb-b2-e7-a7-8b-e6-97-b6/</url>
       
@@ -4702,7 +4780,7 @@
     
     
     <entry>
-      <title>开源协议</title>
+      <title>💾开源协议</title>
       <link href="/e5-bc-80-e6-ba-90-e5-8d-8f-e8-ae-ae/"/>
       <url>/e5-bc-80-e6-ba-90-e5-8d-8f-e8-ae-ae/</url>
       
@@ -4731,7 +4809,7 @@
     
     
     <entry>
-      <title>望友·飞雪无言</title>
+      <title>🌨️望友·飞雪无言</title>
       <link href="/e6-9c-9b-e5-8f-8b-c2-b7-e9-a3-9e-e9-9b-aa-e6-97-a0-e8-a8-80/"/>
       <url>/e6-9c-9b-e5-8f-8b-c2-b7-e9-a3-9e-e9-9b-aa-e6-97-a0-e8-a8-80/</url>
       
@@ -4749,6 +4827,8 @@
             
             <tag> 诗歌 </tag>
             
+            <tag> 相思 </tag>
+            
         </tags>
       
     </entry>
@@ -4756,7 +4836,7 @@
     
     
     <entry>
-      <title>未眠而作</title>
+      <title>🎑未眠而作</title>
       <link href="/e6-9c-aa-e7-9c-a0-e8-80-8c-e4-bd-9c/"/>
       <url>/e6-9c-aa-e7-9c-a0-e8-80-8c-e4-bd-9c/</url>
       
@@ -5130,7 +5210,7 @@
     
     
     <entry>
-      <title>庚子疫 书</title>
+      <title>😷庚子疫 书</title>
       <link href="/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/"/>
       <url>/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/</url>
       
@@ -5157,11 +5237,11 @@
     
     
     <entry>
-      <title>己酉记梦</title>
+      <title>🌇己酉记梦</title>
       <link href="/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/"/>
       <url>/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/</url>
       
-        <content type="html"><![CDATA[<p>他的一生即将殆尽。</p><p>他用着生命的最后一刻，</p><p>回望曾经。</p><p>纷纷过往如风而逝。</p><p>他依旧无动于衷。</p><p>记忆飞速流逝。</p><p>却停在了十四岁。</p><p>他笑了，</p><p>这似乎是理所应当，</p><p>因为他在这一年经历了太多。</p><p>不禁流出泪水。</p><p>“多么可笑啊，“</p><p>“在大年初一和一个根本不喜欢自己的女生表白”</p><p>却如何呢？</p><p>自己将要命归九泉，</p><p>谁又会记得，</p><p>一个心里永远活泼的人，</p><p>在那日也无比紧张，</p><p>手心的汗，</p><p>如雨而下。</p><p>心如丹灵，转眼化作寒酥般寒冷。</p><p>一切都过去了，</p><p>已知回不去的过往，</p><p>又何必呢？</p><p>他早已不记得那个女生的模样，</p><p>只记得那只身影，</p><p>跌在了大海中，</p><p>沉睡。</p><p>他带着最后一抹笑。</p><p>残阳如梦。</p><p>霓虹，</p><p>似火。</p>]]></content>
+        <content type="html"><![CDATA[<p>他的一生即将殆尽。</p><p>他用着生命的最后一刻，</p><p>回望曾经。</p><p>纷纷过往如风而逝。</p><p>他依旧无动于衷。</p><p>记忆飞速流逝。</p><p>却停在了十四岁。</p><p>他笑了，</p><p>这似乎是理所应当，</p><p>因为他在这一年经历了太多。</p><p>不禁流出泪水。</p><p>“多么可笑啊，“</p><p>“在■■■■和一个根本不喜欢自己的女生表白”</p><p>却如何呢？</p><p>自己将要命归九泉，</p><p>谁又会记得，</p><p>一个心里永远活泼的人，</p><p>在那日也无比紧张，</p><p>手心的汗，</p><p>如雨而下。</p><p>心如丹灵，转眼化作寒酥般寒冷。</p><p>一切都过去了，</p><p>已知回不去的过往，</p><p>又何必呢？</p><p>他早已不记得那个女生的模样，</p><p>只记得那只身影，</p><p>跌在了大海中，</p><p>沉睡。</p><p>他带着最后一抹笑。</p><p>残阳如梦。</p><p>霓虹，</p><p>似火。</p>]]></content>
       
       
       <categories>
@@ -5211,7 +5291,7 @@
     
     
     <entry>
-      <title>无题</title>
+      <title>❄️无题</title>
       <link href="/e6-97-a0-e9-a2-98-3/"/>
       <url>/e6-97-a0-e9-a2-98-3/</url>
       
@@ -5292,11 +5372,11 @@
     
     
     <entry>
-      <title>梦醒·岁月烟火</title>
+      <title>💭梦醒·岁月烟火</title>
       <link href="/e6-a2-a6-e9-86-92-c2-b7-e5-b2-81-e6-9c-88-e7-83-9f-e7-81-ab/"/>
       <url>/e6-a2-a6-e9-86-92-c2-b7-e5-b2-81-e6-9c-88-e7-83-9f-e7-81-ab/</url>
       
-        <content type="html"><![CDATA[<p>望向灰暗的轩窗，<br>不时有雨点渗入。</p><p>执笔沉思，<br>却迟迟不敢书写。<br>泪眼彷徨，<br>窗外的雨，<br>伴随着缕缕烟火。<br>化作另一片云。<br>笔上的墨，<br>散发出岁月的痕迹。<br>蓦然回首，<br>不禁热泪盈眶。</p><p>一梦初醒，<br>她的身影渺茫<br>青春一路的风风雨雨，<br>也许，消磨了你的意志，<br>但是你的梦想依旧。<br>回望青春的路，<br>你认识了多少的人，<br>见过了多少的事。<br>你梦中的她，<br>也终于在一阵风中，<br>化作终究消散的彼岸花。</p><p>刘渤源 作</p>]]></content>
+        <content type="html"><![CDATA[<p>望向灰暗的轩窗，<br>不时有雨点渗入。</p><p>执笔沉思，<br>却迟迟不敢书写。<br>泪眼彷徨，<br>窗外的雨，<br>伴随着缕缕烟火。<br>化作另一片云。<br>笔上的墨，<br>散发出岁月的痕迹。<br>蓦然回首，<br>不禁热泪盈眶。</p><p>一梦初醒，<br>她的身影渺茫<br>青春一路的风风雨雨，<br>也许，消磨了你的意志，<br>但是你的梦想依旧。</p><p>回望青春的路，<br>你认识了多少的人，<br>见过了多少的事。<br>你梦中的她，<br>也终于在一阵风中，<br>化作终究消散的彼岸花。</p><p>刘渤源 作</p>]]></content>
       
       
       <categories>
@@ -5342,11 +5422,11 @@
     
     
     <entry>
-      <title>年末随笔</title>
+      <title>🌕年末随笔</title>
       <link href="/e5-b9-b4-e6-9c-ab-e9-9a-8f-e7-ac-94/"/>
       <url>/e5-b9-b4-e6-9c-ab-e9-9a-8f-e7-ac-94/</url>
       
-        <content type="html"><![CDATA[<p>光阴似箭，箭箭穿心。</p><p>日月如梭，梭梭滴血。</p><p>也许在这一年里，</p><p>我们认识了更多的人，</p><p>明白了更多的事。</p><p>却看罢风雪， 孤自无言。</p><p>明月，仍然高悬。</p><p>长叹，依然伴随着欢笑。</p><p>不过多了些岁月的痕迹。</p><p>正如腊月寒冬的落日</p><p>东升西落， 终于化作烟烬，</p><p>却始终找不到存在的理由。</p><p>明年， 一切是否依旧？</p><p>作于2019年12月31日夜</p>]]></content>
+        <content type="html"><![CDATA[<p>光阴似箭，箭箭穿心。</p><p>日月如梭，梭梭滴血。</p><p>也许在这一年里，</p><p>我们认识了更多的人，</p><p>明白了更多的事。</p><p>却看罢风雪， 孤自无言。</p><p>明月，仍然高悬。</p><p>长叹，依然伴随着欢笑。</p><p>不过多了些岁月的痕迹。</p><p>正如腊月寒冬的落日</p><p>东升西落， 终于化作烟烬，</p><p>却始终找不到存在的理由。</p><p>明年， 一切是否依旧？</p><br><p>作于2019年12月31日夜</p>]]></content>
       
       
       <categories>
@@ -5417,7 +5497,7 @@
     
     
     <entry>
-      <title>我的烦恼</title>
+      <title>💬我的烦恼</title>
       <link href="/e6-88-91-e7-9a-84-e7-83-a6-e6-81-bc/"/>
       <url>/e6-88-91-e7-9a-84-e7-83-a6-e6-81-bc/</url>
       
@@ -5598,7 +5678,7 @@
     
     
     <entry>
-      <title>早恋有错吗？</title>
+      <title>🤪早恋有错吗？</title>
       <link href="/e6-97-a9-e6-81-8b-e6-9c-89-e9-94-99-e5-90-97-ef-bc-9f/"/>
       <url>/e6-97-a9-e6-81-8b-e6-9c-89-e9-94-99-e5-90-97-ef-bc-9f/</url>
       
@@ -5623,7 +5703,7 @@
     
     
     <entry>
-      <title>感宪法之美，颂国之强盛</title>
+      <title>📔感宪法之美，颂国之强盛</title>
       <link href="/e6-84-9f-e5-ae-aa-e6-b3-95-e4-b9-8b-e7-be-8e-ef-bc-8c-e9-a2-82-e5-9b-bd-e4-b9-8b-e5-bc-ba-e7-9b-9b/"/>
       <url>/e6-84-9f-e5-ae-aa-e6-b3-95-e4-b9-8b-e7-be-8e-ef-bc-8c-e9-a2-82-e5-9b-bd-e4-b9-8b-e5-bc-ba-e7-9b-9b/</url>
       

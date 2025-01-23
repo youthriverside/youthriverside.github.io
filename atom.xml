@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuboyuan.fun/"/>
-  <updated>2024-08-24T12:44:44.649Z</updated>
+  <updated>2025-01-23T15:17:22.052Z</updated>
   <id>https://liuboyuan.fun/</id>
   
   <author>
@@ -15,6 +15,122 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>🚗一种基于C++的ESP32智能小车控制系统</title>
+    <link href="https://liuboyuan.fun/ESP32-smartCarController/"/>
+    <id>https://liuboyuan.fun/ESP32-smartCarController/</id>
+    <published>2025-01-23T22:59:03.000Z</published>
+    <updated>2025-01-23T15:17:22.052Z</updated>
+    
+    <content type="html"><![CDATA[<div class="tip">    本代码已在Github开源<br>    开源协议为GPL-3.0<br>    <a href="https://github.com/youthriverside/ESP32-Smart-Car-Control-System" target="_blank" rel="noopener">点击此处</a>进入项目页面</div><h1>ESP32 Smart Car Control System</h1><h2 id="Introduction">Introduction</h2><p>The ESP32 Smart Car Control System is an innovative project that realizes hardware-software interaction between a computer and a microcontroller based on the C++ serial port module and the ESP32 microprocessor chip. This system mediates the transmission of string commands or corresponding data frames recognizable by the microcontroller through serial communication, enabling the car to move forward, backward, turn quickly, and adjust speed via PWM (Pulse Width Modulation). The system is easy to operate with a high fault tolerance rate, and it is equipped with an XOR bit self-identification, self-calculation, and self-verification module for data frames, reducing the probability of misidentifying commands. Additionally, this system can efficiently receive status data transmitted back from the ESP32 Smart Car, simplify the processing of the returned data, and clearly display it on the console, achieving precise control of the ESP32 Smart Car.</p><h2 id="Code">Code</h2><h3 id="main-cpp">main.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"serial.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">extern</span> <span class="built_in">string</span> receivedData;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">displayMenuAndStatus</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; carStatus, <span class="keyword">double</span> PWM_L, <span class="keyword">double</span> PWM_R, <span class="keyword">double</span> Speed_L, <span class="keyword">double</span> Speed_R)</span> </span>&#123;</span><br><span class="line"><span class="comment">//显示菜单和小车状态</span></span><br><span class="line">    system(<span class="string">"cls"</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"选择操作:\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"1. 前进\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"2. 后退\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"3. 左转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"4. 右转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"5. 快速左转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"6. 快速右转\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"7. 设置速度（单轮/PWM)\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"8. 停止\n"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"9. 刷新状态\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"0. 退出\n\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"状态: "</span> &lt;&lt; carStatus &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"左轮PWM: "</span> &lt;&lt; PWM_L &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"左轮速度: "</span> &lt;&lt; Speed_L &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"右轮PWM: "</span> &lt;&lt; PWM_R &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"右轮速度: "</span> &lt;&lt; Speed_R &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"接收数据："</span> &lt;&lt; receivedData &lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入选项: "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculateChecksum</span><span class="params">(<span class="keyword">int</span>* hexArray, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 计算异或校验和</span></span><br><span class="line">    <span class="keyword">int</span> checksum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i) &#123;</span><br><span class="line">        checksum ^= hexArray[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">stringstream</span> ss;</span><br><span class="line"><span class="comment">//使用字符串流操作数据帧</span></span><br><span class="line">    ss &lt;&lt; hex &lt;&lt; checksum;</span><br><span class="line">    <span class="keyword">int</span> hexChecksum;</span><br><span class="line">    ss &gt;&gt; hex &gt;&gt; hexChecksum;  </span><br><span class="line">    <span class="keyword">return</span> hexChecksum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">decimalToHexArray</span><span class="params">(<span class="keyword">int</span> decimal, <span class="keyword">int</span>* hexArray, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 进制转换，十进制转为十六进制，并添加前导0</span></span><br><span class="line">    <span class="built_in">stringstream</span> ss;</span><br><span class="line">    ss &lt;&lt; hex &lt;&lt; setfill(<span class="string">'0'</span>) &lt;&lt; setw(<span class="number">2</span>) &lt;&lt; decimal;</span><br><span class="line">    <span class="keyword">int</span> hexValue;</span><br><span class="line">    ss &gt;&gt; hex &gt;&gt; hexValue;  </span><br><span class="line">    hexArray[index] = hexValue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">wstring</span> comPort;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入COM端口（如COM3）："</span>;</span><br><span class="line">    getline(wcin, comPort);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> baudRate;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入波特率（如9600）："</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; baudRate;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!initSerialPort(comPort, baudRate)) &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">"初始化串口失败!\n"</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">string</span> carStatus = <span class="string">"未知"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> PWM_L = <span class="number">0.0</span>, PWM_R = <span class="number">0.0</span>, Speed_L = <span class="number">0.0</span>, Speed_R = <span class="number">0.0</span>;</span><br><span class="line"><span class="comment">//初始化小车状态</span></span><br><span class="line">    displayMenuAndStatus(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">res:</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line"><span class="comment">//处理串口回传数据</span></span><br><span class="line">        displayMenuAndStatus(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line"><span class="comment">//菜单与小车状态显示</span></span><br><span class="line">        <span class="keyword">int</span> choice;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; choice;</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">        <span class="keyword">switch</span> (choice) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"FORWARD"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"BACKWARD"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"LEFT"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"RIGHT"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>: &#123;</span><br><span class="line">                <span class="keyword">int</span> hexValue[] = &#123;<span class="number">0xAA</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0xFF</span>, <span class="number">0xAB</span>&#125;;</span><br><span class="line">                sendHexCommandToESP32(hexValue);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>: &#123;</span><br><span class="line">                <span class="keyword">int</span> hexValue[] = &#123;<span class="number">0xAA</span>, <span class="number">0x00</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xAB</span>&#125;;</span><br><span class="line">                sendHexCommandToESP32(hexValue);</span><br><span class="line"><span class="comment">//向串口发送数据帧</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>: &#123;</span><br><span class="line"><span class="comment">//调速二级菜单</span></span><br><span class="line"><span class="keyword">int</span> leftPWM, rightPWM, flag = <span class="number">1</span>, inp;</span><br><span class="line">                <span class="keyword">int</span> leftStatus, rightStatus;</span><br><span class="line"><span class="keyword">while</span>(flag) &#123;</span><br><span class="line">system(<span class="string">"cls"</span>);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"调速菜单"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"1. pwm双轮调速\n"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"2. 数据帧单轮调速\n"</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"3. 返回上一级\n请选择序号："</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; inp;</span><br><span class="line"><span class="keyword">if</span>(inp == <span class="number">2</span>)&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入左轮方向 1:正，0：反："</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; leftStatus;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入左轮速度 (0-255): "</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; leftPWM;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入右轮方向 1:正，0：反："</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; rightStatus;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入右轮速度 (0-255): "</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; rightPWM;   </span><br><span class="line"><span class="comment">//使用数据帧对左右轮分别调速</span></span><br><span class="line"><span class="keyword">int</span> hexValue[<span class="number">6</span>];</span><br><span class="line">hexValue[<span class="number">0</span>] = <span class="number">0XAA</span>;</span><br><span class="line">hexValue[<span class="number">1</span>] = (leftStatus == <span class="number">1</span>)? <span class="number">0x01</span> : <span class="number">0x00</span>;  <span class="comment">//左轮转动状态</span></span><br><span class="line">decimalToHexArray(leftPWM, hexValue, <span class="number">2</span>);       <span class="comment">//左轮速度</span></span><br><span class="line">hexValue[<span class="number">3</span>] = (rightStatus == <span class="number">1</span>)? <span class="number">0x01</span> : <span class="number">0x00</span>; <span class="comment">//右轮转动状态</span></span><br><span class="line">decimalToHexArray(rightPWM, hexValue, <span class="number">4</span>);      <span class="comment">//右轮速度</span></span><br><span class="line">hexValue[<span class="number">5</span>] = calculateChecksum(hexValue, <span class="number">5</span>);  <span class="comment">//异或校验位</span></span><br><span class="line">sendHexCommandToESP32(hexValue);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(inp == <span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">int</span> pwm;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入速度:"</span>;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; pwm;</span><br><span class="line"><span class="keyword">if</span> (pwm &gt;= <span class="number">0</span> &amp;&amp; pwm &lt;= <span class="number">255</span>) &#123;</span><br><span class="line"><span class="keyword">char</span> command[<span class="number">50</span>];</span><br><span class="line">sprintf_s(command, <span class="keyword">sizeof</span>(command), <span class="string">"PWM %d"</span>, pwm);</span><br><span class="line">sendCommandToESP32(command);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"速度超出范围，请重新输入。\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(inp == <span class="number">3</span>) flag = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">processSerialData(carStatus, PWM_L, PWM_R, Speed_L, Speed_R);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                sendCommandToESP32(<span class="string">"STOP"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">9</span>: <span class="keyword">goto</span> res; <span class="keyword">break</span>;</span><br><span class="line"><span class="comment">//刷新小车状态</span></span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                closeSerialPort(); </span><br><span class="line"><span class="comment">// 在退出前关闭串口</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"无效的选项，请重新选择。\n"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="serial-cpp">serial.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SERIAL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERIAL_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化指定的串口并返回成功与否</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">initSerialPort</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; portName, DWORD baudRate)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送命令到ESP32</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* command)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendHexCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* command)</span></span>;</span><br><span class="line"><span class="comment">// 接受命令</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">receiveDataFromESP32</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; receivedData)</span></span>;</span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processSerialData</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; carStatus,<span class="keyword">double</span>&amp; PWM_L,<span class="keyword">double</span>&amp; PWM_R,<span class="keyword">double</span>&amp; Speed_L,<span class="keyword">double</span>&amp; Speed_R)</span></span>;</span><br><span class="line"><span class="comment">// 关闭串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">closeSerialPort</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// SERIAL_H</span></span></span><br></pre></td></tr></table></figure><h3 id="serial-h">serial.h</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SERIAL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERIAL_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化指定的串口并返回成功与否</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">initSerialPort</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; portName, DWORD baudRate)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送命令到ESP32</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* command)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendHexCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* command)</span></span>;</span><br><span class="line"><span class="comment">// 接受命令</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">receiveDataFromESP32</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; receivedData)</span></span>;</span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processSerialData</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span>&amp; carStatus,<span class="keyword">double</span>&amp; PWM_L,<span class="keyword">double</span>&amp; PWM_R,<span class="keyword">double</span>&amp; Speed_L,<span class="keyword">double</span>&amp; Speed_R)</span></span>;</span><br><span class="line"><span class="comment">// 关闭串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">closeSerialPort</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// SERIAL_H</span></span></span><br></pre></td></tr></table></figure><h2 id="Features">Features</h2><p>The design results of the ESP32 Smart Car Control System basically meet the expected requirements. The commands are sent accurately and successfully achieve operations such as moving forward, backward, turning, and PWM speed adjustment. The XOR checksum calculation for data frames is precise and efficient. The parsing of the car’s status is basically correct, and it can clearly display the car’s speed and direction on the console. The system exhibits excellent robustness, promptly reporting error messages for out-of-bound data, and possesses high memory safety. However, the system still faces occasional errors in car status discrimination and delays in receiving data transmitted back from the car, which are currently difficult to resolve. In the future, we will further improve the system’s functionality by delving deeper into hardware logic and software algorithm knowledge to rewrite and refactor the code.</p><h2 id="Issues-and-Solutions">Issues and Solutions</h2><h3 id="The-single-digit-numbers-in-the-data-frame-lack-a-leading-“0”-placeholder-making-it-unrecognizable-by-the-car">The single-digit numbers in the data frame lack a leading “0” placeholder, making it unrecognizable by the car.</h3><p>Solution: By consulting literature, it was decided to use the stringstream class from the C++ standard library, analogous to the usage of the setfill() function in the iostream stream for homework assignments. Specifically, a string stream was used to add a leading “0” before single digits to achieve precise placeholder formatting.<br>Specific implementation code:</p>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ss &lt;&lt; hex &lt;&lt; setfill(<span class="string">'0'</span>) &lt;&lt; setw(<span class="number">2</span>) &lt;&lt; decimal;</span><br><span class="line"><span class="keyword">int</span> hexValue;</span><br><span class="line">ss &gt;&gt; hex &gt;&gt; hexValue;</span><br><span class="line">hexArray[index] = hexValue;</span><br></pre></td></tr></table></figure><h3 id="The-original-serial-port-sending-function-could-not-send-integer-data-frames">The original serial port sending function could not send integer data frames.</h3><p>Solution: A new serial port sending function was written to send an integer array to the ESP32 microcontroller. This function accepts the base address of an integer array and removes carriage returns when sending information.<br>Specific implementation code:</p>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendHexCommandToESP32</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* command)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hSerial == INVALID_HANDLE_VALUE) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cerr</span> &lt;&lt; <span class="string">"Serial port not initialized."</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    DWORD bytesWritten;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">        WriteFile(hSerial, command + i, <span class="number">1</span>, &amp;bytesWritten, <span class="literal">NULL</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Incorrect-data-transmitted-back-from-the-smart-car-simulator">Incorrect data transmitted back from the smart car simulator.</h3><p>The smart car simulator transmits data like this: PWM_L = 255, Speed_L = 38, STOP; PWM_R = 255, Speed_R = 38, STOP. The status is STOP, but the speed is not zero, indicating incorrect data transmission.<br>Solution: In the car status judgment part, recognition of “STOP” was added to improve the accuracy of status discrimination.</p>   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> ((PWM_L == <span class="number">0</span> &amp;&amp; PWM_R == <span class="number">0</span>) || receivedData.find(<span class="string">"STOP"</span>) != <span class="built_in">std</span>::<span class="built_in">string</span>::npos)</span><br><span class="line">    carStatus = <span class="string">"Stopped"</span>;</span><br></pre></td></tr></table></figure><h3 id="Delay-in-receiving-and-judging-the-car’s-status">Delay in receiving and judging the car’s status.</h3><p>The serial port information receiving function receiveDataFromESP32() has significant delay in receiving information.<br>Solution: A “Refresh Status” option was added to the menu to improve the timeliness of status recognition by multiple acquisitions of data transmitted back from the microcontroller. However, there is currently no feasible solution for the delay itself, and the system functionality needs further improvement.</p><h2 id="Reflection">Reflection</h2><p>During the design process of the ESP32 smart car control system, I deeply experienced the charm of combining hardware and software. By programming to control the behavior of hardware, realizing functions such as the car’s forward, backward, turning, and PWM speed adjustment, I felt the infinite possibilities of technology. However, in the actual design process, I also encountered many challenges, such as how to accurately read the car’s status data, how to accurately calculate the XOR checksum, and how to stably control the motors. Through consulting materials, debugging code, and algorithm optimization, I gradually overcame these difficulties. During the design process, I also constantly tried out new ideas in my mind, cultivated innovation and exploration spirit, and improved my problem-solving abilities and practical skills in C++ programming.</p><h2 id="Suggestions">Suggestions</h2><ul><li>More practical sessions should be added to the course, giving students more opportunities to hands-on operate hardware, write code, and debug systems. Only through practice can students gain a deeper understanding of theoretical knowledge and improve their innovative practical abilities.</li><li>Some team collaboration projects should be set up in the course, giving students opportunities to exercise their team collaboration and communication skills in practice. Teachers can also provide some team collaboration tips and methods to help students better cooperate with others.</li><li>Some application case analyses of smart car control systems can be added to the course, allowing students to understand practical application scenarios. Through discussion and analysis, students can gain a deeper understanding of the design principles and implementation methods of the system, and also stimulate their innovative thinking and improve their problem-solving abilities.</li></ul><div class="tip">This project is for the curriculum design of Programming Logic and Methodology of ZhiXing College, DUT.The above code is for academic reference only. Any consequences arising from improper use of the code are the sole responsibility of the user.</div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div class=&quot;tip&quot;&gt;
+    本代码已在Github开源&lt;br&gt;
+    开源协议为GPL-3.0&lt;br&gt;
+    &lt;a href=&quot;https://github.com/youthriverside/ESP32-Smart-Car-Control-System&quot; 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="编程" scheme="https://liuboyuan.fun/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>💻（未完）C++程序设计习题与题解</title>
+    <link href="https://liuboyuan.fun/cpp-2024/"/>
+    <id>https://liuboyuan.fun/cpp-2024/</id>
+    <published>2024-12-23T22:18:34.000Z</published>
+    <updated>2025-01-23T15:59:19.683Z</updated>
+    
+    <content type="html"><![CDATA[<p>程序设计思维与方法B<br>第一次课后作业：</p><p>上机目标：<br>1.熟悉VS2010等集成开发环境，能够独立地编辑，编译 、链接，生成正确的可执行程序<br>2.完成简单的输入-输出功能及数据运算功能<br>3.通过查找资料，自学掌握C++输入输出操纵符的基本使用方法</p><p>基础编程题：</p><ol><li>学生个人信息显示<br>编写一个学生个人信息的屏幕显示程序。其中同学姓名学号为的真实信息。输出信息格式如下图所示。鼓励在此基础上进行界面改进。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|                学生信息                  |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|              姓名：刘渤源                |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|              学号：                      |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"|              电话：                     |"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li>温度转换<br>通过键盘输入一个华氏温度，程序将其转化为相应的摄氏温度，转化公式为：C=5/9*(F-32). 输出的摄氏温度保留２位小数点。输出见下图。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> f,c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入要转换的华氏温度："</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;f;</span><br><span class="line">    c=<span class="number">5.0</span> / <span class="number">9.0</span> * (f - <span class="number">32</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f华氏度等于%.2f摄氏度\n"</span>,f,c);</span><br><span class="line">    <span class="comment">//cout&lt;&lt; f &lt;&lt; c &lt;&lt; setprecision(2);</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"==========================================="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>3． 大写字母转换成小写字母<br>从键盘输入一个大写英文字母，输出相应的小写字母。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> letter;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter a character:"</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;letter;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The lower case of "</span> &lt;&lt; letter &lt;&lt; <span class="string">" is:"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>) ( (<span class="keyword">int</span>) (letter + <span class="number">32</span>) ) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>4． 求平方根<br>输入1 个实数x，计算并输出其平方根（保留1 位小数）。 提示：利用setprecision()设定输出精度。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The input is:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; fixed &lt;&lt; setprecision(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The square root of "</span> &lt;&lt; a &lt;&lt; <span class="string">" is:"</span> &lt;&lt; <span class="built_in">sqrt</span>(a) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="5"><li>数制转换<br>输入1个10进制整数，输出其8进制和16进制的表示形式。提示：利用hex、oct、dec设定输出进制，showbase设置输出的进制标志。</li></ol><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> orig,cach;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Please enter an integer:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; orig;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The hex form of "</span> &lt;&lt; orig &lt;&lt; <span class="string">" is: "</span> &lt;&lt; showbase &lt;&lt; hex &lt;&lt; orig &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    showbase设置输出进制模式</span></span><br><span class="line"><span class="comment">    并且影响后续的全部输出</span></span><br><span class="line"><span class="comment">    直到遇到下一个showbase</span></span><br><span class="line"><span class="comment">    hex 十六进制0x</span></span><br><span class="line"><span class="comment">    oct 八进制（以0开头）</span></span><br><span class="line"><span class="comment">    dec 十进制</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The oct form of "</span> &lt;&lt; orig &lt;&lt; <span class="string">" is: "</span> &lt;&lt; showbase &lt;&lt; oct &lt;&lt; orig &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>设计类编程题：<br>6. 计算旅途时间<br>输入2 个整数time1 和time2分别表示火车的出发时间和到达时间，计算并输出旅途时间。有效的时间范围是0000 到2359，不需要考虑出发时间晚于到达时间的情况。<br>例：输入：  711  1410（出发时间是7:11，到达时间是14:10）<br>输出：  The train journey time is 6 hrs 59 mins.</p><ol start="7"><li>数字加密<br>输入1 个四位数，将其加密后输出。方法是将该数每一位上的数字加9，然后除以10 取余，做为该位上的新数字，最后将第1 位和第3 位上的数字互换，第2 位和第4 位上的数字互换，组成加密后的新数。<br>例：输入：  The original number is : 1257<br>输出：  The encrypted number is 4601</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;程序设计思维与方法B&lt;br&gt;
+第一次课后作业：&lt;/p&gt;
+&lt;p&gt;上机目标：&lt;br&gt;
+1.熟悉VS2010等集成开发环境，能够独立地编辑，编译 、链接，生成正确的可执行程序&lt;br&gt;
+2.完成简单的输入-输出功能及数据运算功能&lt;br&gt;
+3.通过查找资料，自学掌握C++输入输出操纵
+      
+    
+    </summary>
+    
+    
+    
+      <category term="编程" scheme="https://liuboyuan.fun/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>⛰️齐鲁游记</title>
+    <link href="https://liuboyuan.fun/journeytoshandong/"/>
+    <id>https://liuboyuan.fun/journeytoshandong/</id>
+    <published>2024-10-01T23:13:58.000Z</published>
+    <updated>2025-01-23T15:20:22.033Z</updated>
+    
+    <content type="html"><![CDATA[<p>高考结束，顿感无事可做，故整日宅家，茶饭不调，每况愈下。心向远邑，打算旅游，又不想与父母同行，恐二老体力不支，且对我加以约束，况已成人当独立，自知应出门锻炼生活能力，以适应大学生活。父母闻之亦允，但应去何处，还当深思。</p><p>我自初中便想去西藏这片“神圣”土地，但碍于高原苦寒，环境恶劣，语言不通，且不熟习藏民习俗，恐触犯之，孤行难返，遂搁置不虑。南方诸地亦可，但酷暑难耐。西北荒凉，心忌惮之；家在东北，多已游历。惟齐鲁未曾踏足，虽自幼涉猎孔孟之道，亦未曾体味孔孟之乡，又闻山东人才辈出，况且离家不远，以是下定主意，行旅山东。</p><p>七月十日清晨，街巷空荡，凉风习习，在父母陪同下，前往车站，奔赴省城，乘风南下。机上无论是机窗的《论语》选章，亦或古韵犹存的安全须知，皆彰显着山航乃至山东的文化气息，实是令我赞叹不已。<br>（甚至贴了两层）<br>齐鲁虽赊，扶摇可接。一越过茫茫渤海，整片山东大地便映入眼帘，广阔森林葱郁盎然，蜿蜒河流波光粼粼，山原旷其盈视，川泽纡其骇瞩——这片生机苍郁的土地，和这片沃土孕育的人们，想必定会带给我别样的体验与惊喜。</p><p>飞机强烈的触地将我从梦境拽出，不多时我便踏上山东大地，来到泉城济南。与印象中的”省会“不同，地铁并未通达机场，只得乘车入城，略有不便。大巴颠颠摇摇，颇有些游乐场的趣味，俗话说玩物丧志，这乐趣实在爱莫能受，再者为了那远大的志向，我不敢再坐下去。</p><p>我从济泺[落]路地铁站前往住所，稍作歇息，腹中咕咕，遂外出觅食。心雨建议我去环联夜市瞅瞅，只有两站地，甚是方便。临近夜市，只见人流攘攘，炊烟缭绕，花灯通明，觥筹交错。飨食遍及南北，口音跨越东西，从东北大饭包到新疆羊肉串，从粗犷豪放到吴侬软语，这里汇集着祖国各地的美食，吸引着各方来客，无论何处而来，无论将往何处，想必都会在这里寻得熟悉的味道，正如我的故乡，便在这酱香萦绕的饭包中，轻轻牵扯我心头的回忆，带来外乡里家的回味。<br>夜市虽大，琳琅满目，可肚量终究有限，最终只得带着点遗憾，远离这片熟悉而陌生的喧嚣。虽有不舍，但也给了自己再来济南的理由。<br>7月11日<br>今天要和心雨见面。<br>这是我第一次和网友见面，内心十分紧张。怀着忐忑的心情，我迈入了开往济泺路的地铁，期待着，也恐惧着。对于见面的场景，我已然预想过无数次，但当她真的到来时，却仍显得不知所措。只曾依靠电波交流、素未谋面的两人，一旦面对无比真切的对方，更多的会是喜悦，还是迷惘呢？在我的记忆里，她曾是“虚拟”的——如若身边的是“真实的”，很长一段时间里，她的形象在我心中是模糊的，多是不切实际的猜想，或是梦里虚无缥缈的幻象，而一切印象的形成，也只是胡思乱想中，小小荧屏上，万千字符的重构：平白无力，而又繁杂细腻。<br>而这次，那些印象将拥有归宿。<br>时光飞逝，一转眼地铁便稳稳停在济泺路。刚走出站，我便被阵阵热浪包裹住，定睛一看，这正是我昨日进站处。街道人来车往，我瞪大眼睛找寻她的身影，忽然路口一道熟悉的身影，将我吸引过去，这便是我与心雨的初次见面，平静得像是常常玩耍的老朋友，我悬着的心也落了地。<br>于是几句寒暄后，心雨带着我一路向前，到缤纷楼下，准备来点好吃的。我还正沉浸在见面的喜悦，直到饭食冒着香气扑鼻而来，我才意识到肚子已咕咕叫了半天。心雨俨然一副老主顾的模样，熟练地从桌子抽屉取出餐具递给我，孜孜不倦地向我介绍这家餐馆。我们便在声声谈笑中，享用了这顿便捷而充盈的午饭。<br>随后心雨领我进入机厅，准备教我打舞萌（一款音乐节奏游戏）。作为基本无音游基础的初学者，面对着滚筒洗衣机似的机器，我有点蒙圈。但在心雨的耐心指导和游戏的新手教程辅助下，我成功地登入游戏，并基本掌握了操作方法。在游玩过程中，我渐渐体会到它的乐趣，也逐渐理解玩家会为之排长队的原因，在我印象中这在机厅其他机器上似乎从未有过。几轮舞萌下来，我虽有心再玩，奈何体力不支，如此“体育锻炼”，与其说是在打舞萌，不如说在被舞萌“打”，虽然疲惫，但意犹未尽。<br>日头西斜，我与心雨喝完瑞幸，参观了她的住所。附近既有小吃街，又离机厅很近，用她的话说，这里是个准备“出勤”的好地方。闲聊几句，心雨掏出电脑，想必有不少工作要做。我自知不应打扰她办公，于是合照后，便为这次短暂又回味无穷的见面，画上圆满的句号。<br>奔入地铁站，我便开始寻觅去处。突然老舍笔下的常客“大明湖”闪入脑海，于是出于对老舍先生的敬意，我打算先去大明湖溜溜。进入大门，惟见画壁上对联一幅,其上曰:北渚云飞,泺水帝山迎帝子。明湖波静,莲歌渔唱念曾公。铜鼎庄严伫立于北渚台上,与画壁相为映衬,无声诉说着大明湖庄重典雅的历史。我漫步于大明湖公园,游客云集,或着汉服,或嬉戏,或谈笑,或起舞,笙歌此起彼伏,好一派悠闲之景!转望湖畔,荷花竞放,莲香扑鼻,湖中画船载着夕阳,缓缓驶向星光点点的彼岸。而那抹血红透过摇曳的柳叶,默默斑驳了渐渐暗淡的巷口,我注视着波光轻漾的水面,望向远方连绵的群山,嗅着莲花的阵阵清香,真切地体会到“四面荷花三面柳,一城山色半城湖”这济南城的鲜明写照。</p><p>游罢大明湖,我返回住处,在鲁菜馆子订了份菜,这方才初探到鲁菜的滋味。其实本来想到店中吃,但毕竟孤身一人,难免尴尬,待以后有人陪伴再一同享用罢。天色渐晚,安祥入梦。</p><p>7月12日<br>在老舍的作品中,&quot;趵突泉&quot;可谓是个常客,今日终于有幸前往观赏与品尝。我缓缓俯下身，掬起一捧泉水送入口中,一阵甘甜立刻在舌尖漫延开来。以前每每听闻泉水&quot;甘甜&quot;一类话,总是半信半疑,如今真相大白,甚是欣喜。而后又去看了黑虎泉,不少大爷在此用桶装水以供茶饮,我浅尝小口,却是逊色了不少。泉旁凉亭,有数老叟下棋,谈笑风生,亭中水声汩汩,凉风习习,好不自在!</p><p>下午参观了省博,初步了解齐鲁大地的历史文化,但奈何十分深厚，难以窥其全貌,有待下次再加考究。晚上去万象城闲逛,顺便找些吃食，人来人往，言笑晏晏，俄而皓月当空，好似钦羡济南城夜里的繁华。见已近半夜，只得返回，为明日的跋涉养精蓄锐。<br>7月13日<br>夜爬泰山。人山人海，早晨阴天，未见晨曦。<br>7月14日<br>离开山东。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;高考结束，顿感无事可做，故整日宅家，茶饭不调，每况愈下。心向远邑，打算旅游，又不想与父母同行，恐二老体力不支，且对我加以约束，况已成人当独立，自知应出门锻炼生活能力，以适应大学生活。父母闻之亦允，但应去何处，还当深思。&lt;/p&gt;
+&lt;p&gt;我自初中便想去西藏这片“神圣”土地，但碍
+      
+    
+    </summary>
+    
+    
+    
+      <category term="游记" scheme="https://liuboyuan.fun/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+      <category term="随笔" scheme="https://liuboyuan.fun/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>📗诗朗稿</title>
+    <link href="https://liuboyuan.fun/poem202409/"/>
+    <id>https://liuboyuan.fun/poem202409/</id>
+    <published>2024-09-06T22:24:16.000Z</published>
+    <updated>2025-01-23T15:40:53.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>注：男领2是负雨</p><p>男领1：<br>在蔚蓝海岸的怀抱中，<br>你矗立如峰，智慧之光闪耀。</p><p>女领1：<br>大连理工，我们的骄傲，<br>知识的沃土，创新的浪潮。</p><p>齐：<br>求知的种子已深深埋藏，<br>在你的沃土中孕育希望。<br>科研的舰船正乘风破浪，<br>在你的助推下坚定远航。</p><p>男领2：<br>凌水湖畔波光荡漾，<br>晨曦如梦，诉说大工人的愿景，<br>照耀着无限的憧憬与希望。</p><p>女领2：<br>福佳操场绿意盎然，<br>汗水记录拼搏的模样，<br>激励我们用青春志气，<br>书写崭新的人生篇章。</p><p>齐：<br>晨光洒在图书馆的窗前，<br>我们迫不及待翻开书卷，<br>心中满是对未来的期盼，<br>在知识的海洋起舞翩跹。</p><p>女领1：<br>学子们在这里成长，梦想翱翔。</p><p>男领1：<br>你的怀抱，是我们最温暖的港。</p><p>男，女领1：<br>你是我们永远的骄傲，<br>无论身在何方，都把你深深向往。<br>齐：<br>胸襟宽广纳万物，包容万象显气度，<br>日夜不息攀高峰，坚韧不拔铸精神。<br>品行高尚深钻研，博学多才耀世间，<br>理论实践紧相联，言行一致真人前。</p><p>男领1：<br>海纳百川，</p><p>女领1：<br>自强不息，</p><p>女领2：<br>厚德笃学，</p><p>男领2：<br>知行合一。</p><p>齐：<br>是你的教诲，<br>更是我们共通的理想。</p><p>女领1：<br>从建国之初的艰难困苦，</p><p>男领1：<br>到建设时期的激情燃烧，</p><p>女领2：<br>从改开之际的上下求索，</p><p>男领2：<br>到复兴时代的踔厉奋发。</p><p>所有领诵：<br>七十五载薪火相传，<br>一代代大工人以怎样的奋斗，<br>谱写了怎样的华章？</p><p>齐：<br>我们将把青春献给这片热土，<br>以丰富的学识与无限的热情，<br>为祖国的繁荣栉风沐雨——<br>奔赴那无限可能的彼方！<br>所有领诵：<br>百年后再回首，<br>后人或曰：</p><p>齐：<br>大工名远扬，学子聚八方，<br>楼宇连云起，书香满院芳。<br>科研创佳绩，教学育栋梁，<br>明日英才出，更耀华夏光。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;注：男领2是负雨&lt;/p&gt;
+&lt;p&gt;男领1：&lt;br&gt;
+在蔚蓝海岸的怀抱中，&lt;br&gt;
+你矗立如峰，智慧之光闪耀。&lt;/p&gt;
+&lt;p&gt;女领1：&lt;br&gt;
+大连理工，我们的骄傲，&lt;br&gt;
+知识的沃土，创新的浪潮。&lt;/p&gt;
+&lt;p&gt;齐：&lt;br&gt;
+求知的种子已深深埋藏，&lt;br&gt;
+在你的沃土中孕育
+      
+    
+    </summary>
+    
+    
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>🎇炽梦</title>
@@ -335,11 +451,11 @@
   </entry>
   
   <entry>
-    <title>木兰香·忆过钱塘苏小小墓</title>
+    <title>🏞️木兰香·忆过钱塘苏小小墓</title>
     <link href="https://liuboyuan.fun/e6-9c-a8-e5-85-b0-e9-a6-99-c2-b7-e5-bf-86-e8-bf-87-e9-92-b1-e5-a1-98-e8-8b-8f-e5-b0-8f-e5-b0-8f-e5-a2-93/"/>
     <id>https://liuboyuan.fun/e6-9c-a8-e5-85-b0-e9-a6-99-c2-b7-e5-bf-86-e8-bf-87-e9-92-b1-e5-a1-98-e8-8b-8f-e5-b0-8f-e5-b0-8f-e5-a2-93/</id>
     <published>2021-08-03T19:56:35.000Z</published>
-    <updated>2023-02-13T04:30:50.490Z</updated>
+    <updated>2025-01-12T16:01:29.487Z</updated>
     
     <content type="html"><![CDATA[<p>青青细柳，小小坟头残空酒。</p><p>暗暗秋殇，几客曾知憶断香。</p><p>阮郎归去，寂守西泠花无绪。</p><p>晚雁南飞，哪春眸得郁儿归？</p><p>负雨 作</p><p>八月三日</p>]]></content>
     
@@ -369,11 +485,11 @@
   </entry>
   
   <entry>
-    <title>忆江南</title>
+    <title>🏞️忆江南</title>
     <link href="https://liuboyuan.fun/e5-bf-86-e6-b1-9f-e5-8d-97/"/>
     <id>https://liuboyuan.fun/e5-bf-86-e6-b1-9f-e5-8d-97/</id>
     <published>2021-08-03T19:10:00.000Z</published>
-    <updated>2023-02-13T04:30:50.458Z</updated>
+    <updated>2024-09-21T15:58:32.321Z</updated>
     
     <content type="html"><![CDATA[<p>一</p><p>今秋早，痴醒醉人间。</p><p>水寻柔声沉睡语，灯燃绵影浮春寒。</p><p>残忆逝如烟。</p><p>二</p><p>曾余憾，只影绘孤山。</p><p>笔执言空终寂梦，江流声有阔垂帆。</p><p>花落似昨年。</p><p>负雨 作</p><p>以念梦</p>]]></content>
     
@@ -434,9 +550,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
-    
       <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -811,26 +927,27 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>春残</title>
+    <title>💐春残</title>
     <link href="https://liuboyuan.fun/e6-98-a5-e6-ae-8b/"/>
     <id>https://liuboyuan.fun/e6-98-a5-e6-ae-8b/</id>
     <published>2021-05-01T10:00:02.000Z</published>
-    <updated>2023-02-13T04:30:50.481Z</updated>
+    <updated>2025-01-23T15:47:17.777Z</updated>
     
-    <content type="html"><![CDATA[<p>斑斑夏影，萧萧春风。</p><p>望空谷寂寂，朝晨孤兮。</p><p>呼耳侧畔，吟鸣翘目。</p><p>闻百折声去，恍遇归兮。</p><p>星何无明，夜何无月？</p><p>眸染浸相思，路何平兮！</p><p>月何无明，星何无圆？</p><p>眸斥塞蜃楼，心何畅兮！</p><p>朝兮念兮，寐寐梦兮。</p><p>凭涯涯碧水，何濯沙兮。</p><p>踱兮叹兮，暮暮望兮。</p><p>凭蓝霞辽海，一粟湮兮。</p><p>负雨 作</p>]]></content>
+    <content type="html"><![CDATA[<p>斑斑夏影，萧萧春风。<br>望空谷寂寂，朝晨孤兮。<br>呼耳侧畔，吟鸣翘目。<br>闻百折声去，恍遇归兮。</p><p>星何无明，夜何无月？<br>眸染浸相思，路何平兮！<br>月何无明，星何无圆？<br>眸斥塞蜃楼，心何畅兮！</p><p>朝兮念兮，寐寐梦兮。<br>凭涯涯碧水，何濯沙兮。<br>踱兮叹兮，暮暮望兮。<br>凭蓝霞辽海，一粟湮兮。</p><p>负雨 作</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;斑斑夏影，萧萧春风。&lt;/p&gt;
-&lt;p&gt;望空谷寂寂，朝晨孤兮。&lt;/p&gt;
-&lt;p&gt;呼耳侧畔，吟鸣翘目。&lt;/p&gt;
-&lt;p&gt;闻百折声去，恍遇归兮。&lt;/p&gt;
-&lt;p&gt;星何无明，夜何无月？&lt;/p&gt;
-&lt;p&gt;眸染浸相思，路何平兮！&lt;/p&gt;
-&lt;p&gt;月何无明，星何无圆？&lt;/p&gt;
-&lt;p&gt;眸斥塞蜃楼，心何
+        &lt;p&gt;斑斑夏影，萧萧春风。&lt;br&gt;
+望空谷寂寂，朝晨孤兮。&lt;br&gt;
+呼耳侧畔，吟鸣翘目。&lt;br&gt;
+闻百折声去，恍遇归兮。&lt;/p&gt;
+&lt;p&gt;星何无明，夜何无月？&lt;br&gt;
+眸染浸相思，路何平兮！&lt;br&gt;
+月何无明，星何无圆？&lt;br&gt;
+眸斥塞蜃楼，心何畅兮！&lt;/p&gt;
+&lt;p&gt;朝兮念兮，寐寐
       
     
     </summary>
@@ -887,23 +1004,24 @@ Finaly,ended.&lt;/p&gt;
     <link href="https://liuboyuan.fun/e6-98-a5/"/>
     <id>https://liuboyuan.fun/e6-98-a5/</id>
     <published>2021-04-24T10:14:00.000Z</published>
-    <updated>2023-02-13T04:30:50.481Z</updated>
+    <updated>2025-01-23T15:52:34.185Z</updated>
     
-    <content type="html"><![CDATA[<p>枝间青绿的嫩芽，</p><p>鼓起嘴来轻吻黄花。</p><p>那黄花竟心儿荡漾，</p><p>那清风中跃起淡淡花香。</p><p>垂柳吐出濛濛飞絮，</p><p>打绕飘向思念的远方。</p><p>青杨抽来缕缕青叶，</p><p>伴落花依偎如梦春光。</p><p>看，燕儿陪相思放歌，</p><p>那春雨将相思勾勒。</p><p>那流水随晨曦斑驳，</p><p>那锦书以颦笑铭刻。</p><p>哦，这阳春暖风轻拂，</p><p>那大地点染半分青色。</p><p>那背影何时回首啊，</p><p>看那天涯火烧的晚霞，</p><p>终驻留巷口尽头</p><p>轻轻抖落漫天春花。</p><p>负雨 作</p>]]></content>
+    <content type="html"><![CDATA[<p>枝间青绿的嫩芽，<br>鼓起嘴来轻吻黄花。<br>那黄花竟心儿荡漾，<br>那清风中跃起淡淡花香。</p><p>垂柳吐出濛濛飞絮，<br>打绕飘向思念的远方。<br>青杨抽来缕缕青叶，<br>伴落花依偎如梦春光。</p><p>看，燕儿陪相思放歌，<br>那春雨将相思勾勒。<br>那流水随晨曦斑驳，<br>那锦书以颦笑铭刻。</p><p>哦，这阳春暖风轻拂，<br>那大地点染半分青色。<br>那背影何时回首啊，<br>看那天涯火烧的晚霞，<br>终驻留巷口尽头<br>轻轻抖落漫天春花。</p><p>负雨 作</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;枝间青绿的嫩芽，&lt;/p&gt;
-&lt;p&gt;鼓起嘴来轻吻黄花。&lt;/p&gt;
-&lt;p&gt;那黄花竟心儿荡漾，&lt;/p&gt;
-&lt;p&gt;那清风中跃起淡淡花香。&lt;/p&gt;
-&lt;p&gt;垂柳吐出濛濛飞絮，&lt;/p&gt;
-&lt;p&gt;打绕飘向思念的远方。&lt;/p&gt;
-&lt;p&gt;青杨抽来缕缕青叶，&lt;/p&gt;
-&lt;p&gt;伴落花依偎如梦春光。&lt;/p&gt;
-&lt;
+        &lt;p&gt;枝间青绿的嫩芽，&lt;br&gt;
+鼓起嘴来轻吻黄花。&lt;br&gt;
+那黄花竟心儿荡漾，&lt;br&gt;
+那清风中跃起淡淡花香。&lt;/p&gt;
+&lt;p&gt;垂柳吐出濛濛飞絮，&lt;br&gt;
+打绕飘向思念的远方。&lt;br&gt;
+青杨抽来缕缕青叶，&lt;br&gt;
+伴落花依偎如梦春光。&lt;/p&gt;
+&lt;p&gt;看，燕儿陪相思放歌，&lt;br&gt;
+那
       
     
     </summary>
@@ -993,13 +1111,13 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>望海潮</title>
+    <title>🌇望海潮</title>
     <link href="https://liuboyuan.fun/e6-9c-9b-e6-b5-b7-e6-bd-ae/"/>
     <id>https://liuboyuan.fun/e6-9c-9b-e6-b5-b7-e6-bd-ae/</id>
     <published>2021-04-05T21:46:00.000Z</published>
-    <updated>2023-02-13T04:30:50.497Z</updated>
+    <updated>2024-10-25T16:28:55.937Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>时值情书初送后，应惜之时。</p><p>六月末注</p></blockquote><p>心头续塞，相思盈怀。</p><p>盈寸竟似天涯。</p><p>回首凝眸，风栖雨落。</p><p>碧穹绽焕飞花。</p><p>常记却相识，</p><p>恰叶枯枝舞，晞晓月斜。</p><p>柳折欲坠，心头荒凄探春芽。</p><p>归去念语风凉，</p><p>见西楼日落，东月星光。</p><p>校园未空，情书载梦。</p><p>谧夜春雨花香。华灯抹残阳。</p><p>念信达情远，相望难言。</p><p>凭叹远兮，静随昏巷忆春长。</p><p><br></br></p><p>负雨 作</p><p>于相思中</p><hr><p>注：“盈寸”原作”三里“</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>时值情书初送后，应惜之时。</p><p>六月末注</p></blockquote><p>心头续塞，相思盈怀。</p><p>三里竟似天涯。</p><p>回首凝眸，风栖雨落。</p><p>碧穹绽焕飞花。</p><p>常记却相识，</p><p>恰叶枯枝舞，晞晓月斜。</p><p>柳折欲坠，心头荒凄探春芽。</p><p>归去念语风凉，</p><p>见西楼日落，东月星光。</p><p>校园未空，情书载梦。</p><p>谧夜春雨花香。华灯抹残阳。</p><p>念信达情远，相望难言。</p><p>凭叹远兮，静随昏巷忆春长。</p><p><br></br></p><p>负雨 作</p><p>于相思中</p><hr><p>注：“盈寸”原作”三里“<br>2024.10.26注：改回“三里”</p>]]></content>
     
     <summary type="html">
     
@@ -1010,7 +1128,7 @@ Finaly,ended.&lt;/p&gt;
 &lt;p&gt;六月末注&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;心头续塞，相思盈怀。&lt;/p&gt;
-&lt;p&gt;盈寸竟似天涯。&lt;/p&gt;
+&lt;p&gt;三里竟似天涯。&lt;/p&gt;
 &lt;p&gt;回首凝眸，风栖雨落。&lt;/p&gt;
 &lt;p&gt;碧穹绽焕飞花。&lt;/p&gt;
 &lt;p&gt;常记却相识，&lt;/p&gt;
@@ -1105,13 +1223,13 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>春醒</title>
+    <title>😭春醒</title>
     <link href="https://liuboyuan.fun/e6-98-a5-e9-86-92/"/>
     <id>https://liuboyuan.fun/e6-98-a5-e9-86-92/</id>
     <published>2021-03-27T11:45:00.000Z</published>
-    <updated>2023-02-13T04:30:50.488Z</updated>
+    <updated>2025-01-23T15:52:34.185Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>于辛丑三月二十八日夜战栗抄之为书<br>三月二十九日七时末给出，轻置于案。</p><p>其拾之于案，视之颦然，惑，又阅，收之。<br>抄时更题为 《春醒以赠君》</p><p>难以回首的回忆</p></blockquote><p>徐徐春风，梦醒晨曦。</p><p>盼汝之颦笑，哀绪逝兮。</p><p>袂间素手，涛涛涟漪。</p><p>望君之颦笑，路何难兮。</p><p>春似百花，夏如洁月。</p><p>眸君之颦笑，弆于梦兮。</p><p>梦兮春兮，日夜念兮。</p><p>眸汝之颦笑，恍如醉兮。</p><p>夏兮依兮，朝暮盼兮。</p><p>一朝未见，如三秋兮。</p><p>负雨 作</p><p>已于某日清晨</p><p>鼓起勇气给出</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>于辛丑三月二十八日夜战栗抄之为书<br>三月二十九日七时末给出，轻置于案。</p><p>其拾之于案，视之颦然，惑，又阅，收之。<br>抄时更题为 《春醒以赠君》</p><p>——难以回首的回忆</p></blockquote><p>徐徐春风，梦醒晨曦。<br>盼汝之颦笑，哀绪逝兮。<br>袂间素手，涛涛涟漪。<br>望君之颦笑，路何难兮。</p><p>春似百花，夏如洁月。<br>眸君之颦笑，弆于梦兮。<br>梦兮春兮，日夜念兮。<br>眸汝之颦笑，恍如醉兮。</p><p>夏兮依兮，朝暮盼兮。<br>一朝未见，如三秋兮。</p><p>负雨 作</p><p>//已于某日清晨<br>//鼓起勇气给出</p>]]></content>
     
     <summary type="html">
     
@@ -1122,9 +1240,9 @@ Finaly,ended.&lt;/p&gt;
 三月二十九日七时末给出，轻置于案。&lt;/p&gt;
 &lt;p&gt;其拾之于案，视之颦然，惑，又阅，收之。&lt;br&gt;
 抄时更题为 《春醒以赠君》&lt;/p&gt;
-&lt;p&gt;难以回首的回忆&lt;/p&gt;
+&lt;p&gt;——难以回首的回忆&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;徐徐春风
+&lt;p&gt;徐徐
       
     
     </summary>
@@ -1253,11 +1371,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>拾忆</title>
+    <title>🌸拾忆</title>
     <link href="https://liuboyuan.fun/e6-8b-be-e5-bf-86/"/>
     <id>https://liuboyuan.fun/e6-8b-be-e5-bf-86/</id>
     <published>2021-03-14T21:14:05.000Z</published>
-    <updated>2023-02-13T04:30:50.465Z</updated>
+    <updated>2024-09-21T16:07:10.201Z</updated>
     
     <content type="html"><![CDATA[<p>时间蚕食着记忆，</p><p>过往给予满面风霜。</p><p>蓦然回首将欲回想。</p><p>惊愕中悟却是昨天。</p>  <br><p>时光长兮，</p><p>思绪的线索蜿蜿蜒蜒。</p><p>冬尽的凉风细细捋过，</p><p>方才有些片段</p><p>已然空白。</p><p>​    <br></p><p>那曾经楼间落日变迁，</p><p>那顿然饮光褪色的胶卷。</p><p>那脑海中迸裂的沙砾。</p><p>那苍白，轻轻锁死了记忆。</p><p>​    <br></p><p>远远的过往啊淡得渐浓，</p><p>那疑惑染红青色的天空。</p><p>远远的过往啊淡得渐浓，</p><p>伸手触摸终恍如飞星。</p><p>​    <br></p><p>那些消失的岁月啊，</p><p>似孩童嬉闹着捉迷藏。</p><p>那黑白填充的虚无啊，</p><p>回忆沉思中 颦笑点缀了天空。</p>  <br><p>停下，又一次在阡陌上回首。</p><p>看那些放不下的牵挂，</p><p>却在小径上开出纯净的花儿。</p><p><br></br></p><p>负雨 作</p>]]></content>
     
@@ -1292,11 +1410,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>春来</title>
+    <title>🥀春来</title>
     <link href="https://liuboyuan.fun/e6-98-a5-e6-9d-a5/"/>
     <id>https://liuboyuan.fun/e6-98-a5-e6-9d-a5/</id>
     <published>2021-03-14T10:09:00.000Z</published>
-    <updated>2023-02-13T04:30:50.479Z</updated>
+    <updated>2025-01-23T15:46:32.588Z</updated>
     
     <content type="html"><![CDATA[<p>轻轻地，</p><p>你用手拂去眼角一线灰尘</p><p>——一缕幽香</p><p>那眼眸，像湖心一烛暗火。</p><p>呆呆的散开目光。</p><p>低声地，你又为何会忧愁。</p><p>垂下的头，勾勒暮春的忧伤，</p><p>天上的星星也随黑夜流泪。</p><p>你还记得自己的笑吗？</p><p>冬天也盈起暖流啊。</p><p>而春天，为什么会迟来呢？</p><p>静静地，</p><p>我就这样等候，</p><p>在鸟语花香的初春，</p><p>再睁开眼，回首</p><p>守望你欢笑的模样。</p><p>负雨 作</p>]]></content>
     
@@ -1933,11 +2051,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>时光</title>
+    <title>🕖时光</title>
     <link href="https://liuboyuan.fun/e6-97-b6-e5-85-89/"/>
     <id>https://liuboyuan.fun/e6-97-b6-e5-85-89/</id>
     <published>2020-12-21T07:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.477Z</updated>
+    <updated>2025-01-23T14:56:14.404Z</updated>
     
     <content type="html"><![CDATA[<p>白昼与黑夜，</p><p>融杂炎热与冰冷。</p><p>隆冬与暖春，</p><p>绽放雪花与清风。</p><p>长夜将尽，</p><p>海洋从东方泛起，</p><p>残阳于天外如梦。</p><p>冬季的尽头，</p><p>绿意于冻土萌发，</p><p>胎菊从花园探头。</p><p>如若没有新芽，</p><p>昨日即为今朝。</p><p>日夜是同一片花开，</p><p>又如何迎来朝阳！</p><p>曾经的我，</p><p>真的在当下吗？</p><p>或早已从时间消失。</p><p>若初心依旧在，</p><p>我还是啼哭的婴儿罢？</p><p>往日的波涛，</p><p>洗去当下的土地。</p><p>失去的苦难，</p><p>当为虚无的记忆！</p><p>一味遥望幻光，</p><p>背后会吞噬一切。</p><p>一味驻足昨日，</p><p>冰水将抚平热血。</p><p>在冬至的一刻，</p><p>寒风冻结时光。</p><p>转动的钟只是谎言。</p><p>宇宙在这刻停歇，</p><p>等待春轻轻拂过。</p><p>一切都是过去，</p><p>一切都是将来。</p><p>又何必看星河，</p><p>湮灭而重生！</p><p>聆听时光罢，</p><p>在血红的残阳回眸背影，</p><p>在凝固的冰雪洒下泪滴，</p><p>在冰冷的世界留下温暖，</p><p>在沉郁的阴云撒播希望。</p><p>在此时，</p><p>此地，</p><p>当下。</p><p>负雨 作</p><p>于十二月中</p>]]></content>
     
@@ -1968,11 +2086,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>星辰</title>
+    <title>🌠星辰</title>
     <link href="https://liuboyuan.fun/e6-98-9f-e8-be-b0/"/>
     <id>https://liuboyuan.fun/e6-98-9f-e8-be-b0/</id>
     <published>2020-12-18T04:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.482Z</updated>
+    <updated>2025-01-23T15:52:34.202Z</updated>
     
     <content type="html"><![CDATA[<p>灯光渐暗了罢，</p><p>倒映满天星斗。</p><p>地面的人，默默遥望</p><p>一颗颗小太阳。</p><p>对沉静的死寂，</p><p>对纯净的死寂，</p><p>对永恒的死寂，</p><p>永生于梦的神祇。</p><p>几缕晚烟留驻微光，</p><p>于夏季点亮徐风，</p><p>于冬季绽放温暖。</p><p>虚妄的天才，</p><p>沾灰的绳子伸向繁星。</p><p>——洗濯无踪</p><p>沉郁的哲人，</p><p>以愁思相见彼岸，</p><p>——相看明月</p><p>归家的旅人，</p><p>苦苦追寻故乡的炊烟，</p><p>——历尽千帆</p><p>静随山河飘荡，悄无声息</p><p>缀满无垠的夜空，</p><p>绵延海角的朝阳。</p><p>若于明朗的高山眺望，</p><p>伸手会托住天地罢？</p><p>远远的，</p><p>几颗星从长夜划入，</p><p>刺破一道月牙，</p><p>像一颗颗小太阳，</p><p>闪烁消逝的春花。</p><p>跌倒在萤火飞舞的草丛，</p><p>而梦留在天边，</p><p>未愈合的伤疤。</p><p>“看啊，有一颗星星掉下来了”</p><p>“会是…黑夜在哭泣罢”</p><p>负雨 作</p>]]></content>
     
@@ -2108,11 +2226,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>忠诚</title>
+    <title>💫忠诚</title>
     <link href="https://liuboyuan.fun/e5-bf-a0-e8-af-9a/"/>
     <id>https://liuboyuan.fun/e5-bf-a0-e8-af-9a/</id>
     <published>2020-11-22T08:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.461Z</updated>
+    <updated>2024-09-21T16:06:37.665Z</updated>
     
     <content type="html"><![CDATA[<p>盏月永恒地奔向，</p><p>挥之不去的朝阳，</p><p>潮涌淘去曾经易散的沙砾。</p><p>日日夜夜，朝朝暮暮。</p><p>眼中只有月儿，</p><p>莫被繁星吸引。</p><p>太阳永远相信罢，</p><p>世间仅一轮明月在长夜绽放。</p><p>皎洁翩翩，安守流年。</p><p>一侧忽明忽暗的光点，</p><p>被另一颗星玩弄、拖曳。</p><p>被虚幻的光吸引。</p><p>或在今夜迸裂耀眼的火花，</p><p>或在明日消殒纯净的光芒。</p><p>盛花易现，浮心轻移。</p><p>每每日落日出，繁星过尽。</p><p>日月似初见美好，</p><p>如细细清泉，</p><p>流过白昼黑夜的梦，</p><p>吹走虚浮幻光的风。</p><p>于无止的轮回，</p><p>无止的重生中。</p><p>惟遗留，</p><p>肩负时光的忠诚。</p><p>负雨 作</p>]]></content>
     
@@ -2178,11 +2296,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>守望</title>
+    <title>🧑‍🌾守望</title>
     <link href="https://liuboyuan.fun/e5-ae-88-e6-9c-9b/"/>
     <id>https://liuboyuan.fun/e5-ae-88-e6-9c-9b/</id>
     <published>2020-11-19T05:30:00.000Z</published>
-    <updated>2023-02-13T04:30:50.449Z</updated>
+    <updated>2024-09-21T15:52:00.851Z</updated>
     
     <content type="html"><![CDATA[<p>窄窄的小径，</p><p>一片花园闪烁希望的光。</p><p>却平淡无奇，</p><p>却充满活力。</p><p>几只蛱蝶在花间栖息，</p><p>草仍带着昨夜的露滴。</p><p>蹒跚的老者，</p><p>将水洒向土地。</p><p>阳光下泛起一道彩虹，</p><p>映出黑影的缝隙。</p><p>躺在花瓣上，</p><p>像一面镜子，</p><p>反射出暖春的模样。</p><p>时间无止的前进，</p><p>看素花开放，</p><p>又孤自凋零。</p><p>看雪覆盖住土地，</p><p>又融化为另一季春天。</p><p>看记忆在自然的洗礼中，</p><p>湮灭而重生，不见踪影。</p><p>“请问您在种花吗”</p><p>“没有，我只是守望她自己长大”</p><p>负雨 作</p>]]></content>
     
@@ -2282,11 +2400,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>梦中的童年</title>
+    <title>😴梦中的童年</title>
     <link href="https://liuboyuan.fun/e6-a2-a6-e4-b8-ad-e7-9a-84-e7-ab-a5-e5-b9-b4/"/>
     <id>https://liuboyuan.fun/e6-a2-a6-e4-b8-ad-e7-9a-84-e7-ab-a5-e5-b9-b4/</id>
     <published>2020-11-16T06:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.495Z</updated>
+    <updated>2025-01-23T15:58:30.344Z</updated>
     
     <content type="html"><![CDATA[<p>几丛青青的草，</p><p>几朵红红的花。</p><p>几只蝴蝶从树下飞过，</p><p>几条小狗在田间散步。</p><p>几头老牛悠闲地吃草，</p><p>几缕清风飘过劳作的农民，</p><p>几颗星星照着晚归的炊烟，</p><p>一线晨光点亮黝黑的土地。</p><p>这曾是我梦中的童年。</p><p>负雨 作</p><p>若有失处，多多指教</p>]]></content>
     
@@ -2487,7 +2605,7 @@ Finaly,ended.&lt;/p&gt;
     <link href="https://liuboyuan.fun/e6-9c-89-e6-97-a0/"/>
     <id>https://liuboyuan.fun/e6-9c-89-e6-97-a0/</id>
     <published>2020-11-08T06:30:00.000Z</published>
-    <updated>2023-02-13T04:30:50.485Z</updated>
+    <updated>2024-10-25T16:30:03.463Z</updated>
     
     <content type="html"><![CDATA[<p>每个人的眼前都有座灯塔，</p><p>闪烁动人的光，</p><p>每缕下，都有羊肠小道。</p><p>向着远方前行。</p><p>都被束缚在自己的路，</p><p>边缘即是泥沼。</p><p>而逃脱的人，都会捡拾掠光，</p><p>满手沧桑，载梦而归。</p><p>到达灯塔的人，</p><p>从未知晓，眼前的灯塔</p><p>真的是光吗？</p><p>近处的泥沼，</p><p>真的有黑暗吗？</p><p>而什么又是光？</p><p>若无泥沼，</p><p>处处都是野花飘舞的小路，</p><p>世界，便被光明的黑暗笼罩。</p><p>负雨 作</p>]]></content>
     
@@ -2728,11 +2846,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>昔忆</title>
+    <title>🥹昔忆</title>
     <link href="https://liuboyuan.fun/e6-98-94-e5-bf-86/"/>
     <id>https://liuboyuan.fun/e6-98-94-e5-bf-86/</id>
     <published>2020-10-25T18:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.473Z</updated>
+    <updated>2025-01-23T15:44:38.951Z</updated>
     
     <summary type="html">
     
@@ -2782,11 +2900,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>校秋</title>
+    <title>🍁校秋</title>
     <link href="https://liuboyuan.fun/e6-a0-a1-e7-a7-8b/"/>
     <id>https://liuboyuan.fun/e6-a0-a1-e7-a7-8b/</id>
     <published>2020-10-18T19:41:48.000Z</published>
-    <updated>2023-02-13T04:30:50.492Z</updated>
+    <updated>2025-01-23T15:58:30.344Z</updated>
     
     <content type="html"><![CDATA[<p>黄叶带着绿意，</p><p>一缕一缕阳光从缝中透过，</p><p>烈烈地晃着身子。</p><p>耳边回响起校园的事，</p><p>险些忘了喇叭的口号声。</p><p>每每经过地上铺着许落叶，</p><p>脚不经意踏过。</p><p>弄出阵碎裂的声音，</p><p>好像从地面沉下。</p><p>我呆呆地望着地上的枯枝，</p><p>念想茂盛的曾经。</p><p>不知不觉，</p><p>已跑过几圈操场。</p><p>负雨 作</p>]]></content>
     
@@ -2853,11 +2971,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>春泉</title>
+    <title>♨️春泉</title>
     <link href="https://liuboyuan.fun/e6-98-a5-e6-b3-89/"/>
     <id>https://liuboyuan.fun/e6-98-a5-e6-b3-89/</id>
     <published>2020-10-12T18:08:04.000Z</published>
-    <updated>2023-02-13T04:30:50.483Z</updated>
+    <updated>2025-01-23T15:47:44.651Z</updated>
     
     <content type="html"><![CDATA[<p>一汪清泉，涌上。</p><p>带着地下的热浪，</p><p>却如火山喷发，如何也挡不住。</p><p>岩石被熔为金黄，还未沾上灰尘，</p><p>像发光的水，汩汩地向下流出。</p><p>暖暖的，像从太阳洒下。</p><p>全身都照的发亮，</p><p>偶尔冷风拂过，</p><p>却吹不凉永未停息的泉眼。</p><p>回环，萦绕，柔柔的</p><p>闪着春光。</p><p>一块巨石猛地落下，</p><p>惊醒了沉睡的水花。</p><p>洒在青草和花儿，依偎着</p><p>醉在梦里。</p><p>负雨 作</p>]]></content>
     
@@ -2952,11 +3070,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>惜月</title>
+    <title>🌕惜月</title>
     <link href="https://liuboyuan.fun/e6-83-9c-e6-9c-88/"/>
     <id>https://liuboyuan.fun/e6-83-9c-e6-9c-88/</id>
     <published>2020-10-05T03:50:26.000Z</published>
-    <updated>2023-02-13T04:30:50.467Z</updated>
+    <updated>2025-01-12T16:02:38.089Z</updated>
     
     <content type="html"><![CDATA[<p>月光轻轻地洒在大地，<br>伴着稀稀疏疏的星光。<br>将过往悠悠地洗去，喧嚣渐渐远离。<br>也许，什么将要离开。</p><p>如若太阳掉下去了，明天还会出来吗？<br>如若乌云来了，会将月亮吸走吗？<br>如若我走了，不再回来，月儿还会在窗前等我吗？</p><p>或许在炊烟中摇曳，在往日的记忆中淡薄，<br>在阴云中失去光彩，那缕月光一直都在。<br>坚守着，观望着，从未远去。<br>直到海角，天涯。</p><p>静静地伴我走过时光长河，<br>轻轻地将希望洒向，<br>不起眼的角落，没有一丝光亮。<br>——乡愁充塞的远方。</p><p>刘渤源 作</p>]]></content>
     
@@ -3021,11 +3139,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>孤独</title>
+    <title>☄️孤独</title>
     <link href="https://liuboyuan.fun/e5-ad-a4-e7-8b-ac/"/>
     <id>https://liuboyuan.fun/e5-ad-a4-e7-8b-ac/</id>
     <published>2020-09-30T07:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.450Z</updated>
+    <updated>2024-09-21T15:32:06.680Z</updated>
     
     <content type="html"><![CDATA[<p>像块吸水的海绵，<br>涨的很大很大。<br>直到用虚空遮住星河，<br>挤走奔涌的时间。</p><p>心中只剩下孤独。<br>也许诗意从缝隙中艰难行过，<br>又被挤到另一片空白。<br>这里什么也没有。<br>缺少了什么，却永远填不上。</p><p>没有光，没有时间，没有岁月。<br>无限大、又无限小。<br>将所有记忆抛开。<br>我曾用无数情意，<br>烧起阵阵星空。<br>终停在虚空的边缘。<br>无济，于事。</p><p>凄冷的虚空，雪无情地飘落。<br>偶尔烧起的火，将雪变为冰。<br>也许只有另一片星河，<br>将冰雪用春光融化。<br>将星星洒在这片黑暗。</p><p>一阵风会吹过曾经，<br>寸草不生的土地。<br>如梦的月空，<br>只有在那片星河里，那颗星星中，<br>融为另一个春天。</p><p>负雨 作</p>]]></content>
     
@@ -3095,11 +3213,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>朝天子·题册</title>
+    <title>📒朝天子·题册</title>
     <link href="https://liuboyuan.fun/e6-9c-9d-e5-a4-a9-e5-ad-90-c2-b7-e9-a2-98-e5-86-8c/"/>
     <id>https://liuboyuan.fun/e6-9c-9d-e5-a4-a9-e5-ad-90-c2-b7-e9-a2-98-e5-86-8c/</id>
     <published>2020-09-20T07:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.491Z</updated>
+    <updated>2024-10-25T16:29:54.173Z</updated>
     
     <content type="html"><![CDATA[<p>习题，习册，卷儿小愁儿大，</p><p>答案归隐进师家，笔儿没油说嘛话。</p><p>你听了你愁，他听了他怕。</p><p>眼见的吓倒了这家，吓疯了那家。</p><p>只吓的风吹心凉罢！</p>]]></content>
     
@@ -3128,11 +3246,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>掠光 ——读《三体》而言</title>
+    <title>🌑掠光 ——读《三体》而言</title>
     <link href="https://liuboyuan.fun/e6-8e-a0-e5-85-89-e8-af-bb-e3-80-8a-e4-b8-89-e4-bd-93-e3-80-8b-e8-80-8c-e8-a8-80/"/>
     <id>https://liuboyuan.fun/e6-8e-a0-e5-85-89-e8-af-bb-e3-80-8a-e4-b8-89-e4-bd-93-e3-80-8b-e8-80-8c-e8-a8-80/</id>
     <published>2020-09-15T06:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.475Z</updated>
+    <updated>2024-10-25T16:26:06.491Z</updated>
     
     <content type="html"><![CDATA[<p>我们都是黑暗中的行路者，<br>没有人会碰见彼此。<br>甚至相望，相见。<br>不知这里有多少个生命。</p><p>世间除了黑暗，一无所有。<br>只有风走过的声响。<br>过了好久，一位行路者点亮了火，<br>掠去黑暗，怀着希望，想找到同伴。</p><p>无数把火在宇宙展开，<br>他们只能看到火，观察着，观察着。<br>而看不到背后苦难的人。<br>无论凄冷沉沉、百花齐放。<br>只有火的存在。</p><p>他们想见到彼此，却渐行渐远。<br>恐惧、愤怒、不安涌上角落。<br>火光渐渐回归平静，孤零零的摇晃。<br>“冷，真冷”</p><p>行路者举起了生锈的枪，<br>迟缓的换上弹药，拂去灰尘。<br>准星中，火把如艳阳狂舞。<br>难言的喧嚣，难言的黑暗。<br>象征友好的火把，<br>连着最后的生命，<br>终于回归到，茫茫的黑暗中。</p><p>负雨 作</p>]]></content>
     
@@ -3162,27 +3280,28 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>沉梦</title>
+    <title>🥲沉梦</title>
     <link href="https://liuboyuan.fun/e6-b2-89-e6-a2-a6/"/>
     <id>https://liuboyuan.fun/e6-b2-89-e6-a2-a6/</id>
     <published>2020-09-14T06:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.493Z</updated>
+    <updated>2025-01-23T15:58:28.381Z</updated>
     
-    <content type="html"><![CDATA[<p>落日萦绕中的小路，</p><p>一对影子相望无言。</p><p>青草散发淡淡红晕，</p><p>朦胧着小花，伴石头</p><p>醉倒在云雾里。</p><p>温暖的空气扑盖住我，</p><p>躺在如水的土地。</p><p>那只身影带着点点星光，</p><p>蹦跳着，向我走来。</p><p>天上的两颗星星，</p><p>融化在一起，成为关外</p><p>如梦的缩影。</p><p>一阵凉风惊醒了我，</p><p>平淡的星星在高悬。</p><p>我呆呆地望着无垠的天，</p><p>啜泣声在耳边响起。</p><p>原来只有我一个人，</p><p>迎着刺骨的风，</p><p>孤单战栗。</p><p>负雨 作</p>]]></content>
+    <content type="html"><![CDATA[<p>落日萦绕中的小路，<br>一对影子相望无言。<br>青草散发淡淡红晕，<br>朦胧着小花，伴石头<br>醉倒在云雾里。</p><p>温暖的空气扑盖住我，<br>躺在如水的土地。<br>那只身影带着点点星光，<br>蹦跳着，向我走来。</p><p>天上的两颗星星，<br>融化在一起，成为关外<br>如梦的缩影。</p><p>一阵凉风惊醒了我，<br>平淡的星星在高悬。<br>我呆呆地望着无垠的天，</p><p>啜泣声在耳边响起。<br>原来只有我一个人，<br>迎着刺骨的风，<br>孤单战栗。</p><p>负雨 作</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;落日萦绕中的小路，&lt;/p&gt;
-&lt;p&gt;一对影子相望无言。&lt;/p&gt;
-&lt;p&gt;青草散发淡淡红晕，&lt;/p&gt;
-&lt;p&gt;朦胧着小花，伴石头&lt;/p&gt;
-&lt;p&gt;醉倒在云雾里。&lt;/p&gt;
-&lt;p&gt;温暖的空气扑盖住我，&lt;/p&gt;
-&lt;p&gt;躺在如水的土地。&lt;/p&gt;
-&lt;p&gt;那只身影带着点点星光，&lt;/p&gt;
-&lt;p&gt;蹦
+        &lt;p&gt;落日萦绕中的小路，&lt;br&gt;
+一对影子相望无言。&lt;br&gt;
+青草散发淡淡红晕，&lt;br&gt;
+朦胧着小花，伴石头&lt;br&gt;
+醉倒在云雾里。&lt;/p&gt;
+&lt;p&gt;温暖的空气扑盖住我，&lt;br&gt;
+躺在如水的土地。&lt;br&gt;
+那只身影带着点点星光，&lt;br&gt;
+蹦跳着，向我走来。&lt;/p&gt;
+&lt;p&gt;天上的两颗
       
     
     </summary>
@@ -3229,11 +3348,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>如梦令·秋雨</title>
+    <title>💦如梦令·秋雨</title>
     <link href="https://liuboyuan.fun/e5-a6-82-e6-a2-a6-e4-bb-a4-c2-b7-e7-a7-8b-e9-9b-a8/"/>
     <id>https://liuboyuan.fun/e5-a6-82-e6-a2-a6-e4-bb-a4-c2-b7-e7-a7-8b-e9-9b-a8/</id>
     <published>2020-09-04T04:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.442Z</updated>
+    <updated>2024-09-01T14:46:23.521Z</updated>
     
     <content type="html"><![CDATA[<p>楼外秋夜未醒，<br>深巷月空将冷。<br>望断江水长，不知奔流何向。<br>风起，风起。<br>迎水皓月飞星。</p>]]></content>
     
@@ -3429,11 +3548,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>念孙锡源</title>
+    <title>🪨念孙锡源</title>
     <link href="https://liuboyuan.fun/e5-bf-b5-e5-ad-99-e9-94-a1-e6-ba-90/"/>
     <id>https://liuboyuan.fun/e5-bf-b5-e5-ad-99-e9-94-a1-e6-ba-90/</id>
     <published>2020-08-29T05:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.459Z</updated>
+    <updated>2024-09-21T16:06:51.475Z</updated>
     
     <content type="html"><![CDATA[<p>天昏地暗，鸟兽皆散。<br>世界恍无天日。<br>仿佛末日之时。<br>宏大的高墙阻隔了梦想，<br>挺立的鸿沟截断了忧伤。<br>如火焰的空气，<br>留下无声的叹息。</p><p>只身奋战，顿惊波澜。<br>青空阴云变迁，<br>淡黄的书页载不动信念，<br>茫茫的长夜终见曙光。<br>似春的向往，<br>哪怕，心在流浪。</p><p>形单影只，妙手生花。<br>留万人难忘。<br>抬首仰望，鹰隼迎风追梦<br>光影之上，<br>奋起翱翔。</p>]]></content>
     
@@ -3459,9 +3578,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -3616,11 +3735,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>宝塔面板漏洞</title>
+    <title>⛔宝塔面板漏洞</title>
     <link href="https://liuboyuan.fun/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e6-bc-8f-e6-b4-9e/"/>
     <id>https://liuboyuan.fun/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e6-bc-8f-e6-b4-9e/</id>
     <published>2020-08-25T04:38:00.000Z</published>
-    <updated>2023-02-13T04:30:50.451Z</updated>
+    <updated>2024-09-21T15:33:30.312Z</updated>
     
     <content type="html"><![CDATA[<h3 id="起因"><a href="https://liuboyuan.fun/btbug/#%E8%B5%B7%E5%9B%A0" title="起因"></a>起因</h3><p>宝塔面板出现严重数据库漏洞，官方发布紧急安全更新。公告要求所有用户升级到最新版本，但未说明安全事件的任何信息。据了解，此次更新是为了修复phpmyadmin未鉴权，可通过特定地址直接登陆数据库的严重Bug为解决用户服务器被通过phpmyadmin提权导致的安全问题，</p><blockquote><p>为解决用户服务器被通过phpmyadmin提权导致的安全问题，<br>Linux面板7.4.2/Windows面板6.8.0 版本中加入了phpmyadmin安全访问模块，<br>原理是通过面板进行访问phpmyadmin，而不是nginx/apache，<br>但因在目录存放时存在一个致命逻辑漏洞，导致nginx/apache也可以访问到专门给面板使用的phpmyadmin目录，在做安全审计时将重心放在面板程序中，忽略了除面板外被访问的可能，从而导致了此事件的发生.</p></blockquote><p>我这辈子就没见过这么大的漏洞，数据库都能干没喽<br>估计宝塔要把程序员祭天了。</p><h3 id="详情"><a href="https://liuboyuan.fun/btbug/#%E8%AF%A6%E6%83%85" title="详情"></a>详情</h3><p>据了解，该漏洞可以直接通过</p><p>1</p><p>ip:888/pma</p><p>来进入phpmyadmin，目前已经有很多个人网站以及政府网站受到打击，且都是在7.4.2版本。<br>目前有部分受打击IP如下所示：</p><p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16</p><p><a href="http://47.114.96.59:888/pma" target="_blank" rel="noopener">http://47.114.96.59:888/pma</a><br><a href="http://47.114.98.101:888/pma" target="_blank" rel="noopener">http://47.114.98.101:888/pma</a><br><a href="http://47.114.98.215:888/pma" target="_blank" rel="noopener">http://47.114.98.215:888/pma</a><br><a href="http://47.114.102.153:888/pma" target="_blank" rel="noopener">http://47.114.102.153:888/pma</a><br><a href="http://47.114.104.61:888/pma" target="_blank" rel="noopener">http://47.114.104.61:888/pma</a><br><a href="http://47.114.104.82:888/pma" target="_blank" rel="noopener">http://47.114.104.82:888/pma</a><br><a href="http://47.114.105.229:888/pma" target="_blank" rel="noopener">http://47.114.105.229:888/pma</a><br><a href="http://47.114.106.82:888/pma" target="_blank" rel="noopener">http://47.114.106.82:888/pma</a><br><a href="http://47.114.107.70:888/pma" target="_blank" rel="noopener">http://47.114.107.70:888/pma</a><br><a href="http://47.114.107.74:888/pma" target="_blank" rel="noopener">http://47.114.107.74:888/pma</a><br><a href="http://47.114.108.111:888/pma" target="_blank" rel="noopener">http://47.114.108.111:888/pma</a><br><a href="http://47.114.109.13:888/pma" target="_blank" rel="noopener">http://47.114.109.13:888/pma</a><br><a href="http://47.114.109.200:888/pma" target="_blank" rel="noopener">http://47.114.109.200:888/pma</a><br><a href="http://47.114.109.240:888/pma" target="_blank" rel="noopener">http://47.114.109.240:888/pma</a><br><a href="http://47.114.112.168:888/pma" target="_blank" rel="noopener">http://47.114.112.168:888/pma</a><br><a href="http://47.114.113.178:888/pma" target="_blank" rel="noopener">http://47.114.113.178:888/pma</a></p><h3 id="原理"><a href="https://liuboyuan.fun/btbug/#%E5%8E%9F%E7%90%86" title="原理"></a>原理</h3><p><img src="http://liuboyuan.fun/pics/400.jpg" alt="漏洞原理"></p><p>如图为该漏洞原理</p><h3 id="防范与应用"><a href="https://liuboyuan.fun/btbug/#%E9%98%B2%E8%8C%83%E4%B8%8E%E5%BA%94%E7%94%A8" title="防范与应用"></a>防范与应用</h3><h5 id="防范"><a href="https://liuboyuan.fun/btbug/#%E9%98%B2%E8%8C%83" title="防范"></a>防范</h5><ul><li>更新宝塔面板</li><li>关闭888端口</li><li>有严格的安全认证</li><li>卸载数据库和phpmyadmin</li><li>使用别的面板</li></ul><h5 id="应用"><a href="https://liuboyuan.fun/btbug/#%E5%BA%94%E7%94%A8" title="应用"></a>应用</h5><p><img src="http://liuboyuan.fun/pics/btbug1.jpg" alt=""></p><p>请大家尽量不要尝试，否则警察局见。</p><h3 id="警醒"><a href="https://liuboyuan.fun/btbug/#%E8%AD%A6%E9%86%92" title="警醒"></a>警醒</h3><p>这次事故再次印证了那句话</p><blockquote><p>没有绝对安全的系统</p></blockquote><p>我们在以后的路上要养成勤备份、护安全的良好习惯，不能过度相信面板。要尝试多种安全防护方式，启用端口限制功能。才能在下一次浩劫中得以存活。</p>]]></content>
     
@@ -3647,11 +3766,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>晨临金山</title>
+    <title>🌄晨临金山</title>
     <link href="https://liuboyuan.fun/e6-99-a8-e4-b8-b4-e9-87-91-e5-b1-b1/"/>
     <id>https://liuboyuan.fun/e6-99-a8-e4-b8-b4-e9-87-91-e5-b1-b1/</id>
     <published>2020-08-24T23:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.487Z</updated>
+    <updated>2025-01-23T15:52:34.185Z</updated>
     
     <content type="html"><![CDATA[<p>山路崎岖卧在山上，浓雾还未散去。</p><p>街道上，寒凉萧索。</p><p>小兴安岭的清晨布满冷气。</p><p>远山层层消散，远离云雾。</p><p>山下汤旺河潺潺的流。</p><p>一道光引入金山，冲去寒冷。</p><p>在云里留下淡黄晕影。</p><p>仍残余昨夜的寒气。</p><p>树叶在风的鼓舞下，斑驳晨曦。</p><p>恍然一梦，恍如仙世！</p><p>崇山耸立，云海缭绕。</p><p>淡蓝的天抹着如血的日影，</p><p>没有过多装饰，纯净无边。</p><p>只有虚无缥缈，自由自在。</p><p>我多想沉入云海，溶在云雾，</p><p>飞似鹰隼，游如潜鱼。</p><p>沐浴晨曦，仰望星空。</p><p>没有霓虹，没有繁华。</p><p>最终，活在虚无的梦中—</p><p>云海朦胧。</p>]]></content>
     
@@ -3675,18 +3794,18 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
   <entry>
-    <title>星辰</title>
+    <title>✨星辰</title>
     <link href="https://liuboyuan.fun/e6-98-9f-e8-be-b0-2/"/>
     <id>https://liuboyuan.fun/e6-98-9f-e8-be-b0-2/</id>
     <published>2020-08-23T22:00:00.000Z</published>
-    <updated>2023-02-13T04:30:50.486Z</updated>
+    <updated>2025-01-23T15:52:34.200Z</updated>
     
     <content type="html"><![CDATA[<h3 id="星星"><a href="https://liuboyuan.fun/zushi/#%E6%98%9F%E6%98%9F" title="星星"></a>星星</h3><p>看天上的星星，在夜空飞舞。<br>像好多好多小太阳，将黑暗照亮。<br>过了好久好久，星星掉下去，再也不发光了。<br>从此夏天看不到绿叶，秋天看不到凋零。</p><h3 id="清晨"><a href="https://liuboyuan.fun/zushi/#%E6%B8%85%E6%99%A8" title="清晨"></a>清晨</h3><p>星空洗净了土地，带走了浊污。<br>紧闭的门窗打开，天际处，阳光洒遍大地。<br>冲走叶子上的星星，和昨夜的骤冷。<br>我也不属于昨天。</p><h3 id="夕阳"><a href="https://liuboyuan.fun/zushi/#%E5%A4%95%E9%98%B3" title="夕阳"></a>夕阳</h3><p>一天过去了，房屋被染上如火的夕阳。<br>窗帘在风的吹动飞舞。<br>树叶摇曳，光影斑驳了道路。<br>漫天繁星点缀了天空。</p>]]></content>
     
@@ -3740,9 +3859,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -3815,11 +3934,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>平水韵表</title>
+    <title>🎲平水韵表</title>
     <link href="https://liuboyuan.fun/e5-b9-b3-e6-b0-b4-e9-9f-b5-e8-a1-a8/"/>
     <id>https://liuboyuan.fun/e5-b9-b3-e6-b0-b4-e9-9f-b5-e8-a1-a8/</id>
     <published>2020-08-09T01:19:35.000Z</published>
-    <updated>2023-02-13T04:30:50.456Z</updated>
+    <updated>2024-09-21T15:56:38.250Z</updated>
     
     <content type="html"><![CDATA[<p>平 韵：</p><p>上平一东：东同童僮铜桐峒筒瞳中[中间]衷忠盅虫冲终忡崇嵩[崧]菘戎绒弓躬宫穹融雄熊穷冯风枫疯丰充隆窿空公功工攻蒙濛朦瞢笼胧栊咙聋珑砻泷蓬篷洪荭红虹鸿丛翁嗡匆葱聪骢通棕烘崆</p><p>上平二冬：冬咚彤农侬宗淙锺钟龙茏舂松淞冲容榕蓉溶庸佣慵封胸凶匈汹雍邕痈浓脓重[重复]从[服从]逢缝峰锋丰蜂烽葑纵[纵横]踪茸蛩邛筇跫供[供给]蚣喁</p><p>上平三江：江缸窗邦降[降伏]双泷庞撞豇扛杠腔梆桩幢蛩[冬韵同]</p><p>上平四支：支枝肢移[竹移]为[施为]垂吹陂碑奇宜仪皮儿离施知驰池规危夷师姿迟龟眉悲之芝时诗棋旗辞词期祠基疑姬丝司葵医帷思滋持随痴维卮麋螭麾墀弥慈遗肌脂雌披嬉尸狸炊湄篱兹差[参差]疲茨卑亏蕤骑[跨马]歧岐谁斯澌私窥熙欺疵赀羁彝髭颐资糜饥衰锥姨夔祗涯[佳、麻韵同]伊追蓍缁萁箕椎罴篪萎匙脾坻嶷治[治国]骊綦怡尼漪牺饴而鸱推[灰韵同]匙陲魑锤缡璃骊羸帔糜蘼脾芪畸牺羲曦欹漪猗崎崖萎筛狮蛳鸱绥虽粢瓷椎饴嫠痍惟唯机耆逵岿丕毗枇貔楣霉辎蚩嗤媸颸\埘莳鲥鹚笞漓怡贻禧噫其琪祺麒嶷螭栀鹂累踟琵祁骐訾咨睢馗胝鳍蛇[委蛇]陴淇丽[地名]厮氏[月氏]僖嘻琦怩熹孜罹磁痿隋逶郦嵋唯椅[音漪,木名]</p><p>上平五微：微薇晖辉徽挥韦围帏违闱霏菲[芳菲]妃飞非扉肥威祈畿机几[微也、如见几]讥玑稀希衣[衣服]依归饥[支韵同]矶欷诽绯晞葳巍沂圻颀</p><p>上平六鱼：鱼渔初书舒居裾琚车[麻韵同]渠蕖余予[我也]誉[动词]舆胥狙锄疏蔬梳虚嘘墟徐猪闾庐驴诸储除滁蜍如畬淤妤苴菹沮徂龉茹榈於祛蘧疽蛆醵纾樗躇[药韵同]欤据[拮据]</p><p>上平七虞：虞愚娱隅无芜巫于衢癯瞿氍儒襦濡须需朱珠株诛硃铢蛛殊俞瑜榆愉逾渝窬谀腴区躯驱岖趋扶符凫芙雏敷麸夫肤纡输枢厨俱驹模谟摹蒲逋胡湖瑚乎壶狐弧孤辜姑觚菰徒途涂荼图屠奴吾梧吴租卢鲈炉芦颅垆蚨孥帑苏酥乌污[污秽]枯粗都茱侏姝禺拘嵎蹰桴俘臾萸吁滹瓠糊醐呼沽酤泸舻轳鸬驽匍葡铺[铺盖]菟诬呜迂盂竽趺毋孺酴鸪骷刳蛄晡蒱葫呱蝴劬殂猢郛孚</p><p>上平八齐：齐黎犁梨妻[夫妻]萋凄堤低题提蹄啼鸡稽兮倪霓西栖犀嘶撕梯鼙赍迷泥溪蹊圭闺携畦嵇跻奚脐醯黧蠡醍鹈奎批砒睽荑篦齑藜猊蜺鲵羝</p><p>上平九佳：佳街鞋牌柴钗差[差使]崖涯[支麻韵同]偕阶皆谐骸排乖怀淮豺侪埋霾斋槐[灰韵同]睚崽楷秸揩挨俳</p><p>上平十灰：灰恢魁隈回徊槐[佳韵同]梅枚玫媒煤雷颓崔催摧堆陪杯醅嵬推[支韵同]诙裴培盔偎煨瑰茴追胚徘坯桅傀儡[贿韵同]莓开哀埃台苔抬该才材财裁栽哉来莱灾猜孩徕骀胎唉垓挨皑呆腮</p><p>上平十一真：真因茵辛新薪晨辰臣人仁神亲申身宾滨槟缤邻鳞麟珍瞋尘陈春津秦频蘋颦濒银垠筠巾民岷泯[轸韵同]珉贫莼淳醇纯唇伦轮沦抡匀旬巡驯钧均榛莘遵循甄宸纶椿鹑屯呻粼嶙辚磷呻伸绅寅姻荀询峋氤恂嫔彬皴娠闽纫湮肫逡菌臻豳</p><p>上平十二文：文闻纹蚊云分[分离]氛纷芬焚坟群裙君军勤斤筋勋薰曛醺芸耘芹欣氲荤汶汾殷雯贲纭昕熏</p><p>上平十三元：元原源沅鼋园袁猿垣烦蕃樊喧萱暄冤言轩藩媛援辕番繁翻幡璠鸳鹓蜿湲爰掀燔圈谖魂浑温孙门尊[樽]存敦墩炖暾蹲豚村屯囤[囤积]盆奔论[动词]昏痕根恩吞荪扪昆鲲坤仑婚阍髡馄喷狲饨臀跟瘟飧</p><p>上平十四寒：寒韩翰[翰韵同]丹单安鞍难[艰难]餐檀坛滩弹残干肝竿阑栏澜兰看[翰韵同]刊丸完桓纨端湍酸团攒官观[观看]鸾銮峦冠[衣冠]欢宽盘蟠漫[大水貌]叹[翰韵同]邯郸摊玕\拦珊狻鼾杆跚姗殚箪瘅谰獾倌棺剜潘拼[问韵同]槃般蹒瘢磐瞒谩馒鳗钻抟邗汗[可汗]</p><p>上平十五删：删潸关弯湾还环鬟寰班斑蛮颜奸攀顽山闲艰间[中间]悭患[谏韵同]孱潺擐圜菅般[寒韵同]颁鬘疝讪斓娴鹇鳏殷[赤黑色]纶[纶巾]</p><p>下平一先：先前千阡笺天坚肩贤弦烟燕[地名]莲怜连田填巅鬈宣年颠牵妍研[研究]眠渊涓捐娟边编悬泉迁仙鲜[新鲜]钱煎然延筵毡旃蝉缠廛联篇偏绵全镌穿川缘鸢旋船涎鞭专圆员乾[乾坤]虔愆权拳椽传焉嫣鞯褰搴铅舷跹鹃筌痊诠悛先邅禅婵躔颛燃涟琏便[安也]翩骈癫阗钿[霰韵同]沿蜒胭芊鳊胼滇佃畋咽湮狷蠲蔫骞膻扇棉拴荃籼砖挛儇璇卷[曲也]扁[扁舟]单[单于]溅[溅溅]犍</p><p>下平二萧：萧箫挑貂刁凋雕迢条髫调[调和]蜩枭浇聊辽寥撩寮僚尧宵消霄绡销超朝潮嚣骄娇蕉焦椒饶硝烧[焚烧]遥徭摇谣瑶韶昭招镳瓢苗猫腰桥乔娆妖飘逍潇鸮骁祧鹪鹩缭獠嘹夭[夭夭]幺邀要[要求]姚樵谯憔标飚嫖漂[漂浮]剽佻龆苕岧噍哓跷侥了&lt;明了&gt;魈峣描钊轺桡铫鹞翘枵侨窑礁</p><p>下平三肴：肴巢交郊茅嘲钞包胶苞梢姣庖匏坳敲胞抛蛟崤鵁鞘抄蝥咆哮凹淆教[使也]跑艄捎爻咬铙茭炮[炮制]泡鲛刨抓</p><p>下平四豪：豪劳毫操[操持]髦绦刀萄猱褒桃糟旄袍挠[巧韵同]蒿涛皋号[号呼]陶鳌曹遭羔糕高搔毛艘滔骚韬缫膏牢醪逃濠壕饕洮淘叨啕篙熬遨翱嗷臊嗥尻鏖螯獒敖牦漕嘈槽掏唠涝捞痨芼</p><p>下平五歌：歌多罗河戈阿和[和平]波科柯陀娥蛾鹅萝荷[荷花]何过[经过]磨[琢磨]螺禾珂蓑婆坡呵哥轲沱鼍拖驼跎佗[他]颇[偏颇]峨俄摩么娑莎迦疴苛蹉嵯驮箩逻锣哪挪锅诃窠蝌髁倭涡窝讹陂鄱皤魔梭唆骡挼靴瘸搓哦瘥酡</p><p>下平六麻：麻花霞家茶华沙车[鱼韵同]牙蛇瓜斜邪芽嘉瑕纱鸦遮叉奢涯[支佳韵同]巴耶嗟遐加笳赊槎差[差错]蟆骅虾葭袈裟砂衙呀琶耙芭杷笆疤爬葩些[少也]佘鲨查楂渣爹挝咤拿椰珈跏枷迦痂茄桠丫哑划哗夸胯抓洼呱</p><p>下平七阳：阳杨扬香乡光昌堂章张王房芳长塘妆常凉霜藏场央泱鸯秧嫱床方浆觞梁娘庄黄仓皇装殇襄骧相湘箱缃创忘芒望尝偿樯枪坊囊郎唐狂强肠康冈苍匡荒遑行妨棠翔良航倡伥羌庆姜僵缰疆粮穰将墙桑刚祥详洋徉佯粱量羊伤汤鲂樟彰漳璋猖商防筐煌隍凰蝗惶璜廊浪当裆珰沧纲亢吭潢钢丧盲簧忙茫傍汪臧琅当庠裳昂障糖疡锵杭邙赃滂禳攘瓤抢螳踉眶炀阊彭蒋亡殃蔷镶孀搪彷胱磅膀螃</p><p>下平八庚：庚更[更改]羹盲横[纵横]觥彭亨英烹平枰京惊荆明盟鸣荣莹兵兄卿生甥笙牲擎鲸迎行[行走]衡耕萌甍宏闳茎罂莺樱泓橙争筝清情晴精睛菁晶旌盈楹瀛嬴赢营婴缨贞成盛[盛受]城诚呈程酲声征正[正月]轻名令[使令]并[并州]倾萦琼峥嵘撑粳坑铿撄鹦黥蘅澎膨棚浜坪苹钲伧檠嘤轰铮狰宁狞瞪绷怦璎砰氓鲭侦柽蛏茔赬)茕赓黉瞠</p><p>下平九青：青经泾形陉亭庭廷霆蜓停丁仃馨星腥醒[醉醒]惺俜灵龄玲铃伶零听[径韵同]冥溟铭瓶屏萍荧萤荣扃坰蜻硎苓聆瓴翎娉婷宁暝瞑螟猩钉疔叮厅町泠棂囹羚蛉咛型邢</p><p>下平十蒸：蒸烝承丞惩澄陵凌绫菱冰膺鹰应[应当]蝇绳升缯凭乘[驾乘,动词]胜[胜任]兴[兴起]仍兢矜征[征求]称[称赞]登灯僧憎增曾矰层能朋鹏肱薨腾藤恒罾崩滕誊崚嶒姮塍冯症簦瞢凝[径韵同]棱楞</p><p>下平十一尤：尤邮优尤流旒留骝榴刘由油游猷悠攸牛修羞秋周州洲舟酬雠柔俦畴筹稠丘邱抽瘳遒收鸠搜驺愁休囚求裘仇浮谋牟眸侔矛侯喉猴讴鸥楼陬偷头投钩沟幽纠啾楸蚯踌绸惆勾娄琉疣犹邹兜呦咻貅球蜉蝣輈帱阄瘤硫浏庥湫泅酋瓯啁飕鍪篌抠篝诌骰偻沤[水泡,名词]蝼髅搂欧彪掊虬揉蹂抔不[与有韵\‘否\‘通]瓿缪[绸缪]</p><p>下平十二侵：侵寻浔临林霖针箴斟沈心琴禽擒衾钦吟今襟[衿]金音阴岑簪[覃韵同]壬任[负荷]歆森禁[力所胜任]祲喑琛涔骎参[参差]忱淋妊掺参&lt;人参&gt;椹郴芩檎琳蟫愔喑黔嵚</p><p>下平十三覃：覃潭参[参考]骖南楠男谙庵含涵函[包函]岚蚕探贪耽眈龛堪谈甘三酣柑惭蓝担簪[侵韵同]谭昙坛婪戡颔痰篮褴蚶憨泔聃邯蟫[侵韵同]</p><p>下平十四盐：盐檐廉帘嫌严占[占卜]髯谦奁纤签瞻蟾炎添兼缣沾尖潜阎镰黏淹钳甜恬拈砭詹蒹歼黔钤佥觇崦渐鹣腌襜阉</p><p>下平十五咸：咸函[书函]缄岩谗衔帆衫杉监[监察]凡馋芟搀喃嵌掺巉</p><p>仄 韵：</p><p>上声一董：董懂动孔总笼[东韵同]拢桶捅蓊蠓汞</p><p>上声二肿：肿种[种子]踵宠垅[陇]拥冗重[轻重]冢捧勇甬踊涌俑蛹恐拱竦悚耸巩怂奉</p><p>上声三讲：讲港棒蚌项耩</p><p>上声四纸：纸只咫是靡彼毁委诡髓累技绮觜此泚蕊徙尔弭婢侈弛豕紫旨指视美否[否泰]痞兕几姊比水轨止徴市喜已纪跪妓蚁鄙晷子仔梓矢雉死履垒癸趾址以已似耜祀史驶耳使[使令]里理李起杞圯跂士仕俟始齿矣耻麂枳峙鲤迩氏玺巳[辰巳]滓苡倚匕迤逦旖旎舣蚍秕芷拟你企诔捶屣棰揣豸祉恃</p><p>上声五尾：尾苇鬼岂卉几[几多]伟斐菲[菲薄]匪篚娓悱榧韪炜虺玮虮</p><p>上声六语：语[语言]圉圄吕侣旅杼伫与[给予]予[赐予]渚煮暑鼠汝茹[食也]黍杵处[居住、处理]贮女许拒炬距所楚础阻俎沮叙绪序屿墅巨去[除也]苣举讵溆浒钜醑咀诅苎抒楮</p><p>上声七麌：麌雨宇舞府鼓虎古股贾[商贾]估土吐圃庾户树[种植,动词]煦诩努辅组乳弩补鲁橹睹腐数[动词]簿竖普侮斧聚午伍釜缕部柱矩武五苦取抚浦主杜坞祖愈堵扈父甫禹羽怒[遇韵同]腑拊俯罟赌卤姥鹉拄莽[养韵同]栩窭脯妩庑否[是否]麈褛篓偻酤牡谱怙肚踽虏孥诂瞽羖祜沪雇仵缶母某亩蛊琥</p><p>上声八荠：荠礼体米启陛洗邸底抵弟坻柢涕悌济[水名]澧醴诋眯娣棨递昵睨蠡</p><p>上声九蟹：蟹解洒楷[佳韵同]拐矮摆买骇</p><p>上声十贿：贿悔罪馁每块汇猥璀磊蕾傀儡腿海改采彩在宰醢铠恺待殆怠乃载[岁也]凯闿倍蓓迨亥</p><p>上声十一轸：轸敏允引尹尽忍准隼笋盾[阮韵同]闵悯菌[真韵同]蚓牝殒紧蠢陨哂诊疹赈肾蜃膑黾泯窘吮缜</p><p>上声十二吻：吻粉蕴愤隐谨近忿抆刎揾槿瑾恽韫</p><p>上声十三阮：阮远[远近]晚苑返反饭[动词]偃蹇琬沅宛婉畹菀蜿绻巘挽堰混棍阃悃捆衮滚鲧稳本畚笨损忖囤遁很沌恳垦龈</p><p>上声十四旱：旱暖管琯满短馆[翰韵同]缓盥[翰韵同]碗懒伞伴卵散[散布]伴诞罕瀚[浣]断[断绝]侃算[动词]款但坦袒纂缎拌懑谰莞</p><p>上声十五潸：潸眼简版板阪盏产限绾柬拣撰馔赧皖汕铲羼见楝栈</p><p>上声十六铣：铣善[善恶]遣[遣送]浅典转[霰韵同]衍犬选冕辇免展茧辨篆勉剪卷显饯[霰韵同]践喘藓软蹇[阮韵同]演兖件腆跣缅缱鲜[少也]殄扁匾蚬岘畎燹隽键变泫癣阐颤膳鳝舛娩辗邅先韵同]脔辫捻</p><p>上声十七筱：筱小表鸟了&lt;未了,了得&gt;晓少[多少]扰绕绍杪沼眇矫皎杳窈窕袅挑[挑拨]掉[啸韵同]肇缥缈渺淼茑赵兆缴缭[萧韵同]夭[夭折]悄舀侥蓼娆硗剿晁藐秒殍了&lt;了望&gt;</p><p>上声十八巧：巧饱卯狡爪鲍挠[豪韵同]搅绞拗咬炒吵佼姣[肴韵同]昴茆獠[萧韵同]</p><p>上声十九皓：皓宝藻早枣老好[好丑]道稻造[造作]脑恼岛倒[跌到]祷[号韵同]捣抱讨考燥扫[号韵同]嫂保鸨稿草昊浩镐杲缟槁堡皂瑙媪燠袄懊葆褓芼澡套涝蚤拷栲</p><p>上声二十哿：哿火舸亸舵我拖娜荷[负荷]可左果裹朵锁琐堕惰妥坐[坐立]裸跛颇[稍也]夥颗祸桠婀逻卵那坷爹[麻韵同]簸叵垛哆硪么[歌韵同]峨[歌韵同]</p><p>上声二十一马：马下[上下]者野雅瓦寡社写泻夏[华夏]也把厦惹冶贾[姓贾]假[真假]且玛姐舍喏赭洒嘏剐打耍那</p><p>上声二十二养：养痒象像橡仰朗桨奖蒋敞氅厂枉往颡强[勉强]惘两曩丈杖仗[漾韵同]响掌党想鲞榜爽广享向飨幌莽纺长[长幼]网荡上[上升]壤赏仿罔谠倘魍魉谎蟒漭嗓盎恍脏&lt;肮脏&gt;吭沆慷襁镪抢肮犷</p><p>上声二十三梗：梗影景井岭领境警请饼永骋逞颖颍顷整静省幸颈郢猛丙炳杏秉耿矿冷靖哽绠荇艋蜢皿儆悻婧阱狰[庚韵同]靓惺打瘿并&lt;合并&gt;犷眚憬鲠</p><p>上声二十四迥：迥炯茗挺艇梃醒[青韵同]酩酊并&lt;并行,并且&gt;等鼎顶肯拯謦刭溟</p><p>上声二十五有：有酒首口母[麌韵同]妇[麌韵同]後柳友斗狗久负[麌韵同]厚手叟守否[麌韵同]右受牖偶走阜[麌韵同]九后咎薮吼帚垢舅纽藕朽臼肘韭亩[麌韵同]剖诱牡[麌韵同]缶酉苟丑糗扣叩某莠寿绶玖授蹂[尤韵同]揉[尤韵同]溲纣钮扭呕殴纠耦掊瓿拇姆擞绺抖陡蚪篓黝赳取麌韵同]</p><p>上声二十六寝：寝饮[饮食]锦品枕[枕衾]审甚[沁韵同]廪衽稔凛懔沈[姓氏]朕荏婶沈&lt;沈阳&gt;葚禀噤谂怎恁饪覃</p><p>上声二十七感：感览揽胆澹[淡,勘韵同]啖坎惨敢颔[覃韵同]撼毯糁湛菡萏罱椠喊嵌[咸韵同]橄榄</p><p>上声二十八俭：俭焰敛[艳韵同]险检脸染掩点簟贬冉苒陕谄俨闪剡忝[艳韵同]琰奄歉芡崭堑渐[盐韵同]罨捡弇崦玷</p><p>上声二十九豏：豏槛范减舰犯湛巉[咸韵同]斩黯范</p><p>去声一送：送梦凤洞众瓮贡弄冻痛栋恸仲中[击中]粽讽空[空缺]控哄赣</p><p>去声二宋：宋用颂诵统纵[放纵]讼种[种植]综俸供[供设，名词]从[仆从]缝[隙也]重[再也]共</p><p>去声三绛：绛降[升降]巷撞[江韵同]戆</p><p>去声四寘：寘置事地意志思[名词]泪吏赐自字义利器位戏至次累[连累]伪寺瑞智记异致备肆翠骑[车骑,名词]使[使者]试类弃饵媚鼻易[容易]辔坠醉议翅避笥帜炽粹莳谊帅厕寄睡忌贰萃穗二臂嗣吹[鼓吹,名词]遂恣四骥季刺驷寐魅积[积蓄]被懿觊冀愧匮恚馈蒉篑柜暨庇豉莉腻秘比[近也]鸷毖啻示嗜饲伺遗[馈遗]薏祟值惴屣眦詈企渍譬跛挚燧隧悴尿稚雉莅悸肄泌识[记也]侍踬为[因为]</p><p>去声五未：未味气贵费沸尉畏慰蔚魏纬胃汇&lt;字汇&gt;谓渭卉[尾韵同]讳毅既衣[着衣,动词]蜚溉[队韵同]翡诽</p><p>去声六御：御处[处所]去虑誉[名词]署据驭曙助絮著[显著]箸豫恕与[参与]遽疏[书疏]庶预语[告也]踞倨蓣淤锯觑狙[鱼韵同]翥薯</p><p>去声七遇：遇路辂赂露鹭树[树木]度[制度]渡赋布步固素具务雾鹜数[数量]怒[麌韵同]附兔故顾句墓慕暮募注住注驻炷祚裕误悟寤戍库护屦诉妒惧趣娶铸绔傅付谕喻妪芋捕哺互孺寓赴冱吐[麌韵同]污[动词]恶[憎恶]晤煦酤讣仆[偃仆]赙驸婺锢蛀飓怖铺[店铺]塑愫蠹溯镀璐雇瓠迕妇负阜副富[宥韵同]醋措</p><p>去声八霁：霁制计势世丽岁济[渡也]第艺惠慧币弟滞际涕[荠韵同]厉契[契约]敝弊毙帝蔽髻锐戾裔袂系祭卫隶闭逝缀翳替细桂税婿例誓筮蕙诣砺励瘗噬继脆睿毳曳蒂睇妻[以女妻人]递逮蓟蚋薜荔唳捩粝泥[拘泥]媲嬖彗睥睨剂嚏谛缔剃屉悌俪锲贳掣羿棣蟪薙娣说[游说]赘憩鳜彘呓谜挤</p><p>去声九泰：泰太带外盖大[个韵同]濑赖籁蔡害蔼艾丐奈柰汰癞霭会旆最贝沛霈绘脍荟狈侩桧蜕酹外兑</p><p>去声十卦：卦挂画[图画]懈廨邂隘卖派债怪坏诫戒界介芥械薤拜快迈败稗晒瀣湃寨疥届蒯篑蒉喟聩块惫</p><p>去声十一队：队内辈佩退碎背秽对废悔诲晦昧配妹喙溃吠肺耒块碓刈悖焙淬敦[盘敦]塞[边塞]爱代载[载运]态菜碍戴贷黛概岱溉慨耐在[所在]鼐玳再袋逮埭赉赛忾暧咳嗳睐</p><p>去声十二震：震信印进润阵镇刃顺慎鬓晋骏闰峻衅振俊舜赆吝烬讯仞迅汛趁衬仅觐蔺浚赈[轸韵同]龀认殡摈缙躏廑谆瞬韧浚殉馑</p><p>去声十三问：问闻[名誉]运晕韵训粪忿[吻韵同]酝郡分[名分]紊愠近[动词]抆拼奋郓捃靳</p><p>去声十四愿：愿怨万饭[名词]献健建宪劝蔓券远[动词]侃键贩畈曼挽&lt;挽联&gt;瑗媛圈[猪圈]论[名词]恨寸困顿遁[阮韵同]钝闷逊嫩溷诨巽褪喷[元韵同]艮揾</p><p>去声十五翰：翰[寒韵同]瀚岸汉难[灾难]断[决断]乱叹[寒韵同]观[楼观]干&lt;树干,干练&gt;散[解散]旦算[名词]玩烂贯半案按炭汗赞漫[寒韵同。又副词，独用]冠[冠军]灌爨窜幔粲灿璨换焕唤涣悍弹[名词]惮段看[寒韵同]判叛绊鹳伴畔锻腕惋馆旰捍疸但罐盥婉缎缦侃蒜钻谰</p><p>去声十六谏：谏雁患涧间[间隔]宦晏慢盼篆栈[潸韵同]惯串绽幻瓣苋办谩讪[删韵同]铲绾孪篡裥扮</p><p>去声十七霰；霰殿面县变箭战扇煽膳传[传记]见砚院练链燕宴贱馔荐绢彦掾便[便利]眷倦羡奠遍恋啭眩钏倩卞汴片禅[封禅]谴溅饯善[动词]转[以力转动]卷[书卷]甸电咽茜单念&lt;念书&gt;眄淀靛佃钿[先韵同]镟漩拣缮现狷炫绚绽线煎选旋颤擅缘[衣饰]撰唁谚媛忭弁援研[磨研]</p><p>去声十八啸：啸笑照庙窍妙诏召邵要[重要]曜耀调[音调]钓吊叫眺少[老少]诮料疗潦掉[筱韵同]峤徼跳嘹漂镣廖尿肖鞘悄[筱韵同]峭哨俏醮燎[筱韵同]鹩鹞轿骠票铫[萧韵同]</p><p>去声十九效；效教[教训]貌校孝闹豹罩棹觉[寤也]较窖爆炮[枪炮]泡[肴韵同]刨[肴韵同]稍钞[肴韵同]拗敲[肴韵同]淖</p><p>去声二十号：号[号令]帽报导操[操行]盗噪灶奥告[告诉]诰到蹈傲暴[强暴]好[爱好]劳[慰劳]躁造[造就]冒悼倒[颠倒]燥犒靠懊瑁燠[皓韵同]耄糙套[皓韵同]纛[沃韵同]潦耗</p><p>去声二十一个；个贺佐大[泰韵同]饿过[歌韵同。又过失,独用]座和[唱和]挫课唾播破卧货簸轲[轗轲]驮髁[歌韵同]磋作做剁磨[磨磐]懦糯缚锉挼些[楚些]</p><p>去声二十二祃：祃驾夜下[降也]谢榭罢夏[春夏]霸暇灞嫁赦籍[凭籍]假[休假]蔗化舍[庐舍]价射骂稼架诈亚麝怕借卸帕坝靶鹧贳炙嗄乍咤诧侘(罅吓娅哑讶迓华[姓华]桦话胯[遇韵同]跨衩柘</p><p>去声二十三漾：漾上[上下]望[阳韵同]相[卿相]将[将帅]状帐唱让浪[波浪]酿旷壮放向忘仗[养韵同]畅量[数量]葬匠障瘴谤尚涨饷样藏[库藏]舫访贶嶂当[适当]抗桁妄怆宕怅创酱况亮傍[依傍]丧[丧失]恙谅胀鬯脏&lt;内脏&gt;吭砀伉圹纩桄挡旺炕亢[高亢]阆防</p><p>去声二十四敬：敬命正[正直]令[命令]证性政镜盛[茂盛]行[学行]圣咏姓庆映病柄劲竞靓净竟孟诤更[更加]并&lt;梗韵同&gt;聘硬炳泳迸横[蛮横]摒阱檠迎郑獍</p><p>去声二十五径：径定听胜[胜败]罄磬应[答应]赠乘[名词]佞邓证秤称[相称]莹[庚韵同]孕兴[兴趣]剩凭[蒸韵同]迳甑宁胫暝[夜也]钉[动词]订饤锭謦泞瞪蹭蹬亘[亘古]镫[鞍镫]滢凳磴泾</p><p>去声二十六宥：宥候就售[尤韵同]寿[有韵同]秀绣宿[星宿]奏兽漏富[遇韵同]陋狩昼寇茂旧胄宙袖岫柚覆复[又也]救厩臭佑右囿豆饾窦瘦漱咒究疚谬皱逅嗅遘溜镂逗透骤又侑幼读[句读]堠仆副[遇韵同]锈鹫绉咮灸籀酎诟蔻僦构扣购彀戊懋贸袤嗽凑鼬甃沤[动词]</p><p>去声二十七沁：沁饮[使饮]禁[禁令]任[信任]荫浸谮谶枕[动词]噤甚[寝韵同]鸩赁喑渗窨妊</p><p>去声二十八勘：勘暗滥啖担憾暂三[再三]绀憨澹[咸韵同]瞰淡缆</p><p>去声二十九艳：艳剑念验堑赡店占[占据]敛[聚敛]厌焰[俭韵同]垫欠僭酽潋滟俺砭坫</p><p>去声三十陷：陷鉴泛梵忏赚蘸嵌站馅</p><p>入声一屋：屋木竹目服福禄谷熟肉族鹿漉腹菊陆轴逐苜蓿宿[住宿]牧伏夙读[读书]犊渎牍椟黩毂复[恢复]粥肃碌骕鬻育六缩哭幅斛戮仆畜蓄叔淑倏独卜馥沐速祝麓辘镞蹙筑穆睦秃縠覆辐瀑郁&lt;忧郁,郁郁葱葱&gt;舳掬踘蹴跼茯袱鵩鹆髑槲扑匐簌蔟煜复&lt;复杂&gt;蝠菔孰塾矗竺曝鞠嗾谡簏国[职韵同]副</p><p>入声二沃：沃俗玉足曲粟烛属录辱狱绿毒局欲束鹄蜀促触续浴酷躅褥旭欲笃督赎渌纛碡北[职韵同]瞩嘱勖溽缛梏</p><p>入声三觉：觉[知觉]角桷榷岳乐[音乐]捉朔数[频数]卓啄琢剥驳雹璞朴壳确浊擢濯渥幄握学龌龊槊搦镯喔邈荦</p><p>入声四质：质日笔出室实疾术一乙壹吉秩率律逸佚失漆栗毕恤密蜜桔溢瑟膝匹述黜弼跸七叱卒[终也]虱悉戌嫉帅[动词]蒺侄踬怵蟋筚篥必泌荜秫栉唧帙溧谧昵轶聿诘耋垤捽茁觱鹬窒苾</p><p>入声五物：物佛拂屈郁&lt;馥郁,郁郁乎文哉&gt;乞掘[月韵同]吃[口吃]讫绂弗勿迄不怫绋沸茀厥倔黻崛尉蔚契屹熨[未韵同]绂</p><p>入声六月：月骨发阙越谒没伐罚卒[士卒]竭窟笏钺歇突忽袜曰阀筏鹘[黠韵同]厥[物韵同]蹶蕨殁橛掘[物韵同]核蝎勃渤悖[队韵同]孛揭[屑韵同]碣粤樾鳜脖饽鹁捽[质韵同]猝惚兀讷[呐]羯凸咄[曷韵同]矻</p><p>入声七曷：曷达末阔钵脱夺褐割沫拔[挺拔]葛闼渴拨豁括抹遏挞跋撮泼秣掇[屑韵同]聒獭[黠韵同]刺喝磕蘖瘌袜活鸹斡怛钹捋</p><p>入声八黠：黠拔[拔擢]八察杀刹轧戛瞎刮刷滑辖铩猾捌叭札扎帕茁鹘揠萨捺</p><p>入声九屑：屑节雪绝列烈结穴说血舌洁别缺裂热决铁灭折拙切悦辙诀泄锲咽[呜咽]轶噎彻澈哲鳖设啮劣玦截窃孽浙孑桔颉拮撷揭褐[曷韵同]缬碣[月韵同]挈抉亵薛拽[曳]爇冽瞥迭跌阅餮耋垤捏页阕觖谲鴂撇蹩篾楔惙辍啜缀撤绁杰桀涅霓蜺[齐,锡韵同]批[齐韵同]</p><p>入声十药：药薄恶[善恶]作乐[哀乐]落阁鹤爵弱约脚雀幕洛壑索郭错跃若酌托削铎凿箔鹊诺萼度[测度]橐钥龠瀹着著虐掠获&lt;收获&gt;泊搏藿嚼勺谑廓绰霍镬莫箨缚貉各略骆寞膜鄂博昨柝格拓轹铄烁灼疟蒻箬芍躇却噱矍攫醵踱魄酪络烙珞膊粕簿柞漠摸酢怍涸郝垩谔鳄噩锷颚缴扩椁陌[陌韵同]</p><p>入声十一陌：陌石客白泽伯迹宅席策册碧籍[典籍]格役帛戟璧驿麦额柏魄积[积聚]脉夕液尺隙逆画[动词]百辟赤易[变易]革脊翮屐获&lt;猎获&gt;适索厄隔益窄核舄掷责坼惜癖僻掖腋释译峄择摘弈奕迫疫昔赫瘠谪亦硕貊跖鹡碛蹐只炙[动词]踯斥穸鬲骼舶珀吓磔拆喀蚱舴剧檗擘栅啧帻箦扼划蜴辟帼蝈刺嵴汐藉螫蓦摭襞虢哑[笑声]绎射[音亦]</p><p>入声十二锡：锡壁历枥击绩勣笛敌滴镝檄激寂觌溺觅狄荻幂戚鷁涤的吃沥雳霹惕剔砾翟籴倜析晰淅蜥劈甓嫡轹栎阋菂踢迪皙裼逖蜺阒汨[汨罗江]</p><p>入声十三职：职国德食[饮食]蚀色力翼墨极殛息熄直值得北黑侧贼饰刻则塞[闭塞]式轼域蜮殖植敕亟棘惑忒默织匿慝亿忆臆薏特勒肋幅仄昃稷识[知识]逼克即唧[质韵同]弋拭陟恻测翊洫啬穑鲫抑或匐[屋韵同]</p><p>入声十四缉：缉辑戢立集邑急入泣湿习给十拾袭及级涩楫[叶韵同]粒汁蛰执笠隰汲吸絷挹浥悒岌熠葺什芨廿揖煜[屋韵同]歙笈[叶韵同]圾褶翕</p><p>入声十五合：合塔答纳榻閤杂腊匝阖蛤衲沓鸽踏拓拉盍塌咂盒卅搭褡飒磕榼遢蹋蜡溘邋趿</p><p>入声十六叶：叶帖贴牒接猎妾蝶叠箧惬涉鬣捷颊楫[缉韵同]聂摄慑镊蹑协侠荚挟铗浃睫厌靥蹀躞燮摺辄婕谍堞霎嗫喋碟鲽捻晔躐笈[缉韵同]</p><p>入声十七洽：洽狭峡法甲业邺匣压鸭乏怯劫胁插锸押狎夹恰蛱硖掐剳袷眨胛呷歃闸霎[叶韵同]</p><p>隋朝陆法言的《切韵》分为206韵，过于细，唐代规定相近的韵可以合用，所以唐朝《切韵》实际简化版为193韵。南宋原籍山西平水人刘渊，在著《壬子新刊礼部韵略》时将同用的韵合并，成107韵，同期山西平水官员金人王文郁著《平水新刊韵略》为106韵，这就是后来广为流传的平水韵。平水韵虽然是南宋时才出现的，但它反映了唐宋时代人们作诗用韵的实际发音状况。</p>]]></content>
     
@@ -4050,11 +4169,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>我看</title>
+    <title>👀我看</title>
     <link href="https://liuboyuan.fun/e6-88-91-e7-9c-8b/"/>
     <id>https://liuboyuan.fun/e6-88-91-e7-9c-8b/</id>
     <published>2020-08-01T01:39:27.000Z</published>
-    <updated>2023-02-13T04:30:50.466Z</updated>
+    <updated>2025-01-12T16:03:36.017Z</updated>
     
     <content type="html"><![CDATA[<p>我看朝阳穿过清晨的薄雾<br>飘散在氤氲花香的晨曦</p><p>我看野草在微雨浸润下长大<br>散发淡淡扑鼻的清香</p><p>我看树木折射缕缕阳光<br>我看百鸟归去时日暮的孤凉</p><p>如今这些景象啊 还在何方<br>曾经永无止境的发展<br>将我们推向永恒的消亡</p><p>我看树木排排迎山倒啊<br>花草消殒在烟火深处<br>我看明日的死亡笼罩大地啊<br>留下世界暗暗忧伤</p><p>我看人类的欲望永无止境<br>那些称霸自然的妄想<br>我看那些无济于事的呼喊<br>终于消散在无尽的阴霾之上</p><p>刘渤源 作</p>]]></content>
     
@@ -4084,11 +4203,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>寻旧</title>
+    <title>🎞️寻旧</title>
     <link href="https://liuboyuan.fun/e5-af-bb-e6-97-a7/"/>
     <id>https://liuboyuan.fun/e5-af-bb-e6-97-a7/</id>
     <published>2020-07-29T06:18:10.000Z</published>
-    <updated>2023-02-13T04:30:50.455Z</updated>
+    <updated>2024-09-21T15:52:28.981Z</updated>
     
     <content type="html"><![CDATA[<p>偶然打开陈旧的相簿，<br>长辈的故事也在照片中展开，<br>爷爷奶奶好像都变样了。<br>黑白的照片掩盖不住曾经的活力，<br>炕头、柜子、窗子<br>还有早已不知在哪的缝纫机<br>沾着多年的灰尘，<br>没有了往日的光彩。<br>可是啊，有些人<br>永远留在了照片里。</p><p>曾经的书信，<br>寄托着祝福、思念、情愫。<br>邮票很小，却载着许多梦。<br>纸张散发着那个时代的气味，<br>林木的清香，浸润了枯燥的夜。<br>那时的期待，似乎格外动人。<br>不过往日的荣光早已不在啦<br>曾经值得怀念的日子啊，<br>也终于成为了过去。</p><p>刘渤源 作</p>]]></content>
     
@@ -4120,11 +4239,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>孤独</title>
+    <title>😢孤独</title>
     <link href="https://liuboyuan.fun/e5-ad-a4-e7-8b-ac-2/"/>
     <id>https://liuboyuan.fun/e5-ad-a4-e7-8b-ac-2/</id>
     <published>2020-07-28T05:55:49.000Z</published>
-    <updated>2023-02-13T04:30:50.446Z</updated>
+    <updated>2024-09-21T15:33:06.144Z</updated>
     
     <content type="html"><![CDATA[<p>我尝试向远方呼喊，<br>星空用无限的寂静回应。<br>晓月带着点点光晕，<br>照在霓虹笼罩的街道。<br>雨满江楼，断桥残梦，泪流湖海。<br>叹息微愁，心散秋风。</p><p>我尝试向远方奔跑，<br>山峦以虚无的伟岸隔断。<br>树木沾着昨夜的雨，<br>滴在干枯的野草上，<br>洒遍黑暗布满的大地。<br>残阳仲秋，芳华盛夏，天为谁春？<br>青春沉沦，魂断春花。</p><p>孤独伴我走过，曾经的盛世芳华。<br>也可能终究只是一人，<br>看星河流转，人来人往。<br>这里，没有我的归宿。</p><p>刘渤源 作</p>]]></content>
     
@@ -4353,11 +4472,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>摄影：残阳下</title>
+    <title>🌅摄影：残阳下</title>
     <link href="https://liuboyuan.fun/e6-91-84-e5-bd-b1-ef-bc-9a-e6-ae-8b-e9-98-b3-e4-b8-8b/"/>
     <id>https://liuboyuan.fun/e6-91-84-e5-bd-b1-ef-bc-9a-e6-ae-8b-e9-98-b3-e4-b8-8b/</id>
     <published>2020-07-15T16:51:33.000Z</published>
-    <updated>2023-02-13T04:30:50.468Z</updated>
+    <updated>2025-01-12T16:03:51.183Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://beta.liuboyuan.fun/wp-content/uploads/2021/01/IMG_0146-1024x683.jpg" alt=""></p><p><img src="http://beta.liuboyuan.fun/wp-content/uploads/2021/01/IMG_0152-1024x683.jpg" alt=""></p><p><img src="http://beta.liuboyuan.fun/wp-content/uploads/2021/01/IMG_0159-1024x683.jpg" alt=""></p><p><img src="http://beta.liuboyuan.fun/wp-content/uploads/2021/01/IMG_0158-1024x683.jpg" alt=""></p><p>夕阳，是如血的赤色<br>映在灰暗的桥，流出阵阵光晕<br>松花江水微波缥缈、游人密集。<br>偶尔驶过火车的远鸣<br>期待着和平的夜。</p><p>远山，是无底的黑白<br>承载似火的天际，至向混乱极端<br>小船悠悠惊起涟漪，烟气未散<br>有时瞭望的人群，<br>消逝在无边的叹息。</p><p>刘渤源 摄|作</p>]]></content>
     
@@ -4481,11 +4600,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>夜言·一</title>
+    <title>🌙夜言·一</title>
     <link href="https://liuboyuan.fun/e5-a4-9c-e8-a8-80-c2-b7-e4-b8-80/"/>
     <id>https://liuboyuan.fun/e5-a4-9c-e8-a8-80-c2-b7-e4-b8-80/</id>
     <published>2020-07-06T21:54:31.000Z</published>
-    <updated>2023-02-13T04:30:50.451Z</updated>
+    <updated>2024-09-01T14:43:20.370Z</updated>
     
     <content type="html"><![CDATA[<p>夜深了，<br>宽广的小区空无一人。<br>只有偶尔的风机声，<br>从来没有停歇。<br>带着赶路人的鸣，<br>还有远处悠悠的风铃<br>又回到了无尽的安静.<br>微亮的路灯终究照不透街道，<br>留下驶过单车的身影。</p><p>夏风轻轻，晓月渐明。<br>霓虹一点点熄灭，<br>留下无从置身的飞蛾，<br>在黑幕中飞舞，<br>心，也随着冷平静了些。<br>白日忙碌的人们，<br>终于找到了归宿。</p><p>笔墨书尽了几载岁月，<br>不过是朝行暮回。<br>因为大家都知道，<br>太阳落下去了，<br>明天一定会升起来。</p>]]></content>
     
@@ -4516,11 +4635,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>校园</title>
+    <title>🏫校园</title>
     <link href="https://liuboyuan.fun/e6-a0-a1-e5-9b-ad/"/>
     <id>https://liuboyuan.fun/e6-a0-a1-e5-9b-ad/</id>
     <published>2020-07-03T22:52:07.000Z</published>
-    <updated>2023-02-13T04:30:50.494Z</updated>
+    <updated>2025-01-23T15:52:34.185Z</updated>
     
     <content type="html"><![CDATA[<p>朝阳高耸，林立青山。<br>飞星染白了天日，<br>江水洗清了沙底。<br>踏着第一缕晨曦，<br>望向闪光的轩窗——<br>背负梦想，奔赴远方。<br>风雨兼程也无人恐惧，<br>因为眼里有天地，心中有光。</p><p>鸟鸣风淋，夏叶青葱。<br>炊烟浇遍了天空，<br>迎着最后的星光，<br>彩霞晚归的孤凉——<br>承载知识，沉入梦乡。<br>雷鸣电闪也有人向往，<br>因为脚下有希望，<br>所以明日的青春便不会彷徨。</p><p>刘渤源 作</p>]]></content>
     
@@ -4619,11 +4738,11 @@ Finaly,ended.&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>望雨</title>
+    <title>☔望雨</title>
     <link href="https://liuboyuan.fun/e6-9c-9b-e9-9b-a8/"/>
     <id>https://liuboyuan.fun/e6-9c-9b-e9-9b-a8/</id>
     <published>2020-06-24T21:07:53.000Z</published>
-    <updated>2023-02-13T04:30:50.487Z</updated>
+    <updated>2024-10-25T16:29:30.480Z</updated>
     
     <content type="html"><![CDATA[<p>晓雾晨光冷风吹，冰雨淅窗跌残被。<br>游人冷稀无过客，落珠穿雾石卵摧。<br>孤火淋漓阡陌色，惊起昏灯暗夜悲。<br>高望彼岸人何处，执笔流墨纸沾泪。</p><p>刘渤源 作</p>]]></content>
     
@@ -4864,11 +4983,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>如何敲鼓·第一章</title>
+    <title>🥁如何敲鼓·第一章</title>
     <link href="https://liuboyuan.fun/e5-a6-82-e4-bd-95-e6-95-b2-e9-bc-93-c2-b7-e7-ac-ac-e4-b8-80-e7-ab-a0/"/>
     <id>https://liuboyuan.fun/e5-a6-82-e4-bd-95-e6-95-b2-e9-bc-93-c2-b7-e7-ac-ac-e4-b8-80-e7-ab-a0/</id>
     <published>2020-06-16T01:04:45.000Z</published>
-    <updated>2023-02-13T04:30:50.448Z</updated>
+    <updated>2024-09-01T14:45:56.448Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="https://liuboyuan.fun/ruheqiaogudiyizhang/#%E5%89%8D%E8%A8%80" title="前言"></a>前言</h3><p>（本系列教程特指西洋乐器 架子鼓，又称爵士鼓）</p><p>学鼓，需要有节奏感<br>就是那些上课玩笔敲动次打次，下课玩B-Box的<br>似乎节奏感很强。<br>但是如果你没有这些爱好，<br>也不能说你节奏感不强。<br>所以，敲鼓对所有人都是适合的。<br>敲鼓，是一种发泄的方式。<br>在节奏的冲击下，压力都释放在鼓皮上。<br>就这样，我敲坏过一张。<br>敲得响不一定用力大，这是重点。<br>如果要陶冶情操，不推荐敲鼓。<br>可以试试箫、笛、瑟、琴、埙、笙。<br>我嘛 也觉得鼓太奔放了<br>不符合我的写作风格 所以就当个减压工具。<br>学这个不要为了考级，<br>当做爱好。<br>——来自停留在九级的蒟蒻</p><h3 id="简言"><a href="https://liuboyuan.fun/ruheqiaogudiyizhang/#%E7%AE%80%E8%A8%80" title="简言"></a>简言</h3><p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/image-16.png" alt=""></p><p>这是识谱图 算是比较常用<br>一般敲着敲着就会了<br>还有边击、踩镲等新知识<br>只要你节奏对了， 大多数人听不出来<br>你就算把小鼓敲成三通也是那么回事是吧<br>这方面的知识，会在后面涉猎。</p><h3 id="架子鼓"><a href="https://liuboyuan.fun/ruheqiaogudiyizhang/#%E6%9E%B6%E5%AD%90%E9%BC%93" title="架子鼓"></a>架子鼓</h3><p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3528980889,3933724807&amp;fm=26&amp;gp=0.jpg" alt=""></p><p>没错，这就是一个架子鼓<br>正常座位的右边会有一个叮叮镲<br>也可以有很多拓展，比如牛铃、木鱼、沙槌、三角铁、音树<br>在选择鼓上，<br>我在用TAMA ，镲是SABIAN的<br>津宝的镲我真不推荐，不知道现在什么样了<br>打几天就弯了 声音很难听<br>一些极品镲Istanbul和Turkish比较贵<br>新手不推荐<br>可以试试Sabian,zildjian,PAISTE，baiMEINL等<br>Zildjian的Avedis据说音头清晰，音色总体偏亮，震动时的金颗粒感相对大<br>电鼓力气大的真不推荐 敲起来滚奏也很难受<br>条件允许的话还是选择真鼓<br>说实话，静音垫对音色的影响很大 很大<br>鼓棒一定不要选不直的<br>自己打着舒服才是好鼓棒</p><p>好了，先分享到这里<br>下一期讲讲架子鼓怎么敲<br>（本人有一定可能露面）</p>]]></content>
     
@@ -4978,11 +5097,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>日志</title>
+    <title>🏫日志</title>
     <link href="https://liuboyuan.fun/e6-97-a5-e5-bf-97/"/>
     <id>https://liuboyuan.fun/e6-97-a5-e5-bf-97/</id>
     <published>2020-06-11T00:31:19.000Z</published>
-    <updated>2023-02-13T04:30:50.472Z</updated>
+    <updated>2025-01-23T14:51:15.689Z</updated>
     
     <content type="html"><![CDATA[<p>要开学了，<br>下周一要开学了！<br>校园现在是什么样子呢<br>大树可能也开花了吧，<br>铁门也已经爬满锈痕，<br>没有人的气息。<br>微风吹过，<br>透过紧闭的门窗。<br>没有飘扬的青春，<br>学校物是人非。<br>更添一分孤独。<br>那缕烟，是否还是在那？<br>伴着晨曦、落日。<br>欢声笑语、打闹嬉戏。<br>像曾经一样，<br>黑夜划过，<br>耀眼星河。<br>不过是光阴一瞬。<br>朝阳终究会到来。</p>]]></content>
     
@@ -5009,9 +5128,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -5118,11 +5237,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>无题</title>
+    <title>☕无题</title>
     <link href="https://liuboyuan.fun/e6-97-a0-e9-a2-98/"/>
     <id>https://liuboyuan.fun/e6-97-a0-e9-a2-98/</id>
     <published>2020-06-06T03:54:31.000Z</published>
-    <updated>2023-02-13T04:30:50.470Z</updated>
+    <updated>2025-01-12T16:49:08.231Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://liuboyuan.fun/wp-content/uploads/2020/06/hello-61-1024x576.jpg" alt=""></p><p>三两新茶浊残春<br>奈何人远千古恨<br>暮春欲盼三冬暖<br>芳草桥头情断魂</p><p>刘渤源 作</p>]]></content>
     
@@ -5187,11 +5306,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>小忆</title>
+    <title>🌱小忆</title>
     <link href="https://liuboyuan.fun/e5-b0-8f-e5-bf-86/"/>
     <id>https://liuboyuan.fun/e5-b0-8f-e5-bf-86/</id>
     <published>2020-06-02T05:44:12.000Z</published>
-    <updated>2023-02-13T04:30:50.454Z</updated>
+    <updated>2024-09-21T15:53:06.516Z</updated>
     
     <content type="html"><![CDATA[<p>夏天到了，仿佛啊<br>时光只是那么一刻。<br>随即逝去，<br>却仿佛经过了许多。<br>也包括，自己的蜕变。<br>曾经多么恐惧的时光<br>也终究，成为了记忆。<br>看到明年的中考，<br>分别，又近了一步。<br>从素不相识，<br>到亲密无间。<br>我们经历了多少啊……<br>谁还记得，开学时自我介绍的腼腆<br>与同学交流时的不知所措。<br>看向她时的紧张。<br>本以为时光永驻，<br>本以为童年依旧。<br>光阴似箭，箭箭穿心。<br>九月落叶，<br>六月归根。<br>可能不久的分别，<br>便是永远的回忆。<br>落叶飞洒，吹尽青春昂扬。<br>人来人往，走过夕阳，踌躇难忘。<br>我们是这个学校其中的一届，<br>可能没有人会记住。<br>岁月轮回，终究成为过往。<br>若有来生，<br>我们还会遇到彼此。<br>我依旧，在那个落叶纷飞的校园，<br>等你们每一个人。</p>]]></content>
     
@@ -5291,11 +5410,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>思古言今</title>
+    <title>📙思古言今</title>
     <link href="https://liuboyuan.fun/e6-80-9d-e5-8f-a4-e8-a8-80-e4-bb-8a/"/>
     <id>https://liuboyuan.fun/e6-80-9d-e5-8f-a4-e8-a8-80-e4-bb-8a/</id>
     <published>2020-05-25T05:51:09.000Z</published>
-    <updated>2023-02-13T04:30:50.461Z</updated>
+    <updated>2025-01-12T16:02:17.345Z</updated>
     
     <content type="html"><![CDATA[<p>唐宋二代，名流满城。<br>执笔而书，花尽浮尘。<br>千百诗风，皆自为家。<br>天下共赏，内外同读。<br>手接星河，足临明月。<br>对风念家，思情恨阙。<br>身立沙场，不敌则为带首归。<br>春寒秋暖，一纸憔悴话年岁。<br>半抹灯火，三世繁华。<br>江南雨墨，多少文客。<br>花落冬雪，流尽人心。<br>望天而叹，四季无情。<br>文类茂如夏叶，书体盛于繁花。<br>诗词流芳南北，歌舞惊世东西。<br>后世见得，不可仿之。<br>遣唐倭使，前来习学。<br>鉴真东渡，至岛赠技。<br>倭人见之，甚有心喜。<br>遂惜此技，传代至今。<br>天下渐乱，少有太平。<br>偶有时同，年过皆空。<br>倭国虽乱，却能保文。<br>子传子孙，就成万千。<br>今生全云，唐于倭国。<br>未言中华，文化何处。<br>倭国喜墨，行草化文。<br>许或忘却，文属中原。<br>唐宋传外，外不扰内。<br>也罢无联，外无侵内。<br>多代盛世，恢弘一时。<br>南宋渐弱，元兵大入。<br>屠亡百姓，血河入海。<br>汉人将倾，诗词或无。<br>春冬又至，外族渐平。<br>元朝时安，又演多曲。</p><blockquote><p>话说天下大势，分久必合，合久必分。</p><p>《三国演义》第一回</p></blockquote><p>洪武侵元，流掀暴政。<br>女真灭明，一统南北。<br>为固国政，文字狱生。<br>若有清字，则为牢狱。<br>如见反国，则为九泉。<br>文人受害，名流无言。<br>年过民国，天下似乱。<br>又值新文化之运动，文言立足地之坍塌。<br>五千载风雨雪潇潇，足一年挥之去尘埃。<br>西方占文之江山，国人忘技之珍惜。<br>传统之末路将至，唐宋之消殒无形。<br>文化末路，白话四起。<br>胡适鲁迅，再斥文言。<br>全盘无认，似五千载未曾现诗词辉煌。<br>推崇西学，见半壁文学江山毁于一旦。<br>开放至外，外渐侵内。<br>非扰政权，唯占文化。<br>文言先失，后又如何？<br>待至人不可保文，书无人曾问。<br>老辈依旧，仅无外人。<br>崇洋媚外，实属可凄。<br>若有一日，鄙人见之。<br>街巷内外，无人念旧。<br>那时传统，应当殆尽。</p>]]></content>
     
@@ -5327,11 +5446,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>星空的记忆</title>
+    <title>🌌星空的记忆</title>
     <link href="https://liuboyuan.fun/e6-98-9f-e7-a9-ba-e7-9a-84-e8-ae-b0-e5-bf-86/"/>
     <id>https://liuboyuan.fun/e6-98-9f-e7-a9-ba-e7-9a-84-e8-ae-b0-e5-bf-86/</id>
     <published>2020-05-16T06:24:36.000Z</published>
-    <updated>2023-02-13T04:30:50.480Z</updated>
+    <updated>2025-01-23T14:56:14.404Z</updated>
     
     <content type="html"><![CDATA[<p>月亮探出了头，<br>带来了黑夜。<br>引领着江水流向远方。<br>天好像变得无限大了，<br>洒落着点点繁星。<br>东侧的发电厂仿佛末日的景象，<br>烟囱像曾经的森林一样，<br>喷出墨黑的恶灵。<br>西侧似乎是一望无际的海洋，<br>延伸到水天相接，<br>深蓝，泛着点黄昏。<br>月光透过刚刚冒出新芽的花草，<br>散发着淡淡的喜悦，<br>空气并不冷，也不热的心烦，<br>每一口空气都有曾经的香味。<br>与偶尔飞过的鸟，<br>还有静静走过的人，<br>流尽了初春。<br>枝梢下的鸳鸯齐飞，<br>也少了几分孤单。<br>年少的情愫啊，<br>几百年没有变过。<br>唯一更替的，<br>只是过去的人。<br>无垠的月空早已记下了一切。<br>千古情恨，<br>又回到了苍穹之上。<br>微风猛然吹过，<br>夜深了，<br>我也终于醒来。<br>春天还是那么短暂，<br>光阴一瞬，<br>窥尽全秋。<br>我们又会遇见谁？<br>可能孤独终生，<br>沉浸在深夜的美好。<br>也可能，<br>永远在星空的记忆里，<br>驻足。</p>]]></content>
     
@@ -5399,11 +5518,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>无话可说</title>
+    <title>🏫无话可说</title>
     <link href="https://liuboyuan.fun/e6-97-a0-e8-af-9d-e5-8f-af-e8-af-b4/"/>
     <id>https://liuboyuan.fun/e6-97-a0-e8-af-9d-e5-8f-af-e8-af-b4/</id>
     <published>2020-05-09T04:07:24.000Z</published>
-    <updated>2023-02-13T04:30:50.471Z</updated>
+    <updated>2025-01-12T16:04:02.867Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>当一个组织出现卧底，<br>那么这个团队将不复存在。</p><p>刘渤源</p></blockquote><p>在每一个班级中<br>总会有大大小小的团体。<br>而每一个团体，<br>都有很多高尚的卧底——<br>对老师而言。<br>往往这些卧底，<br>便是同学关系瓦解的祸首。<br>我对这种人，<br>说不上深恶痛绝，<br>但是对他（她）感到惋惜。<br>与同学不好好相处，<br>却干这种勾当，<br>将同学间的秘密公之于他人<br>无耻啊，实在是无耻！<br>虽不说其利弊，<br>单凭人情世故，<br>这种告密者理应湮灭在时间的洪流里。<br>但是纵观千古，<br>这似乎是一种文化——一种让人厌恶的文化</p><blockquote><p>令民为什伍而相牧司连坐，告奸者与斩敌首同赏，不告奸者与降敌同罚。</p><p>《史记》</p></blockquote><p>而这种行为无非就是为了统治者——<br>一定范围内的统治者<br>对其管辖人的一种了解。<br>我对这种统治者不做评价，<br>也不敢评价。<br>试想告密的，<br>正是你最信任的人，<br>你的心，会是什么样子？<br>如若有一天，<br>这种告密者长大了，<br>人缘又该如何？<br>我们无须想象，<br>这种人的结果—不过是乌合之众。<br>当兵可能通敌，<br>工作可能随意检举他人。<br>打报告是好的——<br>在理论上。<br>但是人是活生生的，<br>不是死去不动的。<br>为了利益，各方面的利益，<br>不惜放弃自己的人情，<br>道德何在？</p><blockquote><p>不告密、不揭发，与其说是一种可贵品质，不如说是一条道德底线。告密成风的社会，是人人自危的社会，告密使人与人之间失去基本信任，甚至相互侵害，冲击人们的价值判断，毁掉社会的道德基础。</p><p>《人民日报》</p></blockquote><p>如果那些在角落里偷笑的卧底成年了，<br>我希望他（她）明白，<br>社会没有什么是绝对错的，<br>也没有永远的统治，<br>但是请时刻记住，<br>你是一个人。</p><p>新文章预告：初心</p>]]></content>
     
@@ -5469,11 +5588,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>无题</title>
+    <title>⛅无题</title>
     <link href="https://liuboyuan.fun/e6-97-a0-e9-a2-98-2/"/>
     <id>https://liuboyuan.fun/e6-97-a0-e9-a2-98-2/</id>
     <published>2020-05-04T05:48:19.000Z</published>
-    <updated>2023-02-13T04:30:50.469Z</updated>
+    <updated>2025-01-23T14:51:15.690Z</updated>
     
     <content type="html"><![CDATA[<p>一抹浮云映青空，</p><p>夕阳斜下人匆匆。</p><p>余光只剩流东水，</p><p>秋梦初醒泪惺忪。</p>]]></content>
     
@@ -5572,11 +5691,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>日志</title>
+    <title>🍲日志</title>
     <link href="https://liuboyuan.fun/e6-97-a5-e5-bf-97-2/"/>
     <id>https://liuboyuan.fun/e6-97-a5-e5-bf-97-2/</id>
     <published>2020-05-02T04:35:22.000Z</published>
-    <updated>2023-02-13T04:30:50.472Z</updated>
+    <updated>2025-01-23T14:56:14.416Z</updated>
     
     <content type="html"><![CDATA[<p>五一劳动节快乐</p><p>今天和冠城哥去荒郊野岭大好河山去玩了一下<br>躲开了人群密集的地方，<br>离市区很远，<br>因为嘛，没有景区开门。<br>所以就去了不知道哪的地方，<br>在别人家的农场上采野菜。<br>准确来说去哪不重要，<br>重要的是和谁去。<br>到了哪里也不重要，<br>重要的是去的过程中有什么收获。<br>一路上，吃了许多垃圾食品快乐食品。<br>回来时，<br>去了曾经每次英语班下课都要去的馄饨店，<br>早已没有曾经的繁华，<br>剩下的，只有偶尔闪过的人。<br>仿佛已经很久没有人来了。<br>忽然吹过的灰尘，<br>飘洒出往日的光彩。<br>香气缭绕的街道，<br>如今啊，早已不知道在哪了。<br>馄饨店还是在那，<br>一直都没有变过。<br>变的，<br>只有曾经路过的人，<br>却想不起发生的事。<br>馄饨还是曾经的味道，<br>只是多了酱油瓶，<br>似乎少了胡椒粉。<br>那已经是很久以前的事啦，<br>无论如何也再见不到了。<br>过去的人啊，<br>也就过去了。<br>走过的四季，<br>在哪还能见到？<br>窗外，春雨淅淅沥沥。<br>只不过多了一些雷声，<br>少了几分往日的岁月。</p>]]></content>
     
@@ -5750,16 +5869,17 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
     <link href="https://liuboyuan.fun/e6-97-a5-e5-bf-97-3/"/>
     <id>https://liuboyuan.fun/e6-97-a5-e5-bf-97-3/</id>
     <published>2020-04-22T22:42:36.000Z</published>
-    <updated>2023-02-13T04:30:50.476Z</updated>
+    <updated>2025-01-23T14:54:26.216Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="又下雪了"><a href="https://liuboyuan.fun/journal/#%E5%8F%88%E4%B8%8B%E9%9B%AA%E4%BA%86" title="又下雪了"></a>又下雪了</h3><p>“一场春雨一场寒” 但是四月末来一场雪是真冷。 明天就考试了。 晨曦终于坠下去， 便是永恒的黑夜。 空中飘下雪花， 透过如风的繁华。 如若有一天， 这里是一片不毛之地。 谁又会记得， 当初的一醉方休， 吟诗作赋。 又怎么能够想起那时的 “青春年华” 多么有趣的词啊， 过了多少年， 还是像曾经那样。 纵然千古流逝， 我们都曾是少年时， 都有那段经历— 能让我们永远都无法忘记的经历。 这就是青葱年华， 一代人的梦想， 一辈人的希望， 便在这里启程。 无数次的盼望， 都胜不过， 过往匆匆。 怎奈何， 曾经的人， 回不来。 曾经的事， 可能发生， 但是永远都不会， 再发生在我的心里。 那时， 即使能看见光， 也不过是幻象。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="又下雪了"><a href="https://liuboyuan.fun/journal/#%E5%8F%88%E4%B8%8B%E9%9B%AA%E4%BA%86" title="又下雪了"></a>又下雪了</h3><p>“一场春雨一场寒”<br>但是四月末来一场雪是真冷。<br>明天就考试了。<br>晨曦终于坠下去，<br>便是永恒的黑夜。<br>空中飘下雪花，<br>透过如风的繁华。<br>如若有一天，<br>这里是一片不毛之地。<br>谁又会记得，<br>当初的一醉方休，<br>吟诗作赋。<br>又怎么能够想起那时的 “青春年华”<br>多么有趣的词啊，<br>过了多少年，<br>还是像曾经那样。<br>纵然千古流逝，<br>我们都曾是少年时，<br>都有那段经历—<br>能让我们永远都无法忘记的经历。<br>这就是青葱年华，<br>一代人的梦想，<br>一辈人的希望，<br>便在这里启程。<br>无数次的盼望，<br>都胜不过，<br>过往匆匆。<br>怎奈何，<br>曾经的人，<br>回不来。<br>曾经的事，<br>可能发生，<br>但是永远都不会，<br>再发生在我的心里。<br>那时，<br>即使能看见光，<br>也不过是幻象。</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h3 id=&quot;又下雪了&quot;&gt;&lt;a href=&quot;https://liuboyuan.fun/journal/#%E5%8F%88%E4%B8%8B%E9%9B%AA%E4%BA%86&quot; title=&quot;又下雪了&quot;&gt;&lt;/a&gt;又下雪了&lt;/h3&gt;
-&lt;p&gt;“一场春雨一场寒” 但是四月末来一场
+&lt;p&gt;“一场春雨一场寒”&lt;br&gt;
+但是四月
       
     
     </summary>
@@ -5777,16 +5897,26 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
     <link href="https://liuboyuan.fun/e5-bf-86-e6-b8-85/"/>
     <id>https://liuboyuan.fun/e5-bf-86-e6-b8-85/</id>
     <published>2020-04-21T07:45:27.000Z</published>
-    <updated>2023-02-13T04:30:50.460Z</updated>
+    <updated>2024-09-21T16:06:16.955Z</updated>
     
-    <content type="html"><![CDATA[<p>京城的风， 带着些未散去的烟气。 空中， 飘洒出柔和的水雾， 让人难以呼吸。</p><p>烛光带着些光晕， 映在黑暗的夜。 是江南的雨吗？ 繁华里， 尽是荒芜。 天上洒下的水滴， 浇醒了地上的人。 让他们看见了自己。 又如昨夜剩下的酒， 却早已没有味道。 云里，他的身影又显现在人群。 本以为是暖春， 却吹来一阵冷风。 他的思绪又回到了那个人。 相逢不语， 一朵芙蓉看秋雨。 他等那个人， 等了几生几世。 月光无情的撒向大地， 酒杯倾倒在水中。 留下了他的叹息。 疏花已是不禁风， 那更夜深清露湿愁红。 他终于明白了， 就算等不到她， 也不枉走过红尘， 来过世上。</p>]]></content>
+    <content type="html"><![CDATA[<p>京城的风，<br>带着些未散去的烟气。<br>空中，<br>飘洒出柔和的水雾，<br>让人难以呼吸。</p><p>烛光带着些光晕，<br>映在黑暗的夜。<br>是江南的雨吗？<br>繁华里，<br>尽是荒芜。<br>天上洒下的水滴，<br>浇醒了地上的人。<br>让他们看见了自己。<br>又如昨夜剩下的酒，<br>却早已没有味道。<br>云里，<br>他的身影又显现在人群。<br>本以为是暖春，<br>却吹来一阵冷风。<br>他的思绪又回到了那个人。<br>相逢不语，<br>一朵芙蓉看秋雨。<br>他等那个人，<br>等了几生几世。<br>月光无情的撒向大地，<br>酒杯倾倒在水中。<br>留下了他的叹息。<br>疏花已是不禁风，<br>那更夜深清露湿愁红。<br>他终于明白了，<br>就算等不到她，<br>也不枉走过红尘，<br>来过世上。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;京城的风， 带着些未散去的烟气。 空中， 飘洒出柔和的水雾， 让人难以呼吸。&lt;/p&gt;
-&lt;p&gt;烛光带着些光晕， 映在黑暗的夜。 是江南的雨吗？ 繁华里， 尽是荒芜。 天上洒下的水滴， 浇醒了地上的人。 让他们看见了自己。 又如昨夜剩下的酒， 却早已没有味道。 云里，他的身影又
+        &lt;p&gt;京城的风，&lt;br&gt;
+带着些未散去的烟气。&lt;br&gt;
+空中，&lt;br&gt;
+飘洒出柔和的水雾，&lt;br&gt;
+让人难以呼吸。&lt;/p&gt;
+&lt;p&gt;烛光带着些光晕，&lt;br&gt;
+映在黑暗的夜。&lt;br&gt;
+是江南的雨吗？&lt;br&gt;
+繁华里，&lt;br&gt;
+尽是荒芜。&lt;br&gt;
+天上洒下的水滴，&lt;br&gt;
+浇醒了地上的
       
     
     </summary>
@@ -5828,11 +5958,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>我们需要念旧吗</title>
+    <title>🌖我们需要念旧吗</title>
     <link href="https://liuboyuan.fun/e6-88-91-e4-bb-ac-e9-9c-80-e8-a6-81-e5-bf-b5-e6-97-a7-e5-90-97/"/>
     <id>https://liuboyuan.fun/e6-88-91-e4-bb-ac-e9-9c-80-e8-a6-81-e5-bf-b5-e6-97-a7-e5-90-97/</id>
     <published>2020-04-18T18:58:51.000Z</published>
-    <updated>2023-02-13T04:30:50.463Z</updated>
+    <updated>2025-01-23T14:51:15.692Z</updated>
     
     <content type="html"><![CDATA[<p>我们的人生中，有曾经，也有未来。而我们是否需要回忆曾经，还是该看向未来，忘掉过去？<br>我经常想起过往的事，然后细细品味一番，就像一壶冲泡了十年的茶，苦涩又挥不去，想忘掉，却如何也无法放弃。每个人心中都有伤心的一隅，在孤单时需要有人安慰。而这些安慰，可能只有从过去得到。而过去的，经过了时间的磨砺，把最值得怀念的，留了下来。我总是感觉过去的，永远都应该在自己的心里，不应该消逝，不应该遗忘。</p><p>说白了，我就是一个喜欢念旧的人。感觉所有东西都是一种记忆——旧的书、旧的笔，不舍得扔，也许是因为放不下。没有那种旷达，也不坚定。<br>直到在和博友聊天时，无意间谈到“小时候”。</p><blockquote><p>“哥 你小时候…”</p><p>“你总好奇我小时候的事做什么”<br>“而且你这问题完全没有意义”</p></blockquote><p>失望之余，我再次开始思考，念旧真的有意义吗？<br>我们的视野，必然要向前看，但是未来毕竟是模糊的，带有些不确定的因素，而过去的，能给予我们安慰，也是我们可以相信的东西。但是我们不能永远活在过去，念旧会给我们带来安慰，也会让我们对自己度过的岁月，有所念想。</p><p>但是安慰能解决什么问题呢？我们终究会面向未来，面向自己的余生。总是不坚强，其实也是一种懦弱的表现，我们需要坚强起来，走向明天，无论风和雨，晴与阴。</p><blockquote><p>生活需要向前看<br>过去的事，只存在于日记<br>多花时间思考无意义</p></blockquote><p>对啊，生活需要安慰，也固然需要向前看，这并不矛盾，过去的也回不去，也改变不了什么，只能让千疮百孔的心灵，暂时有了希望，并不渴求别的，只是想以完整的精神面向余生。<br>我们需要念旧，但是不需要永远活在过去。<br>我们需要向前看，但是不需要永远遗忘过去。<br>但并不至于，留在今天。</p><hr><p>想到念旧，文化？总该是历史，也算是一种念旧，而这种念旧的人，也就是对文化执迷不忘，不肯放弃的人。也正是这种对文化的不舍，让一些文化得以传承。遥想当年，我们祖先留下的无数遗产，在一场新文化运动中，所剩无几。民间艺术，之乎者也，已焉哉呼——也终究是历史。</p><p>无论怎么说，新文化运动的许多人都是一些社会上的名人，我也不可妄加评论，我本身并不是大家。毕竟这是历史的选择，一代文明的选择。可能是为了让中文好学些，但是中国的文言文从此便被打入了十八层地狱，白话文时来运转，疯狂了近一百年。其影响之巨，令人心惊。这可能是几千年文化最悲哀的落幕——从此唐诗宋词，不再存在。总之，新文化运动是当时的一批豪杰为中国开出的一剂良方，为正处于特殊历史阶段下的中国作出了突出贡献。</p><p>华夏文明，五千年朝代更替，五千年山重水复。手刻甲骨，挥毫千行。诗词文戏，琴棋书画。柴米油盐，酱醋茶酒。几代传承，几代珍惜。只可怕，当今将湮灭。</p><blockquote><p>“传统文化就只是传统文化”<br>“了解了解就行，吸取有趣的”</p></blockquote><p>这句话对于时代发展来说可以算是完全正确的了。我们终究会面向未来，而不是想着过去的事。但是文化毕竟是一个民族的结晶，一辈辈人的心血。</p><blockquote><p>当喊出“中国复兴需要外国人“的时候，<br>中华民族的伟大复兴就成了笑话。</p></blockquote><p>世界上许多国家，早已开始学习我们的文化。而我们却还在“向前看”，作为炎黄子孙，竟然无法保住文化，等到某门手艺在中国消亡，在别国兴盛起来时——我们可能需要向他们学习，多么悲哀，多么可笑！然而，现在许多青年已经不屑于文化传承，都去追求自己想要的生活，少有人学习，几乎无人发扬，在遗忘的路上越走越远。我认为学校理应开设相关课程，让学生去了解，增加民族自信。让崇洋媚外的风气有所减少。我们不能让外国文化占据一席之地，因为当外来文化的地位超过本土文化时，一个文明的灭亡可能就是明天。</p><p>念旧，本就是一种对过去的怀念，也是一种对文化的珍惜。念旧的同时需要向前发展，不能永远活在过去，也不能死在未来。</p>]]></content>
     
@@ -5935,11 +6065,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>又回那年仲秋时</title>
+    <title>🌱又回那年仲秋时</title>
     <link href="https://liuboyuan.fun/e5-8f-88-e5-9b-9e-e9-82-a3-e5-b9-b4-e4-bb-b2-e7-a7-8b-e6-97-b6/"/>
     <id>https://liuboyuan.fun/e5-8f-88-e5-9b-9e-e9-82-a3-e5-b9-b4-e4-bb-b2-e7-a7-8b-e6-97-b6/</id>
     <published>2020-04-12T06:22:43.000Z</published>
-    <updated>2023-02-13T04:30:50.425Z</updated>
+    <updated>2024-09-01T14:43:10.599Z</updated>
     
     <content type="html"><![CDATA[<p>阳光温和地照在窗上，<br>焦灼的空气里，<br>带着几分昏眩。<br>不想移动一分。</p><p>或许是作业的缘故，<br>懒在床上，<br>不愿起来。<br>任凭大脑更加浑浊。<br>直到头不知如何，<br>倒在了地上…</p><p>我用仅余的力气，<br>打开了那面世界。<br>春风呼啸而入。<br>暖洋洋的，<br>又带有几分干燥，<br>几分忧伤。<br>吹醒了飞扬的历史题。<br>吹落了飘荡的演算纸。<br>几分幼稚，<br>几分甜蜜。</p><p>将沉睡的我，<br>送回了那年仲秋。<br>相识未料曾相逢啊，<br>终见落叶伴东风。<br>虽然熟悉无比，<br>却更加陌生。<br>她，<br>还是如曾经那样。<br>一切都是从前。<br>一切相视，<br>都是初见。<br>我们虽然素不相识，<br>却熟悉彼此。<br>但不知如何回首。<br>青春的小河啊，<br>还在静静地流淌。<br>有时会激起一朵水花，<br>便飞向了另一片海。</p><p>我在梦里睡下了，<br>到了那年仲秋，<br>记得把我叫醒。<br>我还是曾经那样，<br>一直都是如此。</p><p>2020.4.11<br>刘渤源 作</p>]]></content>
     
@@ -6000,11 +6130,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>开源协议</title>
+    <title>💾开源协议</title>
     <link href="https://liuboyuan.fun/e5-bc-80-e6-ba-90-e5-8d-8f-e8-ae-ae/"/>
     <id>https://liuboyuan.fun/e5-bc-80-e6-ba-90-e5-8d-8f-e8-ae-ae/</id>
     <published>2020-04-09T01:41:07.000Z</published>
-    <updated>2023-02-13T04:30:50.457Z</updated>
+    <updated>2024-09-21T15:58:08.429Z</updated>
     
     <content type="html"><![CDATA[<p>来源：《开源时代》2010.02 第十七期</p><h3 id="BSD开源协议-original-BSD-license、FreeBSD-license、Original-BSD-license"><a href="https://liuboyuan.fun/kaiyuan/#BSD%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE-original-BSD-license%E3%80%81FreeBSD-license%E3%80%81Original-BSD-license" title="BSD开源协议(original BSD license、FreeBSD license、Original BSD license)"></a><strong>BSD开源协议(original BSD license、FreeBSD license、Original BSD license)</strong></h3><p>BSD开源协议是一个给于使用者很大自由的协议。基本上使用者可以”为所欲为”，可以自由<br>的使用，修改源代码，也可以将修改后的代码作为开源或者专有软件再发布。</p><p>但”为所欲为”的前提当你发布使用了BSD协议的代码，或则以BSD协议代码为基础做二次开<br>发自己的产品时，需要满足三个条件：</p><p>如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协议。如果再发布<br>的只是二进制类库/软件，则需要在类库/软件的文档和版权声明中包含原来代码中的BSD协议。</p><p>不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。</p><p>BSD代码鼓励代码共享，但需要尊重代码作者的著作权。BSD由于允许使用者修改和重新发布<br>代码，也允许使用或在BSD代码上开发商业软件发布和销售，因此是对商业集成很友好的协议。而<br>很多的公司企业在选用开源产品的时候都首选BSD协议，因为可以完全控制这些第三方的代码，在<br>必要的时候可以修改或者二次开发。</p><h3 id="Apache-Licence-2-0-Apache-License，-Version-2-0、Apache-License，-Version"><a href="https://liuboyuan.fun/kaiyuan/#Apache-Licence-2-0-Apache-License%EF%BC%8C-Version-2-0%E3%80%81Apache-License%EF%BC%8C-Version" title="**Apache Licence 2.0(Apache License， Version 2.0、Apache License， Version"></a>**Apache Licence 2.0(Apache License， Version 2.0、Apache License， Version</h3><p>1.1、Apache License， Version 1.0)**</p><p>Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，同样<br>鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再发布(作为开源或商业软件)。需要满足<br>的条件也和BSD类似：</p><p>需要给代码的用户一份Apache Licence，如果你修改了代码，需要在被修改的文件中说明。<br>在延伸的代码中(修改和有源代码衍生的代码中)需要带有原来代码中的协议，商标，专利声明和其他<br>原来作者规定需要包含的说明。</p><p>如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。<br>你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。</p><p>Apache Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需<br>要并作为开源或商业产品发布/销售。</p><h3 id="GPL-GNU-General-Public-License"><a href="https://liuboyuan.fun/kaiyuan/#GPL-GNU-General-Public-License" title="GPL(GNU General Public License)"></a><strong>GPL(GNU General Public License)</strong></h3><p>我们很熟悉的Linux就是采用了GPL。GPL协议和BSD，Apache Licence等鼓励代码重用的<br>许可很不一样。GPL的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用，但<br>不允许修改后和衍生的代码做为闭源的商业软件发布和销售。这也就是为什么我们能用免费的各种<br>linux，包括商业公司的linux和linux上各种各样的由个人，组织，以及商业软件公司开发的免费软<br>件了。</p><p>GPL协议的主要内容是只要在一个软件中使用(”使用”指类库引用，修改后的代码或者衍生代<br>码)GPL协议的产品，则该软件产品必须也采用GPL协议，既必须也是开源和免费。这就是所谓的<br>”传染性”。GPL协议的产品作为一个单独的产品使用没有任何问题，还可以享受免费的优势。</p><p>由于GPL严格要求使用了GPL类库的软件产品必须使用GPL协议，对于使用GPL协议的开源<br>代码，商业软件或者对代码有保密要求的部门就不适合集成/采用作为类库和二次开发的基础。</p><p>其它细节如再发布的时候需要伴随GPL协议等和BSD/Apache等类似。</p><h3 id="LGPL-GNU-Lesser-General-Public-License"><a href="https://liuboyuan.fun/kaiyuan/#LGPL-GNU-Lesser-General-Public-License" title="LGPL(GNU Lesser General Public License)"></a><strong>LGPL(GNU Lesser General Public License)</strong></h3><p>LGPL是GPL的一个为主要为类库使用设计的开源协议。和GPL要求任何使用/修改/衍生之<br>GPL类库的的软件必须采用GPL协议不同。LGPL允许商业软件通过类库引用(link)方式使用LGPL<br>类库而不需要开源商业软件的代码。这使得采用LGPL协议的开源代码可以被商业软件作为类库引用<br>并发布和销售。</p><p>但是如果修改LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生<br>的代码都必须采用LGPL协议。因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，<br>但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。</p><p>GPL/LGPL都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品</p><h3 id="MIT-MIT"><a href="https://liuboyuan.fun/kaiyuan/#MIT-MIT" title="MIT(MIT)"></a><strong>MIT(MIT)</strong></h3><p>MIT是和BSD一样宽范的许可协议，作者只想保留版权，而无任何其他了限制.也就是说，你必<br>须在你的发行版里包含原许可协议的声明，无论你是以二进制发布的还是以源代码发布的。</p>]]></content>
     
@@ -6031,11 +6161,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
   </entry>
   
   <entry>
-    <title>望友·飞雪无言</title>
+    <title>🌨️望友·飞雪无言</title>
     <link href="https://liuboyuan.fun/e6-9c-9b-e5-8f-8b-c2-b7-e9-a3-9e-e9-9b-aa-e6-97-a0-e8-a8-80/"/>
     <id>https://liuboyuan.fun/e6-9c-9b-e5-8f-8b-c2-b7-e9-a3-9e-e9-9b-aa-e6-97-a0-e8-a8-80/</id>
     <published>2020-04-08T01:06:10.000Z</published>
-    <updated>2023-02-13T04:30:50.484Z</updated>
+    <updated>2024-10-25T16:27:30.279Z</updated>
     
     <content type="html"><![CDATA[<p>数似东风料峭寒， 昼夜欲增如累土。 望天叹月月无情， 心无寄所无归处。 土飘凡世无重见， 唯留各坊充天虚。 唯留落叶残秋途。</p><p>待到日光照北时， 我欲乘风南下去， 一洗冬气迎芳露。 归来还把冬殇除。 草亦有根人有心， 冬风散尽草木疏。 彼岸花落人如初， 百花齐落满荒芜。</p><p>己卯月乙亥日亥时一作 二作于庚辰月庚辰日</p><p>刘渤源 望四月残雪而思</p>]]></content>
     
@@ -6055,14 +6185,16 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
     
       <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
+      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
+    
   </entry>
   
   <entry>
-    <title>未眠而作</title>
+    <title>🎑未眠而作</title>
     <link href="https://liuboyuan.fun/e6-9c-aa-e7-9c-a0-e8-80-8c-e4-bd-9c/"/>
     <id>https://liuboyuan.fun/e6-9c-aa-e7-9c-a0-e8-80-8c-e4-bd-9c/</id>
     <published>2020-04-07T06:30:00.000Z</published>
-    <updated>2023-02-13T04:30:50.492Z</updated>
+    <updated>2025-01-12T16:02:05.092Z</updated>
     
     <content type="html"><![CDATA[<p>门外的灯光，</p><p>随着人们的休息，</p><p>一盏盏熄灭。</p><p>只有剩着的几笼，</p><p>却似乎飘出哀叹声。</p><p>若不是孤独，</p><p>谁又会在夜里——</p><p>雪还没有融化的春季</p><p>独自支起一盏灯呢？</p><p>也许吧，</p><p>是为了显得自己，</p><p>有人陪伴一样。</p><p>多年的追寻，</p><p>换来的，</p><p>不过是纸醉金迷。</p><p>叹息依旧，</p><p>可能还如从前那样，</p><p>孤独。</p>]]></content>
     
@@ -6515,11 +6647,11 @@ begi
   </entry>
   
   <entry>
-    <title>庚子疫 书</title>
+    <title>😷庚子疫 书</title>
     <link href="https://liuboyuan.fun/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/"/>
     <id>https://liuboyuan.fun/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/</id>
     <published>2020-03-09T05:04:31.000Z</published>
-    <updated>2023-02-13T04:30:50.457Z</updated>
+    <updated>2024-09-21T15:57:53.565Z</updated>
     
     <content type="html"><![CDATA[<p>己亥年丙子月，大疫初见。</p><p>少人知，思伤寒者遂告他人其疾不足言。</p><p>现不知其因。</p><p>人云因者，鄂中集市。</p><p>或曰他者，外传也。</p><p>以为无事，度日依旧。</p><p>劝阻无用，踏门登访。</p><p>人亦见人，人亦谈人。</p><p>咳无流涕，首稍发热。</p><p>以为伤寒，自为人医。</p><p>日月而逝，不得疾强。</p><p>唯咳之烈。</p><p>先发于鄂而后布于国。</p><p>国人知难，财物捐之。</p><p>群人知难，尽能助之。</p><p>医者有情，忘身援鄂。</p><p>舍身忽死，以命援灾。</p><p>灾若将歇，跪地谢之，</p><p>雨雪无休，彻夜救命。</p><p>挽人于水土危难，</p><p>莫使人命易交天！</p><p>邑人以之为恩，</p><p>欲以命偿。</p><p>少人不知恩贵，</p><p>忘恩而负义也！</p><p>举国上下，忧无停歇。</p><p>几人步于门外，</p><p>少车驶于路中。</p><p>无往日之喧嚣。</p><p>国之外友，</p><p>“山川异域，风月同天”</p><p>“岂曰无衣,与子同裳”</p><p>无顾自而顾人，</p><p>无忧己而助人。</p><p>国中现医他人而受染者，</p><p>非一二小数。</p><p>以学生之身，</p><p>以何报医者之恩，</p><p>国之恩？</p><p>仅尽己所能，</p><p>报效医者</p><p>报效中华。</p><p>以青春之志，</p><p>莫忘恩！</p>]]></content>
     
@@ -6550,13 +6682,13 @@ begi
   </entry>
   
   <entry>
-    <title>己酉记梦</title>
+    <title>🌇己酉记梦</title>
     <link href="https://liuboyuan.fun/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/"/>
     <id>https://liuboyuan.fun/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/</id>
     <published>2020-03-07T00:30:11.000Z</published>
-    <updated>2023-02-13T04:30:50.452Z</updated>
+    <updated>2024-09-21T15:53:57.161Z</updated>
     
-    <content type="html"><![CDATA[<p>他的一生即将殆尽。</p><p>他用着生命的最后一刻，</p><p>回望曾经。</p><p>纷纷过往如风而逝。</p><p>他依旧无动于衷。</p><p>记忆飞速流逝。</p><p>却停在了十四岁。</p><p>他笑了，</p><p>这似乎是理所应当，</p><p>因为他在这一年经历了太多。</p><p>不禁流出泪水。</p><p>“多么可笑啊，“</p><p>“在大年初一和一个根本不喜欢自己的女生表白”</p><p>却如何呢？</p><p>自己将要命归九泉，</p><p>谁又会记得，</p><p>一个心里永远活泼的人，</p><p>在那日也无比紧张，</p><p>手心的汗，</p><p>如雨而下。</p><p>心如丹灵，转眼化作寒酥般寒冷。</p><p>一切都过去了，</p><p>已知回不去的过往，</p><p>又何必呢？</p><p>他早已不记得那个女生的模样，</p><p>只记得那只身影，</p><p>跌在了大海中，</p><p>沉睡。</p><p>他带着最后一抹笑。</p><p>残阳如梦。</p><p>霓虹，</p><p>似火。</p>]]></content>
+    <content type="html"><![CDATA[<p>他的一生即将殆尽。</p><p>他用着生命的最后一刻，</p><p>回望曾经。</p><p>纷纷过往如风而逝。</p><p>他依旧无动于衷。</p><p>记忆飞速流逝。</p><p>却停在了十四岁。</p><p>他笑了，</p><p>这似乎是理所应当，</p><p>因为他在这一年经历了太多。</p><p>不禁流出泪水。</p><p>“多么可笑啊，“</p><p>“在■■■■和一个根本不喜欢自己的女生表白”</p><p>却如何呢？</p><p>自己将要命归九泉，</p><p>谁又会记得，</p><p>一个心里永远活泼的人，</p><p>在那日也无比紧张，</p><p>手心的汗，</p><p>如雨而下。</p><p>心如丹灵，转眼化作寒酥般寒冷。</p><p>一切都过去了，</p><p>已知回不去的过往，</p><p>又何必呢？</p><p>他早已不记得那个女生的模样，</p><p>只记得那只身影，</p><p>跌在了大海中，</p><p>沉睡。</p><p>他带着最后一抹笑。</p><p>残阳如梦。</p><p>霓虹，</p><p>似火。</p>]]></content>
     
     <summary type="html">
     
@@ -6624,11 +6756,11 @@ begi
   </entry>
   
   <entry>
-    <title>无题</title>
+    <title>❄️无题</title>
     <link href="https://liuboyuan.fun/e6-97-a0-e9-a2-98-3/"/>
     <id>https://liuboyuan.fun/e6-97-a0-e9-a2-98-3/</id>
     <published>2020-02-25T04:44:23.000Z</published>
-    <updated>2023-02-13T04:30:50.474Z</updated>
+    <updated>2025-01-23T14:51:15.689Z</updated>
     
     <content type="html"><![CDATA[<p>我曾经做过无数的梦，</p><p>有的无比真实，有的荒唐不经。</p><p>却都是黄粱一梦。</p><p>每次望向那个身影，</p><p>都不禁流下泪来。</p><p>一阵苦涩在心头。</p><p>寻求知己的希望，</p><p>一次次破碎。</p><p>剩下的，</p><p>早已不是往年的纯真。</p><p>而是，</p><p>占有污垢的灵魂。</p><p>昏暗的霓虹下，</p><p>冰晶飘散，</p><p>从江畔，</p><p>到绝望的远方。</p><p>透过我无限失望的身躯。</p><p>尝试拂去飞雪的手，</p><p>只不过让早已疼痛不堪的皮肤，</p><p>更添痛苦。</p><p>长叹也终究无济于事，</p><p>缕缕烟雾，</p><p>终于飘向远方。</p><p>化作又一载的风雨。</p><p>青春茫然的心啊，</p><p>何时才能有个着落？</p>]]></content>
     
@@ -6721,13 +6853,13 @@ begi
   </entry>
   
   <entry>
-    <title>梦醒·岁月烟火</title>
+    <title>💭梦醒·岁月烟火</title>
     <link href="https://liuboyuan.fun/e6-a2-a6-e9-86-92-c2-b7-e5-b2-81-e6-9c-88-e7-83-9f-e7-81-ab/"/>
     <id>https://liuboyuan.fun/e6-a2-a6-e9-86-92-c2-b7-e5-b2-81-e6-9c-88-e7-83-9f-e7-81-ab/</id>
     <published>2020-02-18T05:00:29.000Z</published>
-    <updated>2023-02-13T04:30:50.496Z</updated>
+    <updated>2025-01-23T15:58:30.344Z</updated>
     
-    <content type="html"><![CDATA[<p>望向灰暗的轩窗，<br>不时有雨点渗入。</p><p>执笔沉思，<br>却迟迟不敢书写。<br>泪眼彷徨，<br>窗外的雨，<br>伴随着缕缕烟火。<br>化作另一片云。<br>笔上的墨，<br>散发出岁月的痕迹。<br>蓦然回首，<br>不禁热泪盈眶。</p><p>一梦初醒，<br>她的身影渺茫<br>青春一路的风风雨雨，<br>也许，消磨了你的意志，<br>但是你的梦想依旧。<br>回望青春的路，<br>你认识了多少的人，<br>见过了多少的事。<br>你梦中的她，<br>也终于在一阵风中，<br>化作终究消散的彼岸花。</p><p>刘渤源 作</p>]]></content>
+    <content type="html"><![CDATA[<p>望向灰暗的轩窗，<br>不时有雨点渗入。</p><p>执笔沉思，<br>却迟迟不敢书写。<br>泪眼彷徨，<br>窗外的雨，<br>伴随着缕缕烟火。<br>化作另一片云。<br>笔上的墨，<br>散发出岁月的痕迹。<br>蓦然回首，<br>不禁热泪盈眶。</p><p>一梦初醒，<br>她的身影渺茫<br>青春一路的风风雨雨，<br>也许，消磨了你的意志，<br>但是你的梦想依旧。</p><p>回望青春的路，<br>你认识了多少的人，<br>见过了多少的事。<br>你梦中的她，<br>也终于在一阵风中，<br>化作终究消散的彼岸花。</p><p>刘渤源 作</p>]]></content>
     
     <summary type="html">
     
@@ -6795,13 +6927,13 @@ begi
   </entry>
   
   <entry>
-    <title>年末随笔</title>
+    <title>🌕年末随笔</title>
     <link href="https://liuboyuan.fun/e5-b9-b4-e6-9c-ab-e9-9a-8f-e7-ac-94/"/>
     <id>https://liuboyuan.fun/e5-b9-b4-e6-9c-ab-e9-9a-8f-e7-ac-94/</id>
     <published>2020-01-01T06:30:04.000Z</published>
-    <updated>2023-02-13T04:30:50.453Z</updated>
+    <updated>2024-09-21T15:57:22.285Z</updated>
     
-    <content type="html"><![CDATA[<p>光阴似箭，箭箭穿心。</p><p>日月如梭，梭梭滴血。</p><p>也许在这一年里，</p><p>我们认识了更多的人，</p><p>明白了更多的事。</p><p>却看罢风雪， 孤自无言。</p><p>明月，仍然高悬。</p><p>长叹，依然伴随着欢笑。</p><p>不过多了些岁月的痕迹。</p><p>正如腊月寒冬的落日</p><p>东升西落， 终于化作烟烬，</p><p>却始终找不到存在的理由。</p><p>明年， 一切是否依旧？</p><p>作于2019年12月31日夜</p>]]></content>
+    <content type="html"><![CDATA[<p>光阴似箭，箭箭穿心。</p><p>日月如梭，梭梭滴血。</p><p>也许在这一年里，</p><p>我们认识了更多的人，</p><p>明白了更多的事。</p><p>却看罢风雪， 孤自无言。</p><p>明月，仍然高悬。</p><p>长叹，依然伴随着欢笑。</p><p>不过多了些岁月的痕迹。</p><p>正如腊月寒冬的落日</p><p>东升西落， 终于化作烟烬，</p><p>却始终找不到存在的理由。</p><p>明年， 一切是否依旧？</p><br><p>作于2019年12月31日夜</p>]]></content>
     
     <summary type="html">
     
@@ -6896,11 +7028,11 @@ begi
   </entry>
   
   <entry>
-    <title>我的烦恼</title>
+    <title>💬我的烦恼</title>
     <link href="https://liuboyuan.fun/e6-88-91-e7-9a-84-e7-83-a6-e6-81-bc/"/>
     <id>https://liuboyuan.fun/e6-88-91-e7-9a-84-e7-83-a6-e6-81-bc/</id>
     <published>2019-10-31T08:00:20.000Z</published>
-    <updated>2023-02-13T04:30:50.463Z</updated>
+    <updated>2025-01-12T16:03:13.075Z</updated>
     
     <content type="html"><![CDATA[<p>行走在青春的河岸，采集岁月的斑斓。每个人在成长的道路上也许都会有烦恼，但倘若不乱于心，终将在蓦然回首的刹那，你会发现答案原来是丰富多彩的。</p><p>我曾经就有一个烦恼——我为什么学习？　 小时候，经常听到同伴们说，他们要好好学习，赚花也花不完的钱，买自己想要的东西，那是钱是什么，我还不曾得知。在快乐的玩闹中我逐渐迷失了自己，并没有想到学习。</p><p>稍微大了一点了，我发现他们所提的钱的用处微乎其微，除了一日三餐，书本文具，钱只是一种摆设，我开始在书本里寻找答案。从杨绛的“用生活所感去读书，用读书所的去生活”，我认为读书是为了更好的生活与实践；从周恩来的“为中华之崛起而读书”，我认为读书是为了报效祖国；从梁文道的“读书是为了让我们更宽容的理解这个世界有多复杂”，我认为读书是为了看透世界。读书归根结底是为了什么，我无从知晓。　 五年级下学期转学到佳木斯的我在学校处处受到制约，为了追求白天鹅般的梦想，我在这座城市成为了一只丑小鸭，因为成绩不理想年少的我体会到了自卑的滋味，因成绩低下而受到老师轻视的我不禁一声长叹“问君能有几多愁，恰似一江春水向东流！”，后来即使成绩大有好转，即使内心狂喜不已，外表也只是风平浪静，走在青春岁月的我，碰到了烦恼的礁石，将我撞击成不息的浪花，任何一个青春年少追梦的人，不可避免经历烦恼，但那些烦恼终将让我涅槃重生，让我的人生风生水起。<br>　 进入初中，我开始热爱写作，体会翰墨之情背后的自在与空灵。向同学们取长补短，互相学习。如痴如狂地积累句子，如痴如醉地谱写篇章，我渐渐体会到，学习的意义，就在于积累的过程，正所谓蓄势方能高飞，厚积才能薄发。　 韶华易逝，菡萏香销。我们为何读书，也许是个谜吧，但是要我们为了国家而学习，为梦想而学习，奋起直追，对人生负责，终将会走向成功的彼岸，烦恼终将烟消云散，不复再来。</p><p>本文作于2019年</p>]]></content>
     
@@ -7100,11 +7232,11 @@ begi
   </entry>
   
   <entry>
-    <title>早恋有错吗？</title>
+    <title>🤪早恋有错吗？</title>
     <link href="https://liuboyuan.fun/e6-97-a9-e6-81-8b-e6-9c-89-e9-94-99-e5-90-97-ef-bc-9f/"/>
     <id>https://liuboyuan.fun/e6-97-a9-e6-81-8b-e6-9c-89-e9-94-99-e5-90-97-ef-bc-9f/</id>
     <published>2019-02-28T02:30:25.000Z</published>
-    <updated>2023-02-13T04:30:50.477Z</updated>
+    <updated>2025-01-23T14:56:14.404Z</updated>
     
     <content type="html"><![CDATA[<p>现在看来很沙雕的文章</p><p>光如日月，似风流过。当青春的岁月开始的时候，我们怀揣着对美好未来的向往，心怀对青春无限憧憬的的力量，执着前行。</p><p>步入初中，刚进入青春期的我们，可能会对异性人有善感，可能会因为对方拥有自己崇尚的能力或专长而产生羡慕之情，也许因为异性有某些自己崇尚的品行而产生倾慕之心，在中国被称作“早恋”，也就是在心智成熟前对异性产生的爱慕之心。<br>然而我认为青春期陷入对异性的倾慕是很正常的生理现象，在欧美，早恋是件很正常的事。未成年的感情，纯真又美好，如果单单为了一个冷冰冰的成绩，就牺牲温暖的人情，不惜把学生变成没有感情的木头，就有些残忍了。经常有人说我们这代青少年很冷漠，但是教育就是将我们往这个方向扭转，摒弃温良的感情，追逐冷冰冰的成绩，我觉得这样对我们的伤害并不比考个低分少。</p><p>其实，中国人对于情感的压抑已经不是一个时代的问题了，相比之下，西方社会则基本听不到“早恋”这个词，这是文化差异，无可厚非。家长们认为早恋会影响学习，我认为早恋中的人都会把自己最好的一面展现给对方，成绩怎么能不会共同上升呢？学习上相互促进，相互鼓励、取长补短，孔子云：“三人行，必有我师焉，择其善者而从之，其不善者而改之。”这难道不好吗，这不正是我们共同的希冀吗？<br>家长和老师们通过日常的理解来评判每一个学生，试图从根本阻止早恋，似乎是不可能的，这样做只是会让同学关系更加疏远，难道不是过于局限吗？他们眼中的“早恋”就是成年之后所谓的“恋爱”，而事实上两者截然不同，同学之间只是单纯的“羡慕”，只要把握好这个“度”，做事就不会出格，反而还有了好处。同学之间成了朋友，这样一来，早恋就没有一点坏处了，人人都希望自己能早恋，这难道不是很好吗？<br>既然早恋可以百利而无一害，又何尝不去早恋，体验一下与异性交往的感觉呢？今天，五中校报给了我这个机会，我就要替早恋平反。我希望有一天，教育体系改革，全民提倡早恋，那时，社会就会想发达又迈进一个巨大的台阶。<br>青春短暂，岁月漫长。记忆中的珍珠，晶莹剔透，闪烁心中。<br>勇敢追梦，努力付出，不轻言放弃，愿光阴不负勤奋，芳华不负卿。<br>路上春色正好，天上太阳正晴，正确的早恋没有错！</p><p>作于 2019.2.27</p>]]></content>
     
@@ -7128,11 +7260,11 @@ begi
   </entry>
   
   <entry>
-    <title>感宪法之美，颂国之强盛</title>
+    <title>📔感宪法之美，颂国之强盛</title>
     <link href="https://liuboyuan.fun/e6-84-9f-e5-ae-aa-e6-b3-95-e4-b9-8b-e7-be-8e-ef-bc-8c-e9-a2-82-e5-9b-bd-e4-b9-8b-e5-bc-ba-e7-9b-9b/"/>
     <id>https://liuboyuan.fun/e6-84-9f-e5-ae-aa-e6-b3-95-e4-b9-8b-e7-be-8e-ef-bc-8c-e9-a2-82-e5-9b-bd-e4-b9-8b-e5-bc-ba-e7-9b-9b/</id>
     <published>2018-12-02T21:30:23.000Z</published>
-    <updated>2023-02-13T04:30:50.467Z</updated>
+    <updated>2025-01-12T16:02:54.801Z</updated>
     
     <content type="html"><![CDATA[<p>一如朝霞般美好的未来，却无不建设在法律的约束之上。<br>　　　　　　　　　　　　　　　　　　　　　　——题记</p><p>宪法是国家的根本_，规定了国家的根本制度和根本任务，是治国安邦的总章程。我国宪法是社会主义性质的宪法，必须准确、及时、全面地反映作为执政党的中国_的各项政治主张，我们要将宪法的各项路线、方针和政策变成国家意志，变成自己的意志，变成我们在人生漫漫长路上的灯塔。</p><p>林寒涧肃，银装素裹，山寒水冷。时维仲冬，参其答题于网之上，品宪法之乐趣无穷，赏宪法之严谨无比，孰谓其天网恢恢且疏而不漏，答之，方才知，然也！虽其果不甚理想，吾知其良也，足矣！</p><p>法律应始终在心中，法律，是我们行走社会、生存于世的守则和法宝，循着法律前行，我们会少犯错误，一路顺风顺水，直达心中的殿堂。在我们的人生之路上，法律不能缺席！<br>　　珍视当下，放眼未来，我们要从小事做起，独立努力实现目标，“积一时之跬步,臻千里之遥程”，我们在学习上、在生活上要有坚定的意志，感宪法之美，总有一天，你面对问题时，你会独立自主的解决它，因为在此之前，你遇上困难，第一个求助的总是自己。到了那一天，虽然你孑然一身，却胜过千军万马。<br>“苟有恒何必三更眠五更起，最无益莫过一日曝十日寒”，我们要坚守自己的目标，奋勇向前，学习身边的人，学习宪法精神，从小事做起，《道德经》有一言：<br>　　　<strong>“天下难事，必做于易；天下大事，必做于细。”<br>　　　“九层之塔，起于累土；合抱之木，生于毫末。”</strong><br>　　除此之外，我们还要多思考，真正的衰老是不思考，真正的死亡是对世人没有用处。有些人死了，但他在人们的心中还是鲜活的；而有些人活着，他们在别人心中，早已化作乌有而灰飞烟灭。<br>　　当生命以痛吻你，你就应当报之以歌。<br>　　回首望去，秋去冬来已过去了三个月，回眸期中考试不理想的成绩，回眸同学们努力的身影，心中不免赞叹“同九义，何汝秀？”，在他们的影响带动下，我的成绩有所进步，在获得曾经桦南的同学惊讶的目光时，那一瞬间，我忽然懂得，即使岁月流年，白驹过隙，那一份浓浓的坚定的信念却始终在心中，挥之不去。<br>　　荣誉，不仅仅属于胜利者，还属于每一位为了梦想与目标全力以赴的人。<br>　　初中，我来了。你不是我的终点，但我会讲你绘成人生路上最瑰丽的风景。<br>　 　 　 　 　 　 刘渤源<br>　 　 　 　 　 　 2018.12.2</p>]]></content>
     

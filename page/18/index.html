@@ -1,4 +1,42 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="刘渤源,youthriverside@outlook.com"><title>负雨杂感</title><meta name="description" content="A Blog Powered By Hexo"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">负雨杂感</a></h3></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/archives">归档</a></li><li><a href="/privacy-policy">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/yoj-e6-a8-aa-e5-90-91-e6-89-93-e5-8d-b0-e4-ba-8c-e5-8f-89-e6-a0-91-e9-a2-98-e8-a7-a3/">YOJ 横向打印二叉树 题解</a></h3></div><div class="post-content"><p>原题目地址
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="刘渤源,youthriverside@outlook.com"><title>负雨杂感</title><meta name="description" content="A Blog Powered By Hexo"><meta name="keywords" content="随笔,青春,记录,校园,诗歌,情感,相思,技术"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">负雨杂感</a></h3></div></div><ul class="social-links"><li><a href="https://twitter.com/LiuBoyuan10" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://liuboyuan.fun/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://facebook.com/boyuan.liu.9678" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/youthriverside" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"></a><span> </span><a href="https://liuboyuan.fun">©刘渤源</a><br><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener">黑ICP备20000740号</a><br><div class="by_farbox"></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/zhihelinyou">友链</a></li><li><a href="/birenziyun">自言</a></li><li><a href="/archives">归档</a></li><li><a href="/privacy-policy">关于</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/yoj-e7-bd-91-e7-bb-9c-e5-af-bb-e8-b7-af-e9-a2-98-e8-a7-a3/">YOJ 网络寻路 题解</a></h3></div><div class="post-content"><p>原题目地址
+问题描述
+沙雕国的一个网络使用若干条线路连接若干个节点。节点间的通信是双向的。某重要数据包，为了安全起见，必须恰好被转发两次到达目的地。该包可能在任意一个节点产生，我们需要知道该网络中一共有多少种不同的转发路径。
+源地址和目标地址可以相同，但中间节点必须不同。
+如下图所示的网络。
+1 -&gt; 2 ...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-21</span><i class="fa fa-comment-o"></i><a href="/yoj-e7-bd-91-e7-bb-9c-e5-af-bb-e8-b7-af-e9-a2-98-e8-a7-a3/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/YOJ/" title="YOJ">YOJ </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e5-8f-b9-e6-9c-88-c2-b7-e5-b9-bb-e6-a2-a6/">🌕叹月·幻梦</a></h3></div><div class="post-content"><p>我曾经幻想过无数次，
+一栏明月之下，
+信手而联，
+牵心走过，
+盛夏仲秋。
+却不知如何言说。
+执笔无言，
+叹失良机。
+恨无重望背影，
+却凭其，
+泪花尽洒。
+若有来生啊，
+我愿重至，
+明月花下。
+化雨为雾。
+赏曾经，
+灼灼桃花。
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-20</span><i class="fa fa-comment-o"></i><a href="/e5-8f-b9-e6-9c-88-c2-b7-e5-b9-bb-e6-a2-a6/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a><a class="tag" href="/tags/胡思乱想/" title="胡思乱想">胡思乱想 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e4-b8-89-e6-9c-88-e5-8d-81-e4-ba-8c-e6-97-a5-e9-9a-8f-e7-ac-94/">🌔三月十二日随笔</a></h3></div><div class="post-content"><p>低矮的屋檐，
+时不时有灯透过。
+昏暗无比。
+对岸的人啊，
+不知在桌前回忆些什么 。
+又淋着风，
+看向了哪一片海？
+却终于，
+在叹息中让本黑暗的屋子，
+如念俱灰
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-16</span><i class="fa fa-comment-o"></i><a href="/e4-b8-89-e6-9c-88-e5-8d-81-e4-ba-8c-e6-97-a5-e9-9a-8f-e7-ac-94/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/yoj-e2-99-82-fibonacci-e2-99-82-e9-a2-98-e8-a7-a3/">YOJ ♂ Fibonacci ♂ 题解</a></h3></div><div class="post-content"><p>原题目地址
+题目描述
+斐波那契数列大家都非常熟悉。它的定义是：
+f(x) = 1 .... (x=1,2)
+f(x) = f(x-1) + f(x-2) .... (x&gt;2)
+对于给定的整数 n 和 m，我们希望求出：
+f(1) + f(2) + … + f(n) 的值。但这个值可能非常大，所以我们把它对 ...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-16</span><i class="fa fa-comment-o"></i><a href="/yoj-e2-99-82-fibonacci-e2-99-82-e9-a2-98-e8-a7-a3/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/YOJ/" title="YOJ">YOJ </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/yoj-e6-a8-aa-e5-90-91-e6-89-93-e5-8d-b0-e4-ba-8c-e5-8f-89-e6-a0-91-e9-a2-98-e8-a7-a3/">YOJ 横向打印二叉树 题解</a></h3></div><div class="post-content"><p>原题目地址
 问题描述
 二叉树可以用于排序。其原理很简单：对于一个排序二叉树添加新节点时，先与根节点比较，若小则交给左子树继续处理，否则交给右子树。
 当遇到空子树时，则把该节点放入那个位置。
@@ -40,7 +78,7 @@ back() 返回最后一个元素
 begin() 返回指向第一个元素的迭代器
 clear() 删除所有元素
 empty() 如果list是空的则返回true
-en...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-09</span><i class="fa fa-comment-o"></i><a href="/e5-9c-a8c-e4-b8-adlist-e5-a4-b4-e6-96-87-e4-bb-b6-e7-94-a8-e6-b3-95/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/计算机知识/" title="计算机知识">计算机知识 </a><a class="tag" href="/tags/搬运/" title="搬运">搬运 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/">庚子疫 书</a></h3></div><div class="post-content"><p>己亥年丙子月，大疫初见。
+en...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-09</span><i class="fa fa-comment-o"></i><a href="/e5-9c-a8c-e4-b8-adlist-e5-a4-b4-e6-96-87-e4-bb-b6-e7-94-a8-e6-b3-95/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/计算机知识/" title="计算机知识">计算机知识 </a><a class="tag" href="/tags/搬运/" title="搬运">搬运 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/">😷庚子疫 书</a></h3></div><div class="post-content"><p>己亥年丙子月，大疫初见。
 少人知，思伤寒者遂告他人其疾不足言。
 现不知其因。
 人云因者，鄂中集市。
@@ -54,7 +92,7 @@ en...</p></div><div class="post-footer"><div class="meta"><div class="info"><i c
 唯咳之烈。
 先发于鄂而后布于国。
 国人知难，财物捐之。
-群人知...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-09</span><i class="fa fa-comment-o"></i><a href="/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a><a class="tag" href="/tags/战疫/" title="战疫">战疫 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/">己酉记梦</a></h3></div><div class="post-content"><p>他的一生即将殆尽。
+群人知...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-09</span><i class="fa fa-comment-o"></i><a href="/e5-ba-9a-e5-ad-90-e7-96-ab-e4-b9-a6/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a><a class="tag" href="/tags/战疫/" title="战疫">战疫 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/">🌇己酉记梦</a></h3></div><div class="post-content"><p>他的一生即将殆尽。
 他用着生命的最后一刻，
 回望曾经。
 纷纷过往如风而逝。
@@ -66,47 +104,8 @@ en...</p></div><div class="post-footer"><div class="meta"><div class="info"><i c
 因为他在这一年经历了太多。
 不禁流出泪水。
 “多么可笑啊，“
-“在大年初一和一个根本不喜欢自己的女生表白”
+“在■■■■和一个根本不喜欢自己的女生表白”
 却如何呢？
 自己将要命归九泉，
 谁又会记得，
-一...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-07</span><i class="fa fa-comment-o"></i><a href="/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a><a class="tag" href="/tags/胡思乱想/" title="胡思乱想">胡思乱想 </a><a class="tag" href="/tags/相识/" title="相识">相识 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e9-97-b2-e7-ac-94-2/">闲笔</a></h3></div><div class="post-content"><p>这段长路啊，也终究，没有她的陪伴。
-孤零走过。
-无限回望她的身影，
-她却径直离去。
-春风拂过的大地，
-有对她的回忆，
-也有那滴泪水，
-转瞬之间，
-化作烟云。
-2020.2.28
-
-灵感来源
-
-一群沙雕评论
-</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-02-29</span><i class="fa fa-comment-o"></i><a href="/e9-97-b2-e7-ac-94-2/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e6-97-a0-e9-a2-98-3/">无题</a></h3></div><div class="post-content"><p>我曾经做过无数的梦，
-有的无比真实，有的荒唐不经。
-却都是黄粱一梦。
-每次望向那个身影，
-都不禁流下泪来。
-一阵苦涩在心头。
-寻求知己的希望，
-一次次破碎。
-剩下的，
-早已不是往年的纯真。
-而是，
-占有污垢的灵魂。
-昏暗的霓虹下，
-冰晶飘散，
-从江畔，
-到绝望的远方。
-透过我无限失望的身躯。
-尝试拂去飞雪的手，
-...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-02-25</span><i class="fa fa-comment-o"></i><a href="/e6-97-a0-e9-a2-98-3/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/virtual-e5-85-b3-e9-94-ae-e5-ad-97/">Virtual关键字</a></h3></div><div class="post-content"><p>在面向对象的C语言中，虚函数（virtual function）是一个非常重要的概念。因为它充分体现了面向对象思想中的继承和多态性这两大特性，在C语言里应用极广。比如在微软的MFC类库中，你会发现很多函数都有virtual关键字，也就是说，它们都是虚函数。难怪有人甚至称虚函数是C++语言的精髓。
-
-那么，什么是虚...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-02-23</span><i class="fa fa-comment-o"></i><a href="/virtual-e5-85-b3-e9-94-ae-e5-ad-97/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a><a class="tag" href="/tags/计算机知识/" title="计算机知识">计算机知识 </a><a class="tag" href="/tags/搬运/" title="搬运">搬运 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/e5-8d-9c-e7-ae-97-e5-ad-90-c2-b7-e6-ad-a3-e6-9c-88-e5-88-9d-e4-bd-9c/">🌨️卜算子·正月初作</a></h3></div><div class="post-content"><p>日暮叩晨窗，黄昏坠冬江。
-愁着庚子半尺雪，欲把春来望。
-新风拂旧尘，泪流映痕殇。
-问子执手度此春，心连赏墨香。
-刘渤源作于桦南
-</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-02-18</span><i class="fa fa-comment-o"></i><a href="/e5-8d-9c-e7-ae-97-e5-ad-90-c2-b7-e6-ad-a3-e6-9c-88-e5-88-9d-e4-bd-9c/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a><a class="tag" href="/tags/古体诗词/" title="古体诗词">古体诗词 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/page/17/">上一页</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/19/">下一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+一...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-07</span><i class="fa fa-comment-o"></i><a href="/e5-b7-b1-e9-85-89-e8-ae-b0-e6-a2-a6/#comments">评论</a><i class="fa fa-tag"></i><a class="tag" href="/categories/未分类/" title="未分类">未分类 </a><a class="tag" href="/tags/诗歌/" title="诗歌">诗歌 </a><a class="tag" href="/tags/胡思乱想/" title="胡思乱想">胡思乱想 </a><a class="tag" href="/tags/相识/" title="相识">相识 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/page/17/">上一页</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/19/">下一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

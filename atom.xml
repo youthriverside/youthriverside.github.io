@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuboyuan.fun/"/>
-  <updated>2026-04-01T18:01:37.993Z</updated>
+  <updated>2026-04-06T07:48:09.563Z</updated>
   <id>https://liuboyuan.fun/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>STM32按鍵檢測代碼</title>
+    <title>💻STM32按鍵檢測代碼</title>
     <link href="https://liuboyuan.fun/stm32-hal-button/"/>
     <id>https://liuboyuan.fun/stm32-hal-button/</id>
     <published>2026-04-02T00:29:19.000Z</published>
-    <updated>2026-04-01T18:01:37.993Z</updated>
+    <updated>2026-04-06T07:48:09.563Z</updated>
     
-    <content type="html"><![CDATA[<div class="tip">    本人電腦的輸入法突然變成繁體中文，儘管顯示中文（簡體，中國），打字竟如是，實在無奈。</div><p>單片機上的按鍵一端鏈接高電位，一端鏈接低電位，二者其一鏈接GPIO管脚。按鍵按下，高低電位導通，引起GPIO管脚電位改變。GPIO管脚処電位變化説明按鍵狀態改變，可以透過讀取GPIO引脚電平來獲取當前按鍵狀態。而因爲單片機信號處理存在時延，按鍵狀態的改變不能及時反映到引脚電位變化，有時按鍵已經鬆開，程序認爲其仍在按下，因而需要將之前狀態一并考慮。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    不合理的寫法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">bool</span> state = <span class="number">0</span>， if_press = <span class="number">0</span>;</span><br><span class="line">state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);</span><br><span class="line"><span class="comment">// state = GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_0);</span></span><br><span class="line"><span class="keyword">if</span>(state) if_press = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> if_press = <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>按鍵狀態結構體定義如下：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Keys</span> &#123;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> judge_sta; </span><br><span class="line">    <span class="comment">//多步驟判定中表示步數</span></span><br><span class="line">    <span class="keyword">bool</span> key_sta; </span><br><span class="line">    <span class="comment">//GPIO讀取到的電位</span></span><br><span class="line">    <span class="keyword">bool</span> single_flag; </span><br><span class="line">    <span class="comment">//最終結果，表示到底按沒按下</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//寫在中斷的囘調函數裏，每隔一個周期自動執行</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_PeriodElapseCallback</span><span class="params">(TIM_handleTypeDef *htim)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(htim -&gt; Instance == TIM3) &#123;</span><br><span class="line">        <span class="comment">//讀取GPIO電位</span></span><br><span class="line">        key[<span class="number">0</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0);</span><br><span class="line">        key[<span class="number">1</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1);</span><br><span class="line">        key[<span class="number">2</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2);</span><br><span class="line">        key[<span class="number">3</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">switch</span>(key[i].judge_sta) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>: </span><br><span class="line">            <span class="comment">//第一步判斷</span></span><br><span class="line">            <span class="keyword">if</span>(key[i].key_sta == <span class="number">0</span>) </span><br><span class="line">            <span class="comment">//如果為按下狀態</span></span><br><span class="line">                key[i].judge_sta = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">//下次直接進行第二步判斷</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span>(key[i].key_sta == <span class="number">0</span>) &#123;</span><br><span class="line">                key[i].judge_sta = <span class="number">2</span>;</span><br><span class="line">                key[i].single_flag = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> key[i].judge_sta = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span>(key[i].key_sta == <span class="number">1</span>) &#123;</span><br><span class="line">                key[i].judge_sta = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<div class="tip">    本人電腦的輸入法突然變成繁體中文，儘管顯示中文（簡體，中國），打字竟如是，實在無奈。</div><h2 id="按鍵需要消抖">按鍵需要消抖</h2><p>單片機上的按鍵一端鏈接高電位，一端鏈接低電位，二者其一鏈接GPIO管脚。按鍵按下，高低電位導通，引起GPIO管脚電位改變。GPIO管脚処電位變化説明按鍵狀態改變，可以透過讀取GPIO引脚電平來獲取當前按鍵狀態。而考慮到<s>單片機信號處理存在時延，按鍵狀態的改變不能及時反映到引脚電位變化，有時按鍵已經鬆開，程序認爲其仍在按下,</s> 按鍵機械結構設計，按下后按鍵兩端電平會發生抖動，可能引發判斷錯誤，所以需要一定的操作來“消抖”實現準確檢測。</p><div class="tip">    本文中按鍵按下時GPIO管脚為低電位，鬆開為高電位。</div>如下述代碼所示：透過直接讀取GPIO電平得到當前按鍵狀態，實測會發生一次按下引發多次響應的現象，判斷會出錯。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    不合理的寫法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">bool</span> state = <span class="number">0</span>， if_press = <span class="number">0</span>;</span><br><span class="line">state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);</span><br><span class="line"><span class="comment">// state = GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_0);</span></span><br><span class="line">if_press = (!state) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 1: press  0: not</span></span><br></pre></td></tr></table></figure><h2 id="按鍵單擊">按鍵單擊</h2><p>我們可以使用延時判定的方法，跳過抖動部分，以獲得更准確的結果。如若抖動部分持續過久，需要適當增加延時，或給按鍵并聯電容來減輕抖動帶來的影響。本案例使用<code>judge_sta</code>來記錄判斷到哪一階段，<code>key_sta</code>記錄GPIO引脚電位，<code>single_flag</code>記錄判斷結果，使用結構體封裝這三個參數。</p><p>按鍵狀態結構體定義如下：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Keys</span> &#123;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> judge_sta; </span><br><span class="line">    <span class="comment">//多步驟判定中表示步數</span></span><br><span class="line">    <span class="keyword">bool</span> key_sta; </span><br><span class="line">    <span class="comment">//GPIO讀取到的電位</span></span><br><span class="line">    <span class="keyword">bool</span> single_flag; </span><br><span class="line">    <span class="comment">//最終結果，表示到底按沒按下</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>在實例化結構體時，强烈建議使用<code>volatile</code>修飾<code>struct</code>，以確保主函數每次能從中斷讀取到最新的數據，因爲<code>key[]</code>共享於中斷與主循環，未用<code>volatile</code>會因編譯器優化導致讀取過期值。如若使用舊版本編譯器或不使用中斷函數進行按鍵判斷，則無需考慮這種情況。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="class"><span class="keyword">struct</span> <span class="title">keys</span> <span class="title">key</span>[4] = &#123;</span><span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br></pre></td></tr></table></figure><p>案件判斷的思路是：<br>如若檢測按下，延時一段時間，再次檢測，如果依舊按下，那麽認爲按鍵按下，直到按鍵鬆開，再重新開始檢測。如下述代碼所示。<br>使用STM32 CubeMX進行時鐘配置大致流程是<br><code>Clock Configuration</code> -&gt; <code>HCLK</code> = <strong>80MHz</strong><br><code>Clock Configuration</code> -&gt; <code>PLL Source</code> = HSE<br><code>Clock Configuration</code> -&gt; <code>Input Source</code> = 晶振頻率<br><code>RCC</code> -&gt; <code>HSE</code> = Crystal/Ceramic Resonator<br><code>TIM2</code> -&gt; <code>Clock Source</code> = Internal clock<br><code>Prescaler</code> = 80 - 1<br><code>Counter Period</code> = 10000 - 1<br>這樣可以實現每10ms進入一次中斷進行判斷。<br>10ms &lt;–&gt; 100Hz = 80,000,000 / 80 / 10000<br>透過初始化<code>HAL_TIM_Base_Start_IT(&amp;htim2)</code>啓動中斷函數。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代碼寫在中斷的囘調函數HAL_TIM_PeriodElapsedCallback裏</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_TIM_PeriodElapsedCallback</span><span class="params">(TIM_handleTypeDef *htim)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(htim -&gt; Instance == TIM3) &#123;</span><br><span class="line">        <span class="comment">//讀取GPIO電位(B0/B1/B2/A0)</span></span><br><span class="line">        key[<span class="number">0</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0);</span><br><span class="line">        key[<span class="number">1</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1);</span><br><span class="line">        key[<span class="number">2</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2);</span><br><span class="line">        key[<span class="number">3</span>].key_sta = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">switch</span>(key[i].judge_sta) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>: </span><br><span class="line">            <span class="comment">//第一步判斷</span></span><br><span class="line">            <span class="keyword">if</span>(key[i].key_sta == <span class="number">0</span>) </span><br><span class="line">            <span class="comment">//如果為按下狀態</span></span><br><span class="line">                key[i].judge_sta = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">//下次直接進行第二步判斷(case 1)</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span>(key[i].key_sta == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//10ms后仍舊按下</span></span><br><span class="line">                key[i].judge_sta = <span class="number">2</span>;</span><br><span class="line">                <span class="comment">//進入下一步判斷(case 2)</span></span><br><span class="line">                key[i].single_flag = <span class="number">1</span>;</span><br><span class="line">                <span class="comment">//這回確實是按下了</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> key[i].judge_sta = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//不然就認爲是抖動</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">if</span>(key[i].key_sta == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">//如果鬆開了，就重新判斷</span></span><br><span class="line">                key[i].judge_sta = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="按鍵長按">按鍵長按</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">0</span>: </span><br><span class="line"><span class="keyword">if</span>(key[i].key_sta == <span class="number">0</span>) &#123;</span><br><span class="line">    key[i].judge_sta = <span class="number">1</span>;</span><br><span class="line">    key[i].key_time = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line"><span class="keyword">if</span>(key[i].key_sta == <span class="number">0</span>) &#123;</span><br><span class="line">    key[i].judge_sta = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> key[i].judge_sta = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line"><span class="keyword">if</span>(key[i].key_sta == <span class="number">1</span>) &#123; </span><br><span class="line">    key[i].judge_sta = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(key[i].key_time &lt; <span class="number">70</span>)</span><br><span class="line">        key[i].single_flag = <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    key[i].key_time++;</span><br><span class="line">    <span class="keyword">if</span>(key[i].key_time &gt; <span class="number">70</span>) </span><br><span class="line">        key[i].long_flag = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -32,7 +32,8 @@
         &lt;div class=&quot;tip&quot;&gt;
     本人電腦的輸入法突然變成繁體中文，儘管顯示中文（簡體，中國），打字竟如是，實在無奈。
 &lt;/div&gt;
-&lt;p&gt;單片機上的按鍵一端鏈接高電位，一端鏈接低電位，二者其一鏈接GPIO管脚。按鍵按下，高低電位導通，引起GPIO管脚電位改變。GPIO
+&lt;h2 id=&quot;按鍵需要消抖&quot;&gt;按鍵需要消抖&lt;/h2&gt;
+&lt;p&gt;單片機上的按鍵一端鏈接高電位，一端鏈接低電位，二者其一鏈接GPIO管脚。按
       
     
     </summary>
@@ -121,9 +122,9 @@
     
     
     
-      <category term="随笔" scheme="https://liuboyuan.fun/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="游记" scheme="https://liuboyuan.fun/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+      <category term="随笔" scheme="https://liuboyuan.fun/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -578,9 +579,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -1576,9 +1577,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
     
@@ -1775,9 +1776,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
       <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
     
   </entry>
   
@@ -1844,11 +1845,11 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="Html" scheme="https://liuboyuan.fun/tags/Html/"/>
     
@@ -1879,11 +1880,11 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="Html" scheme="https://liuboyuan.fun/tags/Html/"/>
     
@@ -1915,11 +1916,11 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="Html" scheme="https://liuboyuan.fun/tags/Html/"/>
     
@@ -3825,11 +3826,11 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
+      <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
       <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
-    
-      <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -5006,9 +5007,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
       <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
     
@@ -5365,11 +5366,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
+      <category term="Java" scheme="https://liuboyuan.fun/tags/Java/"/>
+    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
-    
-      <category term="Java" scheme="https://liuboyuan.fun/tags/Java/"/>
     
   </entry>
   
@@ -5469,11 +5470,11 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
     
   </entry>
   
@@ -5577,9 +5578,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
     
       <category term="资源" scheme="https://liuboyuan.fun/tags/%E8%B5%84%E6%BA%90/"/>
     
@@ -5856,13 +5857,13 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
-    
-      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
-    
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
       <category term="计算机知识" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="Wordpress" scheme="https://liuboyuan.fun/tags/Wordpress/"/>
+    
+      <category term="日志" scheme="https://liuboyuan.fun/tags/%E6%97%A5%E5%BF%97/"/>
     
   </entry>
   
@@ -6348,9 +6349,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
     
       <category term="计算机" scheme="https://liuboyuan.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
-      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
       <category term="YOJ" scheme="https://liuboyuan.fun/tags/YOJ/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
     
   </entry>
   

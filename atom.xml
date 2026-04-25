@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuboyuan.fun/"/>
-  <updated>2026-04-09T15:50:13.031Z</updated>
+  <updated>2026-04-09T19:36:28.986Z</updated>
   <id>https://liuboyuan.fun/</id>
   
   <author>
@@ -17,13 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>stm-hal-oclock</title>
+    <link href="https://liuboyuan.fun/stm-hal-oclock/"/>
+    <id>https://liuboyuan.fun/stm-hal-oclock/</id>
+    <published>2026-04-10T03:35:17.000Z</published>
+    <updated>2026-04-09T19:36:28.986Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="編程" scheme="https://liuboyuan.fun/tags/%E7%B7%A8%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>STM32にPWM波の生成と捕捉</title>
     <link href="https://liuboyuan.fun/stm-hal-pwm/"/>
     <id>https://liuboyuan.fun/stm-hal-pwm/</id>
     <published>2026-04-06T23:09:38.000Z</published>
-    <updated>2026-04-09T15:50:13.031Z</updated>
+    <updated>2026-04-11T10:54:59.978Z</updated>
     
-    <content type="html"><![CDATA[<p>我們可以在STM32單片機引脚產生頻率與占空比可調的PWM波。</p><h3 id="時鐘配置">時鐘配置</h3><blockquote><p><code>Clock Configuration</code> -&gt; <code>HCLK</code> = <strong>80MHz</strong><br><code>Clock Configuration</code> -&gt; <code>PLL Source</code> = HSE<br><code>Clock Configuration</code> -&gt; <code>Input Source</code> = 晶振頻率<br><code>RCC</code> -&gt; <code>HSE</code> = Crystal/Ceramic Resonator<br><code>TIM16</code> -&gt; <code>Clock Source</code> = Internal Clock<br><code>Channel1</code> -&gt; PWM Generation CH1<br><code>Prescaler</code> = 8000 - 1<br><code>Counter Period</code> = 100 - 1<br><code>Pulse</code> = 20 （初始占空比）</p></blockquote><p>計算得<code>80,000,000/8000/100 = 100</code>，程序可以生成<code>100Hz</code>的PWM波，頻率後續可以在程序中透過修改<code>Prescaler</code>或<code>Counter Period</code>(即ARR)來改變。</p><p>配置好后初始化，使用函數<code>HAL_TIM_PWM_Start(&amp;htim16, TIM_CHANNEL_1)</code>打開PWM輸出，否則無波形。不同電路的配置方法有差異。</p><h3 id="占空比切換">占空比切換</h3><p>可以通過函數<br><code>__HAL_TIM_SetCompare(&amp;htim16, TIM_CHANNEL_1, Duty)</code>的Duty參數改變輸出占空比，Duty應當在0-100之間。</p><h3 id="頻率切換">頻率切換</h3><p>輸出PWM波的頻率可以透過修改Prescaler或Counter Period(即ARR)來改變。修改前建議先關閉PWM輸出，修改後再重啓輸出。</p><div class="tip">    注意：設置值不應過高</div><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HAL_TIM_PWM_Stop(&amp;htim16, TIM_CHANNEL_1);</span><br><span class="line">__HAL_TIM_SET_PRESCALER(&amp;htim16, <span class="number">2000</span> - <span class="number">1</span>); </span><br><span class="line"><span class="comment">//__HAL_TIM_SET_AUTORELOAD(&amp;htimx, new_arr);</span></span><br><span class="line">HAL_TIM_PWM_Start(&amp;htim16, TIM_CHANNEL_1);</span><br></pre></td></tr></table></figure><h3 id="PWM捕獲">PWM捕獲</h3><p>PWM捕獲需要在上述基礎上進行如下配置：</p><blockquote><p>TIM Channel1 -&gt; Input Capture direct mode<br>Prescaler -&gt; 80 - 1<br>Counter Period -&gt; 默認<br>NVIC -&gt; Global Interrupt<br>在主函數中調用函數<code>HAL_TIM_IC_Start_IT(&amp;htim2, TIM_CHANNEL_1)</code>啓動頻率測量捕獲計時器</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint8_t</span> ccr_val = <span class="number">0</span>;</span><br><span class="line">uint frq = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_TIM_IC_CaptureCallback</span><span class="params">(TIM_HandleTypeDef *htim)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(htim -&gt; Instance == TIM2) &#123;</span><br><span class="line">        ccr_val = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);</span><br><span class="line">        __HAL_TIM_SetCounter(htim, <span class="number">0</span>);</span><br><span class="line">        frq = (<span class="number">8000000</span> / <span class="number">80</span>) / ccr_val;</span><br><span class="line">        <span class="comment">//80是分頻係數</span></span><br><span class="line">        HAL_TIM_IC_Start(htim, TIM_CHANNEL_1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>同樣地，我們可以使用Polarity Selection</p><p>ADC_IN11 -&gt; IN11 = single_ended</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getADC</span><span class="params">(ADC_HandleTypeDef *pin)</span> </span>&#123;</span><br><span class="line">    uint adc;</span><br><span class="line">    HAL_ADC_Start(pin);</span><br><span class="line">    adc = HAL_ADC_GetValue(pin);</span><br><span class="line">    <span class="keyword">double</span> rtnVal = adc * <span class="number">3.3</span> / <span class="number">4096</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    注意此處4096為2的12次方，</span></span><br><span class="line"><span class="comment">    代表12位分辨率的ADC</span></span><br><span class="line"><span class="comment">    分辨率可以透過CubeMx的ADC配置界面修改</span></span><br><span class="line"><span class="comment">    Parameter Settings -&gt; Resolution -&gt; ADC 12-bit resolution</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">return</span> rtnVal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>調用</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> <span class="built_in">text</span>[<span class="number">30</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="built_in">text</span>, <span class="string">"V = %.2f"</span>, getADC(&amp;hadc1));</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>我們可以在STM32單片機引脚產生頻率與占空比可調的PWM波。</p><h3 id="時鐘配置">時鐘配置</h3><blockquote><p><code>Clock Configuration</code> -&gt;<code>HC LK</code> = <strong>80MHz</strong><br><code>Clock Configuration</code> -&gt; <code>PLL Source</code> = HSE<br><code>Clock Configuration</code> -&gt; <code>Input Source</code> = 晶振頻率<br><code>RCC</code> -&gt; <code>HSE</code> = Crystal/Ceramic Resonator<br><code>TIM16</code> -&gt; <code>Clock Source</code> = Internal Clock<br><code>Channel1</code> -&gt; PWM Generation CH1<br><code>Prescaler</code> = 8000 - 1<br><code>Counter Period</code> = 100 - 1<br><code>Pulse</code> = 20 （初始占空比）</p></blockquote><p>計算得<code>80,000,000/8000/100 = 100</code>，程序可以生成<code>100Hz</code>的PWM波，頻率後續可以在程序中透過修改<code>Prescaler</code>或<code>Counter Period</code>(即ARR)來改變。</p><p>配置好后初始化，使用函數<code>HAL_TIM_PWM_Start(&amp;htim16, TIM_CHANNEL_1)</code>打開PWM輸出，否則無波形。不同電路的配置方法有差異。</p><h3 id="占空比切換">占空比切換</h3><p>可以通過函數<br><code>__HAL_TIM_SetCompare(&amp;htim16, TIM_CHANNEL_1, Duty)</code>的Duty參數改變輸出占空比，Duty應當在0-100之間。</p><h3 id="頻率切換">頻率切換</h3><p>輸出PWM波的頻率可以透過修改Prescaler或Counter Period(即ARR)來改變。修改前建議先關閉PWM輸出，修改後再重啓輸出。</p><div class="tip">    注意：設置值不應過高</div><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HAL_TIM_PWM_Stop(&amp;htim16, TIM_CHANNEL_1);</span><br><span class="line">__HAL_TIM_SET_PRESCALER(&amp;htim16, <span class="number">2000</span> - <span class="number">1</span>); </span><br><span class="line"><span class="comment">//__HAL_TIM_SET_AUTORELOAD(&amp;htimx, new_arr);</span></span><br><span class="line">HAL_TIM_PWM_Start(&amp;htim16, TIM_CHANNEL_1);</span><br></pre></td></tr></table></figure><h3 id="PWM捕獲">PWM捕獲</h3><p>PWM捕獲需要在上述基礎上進行如下配置：</p><blockquote><p>TIM Channel1 -&gt; Input Capture direct mode<br>Prescaler -&gt; 80 - 1<br>Counter Period -&gt; 默認65535<br>NVIC -&gt; Global Interrupt<br>在主函數中調用函數<code>HAL_TIM_IC_Start_IT(&amp;htim2, TIM_CHANNEL_1)</code>啓動頻率測量捕獲計時器</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint8_t</span> ccr_val = <span class="number">0</span>;</span><br><span class="line">uint frq = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_TIM_IC_CaptureCallback</span><span class="params">(TIM_HandleTypeDef *htim)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(htim -&gt; Instance == TIM2) &#123;</span><br><span class="line">        ccr_val = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);</span><br><span class="line">        __HAL_TIM_SetCounter(htim, <span class="number">0</span>);</span><br><span class="line">        frq = (<span class="number">8000000</span> / <span class="number">80</span>) / ccr_val;</span><br><span class="line">        <span class="comment">//80是分頻係數</span></span><br><span class="line">        HAL_TIM_IC_Start(htim, TIM_CHANNEL_1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>同樣地，我們可以使用Polarity Selection</p><p>ADC_IN11 -&gt; IN11 = single_ended</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getADC</span><span class="params">(ADC_HandleTypeDef *pin)</span> </span>&#123;</span><br><span class="line">    uint adc;</span><br><span class="line">    HAL_ADC_Start(pin);</span><br><span class="line">    adc = HAL_ADC_GetValue(pin);</span><br><span class="line">    <span class="keyword">double</span> rtnVal = adc * <span class="number">3.3</span> / <span class="number">4096</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    注意此處4096為2的12次方，</span></span><br><span class="line"><span class="comment">    代表12位分辨率的ADC</span></span><br><span class="line"><span class="comment">    分辨率可以透過CubeMx的ADC配置界面修改</span></span><br><span class="line"><span class="comment">    Parameter Settings -&gt; Resolution -&gt; ADC 12-bit resolution</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">return</span> rtnVal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>調用</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> <span class="built_in">text</span>[<span class="number">30</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="built_in">text</span>, <span class="string">"V = %.2f"</span>, getADC(&amp;hadc1));</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -32,7 +49,7 @@
         &lt;p&gt;我們可以在STM32單片機引脚產生頻率與占空比可調的PWM波。&lt;/p&gt;
 &lt;h3 id=&quot;時鐘配置&quot;&gt;時鐘配置&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Clock Configuration&lt;/code&gt; -&amp;gt; &lt;code&gt;HCLK&lt;/code&gt; = &lt;s
+&lt;p&gt;&lt;code&gt;Clock Configuration&lt;/code&gt; -&amp;gt;&lt;code&gt;HC LK&lt;/code&gt; = &lt;s
       
     
     </summary>
@@ -464,9 +481,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -567,11 +584,11 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
     
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -603,9 +620,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
-    
       <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -676,9 +693,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -751,9 +768,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -787,9 +804,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
     
@@ -863,9 +880,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -899,13 +916,13 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
     
-      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+      <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
   </entry>
   
@@ -973,9 +990,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1050,9 +1067,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1089,9 +1106,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1124,9 +1141,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1161,9 +1178,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
     
@@ -1200,9 +1217,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1237,9 +1254,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1273,9 +1290,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1347,9 +1364,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1382,9 +1399,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1419,9 +1436,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
     
@@ -1710,9 +1727,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -1800,9 +1817,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
-    
       <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
+      <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
     
   </entry>
   
@@ -2375,9 +2392,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -2789,9 +2806,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -2822,9 +2839,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -2858,9 +2875,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="情诗" scheme="https://liuboyuan.fun/tags/%E6%83%85%E8%AF%97/"/>
     
@@ -3022,9 +3039,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -4050,9 +4067,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="搬运" scheme="https://liuboyuan.fun/tags/%E6%90%AC%E8%BF%90/"/>
     
@@ -4199,9 +4216,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -4361,9 +4378,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -4432,9 +4449,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -4597,9 +4614,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -4868,9 +4885,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="季节" scheme="https://liuboyuan.fun/tags/%E5%AD%A3%E8%8A%82/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="雨" scheme="https://liuboyuan.fun/tags/%E9%9B%A8/"/>
     
@@ -5261,9 +5278,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -5645,9 +5662,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -5679,9 +5696,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -6124,9 +6141,9 @@ Wordpress中国本土化社区创始人&lt;a href=&quot;http://ibadboy.net/&quot
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   
@@ -6912,9 +6929,9 @@ begi
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
-    
       <category term="古体诗词" scheme="https://liuboyuan.fun/tags/%E5%8F%A4%E4%BD%93%E8%AF%97%E8%AF%8D/"/>
+    
+      <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
   </entry>
   

@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>stm-hal-oclock</title>
+      <title>stm-hal-oclock（草稿）</title>
       <link href="/stm-hal-oclock/"/>
       <url>/stm-hal-oclock/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>Timers -&gt; RTC -&gt;<br>Activate Clock Source<br>Activate Calendar</p><p>Alarm A -&gt; Internal Alarm A<br>NVIC -&gt; RTC alarm interrupt 使能中斷<br>Data Format -&gt; Binary data format</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> <span class="built_in">text</span>[<span class="number">20</span>];</span><br><span class="line">RTC_TimeTypeDef sTime = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">RTC_DateTypeDef sDate = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">HAL_RTC_GetTime(&amp;hrtc, &amp;sTime, RTC_FORMAT_BIN);</span><br><span class="line">HAL_RTC_GetDate(&amp;hrtc, &amp;sDate, RTC_FORMAT_BIN);</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="built_in">text</span>, <span class="string">"%2d:%2d:%2d"</span>, sTime.Hours, sTime.Minutes, sTime.Seconds);</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="built_in">text</span>, <span class="string">"%d-%d-%d-%d"</span>, sDate.Year, sDate.Month, sDate.Date, sDate.Weekday);</span><br></pre></td></tr></table></figure><p>即使無需獲取日期，也需要HAL_RTC_GetDate()否則時間不流動</p><p>到達鬧鐘設定時間，程序會進入HAL_RTC_AlarmEventCallback(RTC_HandleTypeDef *hrtc);</p>]]></content>
       
       
       
@@ -425,9 +425,9 @@
       
         <tags>
             
-            <tag> 胡思乱想 </tag>
-            
             <tag> 相思 </tag>
+            
+            <tag> 胡思乱想 </tag>
             
             <tag> 相识 </tag>
             
@@ -659,9 +659,9 @@
             
             <tag> 诗歌 </tag>
             
-            <tag> 哲学 </tag>
-            
             <tag> 相思 </tag>
+            
+            <tag> 哲学 </tag>
             
         </tags>
       
@@ -1368,9 +1368,9 @@
       
         <tags>
             
-            <tag> 胡思乱想 </tag>
-            
             <tag> 哲学 </tag>
+            
+            <tag> 胡思乱想 </tag>
             
         </tags>
       

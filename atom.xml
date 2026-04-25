@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liuboyuan.fun/"/>
-  <updated>2026-04-09T19:36:28.986Z</updated>
+  <updated>2026-04-25T16:31:58.097Z</updated>
   <id>https://liuboyuan.fun/</id>
   
   <author>
@@ -17,13 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>stm-hal-oclock</title>
+    <title>stm-hal-oclock（草稿）</title>
     <link href="https://liuboyuan.fun/stm-hal-oclock/"/>
     <id>https://liuboyuan.fun/stm-hal-oclock/</id>
     <published>2026-04-10T03:35:17.000Z</published>
-    <updated>2026-04-09T19:36:28.986Z</updated>
+    <updated>2026-04-25T16:31:58.097Z</updated>
+    
+    <content type="html"><![CDATA[<p>Timers -&gt; RTC -&gt;<br>Activate Clock Source<br>Activate Calendar</p><p>Alarm A -&gt; Internal Alarm A<br>NVIC -&gt; RTC alarm interrupt 使能中斷<br>Data Format -&gt; Binary data format</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> <span class="built_in">text</span>[<span class="number">20</span>];</span><br><span class="line">RTC_TimeTypeDef sTime = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">RTC_DateTypeDef sDate = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">HAL_RTC_GetTime(&amp;hrtc, &amp;sTime, RTC_FORMAT_BIN);</span><br><span class="line">HAL_RTC_GetDate(&amp;hrtc, &amp;sDate, RTC_FORMAT_BIN);</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="built_in">text</span>, <span class="string">"%2d:%2d:%2d"</span>, sTime.Hours, sTime.Minutes, sTime.Seconds);</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="built_in">text</span>, <span class="string">"%d-%d-%d-%d"</span>, sDate.Year, sDate.Month, sDate.Date, sDate.Weekday);</span><br></pre></td></tr></table></figure><p>即使無需獲取日期，也需要HAL_RTC_GetDate()否則時間不流動</p><p>到達鬧鐘設定時間，程序會進入HAL_RTC_AlarmEventCallback(RTC_HandleTypeDef *hrtc);</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;Timers -&amp;gt; RTC -&amp;gt;&lt;br&gt;
+Activate Clock Source&lt;br&gt;
+Activate Calendar&lt;/p&gt;
+&lt;p&gt;Alarm A -&amp;gt; Internal Alarm A&lt;br&gt;
+NVIC -&amp;gt; RTC alarm int
+      
     
     </summary>
     
@@ -620,9 +631,9 @@
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
     
       <category term="相识" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E8%AF%86/"/>
     
@@ -920,9 +931,9 @@
     
       <category term="诗歌" scheme="https://liuboyuan.fun/tags/%E8%AF%97%E6%AD%8C/"/>
     
-      <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
-    
       <category term="相思" scheme="https://liuboyuan.fun/tags/%E7%9B%B8%E6%80%9D/"/>
+    
+      <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
     
   </entry>
   
@@ -1817,9 +1828,9 @@ Finaly,ended.&lt;/p&gt;
       <category term="未分类" scheme="https://liuboyuan.fun/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
       <category term="哲学" scheme="https://liuboyuan.fun/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+      <category term="胡思乱想" scheme="https://liuboyuan.fun/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
     
   </entry>
   
